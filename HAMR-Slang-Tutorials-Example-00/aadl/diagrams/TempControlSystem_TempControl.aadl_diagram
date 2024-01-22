@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="4bdeee42-9089-4cba-bda2-21c06198b991" manual="true">
+    <element uuid="7aafe914-46a9-4b7f-9720-52771d9437ab" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>currenttemp</seg>
+      </bo>
+      <position y="80.0"/>
+    </element>
+    <element uuid="c956db63-5a3c-4f45-8f44-94928e74f65e" manual="true" dockArea="right">
+      <bo>
+        <seg>feature</seg>
+        <seg>fanack</seg>
+      </bo>
+      <position x="279.0" y="90.0"/>
+    </element>
+    <element uuid="361f9c02-56e6-4776-ab6a-7afa984d914e" manual="true" dockArea="right">
+      <bo>
+        <seg>feature</seg>
+        <seg>fancmd</seg>
+      </bo>
+      <position x="274.0" y="40.0"/>
+    </element>
+    <element uuid="b2bb2f76-42af-469c-9560-6d54d941adb8" manual="true" dockArea="top">
+      <bo>
+        <seg>feature</seg>
+        <seg>setpoint</seg>
+      </bo>
+      <position x="230.0"/>
+    </element>
+    <element uuid="791a2cc6-efd2-47d3-a06e-531773ca4c3b" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>tempchanged</seg>
+      </bo>
+      <position y="35.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>tempcontrol</seg>
+    </bo>
+    <position x="10.0" y="10.0"/>
+    <size width="341.0" height="161.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>tempcontrolsystem::tempcontrol</seg>
+    </context>
+  </config>
+</diagram:Diagram>

@@ -1,0 +1,63 @@
+
+-- ===========================================================================================================
+--
+--   P r o d u c e r    Package
+--
+--
+--  Contains a periodic thread and an enclosing process for
+--  generating a stream of records/structs
+-- 
+-- ===========================================================================================================
+  
+package Producer
+public
+  with  ProdCons;
+        
+
+-- ===========================================================================================================
+--
+--   P r o d u c e r    Thread
+--
+--  Periodic thread that produces a simple structured message on an output event data port
+--
+-- 
+-- ===========================================================================================================
+	
+thread ProducerThr
+   features
+    -- ==== OUTPUTS ====	
+    outMessage : out event data port ProdCons::Message.i;
+  -- ==== PROPERTIES ====
+  properties
+    Dispatch_Protocol => Periodic;
+    Period => 1sec;
+end ProducerThr;
+
+thread implementation ProducerThr.i
+end ProducerThr.i;
+
+
+-- ===========================================================================================================
+--
+--   P r o d u c e r P r o c    Process
+--
+--  Process for producer thread
+--
+-- ===========================================================================================================
+
+process ProducerProc
+  features
+  outMessage : out event data port ProdCons::Message.i;
+  -- ==== PROPERTIES ====
+end ProducerProc;
+	
+process implementation ProducerProc.i
+subcomponents
+  producerThr : thread ProducerThr.i;
+			
+connections
+  msgPTtoPP: port producerThr.outMessage -> outMessage;
+end ProducerProc.i;
+
+ 
+end Producer;

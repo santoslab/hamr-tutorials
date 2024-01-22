@@ -1,0 +1,61 @@
+-- ===========================================================================================================
+--
+--   P r o d C o n s   Package
+--
+--   Integrates simple producer and consumer components
+--
+--
+-- ===========================================================================================================
+  
+package ProdCons
+public
+  with  Base_Types,         -- needed when using AADL base types
+        Data_Model,         -- needed when defining new types
+        Producer, Consumer; -- access to producer and consumer processes
+
+-- ===========================================================================================================
+--
+--   P r o d C o n s S y s t e m   System
+--
+--   Integrates the producer process and consumer process
+--
+-- ===========================================================================================================
+
+system ProdConsSystem
+  features
+    none;
+   -- no interface features; this is the top-level component
+end ProdConsSystem;
+	
+system implementation ProdConsSystem.i
+subcomponents
+   prod: process Producer::ProducerProc.i;
+   cons: process Consumer::ConsumerProc.i;			
+connections
+   msgPPtoCP: port prod.outMessage -> cons.inMessage;
+end ProdConsSystem.i;
+
+-- ----------------------------------------------------------------------------------
+  --
+  --   M e s s a g e    Data Type   
+  --
+  --   Define data/message communicated from the producer to the consumer.
+  -- ----------------------------------------------------------------------------------
+
+  data Message
+    properties
+      -- Indicate that the temperature info will be a struct (record)
+      -- For structs, use of the type must refer to the data component implementation (Message.i),
+      --  which defines the fields and associated types of the struct.
+      Data_Model::Data_Representation => Struct;
+  end Message;
+
+  data implementation Message.i
+    subcomponents
+      -- message contains two 32-bit integers, which are represented using an AADL Base Type
+      -- defined in the AADL Data Modeling annex.
+      value: data Base_Types::Integer_32;
+      section: data Base_Types::Integer_32;   
+  end Message.i;
+
+end ProdCons;

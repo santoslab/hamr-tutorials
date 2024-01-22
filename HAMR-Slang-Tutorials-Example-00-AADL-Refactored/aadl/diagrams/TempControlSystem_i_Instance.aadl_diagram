@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="f29e701e-c024-47f6-9b24-433a3e95dffd" manual="true">
+    <element uuid="7f754ce5-2b3c-42dc-bfd9-a9545280f081" manual="true">
+      <element uuid="95621aeb-46d5-483c-bf35-f607d7bbb537" manual="true">
+        <element uuid="bdc464ab-1f9d-4e24-aac2-9d038af21619" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>fanack</seg>
+          </bo>
+          <position x="147.0" y="38.0"/>
+        </element>
+        <element uuid="c3485a4c-140a-492d-b0c4-d71098a14278" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>fancmd</seg>
+          </bo>
+          <position y="38.0"/>
+        </element>
+        <element uuid="52eac3f0-8af0-49b2-89b2-5ff549db20c7" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>fc2fa</seg>
+          </bo>
+        </element>
+        <element uuid="bb1bda71-d3de-4e2f-8944-bc661ad8d14f" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>fc2sink</seg>
+          </bo>
+          <position x="129.0" y="59.0"/>
+          <bendpoints>
+            <point x="619.0" y="351.0"/>
+            <point x="619.0" y="340.0"/>
+          </bendpoints>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>fan</seg>
+        </bo>
+        <position x="506.0" y="231.0"/>
+        <size width="209.0" height="90.0"/>
+      </element>
+      <element uuid="7f09a2a9-28a6-4e00-ad22-4a419b3f1f57" manual="true">
+        <element uuid="bf506108-497c-404c-bd41-e6e019777069" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>currenttemp</seg>
+          </bo>
+          <position y="104.0"/>
+        </element>
+        <element uuid="4e68a934-a346-4cb0-9730-d44d18594a5f" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>setpoint</seg>
+          </bo>
+          <position y="38.0"/>
+        </element>
+        <element uuid="54be3646-d5e9-488b-b654-df7ef2e015c3" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>ct2sink</seg>
+          </bo>
+          <position x="139.0" y="136.0"/>
+        </element>
+        <element uuid="6edce226-abec-45eb-8b22-48da258200a6" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>source2sp</seg>
+          </bo>
+          <position x="139.0" y="70.0"/>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>operatorinterface</seg>
+        </bo>
+        <position x="357.0" y="48.0"/>
+        <size width="358.0" height="162.0"/>
+      </element>
+      <element uuid="976a65ce-194a-41d5-86ce-5b7c38ba0ab0" manual="true">
+        <element uuid="5572650a-ed48-4934-85db-8112d0dc8e50" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>currenttemp</seg>
+          </bo>
+          <position y="88.0"/>
+        </element>
+        <element uuid="1a963317-f303-4d75-b501-cf421d32ea72" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>fanack</seg>
+          </bo>
+          <position y="148.0"/>
+        </element>
+        <element uuid="eb337da0-c5eb-4b23-95e5-8113b7ef1dbd" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>fancmd</seg>
+          </bo>
+          <position x="260.0" y="38.0"/>
+        </element>
+        <element uuid="ed505947-1d8a-48f7-8fba-990dd0dbc3fd" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>setpoint</seg>
+          </bo>
+          <position y="38.0"/>
+        </element>
+        <element uuid="17121ead-995a-4614-aa50-97ae2e508aa6" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>ct2fc</seg>
+          </bo>
+          <bendpoints>
+            <point x="878.0" y="270.0"/>
+            <point x="878.0" y="220.0"/>
+          </bendpoints>
+        </element>
+        <element uuid="29afb767-dd7f-4987-818b-f3fe99823af2" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>fa2sink</seg>
+          </bo>
+          <position x="139.0" y="180.0"/>
+        </element>
+        <element uuid="fb7ce627-30cc-4738-8b7c-8f2b6e32f30a" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>sp2fc</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>tempcontrol</seg>
+        </bo>
+        <position x="735.0" y="100.0"/>
+        <size width="327.0" height="206.0"/>
+      </element>
+      <element uuid="baa5e138-dd89-4a95-865e-ac5b1142b220" manual="true">
+        <element uuid="1ba31da5-e263-4303-98ab-c13a3307e825" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>currenttemp</seg>
+          </bo>
+          <position x="228.0" y="38.0"/>
+        </element>
+        <element uuid="27e852d4-f05f-48f6-b909-d567d8b2b522" manual="true">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>flow_specification_instance</seg>
+            <seg>cto</seg>
+          </bo>
+          <position x="12.0" y="70.0"/>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>tempsensor</seg>
+        </bo>
+        <position x="12.0" y="114.0"/>
+        <size width="325.0" height="96.0"/>
+      </element>
+      <element uuid="5359496d-865e-404a-a3c0-ac42e6d7d537" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>cttstooi : tempcontrolsystem_i_instance.tcproc.tempsensor.currenttemp -> tempcontrolsystem_i_instance.tcproc.operatorinterface.currenttemp</seg>
+        </bo>
+      </element>
+      <element uuid="25236877-ad0c-4a18-8542-dfc38e38fe0e" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>cttstotc : tempcontrolsystem_i_instance.tcproc.tempsensor.currenttemp -> tempcontrolsystem_i_instance.tcproc.tempcontrol.currenttemp</seg>
+        </bo>
+        <bendpoints>
+          <point x="371.0" y="234.0"/>
+          <point x="371.0" y="270.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="4df9e542-498e-4b71-bd63-572f4340e85e" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>faftotc : tempcontrolsystem_i_instance.tcproc.fan.fanack -> tempcontrolsystem_i_instance.tcproc.tempcontrol.fanack</seg>
+        </bo>
+        <bendpoints>
+          <point x="749.0" y="351.0"/>
+          <point x="749.0" y="330.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="f866193f-edcc-448c-ba6f-8c4093dde102" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>fctctof : tempcontrolsystem_i_instance.tcproc.tempcontrol.fancmd -> tempcontrolsystem_i_instance.tcproc.fan.fancmd</seg>
+        </bo>
+        <bendpoints>
+          <point x="1096.0" y="220.0"/>
+          <point x="1096.0" y="381.0"/>
+          <point x="371.0" y="381.0"/>
+          <point x="371.0" y="351.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="22ceeebb-fdf8-4b55-9707-0805172a6c9a" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>spoitotc : tempcontrolsystem_i_instance.tcproc.operatorinterface.setpoint -> tempcontrolsystem_i_instance.tcproc.tempcontrol.setpoint</seg>
+        </bo>
+        <bendpoints>
+          <point x="371.0" y="168.0"/>
+          <point x="371.0" y="88.0"/>
+          <point x="749.0" y="88.0"/>
+          <point x="749.0" y="220.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>tcproc</seg>
+      </bo>
+      <position x="12.0" y="38.0"/>
+      <size width="1084.0" height="343.0"/>
+    </element>
+    <bo>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/hamr-slang-tutorials-example-01/packages/instances/tempcontrolsystem_tempcontrolsystem_i_instance.aaxl2</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="1096.0" height="381.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/hamr-slang-tutorials-example-01/packages/instances/tempcontrolsystem_tempcontrolsystem_i_instance.aaxl2</seg>
+    </context>
+  </config>
+</diagram:Diagram>

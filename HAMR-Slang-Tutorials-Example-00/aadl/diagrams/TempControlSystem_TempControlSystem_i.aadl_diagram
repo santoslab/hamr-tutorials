@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="a613aec9-8b0d-4939-80c9-1d128fdd6177" manual="true">
+    <element uuid="e047ba45-0703-4b7f-9c55-c6ecb4a942f2" manual="true">
+      <bo>
+        <seg>realization</seg>
+      </bo>
+    </element>
+    <element uuid="5670f8f1-386e-4635-88b1-45d83aaece7d" manual="true">
+      <element uuid="72694a77-d7a8-490a-8171-53a7c69f24b4" manual="true">
+        <element uuid="2578db85-0a79-4525-9c63-8f345bbd0440" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>cttstooi</seg>
+        </bo>
+        <bendpoints>
+          <point x="452.0" y="482.0"/>
+          <point x="452.0" y="242.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="8bf8fcd6-0abd-468f-8b2a-f59bcf9cd47b" manual="true">
+        <element uuid="89d09eb7-f2ca-4850-bca3-6df40eef20d7" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>cttstotc</seg>
+        </bo>
+      </element>
+      <element uuid="d19375b1-6e12-456a-a217-02793d0284f6" manual="true">
+        <element uuid="290a5081-b935-495e-802e-dfa1040b95fb" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>faftotc</seg>
+        </bo>
+      </element>
+      <element uuid="ad42d032-5c81-4de9-85ef-13c00f482ace" manual="true">
+        <element uuid="cab0eb45-db2e-41e3-af84-b85ecf510e18" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>fctctof</seg>
+        </bo>
+      </element>
+      <element uuid="1129773d-f1a5-4dc5-b411-c0f1a56680a6" manual="true">
+        <element uuid="9bb652b1-c337-431a-a4e8-4e693d7a2298" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>spoitotc</seg>
+        </bo>
+      </element>
+      <element uuid="3d0df853-ecc8-4f19-abb4-9cb169eb2dbc" manual="true">
+        <element uuid="4dfa5246-6b98-4d44-9438-3116ebd04aa4" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>tctstooi</seg>
+        </bo>
+        <bendpoints>
+          <point x="437.0" y="432.0"/>
+          <point x="437.0" y="192.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="61c70266-f76d-4461-abbd-4ff02f3465da" manual="true">
+        <element uuid="6fd1288f-f257-4d65-98bf-78a1107dd0ba" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>tctstotc</seg>
+        </bo>
+      </element>
+      <element uuid="7feaefa5-6a68-4a3f-b97e-16cc64737241" manual="true">
+        <element uuid="ccff9b5d-e5a1-4b31-8814-99d80a15b9b8" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>fanack</seg>
+          </bo>
+          <position y="55.0"/>
+        </element>
+        <element uuid="ec9f9bd0-4e56-4d9d-98a7-fb743ca16748" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>fancmd</seg>
+          </bo>
+          <position y="2.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>fan</seg>
+        </bo>
+        <position x="852.0" y="310.0"/>
+        <size width="214.0" height="110.0"/>
+      </element>
+      <element uuid="a2f66ed0-c846-4d10-b984-28e6dd82bf97" manual="true">
+        <element uuid="5dfbde4d-2d9e-418d-8e01-fd6326c68548" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>currenttemp</seg>
+          </bo>
+          <position y="60.0"/>
+        </element>
+        <element uuid="18d3ae5f-d5d7-42a4-90cd-adafdb2a1a58" manual="true" dockArea="bottom">
+          <bo>
+            <seg>feature</seg>
+            <seg>setpoint</seg>
+          </bo>
+          <position x="240.0" y="136.0"/>
+        </element>
+        <element uuid="2461f577-7e39-4dad-8a66-1f47848806bf" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>tempchanged</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>operatorinterface</seg>
+        </bo>
+        <position x="409.0" y="70.0"/>
+        <size width="380.0" height="160.0"/>
+      </element>
+      <element uuid="e4efd9ac-2a9c-496b-aec0-5f99ec9f7f59" manual="true">
+        <element uuid="4cd0acca-a4ff-404d-8ef7-6de1195b0103" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>currenttemp</seg>
+          </bo>
+          <position y="85.0"/>
+        </element>
+        <element uuid="aaca2264-fc81-4ab1-af77-c144ed853d02" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>fanack</seg>
+          </bo>
+          <position x="285.0" y="80.0"/>
+        </element>
+        <element uuid="008a701a-c5b5-42f2-b6aa-ecf5d9d8994a" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>fancmd</seg>
+          </bo>
+          <position x="280.0" y="27.0"/>
+        </element>
+        <element uuid="080c17b4-bf5f-4806-97c6-41e18f905969" manual="true" dockArea="top">
+          <bo>
+            <seg>feature</seg>
+            <seg>setpoint</seg>
+          </bo>
+          <position x="221.0"/>
+        </element>
+        <element uuid="183f21c3-d914-4981-b884-3d7628bb0d5d" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>tempchanged</seg>
+          </bo>
+          <position y="35.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>tempcontrol</seg>
+        </bo>
+        <position x="428.0" y="287.0"/>
+        <size width="347.0" height="156.0"/>
+      </element>
+      <element uuid="b3c46559-22ad-4db9-8cdb-add8ad7b7d85" manual="true">
+        <element uuid="716689af-70fc-4a2d-8e23-a25eb7ffd8e0" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>currenttemp</seg>
+          </bo>
+          <position x="182.0" y="60.0"/>
+        </element>
+        <element uuid="e6067480-6cf6-405f-877d-ab6969109ffd" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>tempchanged</seg>
+          </bo>
+          <position x="174.0" y="10.0"/>
+        </element>
+        <element uuid="af4b155e-ffe4-4e0d-8371-86e2c8c9e2d7" manual="true">
+          <bo>
+            <seg>flow_specification</seg>
+            <seg>cto</seg>
+          </bo>
+          <position x="296.0" y="92.0"/>
+        </element>
+        <element uuid="1d7fe706-a74d-4fbf-8ec0-83a3c8fa4925" manual="true">
+          <bo>
+            <seg>flow_specification</seg>
+            <seg>tco</seg>
+          </bo>
+          <position x="296.0" y="42.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>tempsensor</seg>
+        </bo>
+        <position x="59.0" y="310.0"/>
+        <size width="279.0" height="110.0"/>
+      </element>
+      <element uuid="cee4678f-5b15-4b7a-a0e6-286c29fd4f32" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>tcproc</seg>
+      </bo>
+      <position x="51.0" y="60.0"/>
+      <size width="1127.0" height="481.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>tempcontrolsystem.i</seg>
+    </bo>
+    <position x="30.0" y="20.0"/>
+    <size width="1231.0" height="571.0"/>
+  </element>
+  <config type="structure">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>tempcontrolsystem::tempcontrolsystem.i</seg>
+    </context>
+  </config>
+</diagram:Diagram>

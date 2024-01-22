@@ -1,0 +1,3 @@
+system_impl=ProdConsSystem.i
+system_impl_file=ProdCons.aadl
+projects=.

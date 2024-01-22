@@ -1,0 +1,61 @@
+
+-- ===========================================================================================================
+--
+--   P r o d u c e r    Package
+--
+--
+--  Contains a periodic thread and an enclosing process for
+--  consuming a stream of records/structs
+-- 
+-- ===========================================================================================================
+  
+package Consumer
+public
+  with  ProdCons; -- import application package (we need the Message type declaration)
+
+-- ===========================================================================================================
+--
+--   C o n s u m e r T h r   Thread
+--
+--  Sporadic thread that consumes a simple structured message on an input event data port
+--
+-- 
+-- ===========================================================================================================
+	
+thread ConsumerThr
+   features
+    -- ==== OUTPUTS ====	
+    inMessage : in event data port ProdCons::Message.i;
+  -- ==== PROPERTIES ====
+  properties
+    Dispatch_Protocol => Sporadic;
+    Period => 1sec;
+end ConsumerThr;
+
+thread implementation ConsumerThr.i
+end ConsumerThr.i;
+
+
+-- ===========================================================================================================
+--
+--   C o n s u m e r P r o c    Process
+--
+--  Process for consumer thread
+--
+-- ===========================================================================================================
+
+process ConsumerProc
+  features
+  inMessage : in event data port ProdCons::Message.i;
+  -- ==== PROPERTIES ====
+end ConsumerProc;
+	
+process implementation ConsumerProc.i
+subcomponents
+  consumerThr : thread ConsumerThr.i;
+connections		
+  msgCTtoCP: port inMessage -> consumerThr.inMessage;
+end ConsumerProc.i;
+
+
+end Consumer;

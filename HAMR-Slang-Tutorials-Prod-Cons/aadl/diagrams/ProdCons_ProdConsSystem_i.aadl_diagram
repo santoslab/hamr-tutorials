@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="882d38f1-70a7-4813-8afe-423a142e7991" manual="true">
+    <element uuid="f72d08c4-da36-4df7-85aa-bac17c8d30ec" manual="true">
+      <element uuid="2db55a49-648c-4ee5-8eae-e61cc2ba082f" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>msgPPtoCP</seg>
+      </bo>
+    </element>
+    <element uuid="992a076e-7a19-4b8e-8f4a-f700e9b34c3b" manual="true">
+      <element uuid="0f2c2777-ffb5-4a1e-af00-525e24653113" manual="true">
+        <element uuid="f8e10387-141d-4bea-a23c-b26cc1accb6a" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>msgCTtoCP</seg>
+        </bo>
+      </element>
+      <element uuid="4e0ac551-aae8-4847-ad44-00f7d62f07aa" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>inMessage</seg>
+        </bo>
+        <position y="69.0"/>
+      </element>
+      <element uuid="2059b143-cc13-4ca7-a78f-b3c47d5ba06b" manual="true">
+        <element uuid="7b188206-d10c-4ac7-95f5-bb951a4f30e7" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>inMessage</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>consumerThr</seg>
+        </bo>
+        <position x="97.0" y="59.0"/>
+        <size width="314.0" height="60.0"/>
+      </element>
+      <element uuid="59d23592-0927-43e0-98b9-f060928158ab" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cons</seg>
+      </bo>
+      <position x="476.0" y="38.0"/>
+      <size width="423.0" height="131.0"/>
+    </element>
+    <element uuid="0ea21cf2-febf-430d-a314-62240b3d1754" manual="true">
+      <element uuid="64b66c92-7fba-44a5-aec2-12d8e53a26e9" manual="true">
+        <element uuid="25a0fc8a-93c6-4c26-893f-7a62effcba9a" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>msgPTtoPP</seg>
+        </bo>
+      </element>
+      <element uuid="ebf4dc72-f359-4a51-babd-4092b2e52f05" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>outMessage</seg>
+        </bo>
+        <position x="355.0" y="69.0"/>
+      </element>
+      <element uuid="4990e52b-ddbb-4d53-9414-f2eb1abeebca" manual="true">
+        <element uuid="b1fbb72c-5cda-4bec-a90b-4ef4d3f4ed6b" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>outMessage</seg>
+          </bo>
+          <position x="237.0" y="10.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>producerThr</seg>
+        </bo>
+        <position x="12.0" y="59.0"/>
+        <size width="326.0" height="60.0"/>
+      </element>
+      <element uuid="f9839e07-03fd-4ecf-9203-ef238fc72946" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>prod</seg>
+      </bo>
+      <position x="12.0" y="38.0"/>
+      <size width="444.0" height="131.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>ProdConsSystem.i</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="911.0" height="181.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>ProdCons::ProdConsSystem.i</seg>
+    </context>
+  </config>
+</diagram:Diagram>
