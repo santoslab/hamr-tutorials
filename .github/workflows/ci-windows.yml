@@ -1,0 +1,81 @@
+name: Mac
+
+on: 
+   workflow_call:
+
+jobs:
+  ci:
+    runs-on: windows-latest
+    steps:
+      - name: Support longpaths
+        run: git config --system core.longpaths true
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: sireum/kekinian
+          path: kekinian
+          submodules: recursive          
+      - name: Cache Java
+        id: cache-java
+        uses: actions/cache@v3
+        with:
+          path: kekinian\bin\win\java
+          key: ${{ runner.os }}-${{ hashFiles('kekinian\versions.properties') }}-java
+      - name: Cache Scala
+        id: cache-scala
+        uses: actions/cache@v3
+        with:
+          path: kekinian\bin\scala
+          key: ${{ runner.os }}-${{ hashFiles('kekinian\versions.properties') }}-scala
+      - name: Cache Coursier
+        id: cache-coursier
+        uses: actions/cache@v3
+        with:
+          path: cache\coursier
+          key: ${{ runner.os }}-${{ hashFiles('kekinian\versions.properties') }}-coursier
+      - name: Cache SMT2 solvers
+        id: cache-smt2
+        uses: actions/cache@v3
+        with:
+          path: |
+            kekinian\bin\win\cvc.exe
+            kekinian\bin\win\cvc5.exe
+            kekinian\bin\win\.cvc.ver
+            kekinian\bin\win\.cvc5.ver
+            kekinian\bin\win\z3
+          key: ${{ runner.os }}-${{ hashFiles('kekinian\versions.properties') }}-smt2
+      - name: Cache OSATE
+        id: cache-osate
+        uses: actions/cache@v3
+        with:
+          path: kekinian\bin\win\osate
+          key: ${{ runner.os }}-${{ hashFiles('kekinian\hamr\codegen\jvm\src\main\resources\phantom_versions.properties') }}-osate
+      - name: Test
+        shell: cmd
+        run: |
+          set COURSIER_CACHE=%GITHUB_WORKSPACE%\cache\coursier
+          cd /d %GITHUB_WORKSPACE%
+
+          # see https://github.com/sireum/osate-plugin/blob/57785407d84793cf1f8d5926647e4dc75ab197a9/org.sireum.aadl.osate.cli/src/org/sireum/aadl/osate/cli/Phantom.java#L508-L517
+          set CHECK_PHANTOM_HAMR_API_COMPATIBILITY=true
+
+          call kekinian\bin\build.cmd setup || goto :error
+
+          set SIREUM_HOME=%cd%\kekinian
+          set JAVA_HOME=%SIREUM_HOME%/bin/win/java
+          set PATH=%SIREUM_HOME%/bin;%JAVA_HOME%/bin:%PATH%
+
+          call bin/build.cmd || goto :error
+
+          goto :EOF
+          :error
+          exit /b %errorlevel%
+
+
+
+          
+

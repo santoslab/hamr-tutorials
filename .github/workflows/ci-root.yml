@@ -1,0 +1,49 @@
+name: Updater
+on:
+  push:
+  workflow_dispatch:
+  schedule: 
+    - cron: '0 0 * * 0'  # every Sunday at 12AM
+
+jobs:
+  linux:
+    uses: ./.github/workflows/ci-linux.yml
+    with: 
+      branch_name: '${{ github.run_id }}-${{github.run_attempt}}'
+  mac:
+    uses: ./.github/workflows/ci-mac.yml
+  win:
+    uses: ./.github/workflows/ci-windows.yml
+  
+  updateRepo:
+    runs-on: ubuntu-latest
+    needs: [linux, mac, win]
+    env:
+      branch_name: ${{ github.run_id }}-${{github.run_attempt}}
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Update
+        run: |
+          echo "Welcome to the updater - looking for $branch_name"
+          
+          # if we get to this point then all the called/reusable workflows passed.  
+          # If a new branch was created then the linux workflow must have detected 
+          # that codegen differences required the repo be updated.  So, we'll rebase the
+          # new branch (ie. contains codegen diffs) back to main and delete the branch
+
+          git pull --all
+          ret=0
+          git ls-remote --exit-code --heads origin $branch_name >/dev/null 2>&1 || ret=$?
+          
+          # if ret is 0 then the remote branch exists
+          if [[ "${ret}" == '0' ]]; then
+            git checkout $branch_name # check it out the new branch locally
+            git pull # pull the new branch
+            git checkout main # switch back to main
+            git rebase $branch_name # rebase the codegen differences back to main 
+            git push # push the results of rebasing
+            git push origin --delete $branch_name # delete the branch just rebased onto main
+          else
+            echo "Remote branch $branch_name does not exist -- ie. no codegen changes detected"
+          fi

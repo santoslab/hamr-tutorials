@@ -1,15 +1,11 @@
-name: Linux
+name: Mac
 
 on: 
    workflow_call:
-     inputs:
-       branch_name:
-         required: true
-         type: string
-         
+
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +21,7 @@ jobs:
         id: cache-java
         uses: actions/cache@v3
         with:
-          path: kekinian/bin/linux/java
+          path: kekinian/bin/mac/java
           key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-java          
       - name: Cache Scala
         id: cache-scala
@@ -44,17 +40,17 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            kekinian/bin/linux/cvc
-            kekinian/bin/linux/.cvc.ver
-            kekinian/bin/linux/cvc5
-            kekinian/bin/linux/.cvc5.ver
-            kekinian/bin/linux/z3
+            kekinian/bin/mac/cvc
+            kekinian/bin/mac/.cvc.ver
+            kekinian/bin/mac/cvc5
+            kekinian/bin/mac/.cvc5.ver
+            kekinian/bin/mac/z3
           key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-smt2          
       - name: Cache OSATE
         id: cache-osate
         uses: actions/cache@v3
         with:
-          path: kekinian/bin/linux/osate
+          path: kekinian/bin/mac/osate.app
           key: ${{ runner.os }}-${{ hashFiles('kekinian/hamr/codegen/jvm/src/main/resources/phantom_versions.properties') }}-osate
       - name: Test
         run: |
@@ -67,17 +63,8 @@ jobs:
           kekinian/bin/build.cmd setup
 
           export SIREUM_HOME=$(pwd)/kekinian
-          export JAVA_HOME=$SIREUM_HOME/bin/linux/java
+          export JAVA_HOME=$SIREUM_HOME/bin/mac/java
           export PATH=$SIREUM_HOME/bin:$JAVA_HOME/bin:$PATH
-
-          # note: workflows have to have read and write permissions if the workflow pushes changes
-          #       back to the repo.
-          #       Settings >> General >> Actions >> General >> Workflow permissions
-
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-
-          export branch_name=${{ inputs.branch_name }}
 
           bin/build.cmd
 

@@ -72,11 +72,13 @@ if (results.out.size != 0){
     assert (ret, s"$p failed during zip")
   }
 
-  if (isCI()) {
-    // everything zipped up okay so commit all the changes
+  if (isCI() && Os.isLinux) {
+    // everything zipped up okay so commit all the changes to the branch specified via the caller
+    val branch = Os.env("branch_name").get
+    proc"git checkout -b $branch".at(home).runCheck()
     proc"git add $home".at(home).runCheck()
     Os.proc(ISZ[String]("git", "commit", "-m", "GITHUB ACTIONS: Updating repo due to change detection.  See commit diff for mor info")).at(home).runCheck()
-    proc"git push".at(home).runCheck()
+    proc"git push --set-upstream origin $branch".at(home).runCheck()
   } else {
     println(
       st"""Changes were detected and projects re-zipped.  You'll need to manually
