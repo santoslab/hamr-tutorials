@@ -63,13 +63,27 @@ jobs:
           # see https://github.com/sireum/osate-plugin/blob/57785407d84793cf1f8d5926647e4dc75ab197a9/org.sireum.aadl.osate.cli/src/org/sireum/aadl/osate/cli/Phantom.java#L508-L517
           set CHECK_PHANTOM_HAMR_API_COMPATIBILITY=true
 
-          call kekinian\bin\build.cmd setup || goto :error
-
           set SIREUM_HOME=%cd%\kekinian
-          set JAVA_HOME=%SIREUM_HOME%/bin/win/java
-          set PATH=%SIREUM_HOME%/bin;%JAVA_HOME%/bin:%PATH%
+          call %SIREUM_HOME%\bin\build.cmd setup
+          
+          if %errorlevel% neq 0 (
+            if exist %SIREUM_HOME%\out\sireum-proyek\assemble\sireum.jar (
+              REM build.cmd sometimes fails on windows when it tries to
+              REM replace the in-use bin\sireum.jar with the freshly built one.
+              REM Workaround is to manually copy the jar over
+              copy %SIREUM_HOME%\out\sireum-proyek\assemble\sireum.jar %SIREUM_HOME%\bin
 
-          call bin/build.cmd || goto :error
+              echo Manually copied sireum.jar to bin. Errorlevel %errorlevel%
+            ) else (
+              echo "Error occurred while building sireum.jar"
+              goto :error
+            )
+          )
+
+          set JAVA_HOME=%SIREUM_HOME%\bin\win\java
+          set PATH=%SIREUM_HOME%\bin;%JAVA_HOME%\bin:%PATH%
+
+          call bin\build.cmd || goto :error
 
           goto :EOF
           :error
