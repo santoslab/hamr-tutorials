@@ -59,7 +59,7 @@ for (p <- projects) {
 }
 
 val results = proc"git status -s".at(home).run()
-if (results.out.size != 0){
+if (results.out.size != 0 && Os.isLinux){
   // Something has changed since the last codegen.  We'll accept those changes
   // since the results passed Tipe, compiled, and the unit tests passed.
 
@@ -72,7 +72,7 @@ if (results.out.size != 0){
     assert (ret, s"$p failed during zip")
   }
 
-  if (isCI() && Os.isLinux) {
+  if (isCI()) {
     // everything zipped up okay so commit all the changes to the branch specified via the caller
     val branch = Os.env("branch_name").get
     proc"git checkout -b $branch".at(home).runCheck()
