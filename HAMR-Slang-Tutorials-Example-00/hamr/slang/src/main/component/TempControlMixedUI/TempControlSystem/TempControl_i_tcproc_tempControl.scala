@@ -124,14 +124,5 @@ object TempControl_i_tcproc_tempControl {
     }
   }
 
-  //=================================================
-  //  AADL entry points below are unused
-  //=================================================
-  def activate(api: TempControl_i_Operational_Api): Unit = { }
-
-  def deactivate(api: TempControl_i_Operational_Api): Unit = { }
-
   def finalise(api: TempControl_i_Operational_Api): Unit = { }
-
-  def recover(api: TempControl_i_Operational_Api): Unit = { }
 }

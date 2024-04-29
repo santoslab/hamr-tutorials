@@ -44,10 +44,4 @@ object ConsumerThr_i_cons_consumerThr {
   //======================================================
   def finalise(api: ConsumerThr_i_Operational_Api): Unit = { }
 
-  // other AADL entry points not currently used
-  def activate(api: ConsumerThr_i_Operational_Api): Unit = { }
-
-  def deactivate(api: ConsumerThr_i_Operational_Api): Unit = { }
-
-  def recover(api: ConsumerThr_i_Operational_Api): Unit = { }
 }

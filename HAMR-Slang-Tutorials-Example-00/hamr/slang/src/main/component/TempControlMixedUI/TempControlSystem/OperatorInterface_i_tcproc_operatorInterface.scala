@@ -27,11 +27,5 @@ object OperatorInterface_i_tcproc_operatorInterface {
     api.logInfo(s"Received on event port tempChanged: ${apiUsage_tempChanged}")
   }
 
-  def activate(api: OperatorInterface_i_Operational_Api): Unit = { }
-
-  def deactivate(api: OperatorInterface_i_Operational_Api): Unit = { }
-
   def finalise(api: OperatorInterface_i_Operational_Api): Unit = { }
-
-  def recover(api: OperatorInterface_i_Operational_Api): Unit = { }
 }

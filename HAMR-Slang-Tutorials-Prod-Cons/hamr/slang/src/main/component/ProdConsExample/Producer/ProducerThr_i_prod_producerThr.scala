@@ -55,10 +55,4 @@ object ProducerThr_i_prod_producerThr {
   //======================================================
   def finalise(api: ProducerThr_i_Operational_Api): Unit = { }
 
-  // other AADL entry points not currently used
-  def activate(api: ProducerThr_i_Operational_Api): Unit = { }
-
-  def deactivate(api: ProducerThr_i_Operational_Api): Unit = { }
-
-  def recover(api: ProducerThr_i_Operational_Api): Unit = { }
 }

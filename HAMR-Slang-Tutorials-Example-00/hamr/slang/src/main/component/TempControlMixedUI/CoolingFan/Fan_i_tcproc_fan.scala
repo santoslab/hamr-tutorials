@@ -41,16 +41,7 @@ object Fan_i_tcproc_fan {
     api.logInfo(s"Actuation result: ${ack}")
   }
 
-  //=================================================
-  //  AADL entry points below are unused
-  //=================================================
-  def activate(api: Fan_i_Operational_Api): Unit = { }
-
-  def deactivate(api: Fan_i_Operational_Api): Unit = { }
-
   def finalise(api: Fan_i_Operational_Api): Unit = { }
-
-  def recover(api: Fan_i_Operational_Api): Unit = { }
 }
 
 //=================================================

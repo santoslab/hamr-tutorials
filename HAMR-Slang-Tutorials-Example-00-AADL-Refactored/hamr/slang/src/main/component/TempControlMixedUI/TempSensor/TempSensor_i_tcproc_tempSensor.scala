@@ -41,16 +41,7 @@ object TempSensor_i_tcproc_tempSensor {
     api.logInfo(s"Sensed temperature: $degree F")
   }
 
-  //=================================================
-  //  AADL entry points below are unused
-  //=================================================
-  def activate(api: TempSensor_i_Operational_Api): Unit = { }
-
-  def deactivate(api: TempSensor_i_Operational_Api): Unit = { }
-
   def finalise(api: TempSensor_i_Operational_Api): Unit = { }
-
-  def recover(api: TempSensor_i_Operational_Api): Unit = { }
 }
 
 //=================================================
