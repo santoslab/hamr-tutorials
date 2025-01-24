@@ -49,7 +49,8 @@ if(Os.cliArgs.size > 1) {
 
 val packageName = "ProdConsExample"
 
-val slangOutputDir =  aadlDir.up / "hamr" / "slang"
+val hamrDir =  aadlDir.up / "hamr"
+val slangOutputDir = hamrDir / "slang"
 
 assert (!slangOutputDir.exists || (slangOutputDir / "src" / "main" / "component" / packageName).exists, s"Slang output dir exists but the package name is not $packageName")
 
@@ -62,15 +63,15 @@ val excludeComponentImpl = F
 var codegenArgs = ISZ("hamr", "codegen",
   "--platform", platform,
   "--package-name", packageName,
-  "--output-dir", slangOutputDir.string,
-  "--output-c-dir", (slangOutputDir.up / "c").string,
-  "--camkes-output-dir", (slangOutputDir.up / "camkes").string,  
+  "--output-dir", hamrDir.value,
+  "--output-c-dir", (hamrDir / "c").string,
+  "--sel4-output-dir", (hamrDir / "camkes").string,  
   "--run-transpiler",
   "--bit-width", "32",
   "--max-string-size", "256",
   "--max-array-size", "1",
   "--verbose",
-  "--aadl-root-dir", aadlDir.string)
+  "--workspace-root-dir", aadlDir.string)
 
 /*
 if (platform == "JVM") {
