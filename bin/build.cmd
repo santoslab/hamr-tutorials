@@ -58,34 +58,36 @@ for (p <- projects) {
   }
 }
 
-val results = proc"git status -s".at(home).run()
-if (results.out.size != 0 && Os.isLinux){
-  // Something has changed since the last codegen.  We'll accept those changes
-  // since the results passed Tipe, compiled, and the unit tests passed.
+if (Os.isLinux) {
+  val results = proc"git status -s".at(home).run()
+  if (results.out.size != 0) {
+    // Something has changed since the last codegen.  We'll accept those changes
+    // since the results passed Tipe, compiled, and the unit tests passed.
 
-  println("Detected the following changes:")
-  println(results.out)
-  println()
+    println("Detected the following changes:")
+    println(results.out)
+    println()
 
-  for (p <- projects) {
-    val ret = zipit(home / p)
-    assert (ret, s"$p failed during zip")
-  }
+    for (p <- projects) {
+      val ret = zipit(home / p)
+      assert (ret, s"$p failed during zip")
+    }
 
-  if (isCI()) {
-    // everything zipped up okay so commit all the changes to the branch specified via the caller
-    val branch = Os.env("branch_name").get
-    proc"git checkout -b $branch".at(home).runCheck()
-    proc"git add $home".at(home).runCheck()
-    Os.proc(ISZ[String]("git", "commit", "-m", "GITHUB ACTIONS: Updating repo due to change detection.  See commit diff for mor info")).at(home).runCheck()
-    proc"git push --set-upstream origin $branch".at(home).runCheck()
+    if (isCI()) {
+      // everything zipped up okay so commit all the changes to the branch specified via the caller
+      val branch = Os.env("branch_name").get
+      proc"git checkout -b $branch".at(home).runCheck()
+      proc"git add $home".at(home).runCheck()
+      Os.proc(ISZ[String]("git", "commit", "-m", "GITHUB ACTIONS: Updating repo due to change detection.  See commit diff for mor info")).at(home).runCheck()
+      proc"git push --set-upstream origin $branch".at(home).runCheck()
+    } else {
+      println(
+        st"""Changes were detected and projects re-zipped.  You'll need to manually
+            |commit and push these to github since this isn't a CI run""".render)
+    }
   } else {
-    println(
-      st"""Changes were detected and projects re-zipped.  You'll need to manually
-          |commit and push these to github since this isn't a CI run""".render)
+    println("No changes detected")
   }
-} else {
-  println("No changes detected")
 }
 
 
@@ -119,14 +121,20 @@ object Helper {
   def zipit(root: Os.Path) : B = {
     println(s"Zipping $root")
     for (f <- ISZ(
+      root / "hamr" / "slang" / ".bloop",
       root / "hamr" / "slang" / ".idea", 
       root / "hamr" / "slang" / "out")) 
       f.removeAll()
-    val z7 = appDir / "7za"
+    val z7 = appDir / "7zz"
     val zipFile = zipDir / s"${root.name}.zip"
     zipFile.removeAll()
     println()
-    return proc"$z7 a -tzip $zipFile ${root.name}".echo.at(root.up).run().ok
+    val results = proc"$z7 a -tzip $zipFile ${root.name}".echo.at(root.up).run()
+    if (!results.ok) {
+      println(results.err)
+      return F
+    }
+    return T
   }
 
   def cloneRepo(repo: String, proj: String, location: Os.Path): B = {
