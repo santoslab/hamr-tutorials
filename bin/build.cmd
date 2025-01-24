@@ -125,7 +125,7 @@ object Helper {
       root / "hamr" / "slang" / ".idea", 
       root / "hamr" / "slang" / "out")) 
       f.removeAll()
-    val z7 = appDir / "7zz"
+    val z7 = appDir.up / "7zz"
     val zipFile = zipDir / s"${root.name}.zip"
     zipFile.removeAll()
     println()

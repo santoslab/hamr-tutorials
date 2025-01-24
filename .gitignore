@@ -1,6 +1,7 @@
 **/.IR
 **/.aadlbin-gen/
 **/.settings/
+**/.bloop/
 **/instances
 **/c/nix
 **/*-build/
