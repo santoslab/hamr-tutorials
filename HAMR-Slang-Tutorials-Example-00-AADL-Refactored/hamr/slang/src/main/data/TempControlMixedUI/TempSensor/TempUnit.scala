@@ -15,7 +15,7 @@ import TempControlMixedUI._
 
 object TempUnit_Payload {
   def example(): TempUnit_Payload = {
-    return TempUnit_Payload(TempSensor.TempUnit.byOrdinal(0).get)
+    return TempUnit_Payload(TempSensor.TempUnit.Fahrenheit)
   }
 }
 

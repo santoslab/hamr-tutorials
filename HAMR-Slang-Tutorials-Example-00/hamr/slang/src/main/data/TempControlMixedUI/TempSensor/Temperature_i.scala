@@ -11,7 +11,7 @@ object Temperature_i {
   def example(): TempSensor.Temperature_i = {
     return TempSensor.Temperature_i(
       degrees = Base_Types.Float_32_example(),
-      unit = TempSensor.TempUnit.byOrdinal(0).get)
+      unit = TempSensor.TempUnit.Fahrenheit)
   }
 }
 
