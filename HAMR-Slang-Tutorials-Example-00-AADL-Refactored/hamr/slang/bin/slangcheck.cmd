@@ -24,14 +24,14 @@ val sireum = Os.path(Os.env("SIREUM_HOME").get) / "bin" / (if (Os.isWin) "sireum
 
 // create SlangCheck artifacts for the Slang types used in the project
 
-val files: ISZ[String] = ISZ("../src/main/data/TempControlMixedUI/TempSensor/TempUnit.scala",
-                             "../src/main/data/TempControlMixedUI/TempSensor/Temperature_i.scala",
-                             "../src/main/data/TempControlMixedUI/CoolingFan/FanCmd.scala",
-                             "../src/main/data/TempControlMixedUI/CoolingFan/FanAck.scala",
-                             "../src/main/data/TempControlMixedUI/TempControlSystem/SetPoint_i.scala",
+val files: ISZ[String] = ISZ("../src/main/art/art/DataContent.scala",
+                             "../src/main/data/TempControlMixedUI/Aux_Types.scala",
                              "../src/main/data/TempControlMixedUI/Base_Types.scala",
-                             "../src/main/art/art/DataContent.scala",
-                             "../src/main/data/TempControlMixedUI/Aux_Types.scala")
+                             "../src/main/data/TempControlMixedUI/CoolingFan/FanAck.scala",
+                             "../src/main/data/TempControlMixedUI/CoolingFan/FanCmd.scala",
+                             "../src/main/data/TempControlMixedUI/TempControlSystem/SetPoint_i.scala",
+                             "../src/main/data/TempControlMixedUI/TempSensor/TempUnit.scala",
+                             "../src/main/data/TempControlMixedUI/TempSensor/Temperature_i.scala")
 
 val toolargs: String = st"${(files, " ")}".render
 
