@@ -1,5 +1,9 @@
 // This file will not be overwritten if codegen is rerun
 
+// NOTE:  The tests in this file are the default auto-generated tests.
+//  Adding appropriate tests is an exercise for the learner.
+//
+
 mod tests {
   // NOTE: need to run tests sequentially to prevent race conditions
   //       on the app and the testing apis which are static
