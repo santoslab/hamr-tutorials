@@ -26,7 +26,6 @@ package Isolette {
     connection ct : PortConnection connect temp_sensor.current_temp to thermostat.current_temp;
     connection hc : PortConnection connect thermostat.heat_control to heat_source.heat_control;
     connection sp : PortConnection connect operator_interface.desired_temp to thermostat.desired_temp;
-    connection dt : PortConnection connect thermostat.display_temp to operator_interface.display_temp;
 
     //-- A l l o c a t i o n s  of software/partitions to hardware
     allocation pb0: Deployment_Properties::Actual_Processor_Binding 
@@ -80,7 +79,6 @@ package Isolette {
   //===============================================================================
   part def OperatorInterface_Process :> Process {
     //-- I n t e r f a c e  --
-    in port display_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
     out port desired_temp : DataPort { :>> type : Isolette_Data_Model::Set_Points; }
 
     //-- P r o p e r t i e s  --
@@ -88,7 +86,6 @@ package Isolette {
 
     //-- I n t e r n a l s --
     part operator_interface: OperatorInterface; 
-    connection dt : PortConnection connect display_temp to operator_interface.display_temp;
     connection sp : PortConnection connect operator_interface.desired_temp to desired_temp;
   }
 
@@ -102,7 +99,6 @@ package Isolette {
     in port current_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
     in port desired_temp : DataPort { :>> type : Isolette_Data_Model::Set_Points; }
     out port heat_control : DataPort { :>> type : Isolette_Data_Model::On_Off; }
-    out port display_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
 
     attribute :>> Domain = Isolette_Properties::Domain_THERM;
 
@@ -111,6 +107,5 @@ package Isolette {
     connection ct : PortConnection connect current_temp to thermostat.current_temp;
     connection hc : PortConnection connect thermostat.heat_control to heat_control;
     connection sp : PortConnection connect desired_temp to thermostat.desired_temp;
-    connection dt : PortConnection connect thermostat.display_temp to display_temp;
   }
 }

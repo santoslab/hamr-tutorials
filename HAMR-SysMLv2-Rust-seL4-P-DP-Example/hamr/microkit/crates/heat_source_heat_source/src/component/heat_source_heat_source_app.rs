@@ -14,7 +14,6 @@
 //
 //============================================================================
 
-
 use data::*;
 use data::Isolette_Data_Model::*;
 use crate::bridge::heat_source_heat_source_api::*;
@@ -38,6 +37,7 @@ verus! {
     pub heater_state: On_Off, 
   }
 
+  
   impl heat_source_heat_source {
     //-------------------------------------------
     //  Application Component Constructor
@@ -46,6 +46,7 @@ verus! {
     {
       Self {
         // PLACEHOLDER MARKER STATE VAR INIT
+
         heater_state: On_Off::Off,
       }
     }
@@ -78,7 +79,7 @@ verus! {
     {
       log_info("compute entrypoint invoked");
 
-      // get values of input ports 
+       // get values of input ports 
       let heat_control: On_Off = api.get_heat_control();
     
       // update simulation

@@ -33,9 +33,6 @@ mod tests {
     crate::temp_sensor_temp_sensor_initialize();
 }
 
-  // ToDo: Probably should just remove the test below (I'm not sure it illustrates anything 
-  // interesting pedagogically).
-
   // Tire-kicking test for compute entry point (timeTriggered method)
   // ...just run initialize followed by time-triggered to exercise execution.
   // This simple approach works in this case because the component has no input ports
@@ -47,16 +44,9 @@ mod tests {
     crate::temp_sensor_temp_sensor_timeTriggered();
   }
 
-  // Helper function to test if sensor output temperature is
-  // is in the expected range.
-  fn current_temp_in_range(ct: Temp) -> bool {
-       app::sensed_temp_lower_bound <= ct.degrees 
-    && ct.degrees <= app::sensed_temp_upper_bound
-  }
-
   //========================================================================
-  //  REQ-SENSOR-XX: ???  (insert intuition)
-  //  
+  //  REQ_TS_1: the Current Temperature provided by the temperature sensor 
+  //    lies within the range of 96 and 103 inclusive.
   //========================================================================
 
      /*
@@ -67,9 +57,16 @@ mod tests {
          current_temp: (in range)
     */
 
+  // Helper function to test if sensor output temperature is
+  // is in the expected range (utilize constants declared in app component).
+  fn current_temp_in_range(ct: Temp) -> bool {
+       app::sensed_temp_lower_bound <= ct.degrees 
+    && ct.degrees <= app::sensed_temp_upper_bound
+  }
+
   #[test]
   #[serial]
-  fn test_compute_REQ_SENSOR_XX() {
+  fn test_compute_REQ_TS_1() {
     // [InvokeEntryPoint]: invoke the initialize entry point 
     //   to initialize the state of the component
     crate::temp_sensor_temp_sensor_initialize();
@@ -85,7 +82,7 @@ mod tests {
 
   #[test]
   #[serial]
-  fn test_compute_REQ_SENSOR_XX_repeated() {
+  fn test_compute_REQ_TS_1_repeated() {
     // [InvokeEntryPoint]: invoke the initialize entry point 
     //   to initialize the state of the component
     crate::temp_sensor_temp_sensor_initialize();

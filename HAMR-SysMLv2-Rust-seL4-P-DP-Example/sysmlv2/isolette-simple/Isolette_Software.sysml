@@ -40,27 +40,23 @@ package Isolette_Software {
     in port current_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
     in port desired_temp : DataPort { :>> type : Isolette_Data_Model::Set_Points; }
     out port heat_control : DataPort { :>> type : Isolette_Data_Model::On_Off; }
-    out port display_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
-
+    
     //-- B e h a v i o r    C o n s t r a i n t s --
     language "GUMBO" /*{
       state
          lastCmd: Isolette_Data_Model::On_Off;
             
       functions
-      //  -- lower bound for `display_temp` temperature
-      def DT_Lower_Bound(): Base_Types::Integer_32 := 95 [i32];
-      def DT_Upper_Bound(): Base_Types::Integer_32 := 104 [s32];
+      //  -- desired bounds on temperature values in the thermostat
+      def Temp_Lower_Bound(): Base_Types::Integer_32 := 95 [i32];
+      def Temp_Upper_Bound(): Base_Types::Integer_32 := 104 [s32];
           
 	  //-- == I n t e g r a t i o n     C o n s t r a i n t s	
 	  integration
   	    assume ASSM_CT_Range: 
   	    //-- Literals used in spec below
-  	      DT_Lower_Bound() <= current_temp.degrees & current_temp.degrees <= DT_Upper_Bound();
+  	      Temp_Lower_Bound() <= current_temp.degrees & current_temp.degrees <= Temp_Upper_Bound();
 
-        guarantee DT_Range:  
-        //-- local GUMBO functions are used to represent constants
-          DT_Lower_Bound() <= display_temp.degrees & display_temp.degrees <= DT_Upper_Bound();
 
   		//--  == I n i t i a l i z e    E n t r y    P o i n t    Behavior Constraints  ==
         initialize
@@ -71,9 +67,9 @@ package Isolette_Software {
 		
 		//--  ====== C o m p u t e    E n t r y    P o i n t   Behavior Constraints =====      
 		  compute
-	        //-- assumption on set points enforced within the Operator Interface
-		    //-- note: This could be represented as a data invariant
-            assume ASSM_LDT_LE_UDT: desired_temp.lower.degrees <= desired_temp.upper.degrees;
+        // -- we assume that Operator Interface enforces the contraint below on incoming 
+        //    set points (desired temperature range)
+        assume ASSM_LDT_LE_UDT: desired_temp.lower.degrees <= desired_temp.upper.degrees;
 			
 		    //-- the lastCmd state variable is always equal to the value of the heat_control output port
 		    guarantee lastCmd "Set lastCmd to value of output Cmd port":
@@ -108,7 +104,6 @@ package Isolette_Software {
     //===============================================================================
     part def OperatorInterface :> Periodic_Rust_Thread {
       //-- I n t e r f a c e  --
-      in port display_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
       out port desired_temp : DataPort { :>> type : Isolette_Data_Model::Set_Points; }
     }
 }

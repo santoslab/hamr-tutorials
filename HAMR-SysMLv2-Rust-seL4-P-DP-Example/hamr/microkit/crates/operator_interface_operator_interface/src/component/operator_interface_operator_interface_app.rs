@@ -12,7 +12,8 @@
 //
 //============================================================================
 
-use data::{*, Isolette_Data_Model::*};  
+use data::*;
+use data::Isolette_Data_Model::*; // Add for easier reference to data types
 use crate::bridge::operator_interface_operator_interface_api::*;
 use vstd::prelude::*;
 
@@ -26,7 +27,6 @@ verus! {
   //
   //  There is no GUMBO declared application state for this component.
   //-------------------------------------------
-
   pub struct operator_interface_operator_interface {
     // PLACEHOLDER MARKER STATE VARS
 
@@ -36,14 +36,11 @@ verus! {
     pub upper_desired_temp: i32,
     pub lower_desired_temp_trajectory: i32,
     pub upper_desired_temp_trajectory: i32,
-    pub activations_until_send: i32,
-
-     // Simulate temperature display on operator interface screen
-    pub temp_on_display: i32,
+    pub activations_until_update: i32,
   }
 
   impl operator_interface_operator_interface {
-     //-------------------------------------------
+    //-------------------------------------------
     //  Application Component Constructor
     //-------------------------------------------
     pub fn new() -> Self
@@ -57,9 +54,7 @@ verus! {
         upper_desired_temp: 101,
         lower_desired_temp_trajectory: -1, // value with either be +1 or -1
         upper_desired_temp_trajectory: 1, // value with either be +1 or -1
-        activations_until_send: 5, // activations of compute entry point until send
-        // ...simulated temperature display output
-        temp_on_display: 98,
+        activations_until_update: 5, // activations of compute entry point until send
       }
     }
 
@@ -72,7 +67,7 @@ verus! {
       ensures
         // PLACEHOLDER MARKER INITIALIZATION ENSURES
     {
-     log_info("initialize entrypoint invoked");
+      log_info("initialize entrypoint invoked");
 
       // initialize operator input simulation
       self.lower_desired_temp = 98;  // ToDo: switch to constant value
@@ -80,10 +75,7 @@ verus! {
       //  ...set the temperature trajectory to be increaing
       self.lower_desired_temp_trajectory = -1;
       self.upper_desired_temp_trajectory = 1;
-      self.activations_until_send = 5;
-
-      // initialize temperature on simulated display
-      self.temp_on_display = 98;
+      self.activations_until_update = 5;
 
       // put initial (default) desired temp on output port
       api.put_desired_temp(
@@ -95,9 +87,6 @@ verus! {
     //-------------------------------------------
     //  Compute Entry Point
     //-------------------------------------------
-    // (Proposed)  ???? Is this still needed or valid ????
-    // - 97 <= lower_desired_temp.degrees <= 99
-    // - 99 <= upper_desired_temp.degrees <= 102;
     pub fn timeTriggered<API: operator_interface_operator_interface_Full_Api> (
       &mut self,
       api: &mut operator_interface_operator_interface_Application_Api<API>)
@@ -108,58 +97,44 @@ verus! {
     {
       log_info("compute entrypoint invoked");
 
-      // -------------- Process display temp ------------------
-      let display_temp: Temp = api.get_display_temp(); 
-
-      // simulate output to operator screen
-      self.temp_on_display = display_temp.degrees;
-
-      // Manually format string (format! and log::xxx! macros not allowed in Verus blocks)
-      //  ..contrast with helper function below to log set point simulation values
-      //    (implemented using logging macros in a "unverified" Verus function)
-      let str = "Display Temp: ".to_string() + &self.temp_on_display.to_string();
-      log_info(&str);
-
       // --------- Process operator's configuration of set points ------------
 
-      // simulate input from operator screen
-      // ToDo: change these to increment based on trajectories
-      self.lower_desired_temp = 98;  
-      self.upper_desired_temp = 101;  
-
       // set point simulation
-      if self.activations_until_send > 0 {
-        self.activations_until_send = self.activations_until_send - 1;
+      if self.activations_until_update > 0 {
+        // Case: Not updating set points yet...
+        self.activations_until_update = self.activations_until_update - 1;
       } else {
-        //   ..update simulation according to trajectory
+        // Case: Updating set points
+
+        //   ..update lower_desired_temp simulation according to trajectory
         self.lower_desired_temp = self.lower_desired_temp + self.lower_desired_temp_trajectory;
 
         //   ..update the simulation trajectory when temp reaches bounds
-        if self.lower_desired_temp == 99 {
+        if self.lower_desired_temp >= 99 {
           self.lower_desired_temp_trajectory = -1
-        } else if self.lower_desired_temp == 97 {
+        } else if self.lower_desired_temp <= 97 {
           self.lower_desired_temp_trajectory = 1
         };
 
-        //   ..update simulation according to trajectory
+        //   ..update upper_desired_temp simulation according to trajectory
         self.upper_desired_temp = self.upper_desired_temp + self.upper_desired_temp_trajectory;
 
         //   ..update the simulation trajectory when temp reaches bounds
-        if self.upper_desired_temp == 102 {
+        if self.upper_desired_temp >= 102 {
           self.upper_desired_temp_trajectory = -1
-        } else if self.upper_desired_temp == 99 {
+        } else if self.upper_desired_temp <= 99 {
           self.upper_desired_temp = 1
         };
 
         // reset activation count
-        self.activations_until_send = 5;
+        self.activations_until_update = 5;
       }
       log_set_point_simulation(&self);
 
       // build set points struct
       let set_points = 
         Set_Points { lower: Temp { degrees: self.lower_desired_temp}, 
-                       upper: Temp { degrees: self.upper_desired_temp} };
+                     upper: Temp { degrees: self.upper_desired_temp} };
       api.put_desired_temp(set_points);
     }
 
@@ -189,7 +164,7 @@ verus! {
      log::info!("UDT: {}", state.upper_desired_temp);
      log::info!("LDT Trajectory: {}", state.lower_desired_temp_trajectory);
      log::info!("UDT Trajectory: {}", state.upper_desired_temp_trajectory);
-     log::info!("Activations until send: {}", state.activations_until_send);
+     log::info!("Activations until update: {}", state.activations_until_update);
   }
 
   #[verifier::external_body]
@@ -204,16 +179,6 @@ verus! {
     log::warn!("Unexpected channel: {0}", channel);
   }
 
-  // BEGIN MARKER GUMBO METHODS
-  pub open spec fn DT_Lower_Bound() -> i32
-  {
-    50i32
-  }
-
-  pub open spec fn DT_Upper_Bound() -> i32
-  {
-    120i32
-  }
-  // END MARKER GUMBO METHODS
+  // PLACEHOLDER MARKER GUMBO METHODS
 
 }

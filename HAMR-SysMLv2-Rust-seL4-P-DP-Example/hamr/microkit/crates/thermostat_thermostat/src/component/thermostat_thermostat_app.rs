@@ -9,14 +9,11 @@
 //    - set points provided by an operator 
 //        (these specify the lower and upper bounds (inclusive) for the 
 //        desired temperature range.
-//  In addition, to providing an output command for the heat source, 
-//  the thermostat also outputs a "display temperature" value of the current temperature
-//  (e.g., to be displayed on the operator interface).
 //
 //============================================================================
 
 use data::*;
-use data::Isolette_Data_Model::*;
+use data::Isolette_Data_Model::*; // Add for easier reference of data types
 use crate::bridge::thermostat_thermostat_api::*;
 use vstd::prelude::*;
 
@@ -65,11 +62,9 @@ verus! {
       log_info("initialize entrypoint invoked");
 
       self.lastCmd = On_Off::Off;
-      // REQ_THERM_1: If the Regulator Mode is INIT, the Heat Control shall be
-      //   set to Off
+      // REQ_THERM_1: The Heat Control shall be initially Off
       let currentCmd = On_Off::Off;
       api.put_heat_control(currentCmd) 
-      // ToDo: need to initialize display temp
     }
 
     //-------------------------------------------
@@ -110,7 +105,7 @@ verus! {
     {
       log_info("compute entrypoint invoked");
 
-      // -------------- Get values of input ports ------------------
+       // -------------- Get values of input ports ------------------
       let desired_temp: Set_Points = api.get_desired_temp(); 
       let currentTemp: Temp = api.get_current_temp();
 
@@ -131,14 +126,12 @@ verus! {
 
       // -------------- Set values of output ports ------------------
       api.put_heat_control(currentCmd);
-      api.put_display_temp(currentTemp);
-      self.lastCmd = currentCmd          
+      self.lastCmd = currentCmd        
+
     }
 
     //-------------------------------------------
     //  seL4 / Microkit Error Handling
-    //  (should never be called if HAMR code generation is correct,
-    //   and generated code is not modified).
     //-------------------------------------------
     pub fn notify(
       &mut self,
@@ -174,12 +167,12 @@ verus! {
   //-------------------------------------------
 
   // BEGIN MARKER GUMBO METHODS
-  pub open spec fn DT_Lower_Bound() -> i32
+  pub open spec fn Temp_Lower_Bound() -> i32
   {
     95i32
   }
 
-  pub open spec fn DT_Upper_Bound() -> i32
+  pub open spec fn Temp_Upper_Bound() -> i32
   {
     104i32
   }

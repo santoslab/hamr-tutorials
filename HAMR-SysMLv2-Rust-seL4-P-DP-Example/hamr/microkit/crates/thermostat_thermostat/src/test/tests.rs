@@ -1,5 +1,17 @@
 // This file will not be overwritten if codegen is rerun
 
+//----------------------------------------------------------------
+//  This file illustrates three types of HAMR unit (thread application code)
+//  testing:
+//    - manual tests 
+//    - manual GUMBOX tests
+//    - automated randomized GUMBOX tests (property-based testing)
+//
+//  See explanations for the mechanics and purpose of each type of test
+//  in the header sections below.
+//----------------------------------------------------------------
+
+
 //================================================================
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //
@@ -27,15 +39,15 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //================================================================
 
+
 mod tests {
   // NOTE: need to run tests sequentially to prevent race conditions
   //       on the app and the testing apis which are static
   use serial_test::serial;
-  use crate::test::util::test_apis::put_lastCmd;
+
   use crate::test::util::*;
   use data::*;
-  // added
-  use data::Isolette_Data_Model::*;
+  use data::Isolette_Data_Model::*; // Add for easier reference of data types
 
   // auto-generated example test for initialize entry point
   #[test]
@@ -52,7 +64,7 @@ mod tests {
 
     // ..compare outputs to expected results..
     // assert!(..)    
-}
+  }
 
   #[test]
   #[serial]
@@ -71,9 +83,6 @@ mod tests {
     assert!(heat_control == On_Off::Off);
     assert!(post_lastCmd == On_Off::Off);
   }
-
-  // ToDo: what about testing for the presence of display temp as an
-  // output port value??
 
   // auto-generated example test for `compute` entry point
   #[test]
@@ -251,74 +260,16 @@ mod tests {
   }
 
 
- // EXERCISES:
- //  - construct a test for REQ-THERM-3, making direct use of APIs
- //    without a container
- //  - construct an alternate test for REQ-THERM-3, using a container structure 
- //    and the method `put_concrete_inputs_container`
- //  - construct an alternate test for REQ-THERM-3 that uses the
- //    helper method `test_compute_THERM_helper`
- 
- // Solution given below..
+  // EXERCISES:
+  //  - construct a test for REQ-THERM-3, making direct use of APIs
+  //    without a container
+  //  - construct an alternate test for REQ-THERM-3, using a container structure 
+  //    and the method `put_concrete_inputs_container`
+  //  - construct an alternate test for REQ-THERM-3 that uses the
+  //    helper method `test_compute_THERM_helper`
 
- //========================================================================
- //  REQ-THERM-3: If the Current Temperature is greater than the 
- //   Upper Desired Temperature, the Heat Control shall be set to Off.
- //========================================================================
 
-     /*
-       Inputs:
-         current_tempWstatus  101f  
-         lower_desired_temp: *irrelevant to requirement* (use 98f)
-         upper_desired_temp: (use 100f)
-
-       Expected Outputs:
-         heat_control: Off
-         last_cmd (post): Off
-    */
-  #[test]
-  #[serial]
-  fn test_compute_REQ_THERM_3() {
-    // [InvokeEntryPoint]: invoke the entry point test method
-    crate::thermostat_thermostat_initialize();
-
-    // generate values for the incoming data ports
-    let current_temp = Temp { degrees: 101 };
-    let lower_desired_temp = Temp { degrees: 98 };
-    let upper_desired_temp = Temp { degrees: 100 };
-    let desired_temp = Set_Points {lower: lower_desired_temp, upper: upper_desired_temp};
- 
-    // [PutInPorts]: put values on the input ports
-    test_apis::put_current_temp(current_temp);
-    test_apis::put_desired_temp(desired_temp);
-
-    // [InvokeEntryPoint]: Invoke the entry point
-    crate::thermostat_thermostat_timeTriggered();
-
-    // get result values from output ports
-    let api_heat_control = test_apis::get_heat_control();
-    let lastCmd = test_apis::get_lastCmd();
-
-    assert!(api_heat_control == On_Off::Off);
-    assert!(lastCmd == On_Off::Off);
-  }
-
-  #[test]
-  #[serial]
-  fn test_compute_REQ_THERM_3_helper() { // Alternate version: Illustrate "container"-based helpers
-     test_compute_THERM_helper(
-     test_apis::PreStateContainer {
-        api_current_temp : Temp { degrees: 101},
-        api_desired_temp : Set_Points {
-          lower: Temp { degrees:  98 },
-          upper: Temp { degrees: 100 }
-      }
-    },
-    On_Off::Off
-   );
-  }
-
- //========================================================================
+   //========================================================================
  //  REQ-THERM-4: If the Current Temperature is greater than or equal
  //  to the Lower Desired Temperature and less than or equal to the
  //  Upper Desired Temperature, the value of the Heat Control shall not be changed.":
@@ -667,7 +618,7 @@ mod tests {
     test_apis::put_desired_temp(desired_temp);
 
     // set component internal state (last_cmd) to Onn
-    put_lastCmd(On_Off::Onn);
+    test_apis::put_lastCmd(On_Off::Onn);
 
     // [InvokeEntryPoint]: Invoke the entry point
     crate::thermostat_thermostat_timeTriggered();
@@ -714,7 +665,7 @@ mod tests {
     test_apis::put_desired_temp(desired_temp);
 
     // set component internal state (last_cmd) to Onn
-    put_lastCmd(On_Off::Onn);
+    test_apis::put_lastCmd(On_Off::Onn);
 
     // [InvokeEntryPoint]: Invoke the entry point
     crate::thermostat_thermostat_timeTriggered();
@@ -762,7 +713,7 @@ mod tests {
     test_apis::put_desired_temp(desired_temp);
 
     // set component internal state (last_cmd) to Onn
-    put_lastCmd(On_Off::Onn);
+    test_apis::put_lastCmd(On_Off::Onn);
 
     // [InvokeEntryPoint]: Invoke the entry point
     crate::thermostat_thermostat_timeTriggered();
@@ -900,7 +851,6 @@ mod tests {
       },    
       On_Off::Off); // expected
   }
-
 
 }
 
@@ -1045,59 +995,14 @@ mod GUMBOX_manual_tests {
   }
   */
 
-   // EXERCISES:
+ // EXERCISES:
  //  - construct a GUMBOX manual test for REQ-THERM-3, making direct use of APIs
  //    without a container
  //  - construct an alternate GUMBOX manual test for REQ-THERM-3, 
  //    using a container structure 
   
- // Solution given below..
-
- //========================================================================
- //  REQ-THERM-3: If the Current Temperature is greater than the 
- //   Upper Desired Temperature, the Heat Control shall be set to Off.
- //========================================================================
-
-     /*
-       Inputs:
-         current_tempWstatus  101f  
-         lower_desired_temp: *irrelevant to requirement* (use 98f)
-         upper_desired_temp: (use 100f)
-     */
-  #[test]
-  #[serial]
-  fn test_compute_GUMBOX_manual_REQ_THERM_3() {
-    // generate values for the incoming data ports
-    let current_temp = Temp { degrees: 101 };
-    let lower_desired_temp = Temp { degrees: 98 };
-    let upper_desired_temp = Temp { degrees: 100 };
-    let desired_temp = Set_Points {lower: lower_desired_temp, upper: upper_desired_temp};
  
-    let harness_result = 
-       cb_apis::testComputeCB(current_temp, desired_temp);
-
-    assert!(matches!(harness_result, cb_apis::HarnessResult::Passed));
-  }
-
-  #[test]
-  #[serial]
-  fn test_compute_GUMBOX_manual_REQ_THERM_3_container() {
-    // Inputs can be "bundled" into a container. 
-    let preStateContainer = test_apis::PreStateContainer {
-      api_current_temp : Temp { degrees: 101},
-      api_desired_temp : Set_Points {
-        lower: Temp { degrees:  98 },
-        upper: Temp { degrees: 100 }
-      }    
-    };
-
-    let harness_result = 
-       cb_apis::testComputeCB_container(preStateContainer);
-
-    assert!(matches!(harness_result, cb_apis::HarnessResult::Passed));
-  }
-
-  //========================================================================
+ //========================================================================
  //  REQ-THERM-4: If the Current Temperature is greater than or equal
  //  to the Lower Desired Temperature and less than or equal to the
  //  Upper Desired Temperature, the value of the Heat Control shall not be changed.":
@@ -1153,6 +1058,7 @@ mod GUMBOX_manual_tests {
   //  corresponding to original manual tests given previously.
 
 }
+
 
 //================================================================
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1275,7 +1181,4 @@ mod GUMBOX_tests {
       generators::Isolette_Data_Model_Temp_strategy_cust(97..=105)
     )
   }
-
 }
-
-

@@ -112,7 +112,4 @@ mod tests {
     assert!(heater_state == On_Off::Off);
   }
 
-  // To Do:  See if it is possible to manually construct a randomized 
-  // test (illustrating manual use of the PropTest framework)
-
 }
