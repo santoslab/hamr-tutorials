@@ -7,6 +7,8 @@ void operator_interface_operator_interface_notify(microkit_channel channel);
 void operator_interface_operator_interface_timeTriggered(void);
 
 volatile sb_queue_Isolette_Data_Model_Set_Points_1_t *desired_temp_queue_1;
+volatile sb_queue_Isolette_Data_Model_Temp_1_t *display_temp_queue_1;
+sb_queue_Isolette_Data_Model_Temp_1_Recv_t display_temp_recv_queue;
 
 #define PORT_FROM_MON 58
 
@@ -16,8 +18,23 @@ bool put_desired_temp(const Isolette_Data_Model_Set_Points *data) {
   return true;
 }
 
+Isolette_Data_Model_Temp last_display_temp_payload;
+
+bool get_display_temp(Isolette_Data_Model_Temp *data) {
+  sb_event_counter_t numDropped;
+  Isolette_Data_Model_Temp fresh_data;
+  bool isFresh = sb_queue_Isolette_Data_Model_Temp_1_dequeue((sb_queue_Isolette_Data_Model_Temp_1_Recv_t *) &display_temp_recv_queue, &numDropped, &fresh_data);
+  if (isFresh) {
+    last_display_temp_payload = fresh_data;
+  }
+  *data = last_display_temp_payload;
+  return isFresh;
+}
+
 void init(void) {
   sb_queue_Isolette_Data_Model_Set_Points_1_init((sb_queue_Isolette_Data_Model_Set_Points_1_t *) desired_temp_queue_1);
+
+  sb_queue_Isolette_Data_Model_Temp_1_Recv_init(&display_temp_recv_queue, (sb_queue_Isolette_Data_Model_Temp_1_t *) display_temp_queue_1);
 
   operator_interface_operator_interface_initialize();
 }

@@ -58,10 +58,12 @@ pub fn initialize_REQ_THERM_1(api_heat_control: Isolette_Data_Model::On_Off) -> 
 /** IEP-Guar: Initialize Entrypoint for thermostat
   *
   * @param lastCmd post-state state variable
+  * @param api_display_temp outgoing data port
   * @param api_heat_control outgoing data port
   */
 pub fn initialize_IEP_Guar(
   lastCmd: Isolette_Data_Model::On_Off,
+  api_display_temp: Isolette_Data_Model::Temp,
   api_heat_control: Isolette_Data_Model::On_Off) -> bool
 {
   initialize_initlastCmd(lastCmd) &&
@@ -71,13 +73,15 @@ pub fn initialize_IEP_Guar(
 /** IEP-Post: Initialize Entrypoint Post-Condition
   *
   * @param lastCmd post-state state variable
+  * @param api_display_temp outgoing data port
   * @param api_heat_control outgoing data port
   */
 pub fn initialize_IEP_Post(
   lastCmd: Isolette_Data_Model::On_Off,
+  api_display_temp: Isolette_Data_Model::Temp,
   api_heat_control: Isolette_Data_Model::On_Off) -> bool
 {
-  initialize_IEP_Guar(lastCmd, api_heat_control)
+  initialize_IEP_Guar(lastCmd, api_display_temp, api_heat_control)
 }
 
 /** Compute Entrypoint Contract
@@ -231,6 +235,7 @@ pub fn compute_CEP_T_Case(
   * @param lastCmd post-state state variable
   * @param api_current_temp incoming data port
   * @param api_desired_temp incoming data port
+  * @param api_display_temp outgoing data port
   * @param api_heat_control outgoing data port
   */
 pub fn compute_CEP_Post(
@@ -238,16 +243,14 @@ pub fn compute_CEP_Post(
   lastCmd: Isolette_Data_Model::On_Off,
   api_current_temp: Isolette_Data_Model::Temp,
   api_desired_temp: Isolette_Data_Model::Set_Points,
+  api_display_temp: Isolette_Data_Model::Temp,
   api_heat_control: Isolette_Data_Model::On_Off) -> bool
 {
-  // I-Guar-Guard: Integration constraints for thermostat's outgoing ports
-  let r0: bool = I_Assm_current_temp(api_current_temp);
-
   // CEP-Guar: guarantee clauses of thermostat's compute entrypoint
-  let r1: bool = compute_CEP_T_Guar(lastCmd, api_heat_control);
+  let r0: bool = compute_CEP_T_Guar(lastCmd, api_heat_control);
 
   // CEP-T-Case: case clauses of thermostat's compute entrypoint
-  let r2: bool = compute_CEP_T_Case(In_lastCmd, api_current_temp, api_desired_temp, api_heat_control);
+  let r1: bool = compute_CEP_T_Case(In_lastCmd, api_current_temp, api_desired_temp, api_heat_control);
 
-  return r0 && r1 && r2;
+  return r0 && r1;
 }

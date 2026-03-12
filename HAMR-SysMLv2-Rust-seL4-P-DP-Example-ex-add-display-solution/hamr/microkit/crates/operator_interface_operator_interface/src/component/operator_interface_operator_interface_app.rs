@@ -111,12 +111,7 @@ verus! {
 
       // simulate output to operator screen
       self.temp_on_display = display_temp.degrees;
-
-      // Manually format string (the usual Rust format! and log::xxx! macros not allowed in Verus blocks)
-      //  ..contrast with helper function elsewhere to log set point simulation values
-      //    (implemented using logging macros in a "unverified" Verus function)
-      let str = "Display Temp: ".to_string() + &self.temp_on_display.to_string();
-      log_info(&str);
+      log_temp_on_display(self.temp_on_display);
 
       // --------- Process operator's configuration of set points ------------
 
@@ -150,7 +145,13 @@ verus! {
         // reset activation count
         self.activations_until_update = 5;
       }
-      log_set_point_simulation(&self);
+      log_set_point_simulation(
+        self.lower_desired_temp,
+        self.upper_desired_temp,
+        self.lower_desired_temp_trajectory,
+        self.upper_desired_temp_trajectory,
+        self.activations_until_update,
+      );
 
       // build set points struct
       let set_points = 
@@ -179,13 +180,25 @@ verus! {
   //  Logging Helper Functions
   //-------------------------------------------
   #[verifier::external_body]
-  pub fn log_set_point_simulation(state: &operator_interface_operator_interface)
+  pub fn log_set_point_simulation(
+    lower_desired_temp: i32,
+    upper_desired_temp: i32,
+    lower_desired_temp_trajectory: i32,
+    upper_desired_temp_trajectory: i32,
+    activations_until_update: i32,
+  )
   {
-     log::info!("LDT: {}", state.lower_desired_temp);
-     log::info!("UDT: {}", state.upper_desired_temp);
-     log::info!("LDT Trajectory: {}", state.lower_desired_temp_trajectory);
-     log::info!("UDT Trajectory: {}", state.upper_desired_temp_trajectory);
-     log::info!("Activations until update: {}", state.activations_until_update);
+     log::info!("LDT: {}", lower_desired_temp);
+     log::info!("UDT: {}", upper_desired_temp);
+     log::info!("LDT Trajectory: {}", lower_desired_temp_trajectory);
+     log::info!("UDT Trajectory: {}", upper_desired_temp_trajectory);
+     log::info!("Activations until update: {}", activations_until_update);
+  }
+
+  #[verifier::external_body]
+  pub fn log_temp_on_display(display_temp: i32)
+  {
+     log::info!("Temp on Display: {}", display_temp);
   }
 
   #[verifier::external_body]

@@ -10,3 +10,4 @@
 
 
 bool put_desired_temp(const Isolette_Data_Model_Set_Points *data);
+bool get_display_temp(Isolette_Data_Model_Temp *data);

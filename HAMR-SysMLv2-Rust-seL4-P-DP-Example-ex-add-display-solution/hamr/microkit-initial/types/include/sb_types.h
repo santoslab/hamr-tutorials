@@ -6,3 +6,4 @@
 #include <sb_queue_Isolette_Data_Model_Temp_1.h>
 #include <sb_queue_Isolette_Data_Model_Set_Points_1.h>
 #include <sb_queue_Isolette_Data_Model_On_Off_1.h>
+#include <sb_queue_Isolette_Data_Model_Temp_1.h>

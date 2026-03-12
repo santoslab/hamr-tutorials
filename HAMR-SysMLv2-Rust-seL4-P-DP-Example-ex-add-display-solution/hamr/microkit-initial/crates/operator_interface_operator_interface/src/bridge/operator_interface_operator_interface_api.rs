@@ -18,6 +18,15 @@ verus! {
   }
 
   pub trait operator_interface_operator_interface_Get_Api: operator_interface_operator_interface_Api {
+    #[verifier::external_body]
+    fn unverified_get_display_temp(
+      &mut self,
+      value: &Ghost<Isolette_Data_Model::Temp>) -> (res : Isolette_Data_Model::Temp)
+      ensures
+        res == value@,
+    {
+      return extern_api::unsafe_get_display_temp();
+    }
   }
 
   pub trait operator_interface_operator_interface_Full_Api: operator_interface_operator_interface_Put_Api + operator_interface_operator_interface_Get_Api {}
@@ -25,6 +34,7 @@ verus! {
   pub struct operator_interface_operator_interface_Application_Api<API: operator_interface_operator_interface_Api> {
     pub api: API,
 
+    pub ghost display_temp: Isolette_Data_Model::Temp,
     pub ghost desired_temp: Isolette_Data_Model::Set_Points
   }
 
@@ -34,6 +44,7 @@ verus! {
       value: Isolette_Data_Model::Set_Points)
       ensures
         self.desired_temp == value,
+        old(self).display_temp == self.display_temp,
     {
       self.api.unverified_put_desired_temp(value);
       self.desired_temp = value;
@@ -41,6 +52,14 @@ verus! {
   }
 
   impl<API: operator_interface_operator_interface_Get_Api> operator_interface_operator_interface_Application_Api<API> {
+    pub fn get_display_temp(&mut self) -> (res : Isolette_Data_Model::Temp)
+      ensures
+        old(self).desired_temp == self.desired_temp,
+        old(self).display_temp == self.display_temp,
+        res == self.display_temp,
+    {
+      self.api.unverified_get_display_temp(&Ghost(self.display_temp))
+    }
   }
 
   pub struct operator_interface_operator_interface_Initialization_Api;
@@ -51,6 +70,7 @@ verus! {
     return operator_interface_operator_interface_Application_Api {
       api: operator_interface_operator_interface_Initialization_Api {},
 
+      display_temp: Isolette_Data_Model::Temp { degrees: 0 },
       desired_temp: Isolette_Data_Model::Set_Points { lower: Isolette_Data_Model::Temp { degrees: 0 }, upper: Isolette_Data_Model::Temp { degrees: 0 } }
     }
   }
@@ -65,6 +85,7 @@ verus! {
     return operator_interface_operator_interface_Application_Api {
       api: operator_interface_operator_interface_Compute_Api {},
 
+      display_temp: Isolette_Data_Model::Temp { degrees: 0 },
       desired_temp: Isolette_Data_Model::Set_Points { lower: Isolette_Data_Model::Temp { degrees: 0 }, upper: Isolette_Data_Model::Temp { degrees: 0 } }
     }
   }

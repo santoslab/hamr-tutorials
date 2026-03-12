@@ -12,3 +12,4 @@
 bool get_current_temp(Isolette_Data_Model_Temp *data);
 bool get_desired_temp(Isolette_Data_Model_Set_Points *data);
 bool put_heat_control(const Isolette_Data_Model_On_Off *data);
+bool put_display_temp(const Isolette_Data_Model_Temp *data);

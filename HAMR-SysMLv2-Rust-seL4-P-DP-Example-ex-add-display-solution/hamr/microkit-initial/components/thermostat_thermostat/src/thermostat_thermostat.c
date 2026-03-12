@@ -11,6 +11,7 @@ sb_queue_Isolette_Data_Model_Temp_1_Recv_t current_temp_recv_queue;
 volatile sb_queue_Isolette_Data_Model_Set_Points_1_t *desired_temp_queue_1;
 sb_queue_Isolette_Data_Model_Set_Points_1_Recv_t desired_temp_recv_queue;
 volatile sb_queue_Isolette_Data_Model_On_Off_1_t *heat_control_queue_1;
+volatile sb_queue_Isolette_Data_Model_Temp_1_t *display_temp_queue_1;
 
 #define PORT_FROM_MON 56
 
@@ -46,12 +47,20 @@ bool put_heat_control(const Isolette_Data_Model_On_Off *data) {
   return true;
 }
 
+bool put_display_temp(const Isolette_Data_Model_Temp *data) {
+  sb_queue_Isolette_Data_Model_Temp_1_enqueue((sb_queue_Isolette_Data_Model_Temp_1_t *) display_temp_queue_1, (Isolette_Data_Model_Temp *) data);
+
+  return true;
+}
+
 void init(void) {
   sb_queue_Isolette_Data_Model_Temp_1_Recv_init(&current_temp_recv_queue, (sb_queue_Isolette_Data_Model_Temp_1_t *) current_temp_queue_1);
 
   sb_queue_Isolette_Data_Model_Set_Points_1_Recv_init(&desired_temp_recv_queue, (sb_queue_Isolette_Data_Model_Set_Points_1_t *) desired_temp_queue_1);
 
   sb_queue_Isolette_Data_Model_On_Off_1_init((sb_queue_Isolette_Data_Model_On_Off_1_t *) heat_control_queue_1);
+
+  sb_queue_Isolette_Data_Model_Temp_1_init((sb_queue_Isolette_Data_Model_Temp_1_t *) display_temp_queue_1);
 
   thermostat_thermostat_initialize();
 }

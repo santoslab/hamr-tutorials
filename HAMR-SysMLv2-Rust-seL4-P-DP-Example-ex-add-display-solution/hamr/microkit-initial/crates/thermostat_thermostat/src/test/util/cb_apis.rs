@@ -23,10 +23,11 @@ pub fn testInitializeCB() -> HarnessResult
 
   // [RetrieveOutState]: retrieve values of the output ports via get operations and GUMBO declared local state variable
   let lastCmd = get_lastCmd();
+  let api_display_temp = get_display_temp();
   let api_heat_control = get_heat_control();
 
   // [CheckPost]: invoke the oracle function
-  if !GUMBOX::initialize_IEP_Post (lastCmd, api_heat_control) {
+  if !GUMBOX::initialize_IEP_Post (lastCmd, api_display_temp, api_heat_control) {
     return HarnessResult::FailedPostcondition(
       TestCaseError::Fail("Postcondition failed: incorrect output behavior".into())
     );
@@ -91,10 +92,11 @@ pub fn testComputeCB(
 
   // [RetrieveOutState]: retrieve values of the output ports via get operations and GUMBO declared local state variable
   let lastCmd = get_lastCmd();
+  let api_display_temp = get_display_temp();
   let api_heat_control = get_heat_control();
 
   // [CheckPost]: invoke the oracle function
-  if !GUMBOX::compute_CEP_Post(In_lastCmd, lastCmd, api_current_temp, api_desired_temp, api_heat_control) {
+  if !GUMBOX::compute_CEP_Post(In_lastCmd, lastCmd, api_current_temp, api_desired_temp, api_display_temp, api_heat_control) {
     return HarnessResult::FailedPostcondition(TestCaseError::Fail("Postcondition failed: incorrect output behavior".into()));
   }
 
@@ -172,10 +174,11 @@ pub fn testComputeCBwGSV(
 
   // [RetrieveOutState]: retrieve values of the output ports via get operations and GUMBO declared local state variable
   let lastCmd = get_lastCmd();
+  let api_display_temp = get_display_temp();
   let api_heat_control = get_heat_control();
 
   // [CheckPost]: invoke the oracle function
-  if !GUMBOX::compute_CEP_Post(In_lastCmd, lastCmd, api_current_temp, api_desired_temp, api_heat_control) {
+  if !GUMBOX::compute_CEP_Post(In_lastCmd, lastCmd, api_current_temp, api_desired_temp, api_display_temp, api_heat_control) {
     return HarnessResult::FailedPostcondition(TestCaseError::Fail("Postcondition failed: incorrect output behavior".into()));
   }
 

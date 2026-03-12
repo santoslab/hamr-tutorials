@@ -25,11 +25,11 @@ pub fn put_concrete_inputs(display_temp: Isolette_Data_Model::Temp)
 /// getter for OUT DataPort
 pub fn get_desired_temp() -> Isolette_Data_Model::Set_Points
 {
-  return extern_api::OUT_desired_temp.lock().unwrap().expect("Not expecting None")
+  return extern_api::OUT_desired_temp.lock().unwrap_or_else(|e| e.into_inner()).expect("Not expecting None")
 }
 
 /// setter for IN DataPort
 pub fn put_display_temp(value: Isolette_Data_Model::Temp)
 {
-  *extern_api::IN_display_temp.lock().unwrap() = Some(value)
+  *extern_api::IN_display_temp.lock().unwrap_or_else(|e| e.into_inner()) = Some(value)
 }

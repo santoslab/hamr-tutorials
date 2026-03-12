@@ -15,6 +15,14 @@ verus! {
     {
       extern_api::unsafe_put_heat_control(&value);
     }
+
+    #[verifier::external_body]
+    fn unverified_put_display_temp(
+      &mut self,
+      value: Isolette_Data_Model::Temp)
+    {
+      extern_api::unsafe_put_display_temp(&value);
+    }
   }
 
   pub trait thermostat_thermostat_Get_Api: thermostat_thermostat_Api {
@@ -49,7 +57,8 @@ verus! {
 
     pub ghost current_temp: Isolette_Data_Model::Temp,
     pub ghost desired_temp: Isolette_Data_Model::Set_Points,
-    pub ghost heat_control: Isolette_Data_Model::On_Off
+    pub ghost heat_control: Isolette_Data_Model::On_Off,
+    pub ghost display_temp: Isolette_Data_Model::Temp
   }
 
   impl<API: thermostat_thermostat_Put_Api> thermostat_thermostat_Application_Api<API> {
@@ -60,9 +69,22 @@ verus! {
         old(self).current_temp == self.current_temp,
         old(self).desired_temp == self.desired_temp,
         self.heat_control == value,
+        old(self).display_temp == self.display_temp,
     {
       self.api.unverified_put_heat_control(value);
       self.heat_control = value;
+    }
+    pub fn put_display_temp(
+      &mut self,
+      value: Isolette_Data_Model::Temp)
+      ensures
+        old(self).current_temp == self.current_temp,
+        old(self).desired_temp == self.desired_temp,
+        old(self).heat_control == self.heat_control,
+        self.display_temp == value,
+    {
+      self.api.unverified_put_display_temp(value);
+      self.display_temp = value;
     }
   }
 
@@ -73,6 +95,7 @@ verus! {
         res == self.current_temp,
         old(self).desired_temp == self.desired_temp,
         old(self).heat_control == self.heat_control,
+        old(self).display_temp == self.display_temp,
         // assume ASSM_CT_Range
         (crate::component::thermostat_thermostat_app::Temp_Lower_Bound() <= res.degrees) &&
           (res.degrees <= crate::component::thermostat_thermostat_app::Temp_Upper_Bound()),
@@ -85,6 +108,7 @@ verus! {
         old(self).desired_temp == self.desired_temp,
         res == self.desired_temp,
         old(self).heat_control == self.heat_control,
+        old(self).display_temp == self.display_temp,
     {
       self.api.unverified_get_desired_temp(&Ghost(self.desired_temp))
     }
@@ -100,7 +124,8 @@ verus! {
 
       current_temp: Isolette_Data_Model::Temp { degrees: 0 },
       desired_temp: Isolette_Data_Model::Set_Points { lower: Isolette_Data_Model::Temp { degrees: 0 }, upper: Isolette_Data_Model::Temp { degrees: 0 } },
-      heat_control: Isolette_Data_Model::On_Off::Onn
+      heat_control: Isolette_Data_Model::On_Off::Onn,
+      display_temp: Isolette_Data_Model::Temp { degrees: 0 }
     }
   }
 
@@ -116,7 +141,8 @@ verus! {
 
       current_temp: Isolette_Data_Model::Temp { degrees: 0 },
       desired_temp: Isolette_Data_Model::Set_Points { lower: Isolette_Data_Model::Temp { degrees: 0 }, upper: Isolette_Data_Model::Temp { degrees: 0 } },
-      heat_control: Isolette_Data_Model::On_Off::Onn
+      heat_control: Isolette_Data_Model::On_Off::Onn,
+      display_temp: Isolette_Data_Model::Temp { degrees: 0 }
     }
   }
 }

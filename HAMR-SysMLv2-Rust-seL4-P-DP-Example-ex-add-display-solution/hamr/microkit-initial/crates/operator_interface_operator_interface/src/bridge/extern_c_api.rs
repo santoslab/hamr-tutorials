@@ -11,7 +11,17 @@ use std::sync::Mutex;
 
 #[cfg(not(test))]
 extern "C" {
+  fn get_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
   fn put_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool;
+}
+
+pub fn unsafe_get_display_temp() -> Isolette_Data_Model::Temp
+{
+  unsafe {
+    let value: *mut Isolette_Data_Model::Temp = &mut Isolette_Data_Model::Temp::default();
+    get_display_temp(value);
+    return *value;
+  }
 }
 
 pub fn unsafe_put_desired_temp(value: &Isolette_Data_Model::Set_Points) -> bool
@@ -30,13 +40,25 @@ lazy_static::lazy_static! {
   // simulate the global C variables that point to the microkit shared memory regions.  In a full
   // microkit system we would be able to mutate the shared memory for out ports since they're r/w,
   // but we couldn't do that for in ports since they are read-only
+  pub static ref IN_display_temp: Mutex<Option<Isolette_Data_Model::Temp>> = Mutex::new(None);
   pub static ref OUT_desired_temp: Mutex<Option<Isolette_Data_Model::Set_Points>> = Mutex::new(None);
 }
 
 #[cfg(test)]
 pub fn initialize_test_globals() {
   unsafe {
-    *OUT_desired_temp.lock().unwrap() = None;
+    *IN_display_temp.lock().unwrap_or_else(|e| e.into_inner()) = None;
+    *OUT_desired_temp.lock().unwrap_or_else(|e| e.into_inner()) = None;
+  }
+}
+
+#[cfg(test)]
+pub fn get_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool
+{
+  unsafe {
+    let guard = IN_display_temp.lock().unwrap_or_else(|e| e.into_inner());
+    *value = guard.expect("Not expecting None");
+    true
   }
 }
 
@@ -44,7 +66,7 @@ pub fn initialize_test_globals() {
 pub fn put_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool
 {
   unsafe {
-    *OUT_desired_temp.lock().unwrap() = Some(*value);
+    *OUT_desired_temp.lock().unwrap_or_else(|e| e.into_inner()) = Some(*value);
     return true;
   }
 }

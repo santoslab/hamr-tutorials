@@ -14,6 +14,7 @@ extern "C" {
   fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
   fn get_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool;
   fn put_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool;
+  fn put_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
 }
 
 pub fn unsafe_get_current_temp() -> Isolette_Data_Model::Temp
@@ -41,6 +42,13 @@ pub fn unsafe_put_heat_control(value: &Isolette_Data_Model::On_Off) -> bool
   }
 }
 
+pub fn unsafe_put_display_temp(value: &Isolette_Data_Model::Temp) -> bool
+{
+  unsafe {
+    return put_display_temp(value as *const Isolette_Data_Model::Temp as *mut Isolette_Data_Model::Temp);
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////
 // Testing Versions
 //////////////////////////////////////////////////////////////////////////////////
@@ -53,14 +61,16 @@ lazy_static::lazy_static! {
   pub static ref IN_current_temp: Mutex<Option<Isolette_Data_Model::Temp>> = Mutex::new(None);
   pub static ref IN_desired_temp: Mutex<Option<Isolette_Data_Model::Set_Points>> = Mutex::new(None);
   pub static ref OUT_heat_control: Mutex<Option<Isolette_Data_Model::On_Off>> = Mutex::new(None);
+  pub static ref OUT_display_temp: Mutex<Option<Isolette_Data_Model::Temp>> = Mutex::new(None);
 }
 
 #[cfg(test)]
 pub fn initialize_test_globals() {
   unsafe {
-    *IN_current_temp.lock().unwrap() = None;
-    *IN_desired_temp.lock().unwrap() = None;
-    *OUT_heat_control.lock().unwrap() = None;
+    *IN_current_temp.lock().unwrap_or_else(|e| e.into_inner()) = None;
+    *IN_desired_temp.lock().unwrap_or_else(|e| e.into_inner()) = None;
+    *OUT_heat_control.lock().unwrap_or_else(|e| e.into_inner()) = None;
+    *OUT_display_temp.lock().unwrap_or_else(|e| e.into_inner()) = None;
   }
 }
 
@@ -68,8 +78,9 @@ pub fn initialize_test_globals() {
 pub fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 {
   unsafe {
-    *value = IN_current_temp.lock().unwrap().expect("Not expecting None");
-    return true;
+    let guard = IN_current_temp.lock().unwrap_or_else(|e| e.into_inner());
+    *value = guard.expect("Not expecting None");
+    true
   }
 }
 
@@ -77,8 +88,9 @@ pub fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 pub fn get_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool
 {
   unsafe {
-    *value = IN_desired_temp.lock().unwrap().expect("Not expecting None");
-    return true;
+    let guard = IN_desired_temp.lock().unwrap_or_else(|e| e.into_inner());
+    *value = guard.expect("Not expecting None");
+    true
   }
 }
 
@@ -86,7 +98,16 @@ pub fn get_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool
 pub fn put_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool
 {
   unsafe {
-    *OUT_heat_control.lock().unwrap() = Some(*value);
+    *OUT_heat_control.lock().unwrap_or_else(|e| e.into_inner()) = Some(*value);
+    return true;
+  }
+}
+
+#[cfg(test)]
+pub fn put_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool
+{
+  unsafe {
+    *OUT_display_temp.lock().unwrap_or_else(|e| e.into_inner()) = Some(*value);
     return true;
   }
 }

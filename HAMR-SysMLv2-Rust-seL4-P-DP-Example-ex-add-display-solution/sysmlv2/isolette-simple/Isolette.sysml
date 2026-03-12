@@ -47,7 +47,7 @@ package Isolette {
   //===============================================================================
   part def TempSensor_Process :> Process {
      //-- I n t e r f a c e  --
-    out port current_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
+    port current_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
 
     //-- P r o p e r t i e s  --
     attribute :>> Domain = Isolette_Properties::Domain_TS;
@@ -64,7 +64,7 @@ package Isolette {
   //===============================================================================
   part def HeatSource_Process :> Process {
     //-- I n t e r f a c e  --
-    in port heat_control : DataPort { :>> type : Isolette_Data_Model::On_Off; }
+    port heat_control : DataPort { in :>> type : Isolette_Data_Model::On_Off; }
 
     //-- P r o p e r t i e s  --
     attribute :>> Domain = Isolette_Properties::Domain_HS;
@@ -81,9 +81,9 @@ package Isolette {
   //===============================================================================
   part def OperatorInterface_Process :> Process {
     //-- I n t e r f a c e  --
-    out port desired_temp : DataPort { :>> type : Isolette_Data_Model::Set_Points; }
+    port desired_temp : DataPort { out :>> type : Isolette_Data_Model::Set_Points; }
     // Add input display temp port
-    in port display_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
+    port display_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
 
     //-- P r o p e r t i e s  --
     attribute :>> Domain = Isolette_Properties::Domain_OI;
@@ -102,11 +102,11 @@ package Isolette {
   //===============================================================================
   part def Thermostat_Process :> Process {
     //-- I n t e r f a c e  --
-    in port current_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
-    in port desired_temp : DataPort { :>> type : Isolette_Data_Model::Set_Points; }
-    out port heat_control : DataPort { :>> type : Isolette_Data_Model::On_Off; }
+    port current_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
+    port desired_temp : DataPort { in :>> type : Isolette_Data_Model::Set_Points; }
+    port heat_control : DataPort { out :>> type : Isolette_Data_Model::On_Off; }
     // Add output display temp port
-    out port display_temp : DataPort { :>> type : Isolette_Data_Model::Temp; }
+    port display_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
 
     attribute :>> Domain = Isolette_Properties::Domain_THERM;
 

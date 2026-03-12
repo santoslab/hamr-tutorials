@@ -47,8 +47,8 @@ lazy_static::lazy_static! {
 #[cfg(test)]
 pub fn initialize_test_globals() {
   unsafe {
-    *IN_display_temp.lock().unwrap() = None;
-    *OUT_desired_temp.lock().unwrap() = None;
+    *IN_display_temp.lock().unwrap_or_else(|e| e.into_inner()) = None;
+    *OUT_desired_temp.lock().unwrap_or_else(|e| e.into_inner()) = None;
   }
 }
 
@@ -56,8 +56,9 @@ pub fn initialize_test_globals() {
 pub fn get_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 {
   unsafe {
-    *value = IN_display_temp.lock().unwrap().expect("Not expecting None");
-    return true;
+    let guard = IN_display_temp.lock().unwrap_or_else(|e| e.into_inner());
+    *value = guard.expect("Not expecting None");
+    true
   }
 }
 
@@ -65,7 +66,7 @@ pub fn get_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 pub fn put_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool
 {
   unsafe {
-    *OUT_desired_temp.lock().unwrap() = Some(*value);
+    *OUT_desired_temp.lock().unwrap_or_else(|e| e.into_inner()) = Some(*value);
     return true;
   }
 }

@@ -27,6 +27,7 @@ digraph microkit {
       operator_interface_operator_interface_INVIS [label="", style=invis, width=.5, height=.5, fixedsize=true]
 
       pd_operator_interface_operator_interface_desired_temp_queue_1 [label=desired_temp_queue_1];
+      pd_operator_interface_operator_interface_display_temp_queue_1 [label=display_temp_queue_1];
     }
   }
 
@@ -43,6 +44,7 @@ digraph microkit {
       pd_thermostat_thermostat_current_temp_queue_1 [label=current_temp_queue_1];
       pd_thermostat_thermostat_desired_temp_queue_1 [label=desired_temp_queue_1];
       pd_thermostat_thermostat_heat_control_queue_1 [label=heat_control_queue_1];
+      pd_thermostat_thermostat_display_temp_queue_1 [label=display_temp_queue_1];
     }
   }
 
@@ -74,6 +76,8 @@ digraph microkit {
 
   Isolette_System_Instance_thermostat_thermostat_heat_control_1_Memory_Region;
 
+  Isolette_System_Instance_thermostat_thermostat_display_temp_1_Memory_Region;
+
   // channels
   pacer_INVIS -> temp_sensor_temp_sensor_MON_INVIS [lhead=cluster_temp_sensor_temp_sensor_MON, minlen=2, dir=both];
   temp_sensor_temp_sensor_MON_INVIS -> temp_sensor_temp_sensor_INVIS [lhead=cluster_temp_sensor_temp_sensor, minlen=2, dir=both];
@@ -87,8 +91,10 @@ digraph microkit {
   // shared memory mappings
   pd_temp_sensor_temp_sensor_current_temp_queue_1 -> Isolette_System_Instance_temp_sensor_temp_sensor_current_temp_1_Memory_Region [dir=both, style=dashed];
   pd_operator_interface_operator_interface_desired_temp_queue_1 -> Isolette_System_Instance_operator_interface_operator_interface_desired_temp_1_Memory_Region [dir=both, style=dashed];
+  pd_operator_interface_operator_interface_display_temp_queue_1 -> Isolette_System_Instance_thermostat_thermostat_display_temp_1_Memory_Region [dir=back, style=dashed];
   pd_thermostat_thermostat_current_temp_queue_1 -> Isolette_System_Instance_temp_sensor_temp_sensor_current_temp_1_Memory_Region [dir=back, style=dashed];
   pd_thermostat_thermostat_desired_temp_queue_1 -> Isolette_System_Instance_operator_interface_operator_interface_desired_temp_1_Memory_Region [dir=back, style=dashed];
   pd_thermostat_thermostat_heat_control_queue_1 -> Isolette_System_Instance_thermostat_thermostat_heat_control_1_Memory_Region [dir=both, style=dashed];
+  pd_thermostat_thermostat_display_temp_queue_1 -> Isolette_System_Instance_thermostat_thermostat_display_temp_1_Memory_Region [dir=both, style=dashed];
   pd_heat_source_heat_source_heat_control_queue_1 -> Isolette_System_Instance_thermostat_thermostat_heat_control_1_Memory_Region [dir=back, style=dashed];
 }
