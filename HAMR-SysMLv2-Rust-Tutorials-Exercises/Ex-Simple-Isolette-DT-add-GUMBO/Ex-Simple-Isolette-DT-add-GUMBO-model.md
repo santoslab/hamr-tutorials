@@ -122,6 +122,154 @@ Click on the problems report indicator.  The problems report should indicate tha
  connection dt : PortConnection connect thermostat.display_temp to operator_interface.display_temp;
 ```
 
+* **Task:**  Remove the seeded bug above, re-run the "HAMR SysMLv2 Logika Checking" to confirm that all integration constraints are satisfied.
+
+## Activity 6 - Commit Your Solution
+
+Commit/Push your solution to your git repository with a commit message such as "Simple Isolette DT Add GUMBO - models completed".
+
+## Activity 7 - Run HAMR Code Generation for Microkit
+
+We now want to update the Verus contracts and GUMBOX (executable contracts derived from GUMBO contracts used for testing) in the code.
+
+* **Task:**  Using the CodeIVE command palette, run the "HAMR SysMLv2 CodeGen" 
+
+After a bunch of logging messages, you should see a message saying
+```CodeGen Successful```
+
+Scroll back up through the logging messages.  For the thermostat application file, you should see the following message (if needed, if you put the cursor in the terminal window where the logging info is, you can use the Command-F (perhaps CTRL-F on your OS) to activate the search function)...
+
+```
+info: Wrote and preserved existing content: /Users/hatcliff/Dev/git-repos/hamr-tutorials-git/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-GUMBO-solution/hamr/microkit/crates/thermostat_thermostat/src/component/thermostat_thermostat_app.rs
+```
+
+This indicates that HAMR wrote to the file holding your application code for the thermostat, it preserved your code ("existing content"), but updated the contracts (adding a Verus contract clause in the `timeTriggered` method generated from the GUMBO `compute` clause for  `current_temp == display_temp`).
+
+Also see if you can find the following message 
+```
+Wrote: /Users/hatcliff/Dev/git-repos/hamr-tutorials-git/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-GUMBO-solution/hamr/microkit/crates/thermostat_thermostat/src/bridge/thermostat_thermostat_GUMBOX.rs
+```
+
+The `thermostat_thermostat_GUMBOX.rs` file holds the GUMBOX contracts generated for the thermostat.  This file contains no developer written code, so HAMR also overwrites it each time code generation is run.  It will contain a new boolean function representing the GUMBO `compute` clause constraint mentioned above.
+
+In the activities below, we will take a look at these files.
+
+## Activity 8 - Look at Code Generation Updates for Thermostat
+
+* **Task**: Open a new window in the CodeIVE, then use the Open Folder option to open the Thermostat code crate (`hamr/microkit/crates/thermostat_thermostat`).  Now open the application code file (`/src/component/thermostat_thermostat_app.rs`).  Scroll down to the time-triggered method.  Toward the top of the `ensures` section, you should see that the Verus contract now includes a Verus clause corresponding to your newly added GUMBO `compute` `REQ_THERM_7` clause:
+
+```
+ensures
+        // BEGIN MARKER TIME TRIGGERED ENSURES
+        // guarantee lastCmd
+        //   Set lastCmd to value of output Cmd port
+        self.lastCmd == api.heat_control,
+        // guarantee REQ_THERM_7
+        //   The Display Temperature output shall be set 
+        //   to the value of the input Current Temperature
+        api.display_temp == api.current_temp,
+```
+
+HAMR knows where to insert the contract because of the `BEGIN MARKER TIME TRIGGERED ENSURES`.  Actually, HAMR regenerates the entire content between the each set of markers each time code generation is run.  That's why you should never directly modify anything between the markers.
+
+* **Task**: Now open the infrastructure file (`src/bridge/thermostat_thermostat_api.rs`).  This file contains the APIs that HAMR auto-generates for working with thread component ports.  Look for the following method which (among other things), includes the newly added integration constraint for the `display_temp` output port...
+
+```rust
+  pub fn put_display_temp(
+      &mut self,
+      value: Isolette_Data_Model::Temp)
+      requires
+        // guarantee REQ_THERM_6
+        (crate::component::thermostat_thermostat_app::Temp_Lower_Bound() <= value.degrees) &&
+          (value.degrees <= crate::component::thermostat_thermostat_app::Temp_Upper_Bound()),
+      ensures
+        old(self).current_temp == self.current_temp,
+        old(self).desired_temp == self.desired_temp,
+        old(self).heat_control == self.heat_control,
+        self.display_temp == value,
+    {
+      self.api.unverified_put_display_temp(value);
+      self.display_temp = value;
+    }
+```
+
+When your application code calls the `api.put_display_temp` method, Verus will see the contract for the method above, and due to the `requires` pre-condition, it will check that the value supplied as an argument to the `put_` method satisfies the outgoing integration constraint for the port.  Since all values that go onto that port must only be put there via the `put` call, this enforces an *invariant* for the port contents -- all values that ever exist in that port during run-time will satisfy the integration constraint.
+
+Note for advanced users: There is a subtlety in the way that HAMR uses Verus for this file (and all other API files):
+ - Verus is called (e.g., when you do `make verus`) to verify the contents of the *application* code file.  As Verus runs, Verus will check that, for any method called in the application code (including the api method), the pre-condition holds.  For the api methods, Verus will look at this API file to find the pre-conditions for the API `put_` methods.
+ - HAMR doesn't call Verus to verify the contents of this API file (so the body of the method above is not verified by Verus).  That is because the API file in some sense forms the boundary between the Verus-verified application code, and the HAMR-generated infrastructure code.  For example, the method above `self.api.unverified_put_display_temp` is the root of code that interacts with seL4 move the `display_temp` value across the seL4 Microkit protection domain boundary. 
+ 
+For now, HAMR is trusted to produce correct infrastructure code.  The infrastructure code is "lower-level" and contains many features that Verus cannot handle (including the interactions at the seL4 Microkit APIs).  Eventually, we hope to verify the correctness of the infrastructure code using other means.  In the meantime, the infrastructure code is tested to a high degree of confidence as part of HAMR development continuous integration process.
+
+Finally, note that this strategy of forming a "boundary" being the verified code and unverified code (typically code outside of the language subset that the verifier can process) is common in all contract-based verification frameworks like Verus and Logika.  For example, in Logika, the notion of "Slang extension interfaces" are used to form such a boundary.  In the SPARK verification framework for Ada, defining a "SPARK boundary" is a well-established part of the methodology (You can Google for `SPARK Ada verification "SPARK boundary"`).
+
+* **Task**: Now open the test infrastructure file (`src/bridge/thermostat_thermostat_GUMBOX.rs`). Around line 155 or so, you should see the following...
+
+```rust
+/** Compute Entrypoint Contract
+  *
+  * guarantee REQ_THERM_7
+  *   The Display Temperature output shall be set 
+  *   to the value of the input Current Temperature
+  * @param api_current_temp incoming data port
+  * @param api_display_temp outgoing data port
+  */
+pub fn compute_spec_REQ_THERM_7_guarantee(
+  api_current_temp: Isolette_Data_Model::Temp,
+  api_display_temp: Isolette_Data_Model::Temp) -> bool
+{
+  api_display_temp == api_current_temp
+}
+```
+
+This is the "GUMBOX" (executable GUMBO contract) boolean function that can be executed during testing or run-time monitoring to evaluate the newly added `REQ_THERM_7` GUMBO contract on the components run-time state.  From another point of view, this function implements the semantics of the GUMBO contract clause directly in Rust.  This function is a "semantic companion" to the Verus clause view above.  (Note: we would actually like some way to prove that the GUMBOX clause has the same semantics as the Verus clause, but for now one just has to trust the HAMR code generation for that.)
+
+At the bottom of the file, you can see the following method, which forms an executable post-condition derived from the complete GUMBO `compute` contract..
+
+```rust
+ub fn compute_CEP_Post(
+  In_lastCmd: Isolette_Data_Model::On_Off,
+  lastCmd: Isolette_Data_Model::On_Off,
+  api_current_temp: Isolette_Data_Model::Temp,
+  api_desired_temp: Isolette_Data_Model::Set_Points,
+  api_display_temp: Isolette_Data_Model::Temp,
+  api_heat_control: Isolette_Data_Model::On_Off) -> bool
+{
+  // I-Guar-Guard: Integration constraints for thermostat's outgoing ports
+  let r0: bool = I_Guar_display_temp(api_display_temp);
+
+  // CEP-Guar: guarantee clauses of thermostat's compute entrypoint
+  let r1: bool = compute_CEP_T_Guar(lastCmd, api_current_temp, api_display_temp, api_heat_control);
+
+  // CEP-T-Case: case clauses of thermostat's compute entrypoint
+  let r2: bool = compute_CEP_T_Case(In_lastCmd, api_current_temp, api_desired_temp, api_heat_control);
+
+  return r0 && r1 && r2;
+}
+```
+
+This function is automatically called from GUMBOX testing infrastructure after a GUMBOX unit test is performed on this component to check that the input and output state of the component satisfy the GUMBO contract.  Take some time to follow the call tree for this method.  Note that...
+ - `compute_CEP_T_Guar` will eventually call the previous method `compute_spec_REQ_THERM_7_guarantee` that checks that the output state of `display_temp` equals the input state of `current_temp`.
+ - `I_Guar_display_temp` will check that the outgoing *GUMBO integration constraint* for `display_temp` is satisfied.
+Intuitively, the semantics of this function aggregates the semantics of the Verus `timetriggered` `ensures` along with any integration constraints on output ports.
+
+ Here is the GUMBOX function representing the integration constraint mentioned above (you can find it toward the top of the file)...
+
+ ```rust
+/** I-Guar: Integration constraint on thermostat's outgoing data port display_temp
+  *
+  * guarantee REQ_THERM_6
+  */
+pub fn I_Guar_display_temp(display_temp: Isolette_Data_Model::Temp) -> bool
+{
+  (Temp_Lower_Bound() <= display_temp.degrees) &
+    (display_temp.degrees <= Temp_Upper_Bound())
+}
+ ```
+
+**Conclusion**: Hopefully the above code walkthrough gives you some sense of some of the significant work that HAMR does for you behind the scenes to leverage the relatively few lines of GUMBO contracts that you wrote.  In the remaining parts of this exercise, we will working with GUMBOX testing and Verus verification to make use of the HAMR-generated artifacts in the walk-through above.
+
+
 
 
 
