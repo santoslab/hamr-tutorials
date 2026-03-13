@@ -41,7 +41,7 @@ In the subsequent parts of this exercise, you will test and verify that your Rus
 
 ## Setting up the Starting Files for the Project 
 
-The starting project (which includes both SysMLv2 models and Rust implementation) can be found in the folder `HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution` in [this repository](https://github.com/santoslab/hamr-tutorials/tree/main/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution) Copy this folder (the *folder* itself, not just the contents) into a personal git repository and rename the folder to `HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution`.  One reason that it's important to copy the entire folder is that it contains several `.gitignore` that configure the folder for git use (e.g., by ignoring the very large executable files associated with Rust builds).  Open the `sysmlv2` subfolder in the CodeIVE to work on Part 1 of this exercise. 
+The starting project (which includes both SysMLv2 models and Rust implementation) can be found in the folder `HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution` in [this repository](https://github.com/santoslab/hamr-tutorials/tree/main/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution) Copy this folder (the *folder* itself, not just the contents) into a personal git repository and rename the folder to `HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO`.  One reason that it's important to copy the entire folder is that it contains several `.gitignore` that configure the folder for git use (e.g., by ignoring the very large executable files associated with Rust builds).  Open the `sysmlv2` subfolder in the CodeIVE to work on Part 1 of this exercise. 
 
 ## Activity 1 - Commit the Starting Files to a Git Repository
 
@@ -154,7 +154,11 @@ The `thermostat_thermostat_GUMBOX.rs` file holds the GUMBOX contracts generated 
 
 In the activities below, we will take a look at these files.
 
-## Activity 8 - Look at Code Generation Updates for Thermostat
+## Activity 8 - Commit/Push the Changes from Code Generation
+
+Commit/Push the updates to your files produced by code generation with a commit message such as "Simple Isolette DT Add GUMBO - regenerate HAMR project with updated contract info".
+
+## Activity 9 - Look at Code Generation Updates for Thermostat
 
 * **Task**: Open a new window in the CodeIVE, then use the Open Folder option to open the Thermostat code crate (`hamr/microkit/crates/thermostat_thermostat`).  Now open the application code file (`/src/component/thermostat_thermostat_app.rs`).  Scroll down to the time-triggered method.  Toward the top of the `ensures` section, you should see that the Verus contract now includes a Verus clause corresponding to your newly added GUMBO `compute` `REQ_THERM_7` clause:
 
