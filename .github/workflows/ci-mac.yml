@@ -46,12 +46,12 @@ jobs:
             kekinian/bin/mac/.cvc5.ver
             kekinian/bin/mac/z3
           key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-smt2          
-      - name: Cache OSATE
-        id: cache-osate
-        uses: actions/cache@v3
+      - name: Cache FMIDE
+        id: cache-fmide
+        uses: actions/cache@v4
         with:
-          path: kekinian/bin/mac/osate.app
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/hamr/codegen/jvm/src/main/resources/phantom_versions.properties') }}-osate
+          path: kekinian/bin/mac/fmide.app
+          key: ${{ runner.os }}-${{ hashFiles('Kekinian/bin/install/fmide*') }}-fmide
       - name: Test
         run: |
           export COURSIER_CACHE=$GITHUB_WORKSPACE/cache/coursier
@@ -65,6 +65,10 @@ jobs:
           export SIREUM_HOME=$(pwd)/kekinian
           export JAVA_HOME=$SIREUM_HOME/bin/mac/java
           export PATH=$SIREUM_HOME/bin:$JAVA_HOME/bin:$PATH
+
+          sireum -v
+
+          ${SIREUM_HOME}/bin/install/fmide.cmd -v
 
           bin/build.cmd
 

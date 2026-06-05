@@ -24,43 +24,43 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: sireum/kekinian
-          path: Sireum
+          path: kekinian
           submodules: recursive          
       - name: Cache Java
         id: cache-java
         uses: actions/cache@v4
         with:
-          path: Sireum/bin/linux/java
-          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-java          
+          path: kekinian/bin/linux/java
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-java          
       - name: Cache Scala
         id: cache-scala
         uses: actions/cache@v4
         with:
-          path: Sireum/bin/scala
-          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-scala
+          path: kekinian/bin/scala
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-scala
       - name: Cache Coursier
         id: cache-coursier
         uses: actions/cache@v4
         with:
           path: cache/coursier
-          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-coursier
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-coursier
       - name: Cache SMT2 solvers
         id: cache-smt2
         uses: actions/cache@v4
         with:
           path: |
-            Sireum/bin/linux/cvc
-            Sireum/bin/linux/.cvc.ver
-            Sireum/bin/linux/cvc5
-            Sireum/bin/linux/.cvc5.ver
-            Sireum/bin/linux/z3
-          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-smt2          
+            kekinian/bin/linux/cvc
+            kekinian/bin/linux/.cvc.ver
+            kekinian/bin/linux/cvc5
+            kekinian/bin/linux/.cvc5.ver
+            kekinian/bin/linux/z3
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-smt2          
       - name: Cache FMIDE
         id: cache-fmide
         uses: actions/cache@v4
         with:
-          path: Sireum/bin/linux/fmide
-          key: ${{ runner.os }}-${{ hashFiles('Sireum/bin/install/fmide*') }}-fmide          
+          path: kekinian/bin/linux/fmide
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/bin/install/fmide*') }}-fmide          
       - name: Test
         run: |
           export COURSIER_CACHE=$GITHUB_WORKSPACE/cache/coursier
@@ -78,8 +78,8 @@ jobs:
           export branch_name=${{ inputs.branch_name }}
           
 
-          rm -rf ${PROVERS_DIR}/Sireum # remove bootstrap version
-          export SIREUM_HOME=$(pwd)/Sireum
+          rm -rf ${PROVERS_DIR}/kekinian # remove bootstrap version
+          export SIREUM_HOME=$(pwd)/kekinian
           export PATH=${SIREUM_HOME}/bin:${PATH}
 
           ${SIREUM_HOME}/bin/build.cmd setup

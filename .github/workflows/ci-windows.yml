@@ -48,12 +48,12 @@ jobs:
             kekinian\bin\win\.cvc5.ver
             kekinian\bin\win\z3
           key: ${{ runner.os }}-${{ hashFiles('kekinian\versions.properties') }}-smt2
-      - name: Cache OSATE
-        id: cache-osate
-        uses: actions/cache@v3
+      - name: Cache FMIDE
+        id: cache-fmide
+        uses: actions/cache@v4
         with:
-          path: kekinian\bin\win\osate
-          key: ${{ runner.os }}-${{ hashFiles('kekinian\hamr\codegen\jvm\src\main\resources\phantom_versions.properties') }}-osate
+          path: kekinian\bin\win\fmide
+          key: ${{ runner.os }}-${{ hashFiles('Kekinian/bin/install/fmide*') }}-fmide          
       - name: Test
         shell: cmd
         run: |
@@ -82,6 +82,10 @@ jobs:
 
           set JAVA_HOME=%SIREUM_HOME%\bin\win\java
           set PATH=%SIREUM_HOME%\bin;%JAVA_HOME%\bin:%PATH%
+
+          call sireum -v
+
+          call %SIREUM_HOME%\bin\install\fmide.cmd -v
 
           call bin\build.cmd || goto :error
 
