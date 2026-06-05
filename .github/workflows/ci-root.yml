@@ -8,7 +8,7 @@ on:
 jobs:
   linux:
     uses: ./.github/workflows/ci-linux.yml
-    with: 
+    with:
       branch_name: '${{ github.run_id }}-${{github.run_attempt}}'
   mac:
     uses: ./.github/workflows/ci-mac.yml

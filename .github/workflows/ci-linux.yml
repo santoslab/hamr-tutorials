@@ -10,11 +10,8 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    container: 
+    container:
       image: jasonbelt/microkit_provers:latest
-      credentials:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
     name: HAMR-codegen
     env:
         HOME: /home/microkit
