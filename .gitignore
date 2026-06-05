@@ -16,7 +16,10 @@
 **/lib/
 **/slang/js/
 **/cache/
+**/build/
 kekinian/
 bin/build.cmd.jar
 bin/sireum*
 HAMR-Slang-Tutorials-Example-00/hamr/slang/build.cmd
+**/.slang/*.json
+**/Cargo.lock

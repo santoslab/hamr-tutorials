@@ -10,6 +10,14 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    container: 
+      image: jasonbelt/microkit_provers:latest
+      credentials:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    name: HAMR-codegen
+    env:
+        HOME: /home/microkit
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,57 +26,50 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: sireum/kekinian
-          path: kekinian
+          repository: sireum/Sireum
+          path: Sireum
           submodules: recursive          
       - name: Cache Java
         id: cache-java
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
-          path: kekinian/bin/linux/java
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-java          
+          path: Sireum/bin/linux/java
+          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-java          
       - name: Cache Scala
         id: cache-scala
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
-          path: kekinian/bin/scala
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-scala
+          path: Sireum/bin/scala
+          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-scala
       - name: Cache Coursier
         id: cache-coursier
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: cache/coursier
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-coursier
+          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-coursier
       - name: Cache SMT2 solvers
         id: cache-smt2
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
-            kekinian/bin/linux/cvc
-            kekinian/bin/linux/.cvc.ver
-            kekinian/bin/linux/cvc5
-            kekinian/bin/linux/.cvc5.ver
-            kekinian/bin/linux/z3
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-smt2          
-      - name: Cache OSATE
-        id: cache-osate
-        uses: actions/cache@v3
+            Sireum/bin/linux/cvc
+            Sireum/bin/linux/.cvc.ver
+            Sireum/bin/linux/cvc5
+            Sireum/bin/linux/.cvc5.ver
+            Sireum/bin/linux/z3
+          key: ${{ runner.os }}-${{ hashFiles('Sireum/versions.properties') }}-smt2          
+      - name: Cache FMIDE
+        id: cache-fmide
+        uses: actions/cache@v4
         with:
-          path: kekinian/bin/linux/osate
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/hamr/codegen/jvm/src/main/resources/phantom_versions.properties') }}-osate
+          path: Sireum/bin/linux/fmide
+          key: ${{ runner.os }}-${{ hashFiles('Sireum/bin/install/fmide*') }}-fmide          
       - name: Test
         run: |
           export COURSIER_CACHE=$GITHUB_WORKSPACE/cache/coursier
-          cd $GITHUB_WORKSPACE
 
           # see https://github.com/sireum/osate-plugin/blob/57785407d84793cf1f8d5926647e4dc75ab197a9/org.sireum.aadl.osate.cli/src/org/sireum/aadl/osate/cli/Phantom.java#L508-L517
           export CHECK_PHANTOM_HAMR_API_COMPATIBILITY=true
-
-          kekinian/bin/build.cmd setup
-
-          export SIREUM_HOME=$(pwd)/kekinian
-          export JAVA_HOME=$SIREUM_HOME/bin/linux/java
-          export PATH=$SIREUM_HOME/bin:$JAVA_HOME/bin:$PATH
 
           # note: workflows have to have read and write permissions if the workflow pushes changes
           #       back to the repo.
@@ -78,10 +79,21 @@ jobs:
           git config user.email github-actions@github.com
 
           export branch_name=${{ inputs.branch_name }}
-
-          bin/build.cmd
-
-
-
           
 
+          rm -rf ${PROVERS_DIR}/Sireum # remove bootstrap version
+          export SIREUM_HOME=$(pwd)/Sireum
+          export PATH=${SIREUM_HOME}/bin:${PATH}
+
+          ${SIREUM_HOME}/bin/build.cmd setup
+          rm -rf ${SIREUM_HOME}/.git
+          rm -rf ${SIREUM_HOME}/out
+          
+          sireum -v
+          
+          ${SIREUM_HOME}/bin/install/fmide.cmd -v
+
+          git clone --depth 1 https://github.com/santoslab/sysml-aadl-libraries.git sysml-aadl-libraries
+          export SYSML_AADL_LIBRARIES=$(pwd)/sysml-aadl-libraries
+
+          bin/build.cmd

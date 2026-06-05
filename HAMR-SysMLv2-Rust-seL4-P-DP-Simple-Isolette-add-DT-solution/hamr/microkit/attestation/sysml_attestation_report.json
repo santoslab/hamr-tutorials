@@ -1,0 +1,243 @@
+{
+  "type": "AttestationReport",
+  "reports": [
+    {
+      "type": "ComponentReport",
+      "idPath": ["Isolette_System_Instance", "temp_sensor", "temp_sensor"],
+      "classifier": ["Devices", "TempSensor"],
+      "reports": [
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["Isolette_System_Instance", "thermostat", "thermostat"],
+      "classifier": ["Isolette_Software", "Thermostat"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "initlastCmd",
+          "kind": "Initialize",
+          "meta": "Initializes contract for Isolette_Software::Thermostat",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml",
+                  "beginLine": 65,
+                  "beginCol": 7,
+                  "endLine": 66,
+                  "endCol": 61,
+                  "offset": 2627,
+                  "length": 110
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Touched GUMBO state variable: lastCmd",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml",
+                  "beginLine": 49,
+                  "beginCol": 9,
+                  "endLine": 49,
+                  "endCol": 45,
+                  "offset": 1990,
+                  "length": 36
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs",
+                  "beginLine": 62,
+                  "beginCol": 11,
+                  "endLine": 63,
+                  "endCol": 56,
+                  "offset": 2147,
+                  "length": 57
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Rust",
+              "meta": "Touched Rust realization of GUMBO state variable: lastCmd",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs",
+                  "beginLine": 37,
+                  "beginCol": 5,
+                  "endLine": 37,
+                  "endCol": 44,
+                  "offset": 1346,
+                  "length": 39
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "REQ_THERM_1",
+          "kind": "Initialize",
+          "meta": "Initializes contract for Isolette_Software::Thermostat",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml",
+                  "beginLine": 67,
+                  "beginCol": 4,
+                  "endLine": 68,
+                  "endCol": 53,
+                  "offset": 2743,
+                  "length": 127
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs",
+                  "beginLine": 64,
+                  "beginCol": 11,
+                  "endLine": 66,
+                  "endCol": 60,
+                  "offset": 2238,
+                  "length": 123
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "ASSM_LDT_LE_UDT",
+          "kind": "Assume",
+          "meta": "General assume contract for Isolette_Software::Thermostat",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml",
+                  "beginLine": 74,
+                  "beginCol": 8,
+                  "endLine": 74,
+                  "endCol": 88,
+                  "offset": 3128,
+                  "length": 80
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs",
+                  "beginLine": 88,
+                  "beginCol": 11,
+                  "endLine": 89,
+                  "endCol": 82,
+                  "offset": 3129,
+                  "length": 83
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "lastCmd",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for Isolette_Software::Thermostat",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml",
+                  "beginLine": 77,
+                  "beginCol": 6,
+                  "endLine": 78,
+                  "endCol": 28,
+                  "offset": 3319,
+                  "length": 89
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Touched GUMBO state variable: lastCmd",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml",
+                  "beginLine": 49,
+                  "beginCol": 9,
+                  "endLine": 49,
+                  "endCol": 45,
+                  "offset": 1990,
+                  "length": 36
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs",
+                  "beginLine": 93,
+                  "beginCol": 11,
+                  "endLine": 95,
+                  "endCol": 40,
+                  "offset": 3349,
+                  "length": 94
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Rust",
+              "meta": "Touched Rust realization of GUMBO state variable: lastCmd",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs",
+                  "beginLine": 37,
+                  "beginCol": 5,
+                  "endLine": 37,
+                  "endCol": 44,
+                  "offset": 1346,
+                  "length": 39
+                }
+            }
+          ]
+        }
+       ]
+    }
+  ]
+}
