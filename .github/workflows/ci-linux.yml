@@ -15,6 +15,7 @@ jobs:
     name: HAMR-codegen
     env:
         HOME: /home/microkit
+        TAR_OPTIONS: "--warning=no-unknown-keyword"
     steps:
       - name: Checkout
         uses: actions/checkout@v4

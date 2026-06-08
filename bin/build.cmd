@@ -31,16 +31,8 @@ val sireum: Os.Path = sireumHome / "bin" / (if (Os.isWin) "sireum.bat" else "sir
 val appDir: Os.Path = sireumHome / "bin" / (if (Os.isMac) "mac" else if (Os.isWin) "win" else "linux")
 val codegenHome = sireumHome / "hamr" / "codegen"
 
-val osateDir: Os.Path = {
-  Os.env("OSATE_HOME") match {
-    case Some(s) => Os.path(s)
-    case _ => appDir / s"osate${if (Os.isMac) ".app" else ""}"
-  }
-}
-
 val buildEnv: ISZ[(String, String)] = ISZ(
-  ("SIREUM_HOME", sireumHome.string),
-  ("OSATE_HOME", osateDir.string))
+  ("SIREUM_HOME", sireumHome.string))
 
 val projects = ISZ(
   "HAMR-Slang-Tutorials-Example-00",
