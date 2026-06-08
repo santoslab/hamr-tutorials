@@ -7,7 +7,7 @@
         "KEY_TOOL_REPORT",
         {
           "type" : "ToolReport",
-          "commandLineArgs" : "--sourcepath \/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2 --system-name Isolette::Isolette_System --verbose --platform Microkit --output-dir ..\/..\/hamr --package-name isolette --no-proyek-ive --workspace-root-dir \/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2",
+          "commandLineArgs" : "--sourcepath \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2 --system-name Isolette::Isolette_System --verbose --platform Microkit --output-dir ..\/..\/hamr --package-name isolette --no-proyek-ive --workspace-root-dir \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2",
           "status" : {
             "type" : "Status",
             "value" : "Success"
@@ -600,7 +600,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 56,
                       "beginColumn" : 4,
@@ -993,7 +993,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 92,
                       "beginColumn" : 4,
@@ -1428,7 +1428,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 114,
                       "beginColumn" : 4,
@@ -2721,7 +2721,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 73,
                       "beginColumn" : 4,
