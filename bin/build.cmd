@@ -51,8 +51,10 @@ for (p <- projects) {
     assert(ret)
   }
   if ((root / "sysmlv2" / "bin").exists) {
-    val ret = buildSysmlProject(root)
-    assert(ret)
+    if (Os.isLinux) {
+      val ret = buildSysmlProject(root)
+      assert(ret)
+    }
   }
 }
 
