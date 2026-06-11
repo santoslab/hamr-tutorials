@@ -10,16 +10,22 @@ Your updates to the Simple Isolette system will add new ports to the model to en
 
 Upon completion of Part 1, you will have produced version of the model which we will use for an exercise on HAMR code generation in Part 2 of this exercise.
 
-The starting files of this project also include a complete Rust implementation of the system.  In Part 2 of this exercise, you will run HAMR code generation again to update the Rust implementation project (add infrastructure code for the new port communication), and then you will add application logic to multiple Rust components (the Thermostat and Operator Interface) to realize the new temperature display functionality.
+The starting files of this project (linked below) also include a complete Rust implementation of the system.  In Part 2 of this exercise, you will run HAMR code generation again to update the Rust implementation project (add infrastructure code for the new port communication), and then you will add application logic to multiple Rust components (the Thermostat and Operator Interface) to realize the new temperature display functionality.
 
 ## Prerequisites and Resources
 
+### Lectures/Documentation 
+
 Before working through this exercise, you should have gone through the following HAMR lectures (or read the equivalent documentation):
 
-* HAMR Overview (Modeling Part 1 and Rust Implementation Part 3)
+* HAMR Overview - Overall Concepts and Modeling
+* HAMR Overview - Rust Component Implementation
 * HAMR Semantic Concepts and Architecture Building Blocks
 * HAMR CodeIVE for SysMLv2 (working with SysMLv2 models for HAMR)
 
+### Using a Git Repository 
+
+It is useful if you create your own git repository to hold the results of your work.  That way, you can more easily observe the changes that both you and HAMR make to the given system.  The exercise instructions will assume that you have a git repository set up to hold your work.  If you choose not to use your own repository, you can ignore the sections of the exercise associated with commiting and viewing results in git.
 
 ## Excercise Overview
 
@@ -48,11 +54,19 @@ You can see from the updated architecture that four ports were added to achieve 
 
 ## Starting Files
 
-The starting project (which includes both SysMLv2 models and Rust implementation) can be found in the folder `HAMR-SysMLv2-Rust-seL4-P-DP-Example` in this repository (here is [link](../../HAMR-SysMLv2-Rust-seL4-P-DP-Example/)).  Copy this folder (the *folder* itself, not just the contents) into your personal git repository.  One reason that it's important to copy the entire folder is that it contains several `.gitignore` that configure the folder for git use (e.g., by ignoring the very large executable files associated with Rust builds).  Open the `sysmlv2` subfolder in the CodeIVE to work on Part 1 of this homework. 
+The starting project (which includes both SysMLv2 models and Rust implementation) can be found in the folder `HAMR-SysMLv2-Rust-seL4-P-DP-Example` in this repository (here is [link](../../HAMR-SysMLv2-Rust-seL4-P-DP-Example/)).  If you wish, instead of cloning/download the entire `hamr-tutorials` repository, you can also download the specific example folder as a [zip file](https://github.com/santoslab/hamr-tutorials/blob/main/zips/HAMR-SysMLv2-Rust-seL4-P-DP-Example.zip).   Copy this folder (the *folder* itself, not just the contents) into your personal git repository.  One reason that it's important to copy the entire folder is that it contains several `.gitignore` that configure the folder for git use (e.g., by ignoring the very large executable files associated with Rust builds).  Open the `sysmlv2` subfolder in the CodeIVE to work on Part 1 of this homework. 
 
 Use the CodeIVE to make the requested changes below to the model and to perform HAMR Type Checking.  Commit and push your completed model files to your personal repository with a commit message such as "Simple Isolette add DT - Part 1 - Models completed".
 
 As you work, you may consult the documentation for working with SysMLv2 and CodeIVE in the [HAMR documentation](https://hamr.sireum.org/hamr-doc/).  
+
+## Solution Videos and Files 
+
+The solution video to Part 1 is linked below.   The best strategy for this early exercise is to do each listed Activity/Task on your own, and then watch the video for that Activity/Task to see if you have done things according to expectations.  This can prevent you from getting deep in the exercise and then realizing that you have a mistake from some earlier step.  There are some additional insights and discussion provided in the video, so you might find it useful to watch even if you finish the exercise entirely on your own.
+
+* [Solution video](https://drive.google.com/file/d/1GzoQmxeQd72UV8O71Yg7af8jNdXG9dVL/view?usp=sharing)
+
+The completed system models and code resulting from both Parts 1 and 2 of this exercise is found here (here is a [repo link](../../HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution)) or alternatively in this [zip file](https://github.com/santoslab/hamr-tutorials/blob/main/zips/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution.zip).  If you can't figure out what to do, even from the solution video, you can always take a peak at the files in the solution.   It will be especially helpful to double-check your updated SysML files that result from the exercise against the model solution before going on to Part 2 of the exercise dealing with code generation.
 
 ## Activity 0 - Commit the Starting Files to a Git Repository
 
@@ -70,8 +84,7 @@ Note: In the seL4 deployment, the thread port declaration will cause a `get_disp
 
 ## Activity 2 - Add Ports to the Thermostat Thread and Process
 
-* **Task:** Add an output data port `display_temp` to the thermostat thread (in `Isolette_Software.sysml`) to send a temperature to display on the operator interface.  The intent is that on each activation of the thermostat task, 
-the the `current_temp` input from the temp sensor will be forwarded through the output `display_temp` port to the operator interface.
+* **Task:** Add an output data port `display_temp` to the thermostat thread (in `Isolette_Software.sysml`) to send a temperature to display on the operator interface.  The intent is that on each activation of the thermostat task, the `current_temp` input from the temp sensor will be forwarded through the output `display_temp` port to the operator interface.
 
 * **Task:** Add a similar port in the `Thermostat_Process` component (in `Isolette.sysml`).
 
