@@ -13,16 +13,16 @@ Starting from an updated model (with ports and connections for `display_temp`) p
 
 ## Prerequisites and Resources
 
-Before working through this exercise, you should have gone through the following HAMR lectures (or read the equivalent documentation):
+Before working through this exercise, you should have gone through the following HAMR lectures (or read the equivalent [documentation](https://hamr.sireum.org/hamr-doc/)):
 
 * ...all prerequisites for Part 1 of this exercise
-* HAMR Rust project file organization
-* HAMR Rust components - component development
+* HAMR Rust-based Component Development
+* HAMR Rust-based Component Development: Manual Unit Testing
 
 
 ## Excercise Overview
 
-This exercise continues with the "Simple Isolette" system concept used in a number of other HAMR tutorials and examples.  At the completion of Part 1, we had refactored our initial architecture to add the `display_temp` feature, as illustrated in the diagram below.
+This exercise continues with the "Simple Isolette" system concept used in a number of other HAMR tutorials and examples.  At the completion of Part 1 of this Exercise, we had refactored our initial architecture to add the `display_temp` feature, as illustrated in the diagram below.
 
 ![Simple Isolette (before refactoring)](images/simple-isolette-after.png)
 
@@ -30,9 +30,18 @@ In this exercise, you will...
 - Update the Thermostat thread implementation to send the received `current_temp` value out the `display_temp` port (and add appropriate tests)
 - Update the Operator Interface to get the temperature value to display from the `display_temp` port and to update a simulated user interface with this new information (and add appropriate tests).
 
+## Solution Videos and Files 
+
+The solution video to Part 2 is linked below.   The best strategy for this early exercise is to do each listed Activity/Task on your own, and then watch the video for that Activity/Task to see if you have done things according to expectations.  This can prevent you from getting deep in the exercise and then realizing that you have a mistake from some earlier step.  There are some additional insights and discussion provided in the video, so you might find it useful to watch even if you finish the exercise entirely on your own.
+
+* [Solution video](https://drive.google.com/file/d/1y4P1ETp8Mh9HVyydHPQlsjWxzosi6-Ah/view?usp=sharing)
+
+The completed system models and code resulting from both Parts 1 and 2 of this exercise is found here (here is a [repo link](../../HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution)) or alternatively in this [zip file](https://github.com/santoslab/hamr-tutorials/blob/main/zips/HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution.zip).  If you can't figure out what to do, even from the solution video, you can always take a peak at the files in the solution.   It will be especially helpful to double-check your updated SysML files that result from the exercise against the model solution before going on to Part 2 of the exercise dealing with code generation.
+
+
 ## Activity 1 - Running HAMR Code Generation using a Previous Configuration
 
-* **Task**: Use the CodeIVE command "HAMR SysML CodeGen" from the command palette to run code generation, and select `Microkit` for the target platform.  
+* **Task**: Use the CodeIVE command "HAMR SysML CodeGen" from the command palette to run code generation, and select `Microkit` for the target platform (for background, see the material on code generation from the CodeIVE in the [HAMR documentation](https://hamr.sireum.org/hamr-doc/sysmlv2-codeive/)).  
 
 As long as you have not altered the initial starting files beyond adding the ports and the connections, the code generation action will use the code generation configuration embedded in the comment at the top of the file.
 ```
