@@ -1,0 +1,157 @@
+// This file will not be overwritten if codegen is rerun
+
+//============================================================================
+//  G a t e  -- Thread Component
+//
+//  Guard pipeline stage 1: drops Critical messages and passes
+//  Restricted and Public messages through unchanged.
+//
+//  Data flow: TestSender -> [Gate] -> Filter -> TestReceiver
+//============================================================================
+
+use data::*;
+use crate::bridge::gate_gate_api::*;
+use vstd::prelude::*;
+
+verus! {
+
+  //-------------------------------------------
+  //  Application State (as a struct)
+  //-------------------------------------------
+  pub struct gate_gate {
+    // PLACEHOLDER MARKER STATE VARS
+  }
+
+  impl gate_gate {
+    //-------------------------------------------
+    //  Application Component Constructor
+    //-------------------------------------------
+    pub fn new() -> Self
+    {
+      Self {
+        // PLACEHOLDER MARKER STATE VAR INIT
+      }
+    }
+
+    //-------------------------------------------
+    //  Initialize Entry Point
+    //-------------------------------------------
+    pub fn initialize<API: gate_gate_Put_Api> (
+      &mut self,
+      api: &mut gate_gate_Application_Api<API>)
+      ensures
+        // PLACEHOLDER MARKER INITIALIZATION ENSURES
+    {
+      log_info("initialize entrypoint invoked");
+      // No output ports to initialize (EventDataPort does not require initialization)
+    }
+
+    //-------------------------------------------
+    //  Compute Entry Point
+    //-------------------------------------------
+    pub fn timeTriggered<API: gate_gate_Full_Api> (
+      &mut self,
+      api: &mut gate_gate_Application_Api<API>)
+      requires
+        // BEGIN MARKER TIME TRIGGERED REQUIRES
+        // assume AADL_Requirement
+        //   All outgoing event ports must be empty
+        old(api).output.is_none(),
+        // END MARKER TIME TRIGGERED REQUIRES
+      ensures
+        // BEGIN MARKER TIME TRIGGERED ENSURES
+        // guarantee Req_C_Drop_Critical
+        api.input.is_some() &&
+          (api.input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Critical) ==>
+          api.output.is_none(),
+        // guarantee Req_R1_Pass_Restricted
+        api.input.is_some() &&
+          (api.input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Restricted) ==>
+          api.output.is_some() && GumboLib::equalMessage_spec(api.input.unwrap(), api.output.unwrap()),
+        // guarantee Req_P_Pass_Public
+        api.input.is_some() &&
+          (api.input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Public) ==>
+          api.output.is_some() && GumboLib::equalMessage_spec(api.input.unwrap(), api.output.unwrap()),
+        // guarantee No_Input_No_Output
+        !(api.input.is_some()) ==> api.output.is_none(),
+        // END MARKER TIME TRIGGERED ENSURES
+    {
+      // Gate implements message drop/pass policies:
+      //   Req_C: Critical messages are dropped
+      //   Req_R_1: Restricted messages are passed through
+      //   Req_P: Public messages are passed through
+
+      let input_contents = api.get_input();
+      match input_contents {
+        Some(msg) => {
+          match msg.security_level {
+            SNG_Data_Model::SecurityLevel::Critical => {
+              // Req_C: drop Critical messages
+              log_message_dropped(msg);
+            }
+            _ => {
+              // Req_R_1, Req_P: pass Restricted and Public messages through
+              api.put_output(msg);
+              log_message_passed(msg);
+            }
+          }
+        }
+        None => {
+          // no message present on input port
+        }
+      };
+    }
+
+    //-------------------------------------------
+    //  seL4 / Microkit Error Handling
+    //-------------------------------------------
+    pub fn notify(
+      &mut self,
+      channel: microkit_channel)
+    {
+      // this method is called when the monitor does not handle the passed in channel
+      match channel {
+        _ => {
+          log_warn_channel(channel)
+        }
+      }
+    }
+  }
+
+  //-------------------------------------------
+  //  Logging Helper Functions
+  //-------------------------------------------
+  #[verifier::external_body]
+  pub fn log_info(msg: &str)
+  {
+    log::info!("{0}", msg);
+  }
+
+  #[verifier::external_body]
+  pub fn log_message_dropped(msg: SNG_Data_Model::Message)
+  {
+    log::info!("Gate: DROPPED message (security_level={0:?}, payload={1})",
+      msg.security_level, msg.payload);
+  }
+
+  #[verifier::external_body]
+  pub fn log_message_passed(msg: SNG_Data_Model::Message)
+  {
+    log::info!("Gate: PASSED message (security_level={0:?}, payload={1})",
+      msg.security_level, msg.payload);
+  }
+
+  #[verifier::external_body]
+  pub fn log_warn_channel(channel: u32)
+  {
+    log::warn!("Unexpected channel: {0}", channel);
+  }
+
+  //-------------------------------------------
+  //  GUMBO-derived functions/constants auto-generated by HAMR from
+  //  model.
+  //-------------------------------------------
+
+  // PLACEHOLDER MARKER GUMBO METHODS
+
+}
