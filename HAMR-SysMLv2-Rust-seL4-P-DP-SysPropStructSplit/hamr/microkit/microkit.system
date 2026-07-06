@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Content between markers will be preserved if codegen is rerun -->
+
+  <xi:include href="microkit.schedule.xml" />
+
+  <protection_domain name="gen_gen_MON" domain="domain_2">
+    <program_image path="gen_gen_MON.elf" />
+    <protection_domain name="gen_gen" domain="domain_2" id="1">
+      <program_image path="gen_gen.elf" />
+      <map mr="StructSplit_System_Instance_gen_gen_outstruct_1_Memory_Region"
+           vaddr="0x10_000_000"
+           perms="rw"
+           setvar_vaddr="outstruct_queue_1"
+      />
+
+      <!-- BEGIN CONTENT MARKER gen_gen -->
+      <!-- END CONTENT MARKER gen_gen -->
+    </protection_domain>
+
+    <!-- BEGIN CONTENT MARKER gen_gen_MON -->
+    <!-- END CONTENT MARKER gen_gen_MON -->
+  </protection_domain>
+
+  <protection_domain name="splitter_splitter_MON" domain="domain_3">
+    <program_image path="splitter_splitter_MON.elf" />
+    <protection_domain name="splitter_splitter" domain="domain_3" id="1">
+      <program_image path="splitter_splitter.elf" />
+      <map mr="StructSplit_System_Instance_gen_gen_outstruct_1_Memory_Region"
+           vaddr="0x10_000_000"
+           perms="r"
+           setvar_vaddr="instruct_queue_1"
+      />
+      <map mr="StructSplit_System_Instance_splitter_splitter_xfield_1_Memory_Region"
+           vaddr="0x10_001_000"
+           perms="rw"
+           setvar_vaddr="xfield_queue_1"
+      />
+      <map mr="StructSplit_System_Instance_splitter_splitter_yfield_1_Memory_Region"
+           vaddr="0x10_002_000"
+           perms="rw"
+           setvar_vaddr="yfield_queue_1"
+      />
+
+      <!-- BEGIN CONTENT MARKER splitter_splitter -->
+      <!-- END CONTENT MARKER splitter_splitter -->
+    </protection_domain>
+
+    <!-- BEGIN CONTENT MARKER splitter_splitter_MON -->
+    <!-- END CONTENT MARKER splitter_splitter_MON -->
+  </protection_domain>
+
+  <protection_domain name="incx_incx_MON" domain="domain_4">
+    <program_image path="incx_incx_MON.elf" />
+    <protection_domain name="incx_incx" domain="domain_4" id="1">
+      <program_image path="incx_incx.elf" />
+      <map mr="StructSplit_System_Instance_splitter_splitter_xfield_1_Memory_Region"
+           vaddr="0x10_000_000"
+           perms="r"
+           setvar_vaddr="inxfield_queue_1"
+      />
+      <map mr="StructSplit_System_Instance_incx_incx_outxfield_1_Memory_Region"
+           vaddr="0x10_001_000"
+           perms="rw"
+           setvar_vaddr="outxfield_queue_1"
+      />
+
+      <!-- BEGIN CONTENT MARKER incx_incx -->
+      <!-- END CONTENT MARKER incx_incx -->
+    </protection_domain>
+
+    <!-- BEGIN CONTENT MARKER incx_incx_MON -->
+    <!-- END CONTENT MARKER incx_incx_MON -->
+  </protection_domain>
+
+  <protection_domain name="clampx_clampx_MON" domain="domain_6">
+    <program_image path="clampx_clampx_MON.elf" />
+    <protection_domain name="clampx_clampx" domain="domain_6" id="1">
+      <program_image path="clampx_clampx.elf" />
+      <map mr="StructSplit_System_Instance_incx_incx_outxfield_1_Memory_Region"
+           vaddr="0x10_000_000"
+           perms="r"
+           setvar_vaddr="inxfield_queue_1"
+      />
+      <map mr="StructSplit_System_Instance_clampx_clampx_outxfield_1_Memory_Region"
+           vaddr="0x10_001_000"
+           perms="rw"
+           setvar_vaddr="outxfield_queue_1"
+      />
+
+      <!-- BEGIN CONTENT MARKER clampx_clampx -->
+      <!-- END CONTENT MARKER clampx_clampx -->
+    </protection_domain>
+
+    <!-- BEGIN CONTENT MARKER clampx_clampx_MON -->
+    <!-- END CONTENT MARKER clampx_clampx_MON -->
+  </protection_domain>
+
+  <protection_domain name="decy_decy_MON" domain="domain_5">
+    <program_image path="decy_decy_MON.elf" />
+    <protection_domain name="decy_decy" domain="domain_5" id="1">
+      <program_image path="decy_decy.elf" />
+      <map mr="StructSplit_System_Instance_splitter_splitter_yfield_1_Memory_Region"
+           vaddr="0x10_000_000"
+           perms="r"
+           setvar_vaddr="inyfield_queue_1"
+      />
+      <map mr="StructSplit_System_Instance_decy_decy_outyfield_1_Memory_Region"
+           vaddr="0x10_001_000"
+           perms="rw"
+           setvar_vaddr="outyfield_queue_1"
+      />
+
+      <!-- BEGIN CONTENT MARKER decy_decy -->
+      <!-- END CONTENT MARKER decy_decy -->
+    </protection_domain>
+
+    <!-- BEGIN CONTENT MARKER decy_decy_MON -->
+    <!-- END CONTENT MARKER decy_decy_MON -->
+  </protection_domain>
+
+  <protection_domain name="merger_merger_MON" domain="domain_7">
+    <program_image path="merger_merger_MON.elf" />
+    <protection_domain name="merger_merger" domain="domain_7" id="1">
+      <program_image path="merger_merger.elf" />
+      <map mr="StructSplit_System_Instance_clampx_clampx_outxfield_1_Memory_Region"
+           vaddr="0x10_000_000"
+           perms="r"
+           setvar_vaddr="inxfield_queue_1"
+      />
+      <map mr="StructSplit_System_Instance_decy_decy_outyfield_1_Memory_Region"
+           vaddr="0x10_001_000"
+           perms="r"
+           setvar_vaddr="inyfield_queue_1"
+      />
+      <map mr="StructSplit_System_Instance_merger_merger_outstruct_1_Memory_Region"
+           vaddr="0x10_002_000"
+           perms="rw"
+           setvar_vaddr="outstruct_queue_1"
+      />
+
+      <!-- BEGIN CONTENT MARKER merger_merger -->
+      <!-- END CONTENT MARKER merger_merger -->
+    </protection_domain>
+
+    <!-- BEGIN CONTENT MARKER merger_merger_MON -->
+    <!-- END CONTENT MARKER merger_merger_MON -->
+  </protection_domain>
+
+  <protection_domain name="consume_consume_MON" domain="domain_8">
+    <program_image path="consume_consume_MON.elf" />
+    <protection_domain name="consume_consume" domain="domain_8" id="1">
+      <program_image path="consume_consume.elf" />
+      <map mr="StructSplit_System_Instance_merger_merger_outstruct_1_Memory_Region"
+           vaddr="0x10_000_000"
+           perms="r"
+           setvar_vaddr="instruct_queue_1"
+      />
+
+      <!-- BEGIN CONTENT MARKER consume_consume -->
+      <!-- END CONTENT MARKER consume_consume -->
+    </protection_domain>
+
+    <!-- BEGIN CONTENT MARKER consume_consume_MON -->
+    <!-- END CONTENT MARKER consume_consume_MON -->
+  </protection_domain>
+
+  <protection_domain name="pacer" domain="domain_1">
+    <program_image path="pacer.elf" />
+
+    <!-- BEGIN CONTENT MARKER pacer -->
+    <!-- END CONTENT MARKER pacer -->
+  </protection_domain>
+
+  <memory_region name="StructSplit_System_Instance_gen_gen_outstruct_1_Memory_Region"
+                 size="0x1_000" />
+
+  <memory_region name="StructSplit_System_Instance_splitter_splitter_xfield_1_Memory_Region"
+                 size="0x1_000" />
+
+  <memory_region name="StructSplit_System_Instance_splitter_splitter_yfield_1_Memory_Region"
+                 size="0x1_000" />
+
+  <memory_region name="StructSplit_System_Instance_incx_incx_outxfield_1_Memory_Region"
+                 size="0x1_000" />
+
+  <memory_region name="StructSplit_System_Instance_clampx_clampx_outxfield_1_Memory_Region"
+                 size="0x1_000" />
+
+  <memory_region name="StructSplit_System_Instance_decy_decy_outyfield_1_Memory_Region"
+                 size="0x1_000" />
+
+  <memory_region name="StructSplit_System_Instance_merger_merger_outstruct_1_Memory_Region"
+                 size="0x1_000" />
+
+  <channel>
+    <end pd="pacer" id="61" />
+    <end pd="gen_gen_MON" id="61" />
+  </channel>
+
+  <channel>
+    <end pd="gen_gen_MON" id="60" />
+    <end pd="gen_gen" id="60" />
+  </channel>
+
+  <channel>
+    <end pd="pacer" id="59" />
+    <end pd="splitter_splitter_MON" id="59" />
+  </channel>
+
+  <channel>
+    <end pd="splitter_splitter_MON" id="58" />
+    <end pd="splitter_splitter" id="58" />
+  </channel>
+
+  <channel>
+    <end pd="pacer" id="57" />
+    <end pd="incx_incx_MON" id="57" />
+  </channel>
+
+  <channel>
+    <end pd="incx_incx_MON" id="56" />
+    <end pd="incx_incx" id="56" />
+  </channel>
+
+  <channel>
+    <end pd="pacer" id="55" />
+    <end pd="clampx_clampx_MON" id="55" />
+  </channel>
+
+  <channel>
+    <end pd="clampx_clampx_MON" id="54" />
+    <end pd="clampx_clampx" id="54" />
+  </channel>
+
+  <channel>
+    <end pd="pacer" id="53" />
+    <end pd="decy_decy_MON" id="53" />
+  </channel>
+
+  <channel>
+    <end pd="decy_decy_MON" id="52" />
+    <end pd="decy_decy" id="52" />
+  </channel>
+
+  <channel>
+    <end pd="pacer" id="51" />
+    <end pd="merger_merger_MON" id="51" />
+  </channel>
+
+  <channel>
+    <end pd="merger_merger_MON" id="50" />
+    <end pd="merger_merger" id="50" />
+  </channel>
+
+  <channel>
+    <end pd="pacer" id="49" />
+    <end pd="consume_consume_MON" id="49" />
+  </channel>
+
+  <channel>
+    <end pd="consume_consume_MON" id="48" />
+    <end pd="consume_consume" id="48" />
+  </channel>
+
+  <!-- BEGIN MSD CONTENT MARKER -->
+  <!-- END MSD CONTENT MARKER -->
+</system>
