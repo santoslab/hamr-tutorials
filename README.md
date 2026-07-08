@@ -20,6 +20,10 @@ Please see the [HAMR documentation tutorial guide](https://hamr.sireum.org/hamr-
   - Part 1: [Adding GUMBO contracts to models](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-Simple-Isolette-DT-add-GUMBO/01-Ex-Simple-Isolette-DT-add-GUMBO-model.md) (adding GUMBO contracts to SysMLv2 models)
   - Part 2: [Utilizing executable contracts (GUMBOX contracts) for manual unit tests](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-Simple-Isolette-DT-add-GUMBO/02-Ex-Simple-Isolette-DT-add-GUMBO-GUMBOX.md) (writing manual GUMBOX tests)
 
+- Tutorial: Specifying and Verifying System-Level Properties in the Struct Split Example (writing GUMBO system specifications, generating verification conditions, verifying them with Verus, and diagnosing verification failures)
+  - Part 1: [Specifying a system-level property](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-SysPropStructSplit-add-Prop-yLEx/01-Ex-SysPropStructSplit-add-Prop-yLEx-property.md) (stating an end-to-end property as a GUMBO spec function and `property` block, type checking, generating and reading the verification conditions)
+  - Part 2: [Verifying, diagnosing, and repairing the property](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-SysPropStructSplit-add-Prop-yLEx/02-Ex-SysPropStructSplit-add-Prop-yLEx-verify.md) (running Verus, reading a failing verification condition back to a missing carry assertion, and contrasting the two reasons a VC can fail)
+
   
 
 

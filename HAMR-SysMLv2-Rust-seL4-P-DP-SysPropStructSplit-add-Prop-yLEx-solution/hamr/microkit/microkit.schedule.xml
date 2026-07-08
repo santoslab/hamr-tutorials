@@ -1,0 +1,19 @@
+<!-- This file will not be overwritten if HAMR codegen is rerun -->
+
+<domain_schedule>
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_2" length="50" /> <!-- gen_gen_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_3" length="50" /> <!-- splitter_splitter_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_4" length="50" /> <!-- incx_incx_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_5" length="50" /> <!-- decy_decy_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_6" length="50" /> <!-- clampx_clampx_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_7" length="50" /> <!-- merger_merger_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_8" length="50" /> <!-- consume_consume_MON -->
+  <domain name="domain_0" length="440" /> <!-- padding -->
+</domain_schedule>
