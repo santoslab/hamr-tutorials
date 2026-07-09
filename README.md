@@ -30,9 +30,25 @@ Please see the [HAMR documentation tutorial guide](https://hamr.sireum.org/hamr-
 
 ### HAMR SysMLv2 with Rust Components Examples
 
-The following example projects are used to support the tutorials above.
+The following example projects support the tutorials above and also serve as stand-alone reference examples.
+The folder naming indicates the tasking/communication style: `P` = periodic thread components, `DP` = data ports only, `EDP` = event data ports (event-style communication).
+All of these examples use Rust component implementations deployable on seL4 via the Microkit framework.
+
+- [HAMR-SysMLv2-Rust-seL4-P-DP-Example](./HAMR-SysMLv2-Rust-seL4-P-DP-Example) -- the Simple Isolette: the primary running example for the tutorials.  Four periodic components (temperature sensor, operator interface, thermostat, heat source) communicating solely via data ports.  Illustrates GUMBO contracts on the thermostat (integration constraints, initialize guarantees, compute cases over a state variable), Rust component implementations, and manual unit / GUMBOX / property-based tests.
+
+- [HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution](./HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution) -- solution project for the "Modifying an Existing HAMR SysMLv2/Rust system" tutorial: the Simple Isolette extended with the Display Temperature feature (model changes, re-running code generation, and the associated code and tests).
+
+- [HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution](./HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution) -- solution project for the "Working with GUMBO Contracts" tutorial: the Display Temperature variant of the Simple Isolette with GUMBO contracts added to the models and GUMBOX-based tests for the affected components.
+
+- [HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit](./HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit) -- the Struct Split example for GUMBO **system-level properties**: a fork/join pipeline of seven components whose top-level system carries a GUMBO `composition` block (component/port/state aliases, an abstract schedule `schema` with independent branches, and place-assertion `property` blocks with inheritance).  HAMR generates a `sys_proof_nominal` crate whose verification conditions are discharged by Verus.
+
+- [HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution](./HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution) -- solution project for the "Specifying and Verifying System-Level Properties" tutorial: the Struct Split example with an additional end-to-end system property specified, generated, and verified.
 
 - [HAMR-SysMLv2-Rust-seL4-P-EDP-Example](./HAMR-SysMLv2-Rust-seL4-P-EDP-Example) -- an event/event-data-port variant of the Simple Isolette example (periodic components communicating via data ports, event data ports with GUMBO `HasEvent`/`MustSend`/`NoSend` contracts, latched GUMBO state variables, and a send-on-change output policy). Worked end-to-end: GUMBO component contracts, Rust component implementations, manual unit tests, manual GUMBOX tests, property-based GUMBOX tests, and Verus verification of all component crates.
+
+- [HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example](./HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example) -- a minimal producer/consumer example introducing event data ports: two periodic threads with different periods connected by an event data port, GUMBO integration constraints on the message payload, and a GUMBO state variable on the consumer (illustrating `Option`-valued port APIs and state-variable-aware GUMBOX testing).
+
+- [HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example](./HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example) -- the Simple Network Guard: a four-stage message pipeline (test sender, gate, filter, test receiver) over event data ports.  Illustrates GUMBO integration constraints and compute contracts using `HasEvent`/`NoSend` guarantees and `compute_cases` to specify message dropping, pass-through, and payload clamping, with the corresponding Rust implementations and test suites.
 
 
 
