@@ -32,6 +32,8 @@ Please see the [HAMR documentation tutorial guide](https://hamr.sireum.org/hamr-
 
 The following example projects are used to support the tutorials above.
 
+- [HAMR-SysMLv2-Rust-seL4-P-EDP-Example](./HAMR-SysMLv2-Rust-seL4-P-EDP-Example) -- an event/event-data-port variant of the Simple Isolette example (periodic components communicating via data ports, event data ports with GUMBO `HasEvent`/`MustSend`/`NoSend` contracts, latched GUMBO state variables, and a send-on-change output policy). Worked end-to-end: GUMBO component contracts, Rust component implementations, manual unit tests, manual GUMBOX tests, property-based GUMBOX tests, and Verus verification of all component crates.
+
 
 
 
