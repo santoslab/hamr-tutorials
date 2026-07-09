@@ -1,0 +1,3702 @@
+{
+  "type" : "CodegenReports",
+  "reports" : {
+    "type" : "Map",
+    "entries" : [
+      [
+        "KEY_TOOL_REPORT",
+        {
+          "type" : "ToolReport",
+          "commandLineArgs" : "--sourcepath \/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2 --system-name Isolette::Isolette_System --verbose --platform Microkit --output-dir ..\/..\/hamr --package-name isolette --no-proyek-ive --workspace-root-dir \/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2",
+          "status" : {
+            "type" : "Status",
+            "value" : "Success"
+          },
+          "warningMessages" : [
+          ],
+          "errorMessages" : [
+          ],
+          "resources" : [
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_aadl_types.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_event_counter.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_queue_Isolette_Data_Model_Temp_1.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/src\/sb_queue_Isolette_Data_Model_Temp_1.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_queue_Isolette_Data_Model_Temp_1.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/src\/sb_queue_Isolette_Data_Model_Temp_1.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_queue_Isolette_Data_Model_Set_Points_1.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/src\/sb_queue_Isolette_Data_Model_Set_Points_1.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_queue_Isolette_Data_Model_On_Off_1.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/src\/sb_queue_Isolette_Data_Model_On_Off_1.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_types.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/temp_sensor_temp_sensor\/src\/temp_sensor_temp_sensor_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/temp_sensor_temp_sensor\/src\/temp_sensor_temp_sensor.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/temp_sensor_temp_sensor\/src\/temp_sensor_temp_sensor_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/temp_sensor_temp_sensor\/include\/temp_sensor_temp_sensor.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/operator_interface_operator_interface\/src\/operator_interface_operator_interface_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/operator_interface_operator_interface\/src\/operator_interface_operator_interface.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/operator_interface_operator_interface\/src\/operator_interface_operator_interface_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/operator_interface_operator_interface\/include\/operator_interface_operator_interface.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/thermostat_thermostat\/src\/thermostat_thermostat_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/thermostat_thermostat\/src\/thermostat_thermostat_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/thermostat_thermostat\/include\/thermostat_thermostat.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/heat_source_heat_source\/src\/heat_source_heat_source_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/heat_source_heat_source\/src\/heat_source_heat_source.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/heat_source_heat_source\/src\/heat_source_heat_source_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/heat_source_heat_source\/include\/heat_source_heat_source.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/pacer\/src\/pacer.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "Makefile",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "system.mk",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/include\/printf.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/src\/printf.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/include\/util.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/src\/util.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/Isolette_Data_Model\/On_Off.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/Isolette_Data_Model\/Temp.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/Isolette_Data_Model\/Set_Points.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/Isolette_Data_Model\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/sb_event_counter.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/sb_microkit_types.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/component\/temp_sensor_temp_sensor_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/component\/operator_interface_operator_interface_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/temp_sensor_temp_sensor\/src\/test\/util\/cb_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_GUMBOX.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/operator_interface_operator_interface\/src\/test\/util\/cb_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/thermostat_thermostat\/src\/test\/util\/cb_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/heat_source_heat_source\/src\/test\/util\/cb_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "microkit.system",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "microkit.schedule.xml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "microkit.dot",
+              "overwrittenIfExists" : true
+            }
+          ]
+        }
+      ],
+      [
+        "MicrokitReporterPlugin",
+        {
+          "type" : "org.sireum.hamr.codegen.microkit.reporting.MicrokitReport",
+          "componentReport" : {
+            "type" : "HashSMap",
+            "size" : 4,
+            "entries" : [
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["Isolette_System_Instance", "temp_sensor", "temp_sensor"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["Isolette_System_Instance", "temp_sensor", "temp_sensor"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "Devices::TempSensor",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                      },
+                      "beginLine" : 56,
+                      "beginColumn" : 4,
+                      "endLine" : 56,
+                      "endColumn" : 41,
+                      "offset" : 2454,
+                      "length" : 37
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 2,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "temp_sensor", "temp_sensor", "current_temp"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "temp_sensor", "temp_sensor", "current_temp"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "Data"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "Out"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::Temp"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Devices.sysml"
+                            },
+                            "beginLine" : 28,
+                            "beginColumn" : 4,
+                            "endLine" : 28,
+                            "endColumn" : 77,
+                            "offset" : 1027,
+                            "length" : 73
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
+                                },
+                                "beginLine" : 42,
+                                "beginColumn" : 5,
+                                "endLine" : 55,
+                                "endColumn" : 5,
+                                "offset" : 1183,
+                                "length" : 399
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 5,
+                                "endLine" : 18,
+                                "endColumn" : 5,
+                                "offset" : 316,
+                                "length" : 150
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 18,
+                                "beginColumn" : 1,
+                                "endLine" : 23,
+                                "endColumn" : 1,
+                                "offset" : 456,
+                                "length" : 197
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 69,
+                                "offset" : 315,
+                                "length" : 66
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/temp_sensor_temp_sensor\/src\/temp_sensor_temp_sensor.c"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 1,
+                                "endLine" : 18,
+                                "endColumn" : 1,
+                                "offset" : 443,
+                                "length" : 224
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/temp_sensor_temp_sensor\/src\/temp_sensor_temp_sensor.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 69,
+                                "offset" : 276,
+                                "length" : 68
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 11,
+                                "beginColumn" : 7,
+                                "endLine" : 15,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "temp_sensor", "temp_sensor", "temp_changed"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "temp_sensor", "temp_sensor", "temp_changed"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "Out"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::Temp"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Devices.sysml"
+                            },
+                            "beginLine" : 37,
+                            "beginColumn" : 4,
+                            "endLine" : 37,
+                            "endColumn" : 82,
+                            "offset" : 1734,
+                            "length" : 78
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
+                                },
+                                "beginLine" : 56,
+                                "beginColumn" : 5,
+                                "endLine" : 69,
+                                "endColumn" : 5,
+                                "offset" : 1588,
+                                "length" : 419
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
+                                },
+                                "beginLine" : 21,
+                                "beginColumn" : 5,
+                                "endLine" : 26,
+                                "endColumn" : 5,
+                                "offset" : 504,
+                                "length" : 150
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 25,
+                                "beginColumn" : 1,
+                                "endLine" : 30,
+                                "endColumn" : 1,
+                                "offset" : 656,
+                                "length" : 197
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 15,
+                                "beginColumn" : 3,
+                                "endLine" : 15,
+                                "endColumn" : 69,
+                                "offset" : 385,
+                                "length" : 66
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/temp_sensor_temp_sensor\/src\/temp_sensor_temp_sensor.c"
+                                },
+                                "beginLine" : 20,
+                                "beginColumn" : 1,
+                                "endLine" : 24,
+                                "endColumn" : 1,
+                                "offset" : 670,
+                                "length" : 224
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/temp_sensor_temp_sensor\/src\/temp_sensor_temp_sensor.c"
+                                },
+                                "beginLine" : 10,
+                                "beginColumn" : 1,
+                                "endLine" : 10,
+                                "endColumn" : 69,
+                                "offset" : 346,
+                                "length" : 68
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 16,
+                                "beginColumn" : 7,
+                                "endLine" : 20,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/temp_sensor_temp_sensor\/src\/component\/temp_sensor_temp_sensor_app.rs"
+                              },
+                              "beginLine" : 21,
+                              "beginColumn" : 5,
+                              "endLine" : 28,
+                              "endColumn" : 5,
+                              "offset" : 382,
+                              "length" : 263
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/temp_sensor_temp_sensor\/src\/component\/temp_sensor_temp_sensor_app.rs"
+                              },
+                              "beginLine" : 30,
+                              "beginColumn" : 5,
+                              "endLine" : 39,
+                              "endColumn" : 5,
+                              "offset" : 652,
+                              "length" : 333
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/temp_sensor_temp_sensor\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboReport",
+                      "stateReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "methodsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "invariantsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "integrationReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 2,
+                            "entries" : [
+                              [
+                                "temp_range",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
+                                  },
+                                  "beginLine" : 46,
+                                  "beginColumn" : 11,
+                                  "endLine" : 48,
+                                  "endColumn" : 35,
+                                  "offset" : 1310,
+                                  "length" : 72
+                                }
+                              ],
+                              [
+                                "temp_changed_range",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
+                                  },
+                                  "beginLine" : 60,
+                                  "beginColumn" : 11,
+                                  "endLine" : 62,
+                                  "endColumn" : 35,
+                                  "offset" : 1723,
+                                  "length" : 72
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      },
+                      "initializeReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "computeReport" : {
+                        "type" : "None"
+                      }
+                    }
+                  },
+                  "gumboXReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
+                      "gumboxMethods" : {
+                        "type" : "HashSMap",
+                        "size" : 5,
+                        "entries" : [
+                          [
+                            "I_Guar_current_temp",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
+                              },
+                              "beginLine" : 21,
+                              "beginColumn" : 1,
+                              "endLine" : 25,
+                              "endColumn" : 1,
+                              "offset" : 371,
+                              "length" : 151
+                            }
+                          ],
+                          [
+                            "I_Guar_temp_changed",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
+                              },
+                              "beginLine" : 31,
+                              "beginColumn" : 1,
+                              "endLine" : 35,
+                              "endColumn" : 1,
+                              "offset" : 657,
+                              "length" : 151
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_temp_changed",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
+                              },
+                              "beginLine" : 41,
+                              "beginColumn" : 1,
+                              "endLine" : 47,
+                              "endColumn" : 1,
+                              "offset" : 943,
+                              "length" : 183
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
+                              },
+                              "beginLine" : 54,
+                              "beginColumn" : 1,
+                              "endLine" : 61,
+                              "endColumn" : 1,
+                              "offset" : 1289,
+                              "length" : 305
+                            }
+                          ],
+                          [
+                            "compute_CEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
+                              },
+                              "beginLine" : 68,
+                              "beginColumn" : 1,
+                              "endLine" : 77,
+                              "endColumn" : 1,
+                              "offset" : 1770,
+                              "length" : 351
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["Isolette_System_Instance", "operator_interface", "operator_interface"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["Isolette_System_Instance", "operator_interface", "operator_interface"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "Isolette_Software::OperatorInterface",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                      },
+                      "beginLine" : 91,
+                      "beginColumn" : 4,
+                      "endLine" : 91,
+                      "endColumn" : 46,
+                      "offset" : 3859,
+                      "length" : 42
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 1,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "operator_interface", "operator_interface", "desired_temp"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "operator_interface", "operator_interface", "desired_temp"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "Out"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::Set_Points"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml"
+                            },
+                            "beginLine" : 170,
+                            "beginColumn" : 6,
+                            "endLine" : 170,
+                            "endColumn" : 90,
+                            "offset" : 9524,
+                            "length" : 84
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_api.rs"
+                                },
+                                "beginLine" : 33,
+                                "beginColumn" : 5,
+                                "endLine" : 46,
+                                "endColumn" : 5,
+                                "offset" : 1120,
+                                "length" : 466
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_api.rs"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 5,
+                                "endLine" : 18,
+                                "endColumn" : 5,
+                                "offset" : 358,
+                                "length" : 156
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 17,
+                                "beginColumn" : 1,
+                                "endLine" : 22,
+                                "endColumn" : 1,
+                                "offset" : 392,
+                                "length" : 215
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 75,
+                                "offset" : 315,
+                                "length" : 72
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/operator_interface_operator_interface\/src\/operator_interface_operator_interface.c"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 1,
+                                "endLine" : 17,
+                                "endColumn" : 1,
+                                "offset" : 435,
+                                "length" : 248
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/operator_interface_operator_interface\/src\/operator_interface_operator_interface.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 75,
+                                "offset" : 332,
+                                "length" : 74
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 34,
+                                "beginColumn" : 7,
+                                "endLine" : 38,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/operator_interface_operator_interface\/src\/component\/operator_interface_operator_interface_app.rs"
+                              },
+                              "beginLine" : 21,
+                              "beginColumn" : 5,
+                              "endLine" : 28,
+                              "endColumn" : 5,
+                              "offset" : 424,
+                              "length" : 291
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/operator_interface_operator_interface\/src\/component\/operator_interface_operator_interface_app.rs"
+                              },
+                              "beginLine" : 30,
+                              "beginColumn" : 5,
+                              "endLine" : 39,
+                              "endColumn" : 5,
+                              "offset" : 722,
+                              "length" : 361
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/operator_interface_operator_interface\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/operator_interface_operator_interface\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboReport",
+                      "stateReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "methodsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "invariantsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "integrationReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 1,
+                            "entries" : [
+                              [
+                                "LDT_LE_UDT",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_api.rs"
+                                  },
+                                  "beginLine" : 37,
+                                  "beginColumn" : 11,
+                                  "endLine" : 40,
+                                  "endColumn" : 50,
+                                  "offset" : 1253,
+                                  "length" : 174
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      },
+                      "initializeReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "computeReport" : {
+                        "type" : "None"
+                      }
+                    }
+                  },
+                  "gumboXReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
+                      "gumboxMethods" : {
+                        "type" : "HashSMap",
+                        "size" : 4,
+                        "entries" : [
+                          [
+                            "I_Guar_desired_temp",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_GUMBOX.rs"
+                              },
+                              "beginLine" : 23,
+                              "beginColumn" : 1,
+                              "endLine" : 26,
+                              "endColumn" : 1,
+                              "offset" : 491,
+                              "length" : 143
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_desired_temp",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_GUMBOX.rs"
+                              },
+                              "beginLine" : 34,
+                              "beginColumn" : 1,
+                              "endLine" : 40,
+                              "endColumn" : 1,
+                              "offset" : 875,
+                              "length" : 189
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_GUMBOX.rs"
+                              },
+                              "beginLine" : 46,
+                              "beginColumn" : 1,
+                              "endLine" : 50,
+                              "endColumn" : 1,
+                              "offset" : 1180,
+                              "length" : 226
+                            }
+                          ],
+                          [
+                            "compute_CEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_GUMBOX.rs"
+                              },
+                              "beginLine" : 56,
+                              "beginColumn" : 1,
+                              "endLine" : 62,
+                              "endColumn" : 1,
+                              "offset" : 1542,
+                              "length" : 252
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["Isolette_System_Instance", "thermostat", "thermostat"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["Isolette_System_Instance", "thermostat", "thermostat"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "Isolette_Software::Thermostat",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                      },
+                      "beginLine" : 110,
+                      "beginColumn" : 4,
+                      "endLine" : 110,
+                      "endColumn" : 31,
+                      "offset" : 4739,
+                      "length" : 27
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 4,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "thermostat", "thermostat", "current_temp"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "thermostat", "thermostat", "current_temp"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "Data"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "In"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::Temp"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml"
+                            },
+                            "beginLine" : 51,
+                            "beginColumn" : 4,
+                            "endLine" : 51,
+                            "endColumn" : 76,
+                            "offset" : 2292,
+                            "length" : 72
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 88,
+                                "beginColumn" : 5,
+                                "endLine" : 100,
+                                "endColumn" : 5,
+                                "offset" : 2935,
+                                "length" : 628
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 23,
+                                "beginColumn" : 5,
+                                "endLine" : 33,
+                                "endColumn" : 5,
+                                "offset" : 575,
+                                "length" : 449
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 20,
+                                "beginColumn" : 1,
+                                "endLine" : 27,
+                                "endColumn" : 1,
+                                "offset" : 604,
+                                "length" : 218
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 69,
+                                "offset" : 315,
+                                "length" : 66
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 21,
+                                "beginColumn" : 1,
+                                "endLine" : 30,
+                                "endColumn" : 1,
+                                "offset" : 846,
+                                "length" : 409
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 69,
+                                "offset" : 268,
+                                "length" : 68
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 52,
+                                "beginColumn" : 7,
+                                "endLine" : 56,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "thermostat", "thermostat", "temp_changed"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "thermostat", "thermostat", "temp_changed"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "In"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::Temp"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml"
+                            },
+                            "beginLine" : 52,
+                            "beginColumn" : 4,
+                            "endLine" : 52,
+                            "endColumn" : 81,
+                            "offset" : 2370,
+                            "length" : 77
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 101,
+                                "beginColumn" : 5,
+                                "endLine" : 110,
+                                "endColumn" : 5,
+                                "offset" : 3569,
+                                "length" : 420
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 36,
+                                "beginColumn" : 5,
+                                "endLine" : 43,
+                                "endColumn" : 5,
+                                "offset" : 1062,
+                                "length" : 249
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 29,
+                                "beginColumn" : 1,
+                                "endLine" : 39,
+                                "endColumn" : 1,
+                                "offset" : 825,
+                                "length" : 278
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 15,
+                                "beginColumn" : 3,
+                                "endLine" : 15,
+                                "endColumn" : 69,
+                                "offset" : 385,
+                                "length" : 66
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 40,
+                                "beginColumn" : 1,
+                                "endLine" : 43,
+                                "endColumn" : 1,
+                                "offset" : 1618,
+                                "length" : 141
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 11,
+                                "beginColumn" : 1,
+                                "endLine" : 11,
+                                "endColumn" : 69,
+                                "offset" : 406,
+                                "length" : 68
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 57,
+                                "beginColumn" : 7,
+                                "endLine" : 61,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "thermostat", "thermostat", "desired_temp"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "thermostat", "thermostat", "desired_temp"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "In"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::Set_Points"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml"
+                            },
+                            "beginLine" : 53,
+                            "beginColumn" : 4,
+                            "endLine" : 53,
+                            "endColumn" : 87,
+                            "offset" : 2453,
+                            "length" : 83
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 111,
+                                "beginColumn" : 5,
+                                "endLine" : 125,
+                                "endColumn" : 5,
+                                "offset" : 3995,
+                                "length" : 684
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 46,
+                                "beginColumn" : 5,
+                                "endLine" : 58,
+                                "endColumn" : 5,
+                                "offset" : 1349,
+                                "length" : 519
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 41,
+                                "beginColumn" : 1,
+                                "endLine" : 51,
+                                "endColumn" : 1,
+                                "offset" : 1106,
+                                "length" : 296
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 16,
+                                "beginColumn" : 3,
+                                "endLine" : 16,
+                                "endColumn" : 75,
+                                "offset" : 455,
+                                "length" : 72
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 53,
+                                "beginColumn" : 1,
+                                "endLine" : 56,
+                                "endColumn" : 1,
+                                "offset" : 2146,
+                                "length" : 147
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 1,
+                                "endLine" : 13,
+                                "endColumn" : 75,
+                                "offset" : 544,
+                                "length" : 74
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 62,
+                                "beginColumn" : 7,
+                                "endLine" : 66,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "thermostat", "thermostat", "heat_control"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "thermostat", "thermostat", "heat_control"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "Out"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::On_Off"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Isolette_Software.sysml"
+                            },
+                            "beginLine" : 54,
+                            "beginColumn" : 4,
+                            "endLine" : 54,
+                            "endColumn" : 84,
+                            "offset" : 2542,
+                            "length" : 80
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 73,
+                                "beginColumn" : 5,
+                                "endLine" : 84,
+                                "endColumn" : 5,
+                                "offset" : 2437,
+                                "length" : 399
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 5,
+                                "endLine" : 18,
+                                "endColumn" : 5,
+                                "offset" : 310,
+                                "length" : 152
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 53,
+                                "beginColumn" : 1,
+                                "endLine" : 58,
+                                "endColumn" : 1,
+                                "offset" : 1405,
+                                "length" : 203
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 17,
+                                "beginColumn" : 3,
+                                "endLine" : 17,
+                                "endColumn" : 71,
+                                "offset" : 531,
+                                "length" : 68
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 58,
+                                "beginColumn" : 1,
+                                "endLine" : 62,
+                                "endColumn" : 1,
+                                "offset" : 2296,
+                                "length" : 232
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
+                                },
+                                "beginLine" : 15,
+                                "beginColumn" : 1,
+                                "endLine" : 15,
+                                "endColumn" : 71,
+                                "offset" : 694,
+                                "length" : 70
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 67,
+                                "beginColumn" : 7,
+                                "endLine" : 71,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 27,
+                              "beginColumn" : 5,
+                              "endLine" : 46,
+                              "endColumn" : 5,
+                              "offset" : 662,
+                              "length" : 959
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 48,
+                              "beginColumn" : 5,
+                              "endLine" : 116,
+                              "endColumn" : 5,
+                              "offset" : 1628,
+                              "length" : 3663
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/thermostat_thermostat\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboReport",
+                      "stateReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "currentSetPoints",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 11,
+                              "beginColumn" : 5,
+                              "endLine" : 11,
+                              "endColumn" : 57,
+                              "offset" : 230,
+                              "length" : 52
+                            }
+                          ],
+                          [
+                            "lastCmd",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 12,
+                              "beginColumn" : 5,
+                              "endLine" : 12,
+                              "endColumn" : 44,
+                              "offset" : 289,
+                              "length" : 39
+                            }
+                          ]
+                        ]
+                      },
+                      "methodsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 4,
+                        "entries" : [
+                          [
+                            "Temp_Lower_Bound",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 144,
+                              "beginColumn" : 3,
+                              "endLine" : 147,
+                              "endColumn" : 3,
+                              "offset" : 5816,
+                              "length" : 59
+                            }
+                          ],
+                          [
+                            "Temp_Upper_Bound",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 149,
+                              "beginColumn" : 3,
+                              "endLine" : 152,
+                              "endColumn" : 3,
+                              "offset" : 5880,
+                              "length" : 60
+                            }
+                          ],
+                          [
+                            "Default_Lower_Set_Point",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 154,
+                              "beginColumn" : 3,
+                              "endLine" : 157,
+                              "endColumn" : 3,
+                              "offset" : 5945,
+                              "length" : 66
+                            }
+                          ],
+                          [
+                            "Default_Upper_Set_Point",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 159,
+                              "beginColumn" : 3,
+                              "endLine" : 162,
+                              "endColumn" : 3,
+                              "offset" : 6016,
+                              "length" : 67
+                            }
+                          ]
+                        ]
+                      },
+                      "invariantsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "integrationReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 2,
+                            "entries" : [
+                              [
+                                "ASSM_CT_Range",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                  },
+                                  "beginLine" : 95,
+                                  "beginColumn" : 11,
+                                  "endLine" : 97,
+                                  "endColumn" : 90,
+                                  "offset" : 3297,
+                                  "length" : 183
+                                }
+                              ],
+                              [
+                                "ASSM_LDT_LE_UDT",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
+                                  },
+                                  "beginLine" : 119,
+                                  "beginColumn" : 13,
+                                  "endLine" : 122,
+                                  "endColumn" : 67,
+                                  "offset" : 4401,
+                                  "length" : 195
+                                }
+                              ]
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          }
+                        }
+                      },
+                      "initializeReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initCurrentSetPoints",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 32,
+                              "beginColumn" : 11,
+                              "endLine" : 35,
+                              "endColumn" : 76,
+                              "offset" : 896,
+                              "length" : 219
+                            }
+                          ],
+                          [
+                            "REQ_THERM_1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                              },
+                              "beginLine" : 36,
+                              "beginColumn" : 11,
+                              "endLine" : 42,
+                              "endColumn" : 56,
+                              "offset" : 1149,
+                              "length" : 365
+                            }
+                          ]
+                        ]
+                      },
+                      "computeReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboComputeReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 1,
+                            "entries" : [
+                              [
+                                "INV_CSP",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 56,
+                                  "beginColumn" : 11,
+                                  "endLine" : 58,
+                                  "endColumn" : 96,
+                                  "offset" : 1980,
+                                  "length" : 150
+                                }
+                              ]
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 9,
+                            "entries" : [
+                              [
+                                "latchSetPointsOnEvent",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 62,
+                                  "beginColumn" : 11,
+                                  "endLine" : 66,
+                                  "endColumn" : 92,
+                                  "offset" : 2281,
+                                  "length" : 286
+                                }
+                              ],
+                              [
+                                "latchSetPointsNoEvent",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 67,
+                                  "beginColumn" : 11,
+                                  "endLine" : 70,
+                                  "endColumn" : 63,
+                                  "offset" : 2611,
+                                  "length" : 167
+                                }
+                              ],
+                              [
+                                "invCSPMaintained",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 71,
+                                  "beginColumn" : 11,
+                                  "endLine" : 74,
+                                  "endColumn" : 82,
+                                  "offset" : 2817,
+                                  "length" : 192
+                                }
+                              ],
+                              [
+                                "noTriggerNoChange",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 75,
+                                  "beginColumn" : 11,
+                                  "endLine" : 79,
+                                  "endColumn" : 45,
+                                  "offset" : 3049,
+                                  "length" : 244
+                                }
+                              ],
+                              [
+                                "REQ_THERM_2",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 80,
+                                  "beginColumn" : 11,
+                                  "endLine" : 86,
+                                  "endColumn" : 60,
+                                  "offset" : 3327,
+                                  "length" : 379
+                                }
+                              ],
+                              [
+                                "REQ_THERM_3",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 87,
+                                  "beginColumn" : 11,
+                                  "endLine" : 93,
+                                  "endColumn" : 60,
+                                  "offset" : 3740,
+                                  "length" : 383
+                                }
+                              ],
+                              [
+                                "REQ_THERM_4",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 94,
+                                  "beginColumn" : 11,
+                                  "endLine" : 102,
+                                  "endColumn" : 45,
+                                  "offset" : 4157,
+                                  "length" : 530
+                                }
+                              ],
+                              [
+                                "mustSendOnChange",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 103,
+                                  "beginColumn" : 11,
+                                  "endLine" : 108,
+                                  "endColumn" : 55,
+                                  "offset" : 4726,
+                                  "length" : 268
+                                }
+                              ],
+                              [
+                                "noSendNoChange",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
+                                  },
+                                  "beginLine" : 109,
+                                  "beginColumn" : 11,
+                                  "endLine" : 112,
+                                  "endColumn" : 36,
+                                  "offset" : 5031,
+                                  "length" : 156
+                                }
+                              ]
+                            ]
+                          },
+                          "casesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "handlers" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gumboXReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
+                      "gumboxMethods" : {
+                        "type" : "HashSMap",
+                        "size" : 25,
+                        "entries" : [
+                          [
+                            "Temp_Lower_Bound",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 17,
+                              "beginColumn" : 1,
+                              "endLine" : 20,
+                              "endColumn" : 1,
+                              "offset" : 253,
+                              "length" : 43
+                            }
+                          ],
+                          [
+                            "Temp_Upper_Bound",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 22,
+                              "beginColumn" : 1,
+                              "endLine" : 25,
+                              "endColumn" : 1,
+                              "offset" : 299,
+                              "length" : 44
+                            }
+                          ],
+                          [
+                            "Default_Lower_Set_Point",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 27,
+                              "beginColumn" : 1,
+                              "endLine" : 30,
+                              "endColumn" : 1,
+                              "offset" : 346,
+                              "length" : 50
+                            }
+                          ],
+                          [
+                            "Default_Upper_Set_Point",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 32,
+                              "beginColumn" : 1,
+                              "endLine" : 35,
+                              "endColumn" : 1,
+                              "offset" : 399,
+                              "length" : 51
+                            }
+                          ],
+                          [
+                            "I_Assm_current_temp",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 41,
+                              "beginColumn" : 1,
+                              "endLine" : 45,
+                              "endColumn" : 1,
+                              "offset" : 570,
+                              "length" : 176
+                            }
+                          ],
+                          [
+                            "I_Assm_desired_temp",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 53,
+                              "beginColumn" : 1,
+                              "endLine" : 56,
+                              "endColumn" : 1,
+                              "offset" : 983,
+                              "length" : 143
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_desired_temp",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 64,
+                              "beginColumn" : 1,
+                              "endLine" : 70,
+                              "endColumn" : 1,
+                              "offset" : 1363,
+                              "length" : 189
+                            }
+                          ],
+                          [
+                            "initialize_initCurrentSetPoints",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 78,
+                              "beginColumn" : 1,
+                              "endLine" : 82,
+                              "endColumn" : 1,
+                              "offset" : 1744,
+                              "length" : 232
+                            }
+                          ],
+                          [
+                            "initialize_REQ_THERM_1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 94,
+                              "beginColumn" : 1,
+                              "endLine" : 97,
+                              "endColumn" : 1,
+                              "offset" : 2366,
+                              "length" : 124
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Guar",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 105,
+                              "beginColumn" : 1,
+                              "endLine" : 112,
+                              "endColumn" : 1,
+                              "offset" : 2705,
+                              "length" : 277
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 120,
+                              "beginColumn" : 1,
+                              "endLine" : 126,
+                              "endColumn" : 1,
+                              "offset" : 3197,
+                              "length" : 255
+                            }
+                          ],
+                          [
+                            "compute_spec_INV_CSP_assume",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 134,
+                              "beginColumn" : 1,
+                              "endLine" : 137,
+                              "endColumn" : 1,
+                              "offset" : 3618,
+                              "length" : 172
+                            }
+                          ],
+                          [
+                            "compute_CEP_T_Assm",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 143,
+                              "beginColumn" : 1,
+                              "endLine" : 148,
+                              "endColumn" : 1,
+                              "offset" : 3937,
+                              "length" : 171
+                            }
+                          ],
+                          [
+                            "compute_CEP_Pre",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 158,
+                              "beginColumn" : 1,
+                              "endLine" : 173,
+                              "endColumn" : 1,
+                              "offset" : 4437,
+                              "length" : 639
+                            }
+                          ],
+                          [
+                            "compute_spec_latchSetPointsOnEvent_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 182,
+                              "beginColumn" : 1,
+                              "endLine" : 190,
+                              "endColumn" : 1,
+                              "offset" : 5316,
+                              "length" : 387
+                            }
+                          ],
+                          [
+                            "compute_spec_latchSetPointsNoEvent_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 200,
+                              "beginColumn" : 1,
+                              "endLine" : 208,
+                              "endColumn" : 1,
+                              "offset" : 6000,
+                              "length" : 327
+                            }
+                          ],
+                          [
+                            "compute_spec_invCSPMaintained_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 217,
+                              "beginColumn" : 1,
+                              "endLine" : 220,
+                              "endColumn" : 1,
+                              "offset" : 6551,
+                              "length" : 175
+                            }
+                          ],
+                          [
+                            "compute_spec_noTriggerNoChange_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 232,
+                              "beginColumn" : 1,
+                              "endLine" : 241,
+                              "endColumn" : 1,
+                              "offset" : 7112,
+                              "length" : 364
+                            }
+                          ],
+                          [
+                            "compute_spec_REQ_THERM_2_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 255,
+                              "beginColumn" : 1,
+                              "endLine" : 266,
+                              "endColumn" : 1,
+                              "offset" : 7946,
+                              "length" : 505
+                            }
+                          ],
+                          [
+                            "compute_spec_REQ_THERM_3_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 280,
+                              "beginColumn" : 1,
+                              "endLine" : 291,
+                              "endColumn" : 1,
+                              "offset" : 8925,
+                              "length" : 505
+                            }
+                          ],
+                          [
+                            "compute_spec_REQ_THERM_4_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 307,
+                              "beginColumn" : 1,
+                              "endLine" : 320,
+                              "endColumn" : 1,
+                              "offset" : 10026,
+                              "length" : 597
+                            }
+                          ],
+                          [
+                            "compute_spec_mustSendOnChange_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 331,
+                              "beginColumn" : 1,
+                              "endLine" : 340,
+                              "endColumn" : 1,
+                              "offset" : 10953,
+                              "length" : 319
+                            }
+                          ],
+                          [
+                            "compute_spec_noSendNoChange_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 350,
+                              "beginColumn" : 1,
+                              "endLine" : 358,
+                              "endColumn" : 1,
+                              "offset" : 11554,
+                              "length" : 269
+                            }
+                          ],
+                          [
+                            "compute_CEP_T_Guar",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 371,
+                              "beginColumn" : 1,
+                              "endLine" : 392,
+                              "endColumn" : 1,
+                              "offset" : 12325,
+                              "length" : 1528
+                            }
+                          ],
+                          [
+                            "compute_CEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_GUMBOX.rs"
+                              },
+                              "beginLine" : 405,
+                              "beginColumn" : 1,
+                              "endLine" : 419,
+                              "endColumn" : 1,
+                              "offset" : 14336,
+                              "length" : 698
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["Isolette_System_Instance", "heat_source", "heat_source"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["Isolette_System_Instance", "heat_source", "heat_source"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "Devices::HeatSource",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                      },
+                      "beginLine" : 74,
+                      "beginColumn" : 4,
+                      "endLine" : 74,
+                      "endColumn" : 41,
+                      "offset" : 3184,
+                      "length" : 37
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 1,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["Isolette_System_Instance", "heat_source", "heat_source", "heat_control"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["Isolette_System_Instance", "heat_source", "heat_source", "heat_control"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "In"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "Isolette_Data_Model::On_Off"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/isolette-simple\/Devices.sysml"
+                            },
+                            "beginLine" : 69,
+                            "beginColumn" : 4,
+                            "endLine" : 69,
+                            "endColumn" : 83,
+                            "offset" : 3263,
+                            "length" : 79
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_api.rs"
+                                },
+                                "beginLine" : 38,
+                                "beginColumn" : 5,
+                                "endLine" : 44,
+                                "endColumn" : 5,
+                                "offset" : 1142,
+                                "length" : 263
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_api.rs"
+                                },
+                                "beginLine" : 16,
+                                "beginColumn" : 5,
+                                "endLine" : 23,
+                                "endColumn" : 5,
+                                "offset" : 396,
+                                "length" : 253
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/heat_source_heat_source\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 17,
+                                "beginColumn" : 1,
+                                "endLine" : 27,
+                                "endColumn" : 1,
+                                "offset" : 388,
+                                "length" : 284
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/heat_source_heat_source\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 71,
+                                "offset" : 315,
+                                "length" : 68
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/heat_source_heat_source\/src\/heat_source_heat_source.c"
+                                },
+                                "beginLine" : 22,
+                                "beginColumn" : 1,
+                                "endLine" : 25,
+                                "endColumn" : 1,
+                                "offset" : 813,
+                                "length" : 143
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/heat_source_heat_source\/src\/heat_source_heat_source.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 71,
+                                "offset" : 276,
+                                "length" : 70
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 85,
+                                "beginColumn" : 7,
+                                "endLine" : 89,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
+                              },
+                              "beginLine" : 25,
+                              "beginColumn" : 5,
+                              "endLine" : 39,
+                              "endColumn" : 5,
+                              "offset" : 549,
+                              "length" : 652
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
+                              },
+                              "beginLine" : 41,
+                              "beginColumn" : 5,
+                              "endLine" : 59,
+                              "endColumn" : 5,
+                              "offset" : 1208,
+                              "length" : 770
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/heat_source_heat_source\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/heat_source_heat_source\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboReport",
+                      "stateReport" : {
+                        "type" : "HashSMap",
+                        "size" : 1,
+                        "entries" : [
+                          [
+                            "heater_state",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
+                              },
+                              "beginLine" : 11,
+                              "beginColumn" : 5,
+                              "endLine" : 11,
+                              "endColumn" : 49,
+                              "offset" : 234,
+                              "length" : 44
+                            }
+                          ]
+                        ]
+                      },
+                      "methodsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "invariantsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "integrationReport" : {
+                        "type" : "None"
+                      },
+                      "initializeReport" : {
+                        "type" : "HashSMap",
+                        "size" : 1,
+                        "entries" : [
+                          [
+                            "REQ_THERM_1_HS",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
+                              },
+                              "beginLine" : 30,
+                              "beginColumn" : 11,
+                              "endLine" : 35,
+                              "endColumn" : 61,
+                              "offset" : 781,
+                              "length" : 313
+                            }
+                          ]
+                        ]
+                      },
+                      "computeReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboComputeReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 2,
+                            "entries" : [
+                              [
+                                "HS_latch_cmd",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
+                                  },
+                                  "beginLine" : 48,
+                                  "beginColumn" : 11,
+                                  "endLine" : 51,
+                                  "endColumn" : 58,
+                                  "offset" : 1511,
+                                  "length" : 164
+                                }
+                              ],
+                              [
+                                "HS_hold_cmd",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
+                                  },
+                                  "beginLine" : 52,
+                                  "beginColumn" : 11,
+                                  "endLine" : 55,
+                                  "endColumn" : 55,
+                                  "offset" : 1709,
+                                  "length" : 165
+                                }
+                              ]
+                            ]
+                          },
+                          "casesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "handlers" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gumboXReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
+                      "gumboxMethods" : {
+                        "type" : "HashSMap",
+                        "size" : 7,
+                        "entries" : [
+                          [
+                            "initialize_REQ_THERM_1_HS",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs"
+                              },
+                              "beginLine" : 26,
+                              "beginColumn" : 1,
+                              "endLine" : 29,
+                              "endColumn" : 1,
+                              "offset" : 598,
+                              "length" : 137
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Guar",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs"
+                              },
+                              "beginLine" : 35,
+                              "beginColumn" : 1,
+                              "endLine" : 38,
+                              "endColumn" : 1,
+                              "offset" : 849,
+                              "length" : 122
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs"
+                              },
+                              "beginLine" : 44,
+                              "beginColumn" : 1,
+                              "endLine" : 47,
+                              "endColumn" : 1,
+                              "offset" : 1084,
+                              "length" : 116
+                            }
+                          ],
+                          [
+                            "compute_spec_HS_latch_cmd_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs"
+                              },
+                              "beginLine" : 56,
+                              "beginColumn" : 1,
+                              "endLine" : 63,
+                              "endColumn" : 1,
+                              "offset" : 1433,
+                              "length" : 249
+                            }
+                          ],
+                          [
+                            "compute_spec_HS_hold_cmd_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs"
+                              },
+                              "beginLine" : 73,
+                              "beginColumn" : 1,
+                              "endLine" : 81,
+                              "endColumn" : 1,
+                              "offset" : 1967,
+                              "length" : 289
+                            }
+                          ],
+                          [
+                            "compute_CEP_T_Guar",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs"
+                              },
+                              "beginLine" : 89,
+                              "beginColumn" : 1,
+                              "endLine" : 98,
+                              "endColumn" : 1,
+                              "offset" : 2506,
+                              "length" : 395
+                            }
+                          ],
+                          [
+                            "compute_CEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_GUMBOX.rs"
+                              },
+                              "beginLine" : 106,
+                              "beginColumn" : 1,
+                              "endLine" : 115,
+                              "endColumn" : 1,
+                              "offset" : 3132,
+                              "length" : 354
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      ]
+    ]
+  }
+}

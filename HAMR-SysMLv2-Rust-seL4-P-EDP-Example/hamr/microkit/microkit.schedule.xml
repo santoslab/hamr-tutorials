@@ -1,0 +1,13 @@
+<!-- This file will not be overwritten if HAMR codegen is rerun -->
+
+<domain_schedule>
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_2" length="50" /> <!-- operator_interface_operator_interface_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_3" length="50" /> <!-- temp_sensor_temp_sensor_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_4" length="50" /> <!-- thermostat_thermostat_MON -->
+  <domain name="domain_1" length="30" /> <!-- pacer -->
+  <domain name="domain_5" length="50" /> <!-- heat_source_heat_source_MON -->
+  <domain name="domain_0" length="680" /> <!-- padding -->
+</domain_schedule>
