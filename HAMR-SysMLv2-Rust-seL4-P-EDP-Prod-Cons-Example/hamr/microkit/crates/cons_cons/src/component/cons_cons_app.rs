@@ -42,6 +42,11 @@ verus! {
         // END MARKER INITIALIZATION ENSURES
     {
       log_info("initialize entrypoint invoked");
+
+      // establish the initSum initialize guarantee (Verus verifies the entry
+      // point for an arbitrary pre-state, so the constructor's value cannot be
+      // assumed here); the literal matches the model's Init_Payload_Sum()
+      self.payload_sum = 0;
     }
 
     //-------------------------------------------
@@ -60,7 +65,13 @@ verus! {
       let input_contents = api.get_input();
       match input_contents {
         Some(m) =>  { // message is present on port
-            self.payload_sum = self.payload_sum + m.payload;
+            // the Payload_Range integration assume woven into get_input bounds
+            // the payload to [0, 100]; the running sum itself is unbounded, so
+            // guard the addition against overflow (restarting the sum from the
+            // current payload) to let Verus discharge the arithmetic check
+            self.payload_sum =
+              if self.payload_sum > i32::MAX - 100 { m.payload }
+              else { self.payload_sum + m.payload };
             log_message_received(m, self.payload_sum);
           }
         None => {  // no message present on port

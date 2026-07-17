@@ -45,13 +45,13 @@ val projects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution",
 
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example",
 
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
 )
 
-// SysMLv2 system-property projects: their model directory is "struct-split" rather than
-// "isolette-simple", and they do not commit codegen's attestation artifacts
+// SysMLv2 system-property projects: they do not commit codegen's attestation artifacts
 val sysPropProjects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
@@ -62,6 +62,7 @@ val sysPropProjects = ISZ(
 // the single thermostat crate
 val projectLevelVerusProjects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
 )
@@ -74,11 +75,9 @@ for (p <- projects) {
   }
   if ((root / "sysmlv2" / "bin").exists) {
     if (Os.isLinux) {
-      val isSysProp = ops.ISZOps(sysPropProjects).contains(p)
       val ret = buildSysmlProject(
         root = root,
-        modelDirName = if (isSysProp) "struct-split" else "isolette-simple",
-        removeAttestation = isSysProp,
+        removeAttestation = ops.ISZOps(sysPropProjects).contains(p),
         systemLevelVerus = ops.ISZOps(projectLevelVerusProjects).contains(p))
       assert(ret)
     }
@@ -139,7 +138,19 @@ object Helper {
     return r.exitCode
   }
 
-  def buildSysmlProject(root: Os.Path, modelDirName: String, removeAttestation: B, systemLevelVerus: B): B = {
+  // the model directory is the sysmlv2 subdirectory holding the project's .sysml files
+  // (its sibling directories are the shared aadl-lib, the helper scripts in bin, and
+  // possibly a .slang cache)
+  def findModelDir(sysmlv2Dir: Os.Path): Os.Path = {
+    var candidates = ISZ[Os.Path]()
+    for (d <- sysmlv2Dir.list if d.isDir && d.name != "aadl-lib" && d.name != "bin" && !ops.StringOps(d.name).startsWith(".")) {
+      candidates = candidates :+ d
+    }
+    assert(candidates.size == 1, s"Expected exactly one model directory under $sysmlv2Dir, found ${candidates.size}")
+    return candidates(0)
+  }
+
+  def buildSysmlProject(root: Os.Path, removeAttestation: B, systemLevelVerus: B): B = {
     if (Os.env("MICROKIT_SDK").isEmpty) {
       println("MICROKIT_SDK environment variable not set")
       return F
@@ -168,7 +179,7 @@ object Helper {
     var ret = run(s"Cleaning $microkitDir", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "clean.cmd"} $microkitDir")
 
     if (ret == 0) {
-      ret = run(s"Running HAMR codegen", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "run-hamr.cmd"} --platform Microkit".at(sysmlv2Dir / modelDirName))
+      ret = run(s"Running HAMR codegen", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "run-hamr.cmd"} --platform Microkit".at(findModelDir(sysmlv2Dir)))
     }
 
     if (ret == 0) {

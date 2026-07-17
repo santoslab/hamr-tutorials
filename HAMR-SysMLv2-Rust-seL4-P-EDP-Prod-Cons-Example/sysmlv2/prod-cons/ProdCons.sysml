@@ -59,6 +59,9 @@ package ProdCons {
     attribute :>> Period = 60 [ms];  
     attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
     attribute :>> Implementation_Language = Implementation_Languages::Rust;
+    // explicit execution-time budget: the scheduling-domain budget check requires
+    // component budgets plus the Pacer's slots to fit within the 120ms frame
+    attribute :>> Compute_Execution_Time = 10 [ms] .. 10 [ms] as Timing_Properties::Compute_Execution_Time;
 
     //-- B e h a v i o r    C o n s t r a i n t s --
     language "GUMBO" /*{
@@ -105,6 +108,8 @@ package ProdCons {
     attribute :>> Period = 40 [ms];  
     attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
     attribute :>> Implementation_Language = Implementation_Languages::Rust;
+    // explicit execution-time budget (see the Prod thread's note)
+    attribute :>> Compute_Execution_Time = 10 [ms] .. 10 [ms] as Timing_Properties::Compute_Execution_Time;
 
      //-- B e h a v i o r    C o n s t r a i n t s --
     language "GUMBO" /*{

@@ -82,32 +82,36 @@ verus! {
     {
       log_info("compute entrypoint invoked");
 
-      self.num_dispatches = self.num_dispatches + 1;
-
-      // ..we only send messages every 5 dispatches
-      if self.num_dispatches >= 5 {
-        // ..after waiting through some dispatches, it's now time to 
+      // ..we only send messages every 5 dispatches.
+      //   Verus notes: Verus verifies the entry point for an ARBITRARY pre-state
+      //   (there are no GUMBO state variables constraining these simulation
+      //   fields), so the arithmetic below is written with explicit guards even
+      //   though at runtime the fields never leave their intended ranges: the
+      //   dispatch counter stays in [0, 4], and clamp_payload lets Verus prove
+      //   the sent payload satisfies the [0, 90] range that the output port's
+      //   integration guarantee imposes as a requires clause on put_output.
+      if self.num_dispatches >= 4 {
+        // ..this is the 5th dispatch since the last send; it's now time to
         // take action.
 
         // assemble, send, and log message
-        let m = Message{payload: self.next_payload, control_num: self.control_num};
+        let payload: i32 = clamp_payload(self.next_payload);
+        let m = Message{payload: payload, control_num: self.control_num};
         api.put_output(m);
         log_message_sent(m);
 
-        // update payload
-        self.next_payload = self.next_payload + 1;
-        if self.next_payload > 90 {
-          self.next_payload = 0;
-        }
+        // update payload (wraps back to 0 after 90)
+        self.next_payload = if payload >= 90 { 0 } else { payload + 1 };
 
-        // update control number
-        self.control_num = self.control_num + 1;
-        if self.control_num > 10000 { // avoid rollover
-          self.control_num = 0;
-        }
+        // update control number (wraps to avoid rollover)
+        self.control_num =
+          if self.control_num >= 10000 || self.control_num < 0 { 0 }
+          else { self.control_num + 1 };
 
         // reset dispatch count
         self.num_dispatches = 0;
+      } else {
+        self.num_dispatches = if self.num_dispatches < 0 { 0 } else { self.num_dispatches + 1 };
       }
     }
 
@@ -125,6 +129,23 @@ verus! {
         }
       }
     }
+  }
+
+  //-------------------------------------------
+  //  Helper Functions
+  //-------------------------------------------
+
+  // Clamp a payload value into the range required by the output port's
+  // integration guarantee.  The ensures clauses give Verus what it needs to
+  // discharge the put_output range requirement; at runtime the simulation never
+  // leaves the range, so the second ensures clause guarantees the clamp is the
+  // identity on simulated values.
+  pub fn clamp_payload(v: i32) -> (res: i32)
+    ensures
+      0 <= res && res <= 90,
+      (0 <= v && v <= 90) ==> res == v,
+  {
+    if v > 90 { 90 } else if v < 0 { 0 } else { v }
   }
 
   //-------------------------------------------

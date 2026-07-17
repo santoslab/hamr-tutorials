@@ -1,0 +1,123 @@
+{
+  "type": "AttestationReport",
+  "reports": [
+    {
+      "type": "ComponentReport",
+      "idPath": ["ProdCons_System_Instance", "prod", "prod"],
+      "classifier": ["ProdCons", "Prod"],
+      "reports": [
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["ProdCons_System_Instance", "cons", "cons"],
+      "classifier": ["ProdCons", "Cons"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "initSum",
+          "kind": "Initialize",
+          "meta": "Initializes contract for ProdCons::Cons",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/prod-cons\/ProdCons.sysml",
+                  "beginLine": 130,
+                  "beginCol": 6,
+                  "endLine": 131,
+                  "endCol": 48,
+                  "offset": 4218,
+                  "length": 59
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Touched GUMBO state variable: payload_sum",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/prod-cons\/ProdCons.sysml",
+                  "beginLine": 117,
+                  "beginCol": 9,
+                  "endLine": 117,
+                  "endCol": 44,
+                  "offset": 3789,
+                  "length": 35
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked GUMBO Subclause Method: Init_Payload_Sum",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/prod-cons\/ProdCons.sysml",
+                  "beginLine": 121,
+                  "beginCol": 6,
+                  "endLine": 121,
+                  "endCol": 62,
+                  "offset": 3924,
+                  "length": 56
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/cons_cons\/src\/component\/cons_cons_app.rs",
+                  "beginLine": 40,
+                  "beginCol": 11,
+                  "endLine": 41,
+                  "endCol": 46,
+                  "offset": 1066,
+                  "length": 47
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Rust",
+              "meta": "Touched Rust realization of GUMBO state variable: payload_sum",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/cons_cons\/src\/component\/cons_cons_app.rs",
+                  "beginLine": 15,
+                  "beginCol": 5,
+                  "endLine": 15,
+                  "endCol": 24,
+                  "offset": 358,
+                  "length": 19
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked Verus Method: Init_Payload_Sum",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/cons_cons\/src\/component\/cons_cons_app.rs",
+                  "beginLine": 111,
+                  "beginCol": 3,
+                  "endLine": 114,
+                  "endCol": 3,
+                  "offset": 3057,
+                  "length": 58
+                }
+            }
+          ]
+        }
+       ]
+    }
+  ]
+}
