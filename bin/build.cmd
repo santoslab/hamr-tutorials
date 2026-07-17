@@ -42,8 +42,21 @@ val projects = ISZ(
 
   "HAMR-SysMLv2-Rust-seL4-P-DP-Example",
   "HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution",
-  "HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution"
+  "HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution",
+
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
 )
+
+// SysMLv2 system-property projects: their model directory is "struct-split" rather than
+// "isolette-simple", they do not commit codegen's attestation artifacts, and verification
+// runs project-level `make verus` (every component crate plus the system-property proof
+// crate) instead of a single crate
+val sysPropProjects = ISZ(
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
+)
+
 for (p <- projects) {
   val root = home / p
   if ((root / "aadl" / "bin").exists) {
@@ -52,7 +65,11 @@ for (p <- projects) {
   }
   if ((root / "sysmlv2" / "bin").exists) {
     if (Os.isLinux) {
-      val ret = buildSysmlProject(root)
+      val isSysProp = ops.ISZOps(sysPropProjects).contains(p)
+      val ret = buildSysmlProject(
+        root = root,
+        modelDirName = if (isSysProp) "struct-split" else "isolette-simple",
+        systemLevelVerus = isSysProp)
       assert(ret)
     }
   }
@@ -112,7 +129,7 @@ object Helper {
     return r.exitCode
   }
 
-  def buildSysmlProject(root: Os.Path): B = {
+  def buildSysmlProject(root: Os.Path, modelDirName: String, systemLevelVerus: B): B = {
     if (Os.env("MICROKIT_SDK").isEmpty) {
       println("MICROKIT_SDK environment variable not set")
       return F
@@ -141,15 +158,24 @@ object Helper {
     var ret = run(s"Cleaning $microkitDir", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "clean.cmd"} $microkitDir")
 
     if (ret == 0) {
-      ret = run(s"Running HAMR codegen", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "run-hamr.cmd"} --platform Microkit".at(sysmlv2Dir / "isolette-simple"))
+      ret = run(s"Running HAMR codegen", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "run-hamr.cmd"} --platform Microkit".at(sysmlv2Dir / modelDirName))
     }
 
     if (ret == 0) {
+      if (systemLevelVerus) {
+        // the system-property projects do not commit codegen's attestation artifacts
+        (microkitDir / "attestation").removeAll()
+      }
+
       ret = run("Building the image", F, proc"make RUST_MAKE_TARGET=build-release".at(microkitDir))
 
       if (ret == 0) {
-        val thermCrateDir = microkitDir / "crates" / "thermostat_thermostat"
-        ret = run("Verifying thermostat", F, proc"make verus".at(thermCrateDir))
+        if (systemLevelVerus) {
+          ret = run("Verifying the component crates and the system-property proof crate", F, proc"make verus".at(microkitDir))
+        } else {
+          val thermCrateDir = microkitDir / "crates" / "thermostat_thermostat"
+          ret = run("Verifying thermostat", F, proc"make verus".at(thermCrateDir))
+        }
       }
 
       if (ret == 0) {
@@ -191,9 +217,10 @@ object Helper {
     println(s"Zipping $root")
     for (f <- ISZ(
       root / "hamr" / "slang" / ".bloop",
-      root / "hamr" / "slang" / ".idea", 
-      root / "hamr" / "slang" / "out")) 
+      root / "hamr" / "slang" / ".idea",
+      root / "hamr" / "slang" / "out")) {
       f.removeAll()
+    }
     val z7 = appDir.up / "7zz"
     val zipFile = zipDir / s"${root.name}.zip"
     zipFile.removeAll()
