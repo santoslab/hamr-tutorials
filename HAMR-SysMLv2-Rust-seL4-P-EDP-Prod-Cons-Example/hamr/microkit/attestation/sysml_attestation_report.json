@@ -107,11 +107,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/cons_cons\/src\/component\/cons_cons_app.rs",
-                  "beginLine": 111,
+                  "beginLine": 122,
                   "beginCol": 3,
-                  "endLine": 114,
+                  "endLine": 125,
                   "endCol": 3,
-                  "offset": 3057,
+                  "offset": 3723,
                   "length": 58
                 }
             }

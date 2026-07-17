@@ -370,7 +370,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example\/sysmlv2\/prod-cons\/ProdCons.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example\/sysmlv2\/prod-cons\/ProdCons.sysml"
                       },
                       "beginLine" : 48,
                       "beginColumn" : 4,
@@ -590,10 +590,10 @@
                               },
                               "beginLine" : 75,
                               "beginColumn" : 5,
-                              "endLine" : 112,
+                              "endLine" : 116,
                               "endColumn" : 5,
                               "offset" : 2360,
-                              "length" : 1138
+                              "length" : 1795
                             }
                           ]
                         ]
@@ -779,7 +779,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example\/sysmlv2\/prod-cons\/ProdCons.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example\/sysmlv2\/prod-cons\/ProdCons.sysml"
                       },
                       "beginLine" : 97,
                       "beginColumn" : 4,
@@ -983,10 +983,10 @@
                               },
                               "beginLine" : 35,
                               "beginColumn" : 5,
-                              "endLine" : 45,
+                              "endLine" : 50,
                               "endColumn" : 5,
                               "offset" : 869,
-                              "length" : 351
+                              "length" : 613
                             }
                           ],
                           [
@@ -997,12 +997,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/cons_cons\/src\/component\/cons_cons_app.rs"
                               },
-                              "beginLine" : 50,
+                              "beginLine" : 55,
                               "beginColumn" : 5,
-                              "endLine" : 70,
+                              "endLine" : 81,
                               "endColumn" : 5,
-                              "offset" : 1355,
-                              "length" : 679
+                              "offset" : 1617,
+                              "length" : 1083
                             }
                           ]
                         ]
@@ -1059,11 +1059,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/cons_cons\/src\/component\/cons_cons_app.rs"
                               },
-                              "beginLine" : 111,
+                              "beginLine" : 122,
                               "beginColumn" : 3,
-                              "endLine" : 114,
+                              "endLine" : 125,
                               "endColumn" : 3,
-                              "offset" : 3057,
+                              "offset" : 3723,
                               "length" : 58
                             }
                           ]

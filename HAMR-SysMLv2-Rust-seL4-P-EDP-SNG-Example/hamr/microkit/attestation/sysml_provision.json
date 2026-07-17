@@ -19,6 +19,8 @@
           "%%workspace_dir%%/sysmlv2/aadl-lib/hamr.aadl.library/CASE_Scheduling.sysml",
           "%%workspace_dir%%/sysmlv2/aadl-lib/hamr.aadl.library/HAMR.sysml",
           "%%workspace_dir%%/sysmlv2/aadl-lib/hamr.aadl.library/HAMR_AADL.sysml",
+          "%%workspace_dir%%/sysmlv2/aadl-lib/hamr.aadl.library/HAMR_Microkit.sysml",
+          "%%workspace_dir%%/sysmlv2/aadl-lib/hamr.aadl.library/HAMR_ROS.sysml",
           "%%workspace_dir%%/sysmlv2/aadl-lib/hamr.aadl.library/HAMR_Time_Units.sysml",
           "%%workspace_dir%%/sysmlv2/sng/GUMBOLib.sysml",
           "%%workspace_dir%%/sysmlv2/sng/Platform.sysml",

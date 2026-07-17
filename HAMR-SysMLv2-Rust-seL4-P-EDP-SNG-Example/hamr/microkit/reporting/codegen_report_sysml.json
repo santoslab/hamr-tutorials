@@ -600,7 +600,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 80,
                       "beginColumn" : 8,
@@ -1343,7 +1343,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 99,
                       "beginColumn" : 8,
@@ -2054,7 +2054,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 117,
                       "beginColumn" : 8,
@@ -2326,7 +2326,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 134,
                       "beginColumn" : 8,
