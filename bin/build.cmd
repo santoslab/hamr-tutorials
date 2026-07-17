@@ -46,6 +46,7 @@ val projects = ISZ(
 
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example",
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example",
 
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
@@ -63,6 +64,7 @@ val sysPropProjects = ISZ(
 val projectLevelVerusProjects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example",
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
 )

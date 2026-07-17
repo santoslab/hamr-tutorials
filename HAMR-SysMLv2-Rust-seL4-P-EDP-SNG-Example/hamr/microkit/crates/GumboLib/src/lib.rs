@@ -12,7 +12,10 @@
 #![allow(unused_unsafe)]
 #![allow(unused_variables)]
 
-// This file will not be overwritten if codegen is rerun
+#![feature(proc_macro_hygiene)]
+#![cfg_attr(not(verus_keep_ghost), feature(stmt_expr_attributes))]
+
+// This file will not be overwritten if HAMR codegen is rerun
 
 use data::*;
 use vstd::prelude::*;
@@ -75,6 +78,7 @@ pub fn equalMessage(
 // END MARKER GUMBO RUST MARKER
 
 verus! {
+
   // BEGIN MARKER GUMBO VERUS MARKER
   pub open spec fn clampedPayloadLowerBound_spec() -> i32
   {
@@ -119,4 +123,5 @@ verus! {
     equalSecurityLevel_spec(m1, m2) && equalPayload_spec(m1, m2)
   }
   // END MARKER GUMBO VERUS MARKER
+
 }

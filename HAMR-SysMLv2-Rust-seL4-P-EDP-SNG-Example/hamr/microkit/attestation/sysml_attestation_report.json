@@ -1,0 +1,275 @@
+{
+  "type": "AttestationReport",
+  "reports": [
+    {
+      "type": "ComponentReport",
+      "idPath": ["SNG_System_Instance", "gate", "gate"],
+      "classifier": ["SNG_Software", "Gate"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "Req_C_Drop_Critical",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SNG_Software::Gate",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/SNG_Software.sysml",
+                  "beginLine": 54,
+                  "beginCol": 16,
+                  "endLine": 56,
+                  "endCol": 42,
+                  "offset": 2111,
+                  "length": 178
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/gate_gate\/src\/component\/gate_gate_app.rs",
+                  "beginLine": 63,
+                  "beginCol": 11,
+                  "endLine": 66,
+                  "endCol": 30,
+                  "offset": 2020,
+                  "length": 155
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "Req_R1_Pass_Restricted",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SNG_Software::Gate",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/SNG_Software.sysml",
+                  "beginLine": 58,
+                  "beginCol": 16,
+                  "endLine": 60,
+                  "endCol": 102,
+                  "offset": 2308,
+                  "length": 243
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked GUMBO Annex Library Method: GumboLib::equalMessage",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/GUMBOLib.sysml",
+                  "beginLine": 27,
+                  "beginCol": 6,
+                  "endLine": 29,
+                  "endCol": 58,
+                  "offset": 1056,
+                  "length": 180
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked GUMBO Annex Library Method: GumboLib::equalSecurityLevel",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/GUMBOLib.sysml",
+                  "beginLine": 19,
+                  "beginCol": 6,
+                  "endLine": 21,
+                  "endCol": 49,
+                  "offset": 696,
+                  "length": 183
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked GUMBO Annex Library Method: GumboLib::equalPayload",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/GUMBOLib.sysml",
+                  "beginLine": 23,
+                  "beginCol": 6,
+                  "endLine": 25,
+                  "endCol": 35,
+                  "offset": 889,
+                  "length": 157
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/gate_gate\/src\/component\/gate_gate_app.rs",
+                  "beginLine": 67,
+                  "beginCol": 11,
+                  "endLine": 70,
+                  "endCol": 80,
+                  "offset": 2220,
+                  "length": 207
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "Req_P_Pass_Public",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SNG_Software::Gate",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/SNG_Software.sysml",
+                  "beginLine": 62,
+                  "beginCol": 16,
+                  "endLine": 64,
+                  "endCol": 102,
+                  "offset": 2570,
+                  "length": 234
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked GUMBO Annex Library Method: GumboLib::equalMessage",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/GUMBOLib.sysml",
+                  "beginLine": 27,
+                  "beginCol": 6,
+                  "endLine": 29,
+                  "endCol": 58,
+                  "offset": 1056,
+                  "length": 180
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked GUMBO Annex Library Method: GumboLib::equalSecurityLevel",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/GUMBOLib.sysml",
+                  "beginLine": 19,
+                  "beginCol": 6,
+                  "endLine": 21,
+                  "endCol": 49,
+                  "offset": 696,
+                  "length": 183
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Invoked GUMBO Annex Library Method: GumboLib::equalPayload",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/GUMBOLib.sysml",
+                  "beginLine": 23,
+                  "beginCol": 6,
+                  "endLine": 25,
+                  "endCol": 35,
+                  "offset": 889,
+                  "length": 157
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/gate_gate\/src\/component\/gate_gate_app.rs",
+                  "beginLine": 71,
+                  "beginCol": 11,
+                  "endLine": 74,
+                  "endCol": 80,
+                  "offset": 2489,
+                  "length": 203
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "No_Input_No_Output",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SNG_Software::Gate",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/sng\/SNG_Software.sysml",
+                  "beginLine": 66,
+                  "beginCol": 16,
+                  "endLine": 67,
+                  "endCol": 64,
+                  "offset": 2823,
+                  "length": 94
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/gate_gate\/src\/component\/gate_gate_app.rs",
+                  "beginLine": 75,
+                  "beginCol": 11,
+                  "endLine": 76,
+                  "endCol": 55,
+                  "offset": 2755,
+                  "length": 56
+                }
+            }
+          ]
+        }
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["SNG_System_Instance", "msg_filter", "msg_filter"],
+      "classifier": ["SNG_Software", "Filter"],
+      "reports": [
+       ]
+    }
+  ]
+}

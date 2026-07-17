@@ -69,10 +69,9 @@ verus! {
         // case Req_R2_Restricted_Clamp
         (old(api).input.is_some() &&
           (old(api).input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Restricted)) ==>
-          (api.output.is_some() &&
-             (GumboLib::equalSecurityLevel_spec(api.input.unwrap(), api.output.unwrap()) &&
-               (GumboLib::clampedPayload_spec(api.output.unwrap()) &&
-                 (GumboLib::clampedPayload_spec(api.input.unwrap()) ==> GumboLib::equalPayload_spec(api.input.unwrap(), api.output.unwrap()))))),
+          (api.output.is_some() && GumboLib::equalSecurityLevel_spec(api.input.unwrap(), api.output.unwrap()) &&
+             GumboLib::clampedPayload_spec(api.output.unwrap()) &&
+             (GumboLib::clampedPayload_spec(api.input.unwrap()) ==> GumboLib::equalPayload_spec(api.input.unwrap(), api.output.unwrap()))),
         // case No_Input
         (!(old(api).input.is_some())) ==>
           (api.output.is_none()),

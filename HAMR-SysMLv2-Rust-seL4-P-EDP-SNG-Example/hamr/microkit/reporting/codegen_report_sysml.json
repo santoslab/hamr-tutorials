@@ -1,0 +1,2585 @@
+{
+  "type" : "CodegenReports",
+  "reports" : {
+    "type" : "Map",
+    "entries" : [
+      [
+        "KEY_TOOL_REPORT",
+        {
+          "type" : "ToolReport",
+          "commandLineArgs" : "--sourcepath ..\/aadl-lib:. --platform Microkit --output-dir ..\/..\/hamr --package-name base --workspace-root-dir ..\/..",
+          "status" : {
+            "type" : "Status",
+            "value" : "Success"
+          },
+          "warningMessages" : [
+          ],
+          "errorMessages" : [
+          ],
+          "resources" : [
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_aadl_types.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_event_counter.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_queue_SNG_Data_Model_Message_1.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/src\/sb_queue_SNG_Data_Model_Message_1.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_queue_SNG_Data_Model_Message_1.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/src\/sb_queue_SNG_Data_Model_Message_1.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_queue_SNG_Data_Model_Message_1.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/src\/sb_queue_SNG_Data_Model_Message_1.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "types\/include\/sb_types.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/gate_gate\/src\/gate_gate_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/gate_gate\/src\/gate_gate.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/gate_gate\/src\/gate_gate_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/gate_gate\/include\/gate_gate.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/msg_filter_msg_filter\/include\/msg_filter_msg_filter.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_sender_test_sender\/src\/test_sender_test_sender_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_sender_test_sender\/src\/test_sender_test_sender.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_sender_test_sender\/src\/test_sender_test_sender_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_sender_test_sender\/include\/test_sender_test_sender.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_receiver_test_receiver\/src\/test_receiver_test_receiver_MON.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_receiver_test_receiver\/src\/test_receiver_test_receiver.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_receiver_test_receiver\/src\/test_receiver_test_receiver_user.c",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/test_receiver_test_receiver\/include\/test_receiver_test_receiver.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "components\/pacer\/src\/pacer.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "Makefile",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "system.mk",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/include\/printf.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/src\/printf.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/include\/util.h",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "util\/src\/util.c",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/SNG_Data_Model\/SecurityLevel.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/SNG_Data_Model\/Message.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/SNG_Data_Model\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/sb_event_counter.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/sb_microkit_types.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/data\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/bridge\/test_sender_test_sender_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/bridge\/extern_c_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/bridge\/test_receiver_test_receiver_api.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/bridge\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/component\/gate_gate_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/component\/msg_filter_msg_filter_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/component\/test_sender_test_sender_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/lib.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/logging.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/component\/test_receiver_test_receiver_app.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/component\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/Makefile",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_sender_test_sender\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/test\/mod.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/test\/tests.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/test\/util\/mod.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/test\/util\/generators.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/test_receiver_test_receiver\/src\/test\/util\/test_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/GumboLib\/src\/lib.rs",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/GumboLib\/Cargo.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/GumboLib\/rust-toolchain.toml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/gate_gate\/src\/test\/util\/cb_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "crates\/msg_filter_msg_filter\/src\/test\/util\/cb_apis.rs",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "microkit.system",
+              "overwrittenIfExists" : true
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "microkit.schedule.xml",
+              "overwrittenIfExists" : false
+            },
+            {
+              "type" : "ResourceReport",
+              "path" : "microkit.dot",
+              "overwrittenIfExists" : true
+            }
+          ]
+        }
+      ],
+      [
+        "MicrokitReporterPlugin",
+        {
+          "type" : "org.sireum.hamr.codegen.microkit.reporting.MicrokitReport",
+          "componentReport" : {
+            "type" : "HashSMap",
+            "size" : 4,
+            "entries" : [
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["SNG_System_Instance", "gate", "gate"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["SNG_System_Instance", "gate", "gate"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "SNG_Software::Gate",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                      },
+                      "beginLine" : 80,
+                      "beginColumn" : 8,
+                      "endLine" : 80,
+                      "endColumn" : 24,
+                      "offset" : 3121,
+                      "length" : 16
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 2,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["SNG_System_Instance", "gate", "gate", "input"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["SNG_System_Instance", "gate", "gate", "input"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "In"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "SNG_Data_Model::Message"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/sng\/SNG_Software.sysml"
+                            },
+                            "beginLine" : 40,
+                            "beginColumn" : 8,
+                            "endLine" : 40,
+                            "endColumn" : 60,
+                            "offset" : 1461,
+                            "length" : 52
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
+                                },
+                                "beginLine" : 59,
+                                "beginColumn" : 5,
+                                "endLine" : 66,
+                                "endColumn" : 5,
+                                "offset" : 1505,
+                                "length" : 258
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
+                                },
+                                "beginLine" : 23,
+                                "beginColumn" : 5,
+                                "endLine" : 30,
+                                "endColumn" : 5,
+                                "offset" : 499,
+                                "length" : 231
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 18,
+                                "beginColumn" : 1,
+                                "endLine" : 28,
+                                "endColumn" : 1,
+                                "offset" : 439,
+                                "length" : 258
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 60,
+                                "offset" : 315,
+                                "length" : 57
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/gate_gate\/src\/gate_gate.c"
+                                },
+                                "beginLine" : 29,
+                                "beginColumn" : 1,
+                                "endLine" : 32,
+                                "endColumn" : 1,
+                                "offset" : 960,
+                                "length" : 125
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/gate_gate\/src\/gate_gate.c"
+                                },
+                                "beginLine" : 10,
+                                "beginColumn" : 1,
+                                "endLine" : 10,
+                                "endColumn" : 60,
+                                "offset" : 282,
+                                "length" : 59
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 16,
+                                "beginColumn" : 7,
+                                "endLine" : 20,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["SNG_System_Instance", "gate", "gate", "output"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["SNG_System_Instance", "gate", "gate", "output"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "Out"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "SNG_Data_Model::Message"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/sng\/SNG_Software.sysml"
+                            },
+                            "beginLine" : 41,
+                            "beginColumn" : 8,
+                            "endLine" : 41,
+                            "endColumn" : 62,
+                            "offset" : 1523,
+                            "length" : 54
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
+                                },
+                                "beginLine" : 43,
+                                "beginColumn" : 5,
+                                "endLine" : 55,
+                                "endColumn" : 5,
+                                "offset" : 1072,
+                                "length" : 358
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 5,
+                                "endLine" : 18,
+                                "endColumn" : 5,
+                                "offset" : 274,
+                                "length" : 136
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 30,
+                                "beginColumn" : 1,
+                                "endLine" : 35,
+                                "endColumn" : 1,
+                                "offset" : 700,
+                                "length" : 179
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 15,
+                                "beginColumn" : 3,
+                                "endLine" : 15,
+                                "endColumn" : 61,
+                                "offset" : 376,
+                                "length" : 58
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/gate_gate\/src\/gate_gate.c"
+                                },
+                                "beginLine" : 15,
+                                "beginColumn" : 1,
+                                "endLine" : 19,
+                                "endColumn" : 1,
+                                "offset" : 429,
+                                "length" : 204
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/gate_gate\/src\/gate_gate.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 61,
+                                "offset" : 220,
+                                "length" : 60
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 11,
+                                "beginColumn" : 7,
+                                "endLine" : 15,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/component\/gate_gate_app.rs"
+                              },
+                              "beginLine" : 39,
+                              "beginColumn" : 5,
+                              "endLine" : 47,
+                              "endColumn" : 5,
+                              "offset" : 1119,
+                              "length" : 322
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/component\/gate_gate_app.rs"
+                              },
+                              "beginLine" : 52,
+                              "beginColumn" : 5,
+                              "endLine" : 103,
+                              "endColumn" : 5,
+                              "offset" : 1576,
+                              "length" : 2087
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/gate_gate\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboReport",
+                      "stateReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "methodsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "invariantsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "integrationReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 1,
+                            "entries" : [
+                              [
+                                "No_Critical_Output",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
+                                  },
+                                  "beginLine" : 47,
+                                  "beginColumn" : 11,
+                                  "endLine" : 48,
+                                  "endColumn" : 50,
+                                  "offset" : 1199,
+                                  "length" : 51
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      },
+                      "initializeReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "computeReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboComputeReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 4,
+                            "entries" : [
+                              [
+                                "Req_C_Drop_Critical",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/gate_gate\/src\/component\/gate_gate_app.rs"
+                                  },
+                                  "beginLine" : 63,
+                                  "beginColumn" : 11,
+                                  "endLine" : 66,
+                                  "endColumn" : 30,
+                                  "offset" : 2020,
+                                  "length" : 155
+                                }
+                              ],
+                              [
+                                "Req_R1_Pass_Restricted",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/gate_gate\/src\/component\/gate_gate_app.rs"
+                                  },
+                                  "beginLine" : 67,
+                                  "beginColumn" : 11,
+                                  "endLine" : 70,
+                                  "endColumn" : 80,
+                                  "offset" : 2220,
+                                  "length" : 207
+                                }
+                              ],
+                              [
+                                "Req_P_Pass_Public",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/gate_gate\/src\/component\/gate_gate_app.rs"
+                                  },
+                                  "beginLine" : 71,
+                                  "beginColumn" : 11,
+                                  "endLine" : 74,
+                                  "endColumn" : 80,
+                                  "offset" : 2489,
+                                  "length" : 203
+                                }
+                              ],
+                              [
+                                "No_Input_No_Output",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/gate_gate\/src\/component\/gate_gate_app.rs"
+                                  },
+                                  "beginLine" : 75,
+                                  "beginColumn" : 11,
+                                  "endLine" : 76,
+                                  "endColumn" : 55,
+                                  "offset" : 2755,
+                                  "length" : 56
+                                }
+                              ]
+                            ]
+                          },
+                          "casesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "handlers" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gumboXReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
+                      "gumboxMethods" : {
+                        "type" : "HashSMap",
+                        "size" : 9,
+                        "entries" : [
+                          [
+                            "I_Guar_output",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 21,
+                              "beginColumn" : 1,
+                              "endLine" : 24,
+                              "endColumn" : 1,
+                              "offset" : 372,
+                              "length" : 105
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_output",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 30,
+                              "beginColumn" : 1,
+                              "endLine" : 36,
+                              "endColumn" : 1,
+                              "offset" : 599,
+                              "length" : 151
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 42,
+                              "beginColumn" : 1,
+                              "endLine" : 46,
+                              "endColumn" : 1,
+                              "offset" : 860,
+                              "length" : 186
+                            }
+                          ],
+                          [
+                            "compute_spec_Req_C_Drop_Critical_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 54,
+                              "beginColumn" : 1,
+                              "endLine" : 62,
+                              "endColumn" : 1,
+                              "offset" : 1217,
+                              "length" : 305
+                            }
+                          ],
+                          [
+                            "compute_spec_Req_R1_Pass_Restricted_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 70,
+                              "beginColumn" : 1,
+                              "endLine" : 78,
+                              "endColumn" : 1,
+                              "offset" : 1696,
+                              "length" : 377
+                            }
+                          ],
+                          [
+                            "compute_spec_Req_P_Pass_Public_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 86,
+                              "beginColumn" : 1,
+                              "endLine" : 94,
+                              "endColumn" : 1,
+                              "offset" : 2242,
+                              "length" : 368
+                            }
+                          ],
+                          [
+                            "compute_spec_No_Input_No_Output_guarantee",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 102,
+                              "beginColumn" : 1,
+                              "endLine" : 109,
+                              "endColumn" : 1,
+                              "offset" : 2780,
+                              "length" : 219
+                            }
+                          ],
+                          [
+                            "compute_CEP_T_Guar",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 116,
+                              "beginColumn" : 1,
+                              "endLine" : 126,
+                              "endColumn" : 1,
+                              "offset" : 3180,
+                              "length" : 498
+                            }
+                          ],
+                          [
+                            "compute_CEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_GUMBOX.rs"
+                              },
+                              "beginLine" : 133,
+                              "beginColumn" : 1,
+                              "endLine" : 144,
+                              "endColumn" : 1,
+                              "offset" : 3840,
+                              "length" : 390
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["SNG_System_Instance", "msg_filter", "msg_filter"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["SNG_System_Instance", "msg_filter", "msg_filter"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "SNG_Software::Filter",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                      },
+                      "beginLine" : 99,
+                      "beginColumn" : 8,
+                      "endLine" : 99,
+                      "endColumn" : 32,
+                      "offset" : 3857,
+                      "length" : 24
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 2,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["SNG_System_Instance", "msg_filter", "msg_filter", "input"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["SNG_System_Instance", "msg_filter", "msg_filter", "input"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "In"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "SNG_Data_Model::Message"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/sng\/SNG_Software.sysml"
+                            },
+                            "beginLine" : 82,
+                            "beginColumn" : 8,
+                            "endLine" : 82,
+                            "endColumn" : 60,
+                            "offset" : 3405,
+                            "length" : 52
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
+                                },
+                                "beginLine" : 59,
+                                "beginColumn" : 5,
+                                "endLine" : 69,
+                                "endColumn" : 5,
+                                "offset" : 1692,
+                                "length" : 384
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
+                                },
+                                "beginLine" : 23,
+                                "beginColumn" : 5,
+                                "endLine" : 33,
+                                "endColumn" : 5,
+                                "offset" : 559,
+                                "length" : 357
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 18,
+                                "beginColumn" : 1,
+                                "endLine" : 28,
+                                "endColumn" : 1,
+                                "offset" : 439,
+                                "length" : 258
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 60,
+                                "offset" : 315,
+                                "length" : 57
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter.c"
+                                },
+                                "beginLine" : 23,
+                                "beginColumn" : 1,
+                                "endLine" : 26,
+                                "endColumn" : 1,
+                                "offset" : 801,
+                                "length" : 125
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 60,
+                                "offset" : 268,
+                                "length" : 59
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 34,
+                                "beginColumn" : 7,
+                                "endLine" : 38,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["SNG_System_Instance", "msg_filter", "msg_filter", "output"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["SNG_System_Instance", "msg_filter", "msg_filter", "output"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "Out"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "SNG_Data_Model::Message"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/sng\/SNG_Software.sysml"
+                            },
+                            "beginLine" : 83,
+                            "beginColumn" : 8,
+                            "endLine" : 83,
+                            "endColumn" : 62,
+                            "offset" : 3467,
+                            "length" : 54
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
+                                },
+                                "beginLine" : 46,
+                                "beginColumn" : 5,
+                                "endLine" : 55,
+                                "endColumn" : 5,
+                                "offset" : 1342,
+                                "length" : 251
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 5,
+                                "endLine" : 18,
+                                "endColumn" : 5,
+                                "offset" : 310,
+                                "length" : 136
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 30,
+                                "beginColumn" : 1,
+                                "endLine" : 35,
+                                "endColumn" : 1,
+                                "offset" : 700,
+                                "length" : 179
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 15,
+                                "beginColumn" : 3,
+                                "endLine" : 15,
+                                "endColumn" : 61,
+                                "offset" : 376,
+                                "length" : 58
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter.c"
+                                },
+                                "beginLine" : 28,
+                                "beginColumn" : 1,
+                                "endLine" : 32,
+                                "endColumn" : 1,
+                                "offset" : 929,
+                                "length" : 204
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter.c"
+                                },
+                                "beginLine" : 11,
+                                "beginColumn" : 1,
+                                "endLine" : 11,
+                                "endColumn" : 61,
+                                "offset" : 388,
+                                "length" : 60
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 39,
+                                "beginColumn" : 7,
+                                "endLine" : 43,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/component\/msg_filter_msg_filter_app.rs"
+                              },
+                              "beginLine" : 41,
+                              "beginColumn" : 5,
+                              "endLine" : 49,
+                              "endColumn" : 5,
+                              "offset" : 1316,
+                              "length" : 346
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/component\/msg_filter_msg_filter_app.rs"
+                              },
+                              "beginLine" : 54,
+                              "beginColumn" : 5,
+                              "endLine" : 121,
+                              "endColumn" : 5,
+                              "offset" : 1797,
+                              "length" : 2926
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/msg_filter_msg_filter\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboReport",
+                      "stateReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "methodsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "invariantsReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "integrationReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 1,
+                            "entries" : [
+                              [
+                                "No_Critical_Input",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
+                                  },
+                                  "beginLine" : 65,
+                                  "beginColumn" : 13,
+                                  "endLine" : 66,
+                                  "endColumn" : 60,
+                                  "offset" : 1946,
+                                  "length" : 61
+                                }
+                              ]
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          }
+                        }
+                      },
+                      "initializeReport" : {
+                        "type" : "HashSMap",
+                        "size" : 0,
+                        "entries" : [
+                        ]
+                      },
+                      "computeReport" : {
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboComputeReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "casesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 3,
+                            "entries" : [
+                              [
+                                "Req_P_Public_Pass",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/msg_filter_msg_filter\/src\/component\/msg_filter_msg_filter_app.rs"
+                                  },
+                                  "beginLine" : 65,
+                                  "beginColumn" : 11,
+                                  "endLine" : 68,
+                                  "endColumn" : 81,
+                                  "offset" : 2258,
+                                  "length" : 216
+                                }
+                              ],
+                              [
+                                "Req_R2_Restricted_Clamp",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/msg_filter_msg_filter\/src\/component\/msg_filter_msg_filter_app.rs"
+                                  },
+                                  "beginLine" : 69,
+                                  "beginColumn" : 11,
+                                  "endLine" : 72,
+                                  "endColumn" : 87,
+                                  "offset" : 2538,
+                                  "length" : 226
+                                }
+                              ],
+                              [
+                                "No_Input",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/msg_filter_msg_filter\/src\/component\/msg_filter_msg_filter_app.rs"
+                                  },
+                                  "beginLine" : 75,
+                                  "beginColumn" : 11,
+                                  "endLine" : 77,
+                                  "endColumn" : 32,
+                                  "offset" : 3021,
+                                  "length" : 75
+                                }
+                              ]
+                            ]
+                          },
+                          "handlers" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gumboXReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
+                      "gumboxMethods" : {
+                        "type" : "HashSMap",
+                        "size" : 8,
+                        "entries" : [
+                          [
+                            "I_Assm_input",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 21,
+                              "beginColumn" : 1,
+                              "endLine" : 24,
+                              "endColumn" : 1,
+                              "offset" : 373,
+                              "length" : 102
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_input",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 30,
+                              "beginColumn" : 1,
+                              "endLine" : 36,
+                              "endColumn" : 1,
+                              "offset" : 598,
+                              "length" : 146
+                            }
+                          ],
+                          [
+                            "compute_CEP_Pre",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 42,
+                              "beginColumn" : 1,
+                              "endLine" : 48,
+                              "endColumn" : 1,
+                              "offset" : 863,
+                              "length" : 214
+                            }
+                          ],
+                          [
+                            "compute_case_Req_P_Public_Pass",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 54,
+                              "beginColumn" : 1,
+                              "endLine" : 62,
+                              "endColumn" : 1,
+                              "offset" : 1210,
+                              "length" : 358
+                            }
+                          ],
+                          [
+                            "compute_case_Req_R2_Restricted_Clamp",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 68,
+                              "beginColumn" : 1,
+                              "endLine" : 80,
+                              "endColumn" : 1,
+                              "offset" : 1707,
+                              "length" : 577
+                            }
+                          ],
+                          [
+                            "compute_case_No_Input",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 86,
+                              "beginColumn" : 1,
+                              "endLine" : 93,
+                              "endColumn" : 1,
+                              "offset" : 2408,
+                              "length" : 199
+                            }
+                          ],
+                          [
+                            "compute_CEP_T_Case",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 100,
+                              "beginColumn" : 1,
+                              "endLine" : 109,
+                              "endColumn" : 1,
+                              "offset" : 2789,
+                              "length" : 369
+                            }
+                          ],
+                          [
+                            "compute_CEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_GUMBOX.rs"
+                              },
+                              "beginLine" : 116,
+                              "beginColumn" : 1,
+                              "endLine" : 124,
+                              "endColumn" : 1,
+                              "offset" : 3326,
+                              "length" : 267
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["SNG_System_Instance", "test_sender", "test_sender"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["SNG_System_Instance", "test_sender", "test_sender"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "SNG_Software::TestSender",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                      },
+                      "beginLine" : 117,
+                      "beginColumn" : 8,
+                      "endLine" : 117,
+                      "endColumn" : 37,
+                      "offset" : 4557,
+                      "length" : 29
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 1,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["SNG_System_Instance", "test_sender", "test_sender", "output"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["SNG_System_Instance", "test_sender", "test_sender", "output"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "Out"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "SNG_Data_Model::Message"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/sng\/SNG_Software.sysml"
+                            },
+                            "beginLine" : 124,
+                            "beginColumn" : 8,
+                            "endLine" : 124,
+                            "endColumn" : 62,
+                            "offset" : 5385,
+                            "length" : 54
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_sender_test_sender\/src\/bridge\/test_sender_test_sender_api.rs"
+                                },
+                                "beginLine" : 33,
+                                "beginColumn" : 5,
+                                "endLine" : 41,
+                                "endColumn" : 5,
+                                "offset" : 918,
+                                "length" : 212
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_sender_test_sender\/src\/bridge\/test_sender_test_sender_api.rs"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 5,
+                                "endLine" : 18,
+                                "endColumn" : 5,
+                                "offset" : 316,
+                                "length" : 136
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_sender_test_sender\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 17,
+                                "beginColumn" : 1,
+                                "endLine" : 22,
+                                "endColumn" : 1,
+                                "offset" : 378,
+                                "length" : 179
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_sender_test_sender\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 61,
+                                "offset" : 315,
+                                "length" : 58
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/test_sender_test_sender\/src\/test_sender_test_sender.c"
+                                },
+                                "beginLine" : 13,
+                                "beginColumn" : 1,
+                                "endLine" : 17,
+                                "endColumn" : 1,
+                                "offset" : 365,
+                                "length" : 204
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/test_sender_test_sender\/src\/test_sender_test_sender.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 61,
+                                "offset" : 276,
+                                "length" : 60
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 57,
+                                "beginColumn" : 7,
+                                "endLine" : 61,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/test_sender_test_sender\/src\/component\/test_sender_test_sender_app.rs"
+                              },
+                              "beginLine" : 73,
+                              "beginColumn" : 5,
+                              "endLine" : 82,
+                              "endColumn" : 5,
+                              "offset" : 2649,
+                              "length" : 387
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/test_sender_test_sender\/src\/component\/test_sender_test_sender_app.rs"
+                              },
+                              "beginLine" : 87,
+                              "beginColumn" : 5,
+                              "endLine" : 115,
+                              "endColumn" : 5,
+                              "offset" : 3171,
+                              "length" : 1416
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/test_sender_test_sender\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/test_sender_test_sender\/src\/bridge\/test_sender_test_sender_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/test_sender_test_sender\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "None"
+                  },
+                  "gumboXReport" : {
+                    "type" : "None"
+                  }
+                }
+              ],
+              [
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                  "idPath" : ["SNG_System_Instance", "test_receiver", "test_receiver"]
+                },
+                {
+                  "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentReport",
+                  "path" : ["SNG_System_Instance", "test_receiver", "test_receiver"],
+                  "kind" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.ComponentKind",
+                    "value" : "Thread"
+                  },
+                  "optModelType" : {
+                    "type" : "None"
+                  },
+                  "modelImplementation" : {
+                    "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPos",
+                    "id" : "SNG_Software::TestReceiver",
+                    "pos" : {
+                      "type" : "Position",
+                      "uriOpt" : {
+                        "type" : "Some",
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                      },
+                      "beginLine" : 134,
+                      "beginColumn" : 8,
+                      "endLine" : 134,
+                      "endColumn" : 41,
+                      "offset" : 5194,
+                      "length" : 33
+                    }
+                  },
+                  "modelProperties" : [
+                  ],
+                  "subcomponents" : [
+                  ],
+                  "ports" : {
+                    "type" : "HashSMap",
+                    "size" : 1,
+                    "entries" : [
+                      [
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.IdPathR",
+                          "idPath" : ["SNG_System_Instance", "test_receiver", "test_receiver", "input"]
+                        },
+                        {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.PortReport",
+                          "name" : ["SNG_System_Instance", "test_receiver", "test_receiver", "input"],
+                          "kind" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
+                            "value" : "EventData"
+                          },
+                          "direction" : {
+                            "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
+                            "value" : "In"
+                          },
+                          "payload" : {
+                            "type" : "Some",
+                            "value" : "SNG_Data_Model::Message"
+                          },
+                          "modelPos" : {
+                            "type" : "Position",
+                            "uriOpt" : {
+                              "type" : "Some",
+                              "value" : "..\/..\/sysmlv2\/sng\/SNG_Software.sysml"
+                            },
+                            "beginLine" : 136,
+                            "beginColumn" : 8,
+                            "endLine" : 136,
+                            "endColumn" : 60,
+                            "offset" : 5848,
+                            "length" : 52
+                          },
+                          "languageRealizations" : [
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/Verus API",
+                              "title" : "Rust\/Verus API",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_receiver_test_receiver\/src\/bridge\/test_receiver_test_receiver_api.rs"
+                                },
+                                "beginLine" : 38,
+                                "beginColumn" : 5,
+                                "endLine" : 44,
+                                "endColumn" : 5,
+                                "offset" : 1165,
+                                "length" : 217
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Unverified Rust Interface",
+                              "title" : "Unverified Rust Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_receiver_test_receiver\/src\/bridge\/test_receiver_test_receiver_api.rs"
+                                },
+                                "beginLine" : 16,
+                                "beginColumn" : 5,
+                                "endLine" : 23,
+                                "endColumn" : 5,
+                                "offset" : 416,
+                                "length" : 231
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Rust\/C Interface",
+                              "title" : "Rust\/C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_receiver_test_receiver\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 17,
+                                "beginColumn" : 1,
+                                "endLine" : 27,
+                                "endColumn" : 1,
+                                "offset" : 377,
+                                "length" : 258
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Extern",
+                              "title" : "C Extern",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "crates\/test_receiver_test_receiver\/src\/bridge\/extern_c_api.rs"
+                                },
+                                "beginLine" : 14,
+                                "beginColumn" : 3,
+                                "endLine" : 14,
+                                "endColumn" : 60,
+                                "offset" : 315,
+                                "length" : 57
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C Interface",
+                              "title" : "C Interface",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/test_receiver_test_receiver\/src\/test_receiver_test_receiver.c"
+                                },
+                                "beginLine" : 22,
+                                "beginColumn" : 1,
+                                "endLine" : 25,
+                                "endColumn" : 1,
+                                "offset" : 763,
+                                "length" : 125
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "C var_addr",
+                              "title" : "C Shared Memory Variable",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "components\/test_receiver_test_receiver\/src\/test_receiver_test_receiver.c"
+                                },
+                                "beginLine" : 9,
+                                "beginColumn" : 1,
+                                "endLine" : 9,
+                                "endColumn" : 60,
+                                "offset" : 292,
+                                "length" : 59
+                              }
+                            },
+                            {
+                              "type" : "org.sireum.hamr.codegen.microkit.reporting.PortLanguageArtifact",
+                              "name" : "Memory Map",
+                              "title" : "Memory Map",
+                              "pos" : {
+                                "type" : "Position",
+                                "uriOpt" : {
+                                  "type" : "Some",
+                                  "value" : "microkit.system"
+                                },
+                                "beginLine" : 75,
+                                "beginColumn" : 7,
+                                "endLine" : 79,
+                                "endColumn" : 9,
+                                "offset" : 0,
+                                "length" : 0
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "cCodeReport" : {
+                    "type" : "None"
+                  },
+                  "rustReport" : {
+                    "type" : "Some",
+                    "value" : {
+                      "type" : "org.sireum.hamr.codegen.microkit.reporting.RustReport",
+                      "entrypointReport" : {
+                        "type" : "HashSMap",
+                        "size" : 2,
+                        "entries" : [
+                          [
+                            "initialize",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/test_receiver_test_receiver\/src\/component\/test_receiver_test_receiver_app.rs"
+                              },
+                              "beginLine" : 62,
+                              "beginColumn" : 5,
+                              "endLine" : 71,
+                              "endColumn" : 5,
+                              "offset" : 2106,
+                              "length" : 386
+                            }
+                          ],
+                          [
+                            "timeTriggered",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/test_receiver_test_receiver\/src\/component\/test_receiver_test_receiver_app.rs"
+                              },
+                              "beginLine" : 76,
+                              "beginColumn" : 5,
+                              "endLine" : 100,
+                              "endColumn" : 5,
+                              "offset" : 2627,
+                              "length" : 1007
+                            }
+                          ]
+                        ]
+                      },
+                      "apiReport" : {
+                        "type" : "org.sireum.hamr.codegen.microkit.reporting.RustApiReport",
+                        "extern_c_apiPath" : "crates\/test_receiver_test_receiver\/src\/bridge\/extern_c_api.rs",
+                        "developerApiPath" : "crates\/test_receiver_test_receiver\/src\/bridge\/test_receiver_test_receiver_api.rs",
+                        "developerApiReport" : {
+                          "type" : "HashSMap",
+                          "size" : 0,
+                          "entries" : [
+                          ]
+                        },
+                        "testApiPath" : "crates\/test_receiver_test_receiver\/src\/test\/util\/test_apis.rs"
+                      }
+                    }
+                  },
+                  "gumboReport" : {
+                    "type" : "None"
+                  },
+                  "gumboXReport" : {
+                    "type" : "None"
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      ]
+    ]
+  }
+}
