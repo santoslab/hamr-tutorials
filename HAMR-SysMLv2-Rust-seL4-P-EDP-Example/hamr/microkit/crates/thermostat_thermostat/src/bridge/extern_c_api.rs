@@ -12,7 +12,7 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
-  fn get_temp_changed(value: *mut Isolette_Data_Model::Temp) -> bool;
+  fn get_temp_changed() -> bool;
   fn get_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool;
   fn put_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool;
 }
@@ -26,15 +26,10 @@ pub fn unsafe_get_current_temp() -> Isolette_Data_Model::Temp
   }
 }
 
-pub fn unsafe_get_temp_changed() -> Option<Isolette_Data_Model::Temp>
+pub fn unsafe_get_temp_changed() -> bool
 {
   unsafe {
-    let value: *mut Isolette_Data_Model::Temp = &mut Isolette_Data_Model::Temp::default();
-    if (get_temp_changed(value)) {
-      return Some(*value);
-    } else {
-      return None;
-    }
+    return get_temp_changed();
   }
 }
 
@@ -67,7 +62,7 @@ lazy_static::lazy_static! {
   // microkit system we would be able to mutate the shared memory for out ports since they're r/w,
   // but we couldn't do that for in ports since they are read-only
   pub static ref IN_current_temp: Mutex<Option<Isolette_Data_Model::Temp>> = Mutex::new(None);
-  pub static ref IN_temp_changed: Mutex<Option<Isolette_Data_Model::Temp>> = Mutex::new(None);
+  pub static ref IN_temp_changed: Mutex<Option<u8>> = Mutex::new(None);
   pub static ref IN_desired_temp: Mutex<Option<Isolette_Data_Model::Set_Points>> = Mutex::new(None);
   pub static ref OUT_heat_control: Mutex<Option<Isolette_Data_Model::On_Off>> = Mutex::new(None);
 }
@@ -93,12 +88,11 @@ pub fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 }
 
 #[cfg(test)]
-pub fn get_temp_changed(value: *mut Isolette_Data_Model::Temp) -> bool
+pub fn get_temp_changed() -> bool
 {
   unsafe {
     match *IN_temp_changed.lock().unwrap_or_else(|e| e.into_inner()) {
       Some(v) => {
-        *value = v;
         return true;
       },
       None => return false,

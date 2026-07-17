@@ -18,11 +18,9 @@ verus! {
     }
 
     #[verifier::external_body]
-    fn unverified_put_temp_changed(
-      &mut self,
-      value: Isolette_Data_Model::Temp)
+    fn unverified_put_temp_changed(&mut self)
     {
-      extern_api::unsafe_put_temp_changed(&value);
+      extern_api::unsafe_put_temp_changed();
     }
   }
 
@@ -35,7 +33,7 @@ verus! {
     pub api: API,
 
     pub ghost current_temp: Isolette_Data_Model::Temp,
-    pub ghost temp_changed: Option<Isolette_Data_Model::Temp>
+    pub ghost temp_changed: Option<u8>
   }
 
   impl<API: temp_sensor_temp_sensor_Put_Api> temp_sensor_temp_sensor_Application_Api<API> {
@@ -53,19 +51,13 @@ verus! {
       self.api.unverified_put_current_temp(value);
       self.current_temp = value;
     }
-    pub fn put_temp_changed(
-      &mut self,
-      value: Isolette_Data_Model::Temp)
-      requires
-        // guarantee temp_changed_range
-        (96i32 <= value.degrees) &&
-          (value.degrees <= 103i32),
+    pub fn put_temp_changed(&mut self)
       ensures
         old(self).current_temp == self.current_temp,
-        self.temp_changed == Some(value),
+        self.temp_changed == Some(0u8),
     {
-      self.api.unverified_put_temp_changed(value);
-      self.temp_changed = Some(value);
+      self.api.unverified_put_temp_changed();
+      self.temp_changed = Some(0u8);
     }
   }
 

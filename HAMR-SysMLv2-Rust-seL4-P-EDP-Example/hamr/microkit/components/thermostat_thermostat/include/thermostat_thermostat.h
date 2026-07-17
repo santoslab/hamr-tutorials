@@ -11,8 +11,8 @@
 
 bool get_current_temp(Isolette_Data_Model_Temp *data);
 bool temp_changed_is_empty(void);
-bool get_temp_changed_poll(sb_event_counter_t *numDropped, Isolette_Data_Model_Temp *data);
-bool get_temp_changed(Isolette_Data_Model_Temp *data);
+bool get_temp_changed_poll(sb_event_counter_t *numDropped);
+bool get_temp_changed();
 bool desired_temp_is_empty(void);
 bool get_desired_temp_poll(sb_event_counter_t *numDropped, Isolette_Data_Model_Set_Points *data);
 bool get_desired_temp(Isolette_Data_Model_Set_Points *data);

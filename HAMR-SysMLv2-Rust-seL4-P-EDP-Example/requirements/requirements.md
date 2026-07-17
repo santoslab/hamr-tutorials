@@ -6,9 +6,9 @@ This file contains a sketch of functional requirements for the event/event-data-
 This variant preserves the control-law semantics of the original all-DataPort
 Simple Isolette while moving to event-driven communication:
 
-- the temperature sensor announces changes of the sensed value on a `temp_changed`
-  event data port carrying the new value (the sampled `current_temp` data port is
-  retained),
+- the temperature sensor announces changes of the sensed value on a pure
+  (payload-less) `temp_changed` event port (the sampled `current_temp` data port
+  is retained and carries the value itself),
 - the operator's set points arrive at the thermostat as event data messages
   (sent only when the set points change), so the thermostat latches the most
   recently received set points,
@@ -55,8 +55,8 @@ REQ_TS_1:
   96 and 103 inclusive.
 
 REQ_TS_2:
-- the temperature sensor shall raise a `temp_changed` event, carrying the new value,
-  exactly when the sensed temperature value differs from the previously reported value.
+- the temperature sensor shall raise a `temp_changed` event exactly when the sensed
+  temperature value differs from the previously reported value.
 
 REQ_HS_1
 - The heat source is initially in the OFF state.

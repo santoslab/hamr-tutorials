@@ -47,7 +47,7 @@ package Isolette {
   part def TempSensor_Process :> Process {
      //-- I n t e r f a c e  --
     port current_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
-    port temp_changed : EventDataPort { out :>> type : Isolette_Data_Model::Temp; }
+    out port temp_changed : EventPort;
 
     //-- P r o p e r t i e s  --
     attribute :>> Domain = Isolette_Properties::Domain_TS;
@@ -100,7 +100,7 @@ package Isolette {
   part def Thermostat_Process :> Process {
     //-- I n t e r f a c e  --
     port current_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
-    port temp_changed : EventDataPort { in :>> type : Isolette_Data_Model::Temp; }
+    in port temp_changed : EventPort;
     port desired_temp : EventDataPort { in :>> type : Isolette_Data_Model::Set_Points; }
     port heat_control : EventDataPort { out :>> type : Isolette_Data_Model::On_Off; }
 

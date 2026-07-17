@@ -46,13 +46,13 @@ mod tests {
   fn run_thermostat(
     in_lastCmd: On_Off,
     current_temp: i32,
-    temp_changed: Option<i32>,
+    temp_changed: bool,
     desired_temp: Option<Set_Points>) -> Option<On_Off>
   {
     crate::thermostat_thermostat_initialize();
     test_apis::put_lastCmd(in_lastCmd);
     test_apis::put_current_temp(Temp { degrees: current_temp });
-    test_apis::put_temp_changed(temp_changed.map(|d| Temp { degrees: d }));
+    test_apis::put_temp_changed(if temp_changed { Some(0u8) } else { None });
     test_apis::put_desired_temp(desired_temp);
     crate::thermostat_thermostat_timeTriggered();
     test_apis::get_heat_control()
@@ -86,7 +86,7 @@ mod tests {
   #[serial]
   fn test_REQ_THERM_2_low_temp_turns_heat_on() {
     // temp 96 < default lower set point 98, triggered by a temp_changed event
-    let output = run_thermostat(On_Off::Off, 96, Some(96), None);
+    let output = run_thermostat(On_Off::Off, 96, true, None);
     assert!(output == Some(On_Off::Onn), "expected an On command message");
     assert!(test_apis::get_lastCmd() == On_Off::Onn);
   }
@@ -96,7 +96,7 @@ mod tests {
   fn test_REQ_THERM_3_high_temp_turns_heat_off() {
     // temp 103 > default upper set point 101; heater currently commanded On,
     // so an Off command message is sent
-    let output = run_thermostat(On_Off::Onn, 103, Some(103), None);
+    let output = run_thermostat(On_Off::Onn, 103, true, None);
     assert!(output == Some(On_Off::Off), "expected an Off command message");
     assert!(test_apis::get_lastCmd() == On_Off::Off);
   }
@@ -106,7 +106,7 @@ mod tests {
   fn test_REQ_THERM_3_heater_already_off_no_send() {
     // temp 103 > upper, but the commanded state is already Off: the control
     // law selects Off and the send-on-change policy suppresses the message
-    let output = run_thermostat(On_Off::Off, 103, Some(103), None);
+    let output = run_thermostat(On_Off::Off, 103, true, None);
     assert!(output.is_none(), "no message expected when the command is unchanged");
     assert!(test_apis::get_lastCmd() == On_Off::Off);
   }
@@ -117,7 +117,7 @@ mod tests {
     // temp 100 within the default range [98, 101]: the commanded state is
     // unchanged and no message is sent -- for both possible pre-states
     for pre in [On_Off::Off, On_Off::Onn] {
-      let output = run_thermostat(pre, 100, Some(100), None);
+      let output = run_thermostat(pre, 100, true, None);
       assert!(output.is_none(), "no message expected for in-range temperature");
       assert!(test_apis::get_lastCmd() == pre, "commanded state must be unchanged");
     }
@@ -128,7 +128,7 @@ mod tests {
   fn test_REQ_THERM_TRIGGER_no_events_no_action() {
     // no triggering event: the control logic does not run, even though the
     // current temperature is outside the desired range
-    let output = run_thermostat(On_Off::Off, 96, None, None);
+    let output = run_thermostat(On_Off::Off, 96, false, None);
     assert!(output.is_none(), "no trigger => no message");
     assert!(test_apis::get_lastCmd() == On_Off::Off, "no trigger => command unchanged");
     assert!(test_apis::get_currentSetPoints() == sp(98, 101), "no message => latch unchanged");
@@ -139,7 +139,7 @@ mod tests {
   fn test_REQ_THERM_LATCH_set_point_message_latched_and_triggers() {
     // a set point message alone is a trigger: with the new range [99, 100]
     // and temp 98 < 99 the heat is commanded On, and the message is latched
-    let output = run_thermostat(On_Off::Off, 98, None, Some(sp(99, 100)));
+    let output = run_thermostat(On_Off::Off, 98, false, Some(sp(99, 100)));
     assert!(test_apis::get_currentSetPoints() == sp(99, 100), "set points should be latched");
     assert!(output == Some(On_Off::Onn));
     assert!(test_apis::get_lastCmd() == On_Off::Onn);
@@ -151,7 +151,7 @@ mod tests {
     // dispatch 1: temperature change to 96 -> On command message sent
     crate::thermostat_thermostat_initialize();
     test_apis::put_current_temp(Temp { degrees: 96 });
-    test_apis::put_temp_changed(Some(Temp { degrees: 96 }));
+    test_apis::put_temp_changed(Some(0u8));
     test_apis::put_desired_temp(None);
     crate::thermostat_thermostat_timeTriggered();
     assert!(test_apis::get_heat_control() == Some(On_Off::Onn));
@@ -191,9 +191,9 @@ mod GUMBOX_manual_tests {
   #[test]
   #[serial]
   fn test_GUMBOX_REQ_THERM_2_low_temp() {
-    // (In_currentSetPoints, In_lastCmd, api_desired_temp, api_temp_changed, api_current_temp)
+    // (In_currentSetPoints, In_lastCmd, api_temp_changed, api_desired_temp, api_current_temp)
     let result = cb_apis::testComputeCBwGSV(
-      sp(98, 101), On_Off::Off, None, Some(Temp { degrees: 96 }), Temp { degrees: 96 });
+      sp(98, 101), On_Off::Off, Some(0u8), None, Temp { degrees: 96 });
     assert!(matches!(result, cb_apis::HarnessResult::Passed));
   }
 
@@ -202,7 +202,7 @@ mod GUMBOX_manual_tests {
   fn test_GUMBOX_REQ_THERM_3_high_temp_both_prestates() {
     for pre in [On_Off::Off, On_Off::Onn] {
       let result = cb_apis::testComputeCBwGSV(
-        sp(98, 101), pre, None, Some(Temp { degrees: 103 }), Temp { degrees: 103 });
+        sp(98, 101), pre, Some(0u8), None, Temp { degrees: 103 });
       assert!(matches!(result, cb_apis::HarnessResult::Passed),
         "failed for pre-state {:?}", pre);
     }
@@ -213,7 +213,7 @@ mod GUMBOX_manual_tests {
   fn test_GUMBOX_REQ_THERM_4_in_range_both_prestates() {
     for pre in [On_Off::Off, On_Off::Onn] {
       let result = cb_apis::testComputeCBwGSV(
-        sp(98, 101), pre, None, Some(Temp { degrees: 100 }), Temp { degrees: 100 });
+        sp(98, 101), pre, Some(0u8), None, Temp { degrees: 100 });
       assert!(matches!(result, cb_apis::HarnessResult::Passed),
         "failed for pre-state {:?}", pre);
     }
@@ -232,7 +232,7 @@ mod GUMBOX_manual_tests {
   fn test_GUMBOX_set_point_latching() {
     // new set points arrive (and act as the trigger)
     let result = cb_apis::testComputeCBwGSV(
-      sp(98, 101), On_Off::Off, Some(sp(99, 100)), None, Temp { degrees: 98 });
+      sp(98, 101), On_Off::Off, None, Some(sp(99, 100)), Temp { degrees: 98 });
     assert!(matches!(result, cb_apis::HarnessResult::Passed));
   }
 
@@ -245,7 +245,7 @@ mod GUMBOX_manual_tests {
     for pre in [On_Off::Off, On_Off::Onn] {
       for t in [95, 96, 97, 98, 99, 100, 101, 102, 103, 104] {
         let result = cb_apis::testComputeCBwGSV(
-          sp(98, 101), pre, None, Some(Temp { degrees: t }), Temp { degrees: t });
+          sp(98, 101), pre, Some(0u8), None, Temp { degrees: t });
         assert!(matches!(result, cb_apis::HarnessResult::Passed),
           "failed for pre-state {:?}, temp {}", pre, t);
       }
@@ -258,7 +258,7 @@ mod GUMBOX_manual_tests {
     // the pre-state violates the INV_CSP compute assume (lower > upper),
     // so the harness rejects the vector instead of running the entry point
     let result = cb_apis::testComputeCBwGSV(
-      sp(101, 98), On_Off::Off, None, Some(Temp { degrees: 96 }), Temp { degrees: 96 });
+      sp(101, 98), On_Off::Off, Some(0u8), None, Temp { degrees: 96 });
     assert!(matches!(result, cb_apis::HarnessResult::RejectedPrecondition));
   }
 
@@ -275,7 +275,7 @@ mod GUMBOX_manual_tests {
   fn test_GUMBOX_rejected_ill_formed_set_point_message() {
     // the incoming set point message violates the ASSM_LDT_LE_UDT
     // integration assume (lower > upper)
-    let result = cb_apis::testComputeCB(Some(sp(102, 97)), None, Temp { degrees: 100 });
+    let result = cb_apis::testComputeCB(None, Some(sp(102, 97)), Temp { degrees: 100 });
     assert!(matches!(result, cb_apis::HarnessResult::RejectedPrecondition));
   }
 }
@@ -355,8 +355,8 @@ mod GUMBOX_tests {
       ..ProptestConfig::default()
     },
     // strategies for generating each component input
+    api_temp_changed: generators::option_strategy_default(Just(0u8)),
     api_desired_temp: generators::option_strategy_bias(3, well_formed_set_points_strategy()),
-    api_temp_changed: generators::option_strategy_default(sensed_temp_strategy()),
     api_current_temp: sensed_temp_strategy()
   }
 
@@ -375,8 +375,8 @@ mod GUMBOX_tests {
     // strategies for generating each component input
     In_currentSetPoints: well_formed_set_points_strategy(),
     In_lastCmd: generators::Isolette_Data_Model_On_Off_strategy_default(),
+    api_temp_changed: generators::option_strategy_default(Just(0u8)),
     api_desired_temp: generators::option_strategy_bias(3, well_formed_set_points_strategy()),
-    api_temp_changed: generators::option_strategy_default(sensed_temp_strategy()),
     api_current_temp: sensed_temp_strategy()
   }
 
@@ -395,8 +395,8 @@ mod GUMBOX_tests {
     },
     In_currentSetPoints: Just(Set_Points { lower: Temp { degrees: 98 }, upper: Temp { degrees: 101 } }),
     In_lastCmd: generators::Isolette_Data_Model_On_Off_strategy_default(),
+    api_temp_changed: generators::option_strategy_bias(3, Just(0u8)),
     api_desired_temp: Just(None::<Set_Points>),
-    api_temp_changed: generators::option_strategy_bias(3, sensed_temp_strategy()),
     api_current_temp: prop_oneof![
       Just(Temp { degrees: 97 }),   // just below lower
       Just(Temp { degrees: 98 }),   // at lower
@@ -421,8 +421,8 @@ mod GUMBOX_tests {
     },
     In_currentSetPoints: well_formed_set_points_strategy(),
     In_lastCmd: generators::Isolette_Data_Model_On_Off_strategy_default(),
+    api_temp_changed: Just(None::<u8>),
     api_desired_temp: Just(None::<Set_Points>),
-    api_temp_changed: Just(None::<Temp>),
     api_current_temp: sensed_temp_strategy()
   }
 }

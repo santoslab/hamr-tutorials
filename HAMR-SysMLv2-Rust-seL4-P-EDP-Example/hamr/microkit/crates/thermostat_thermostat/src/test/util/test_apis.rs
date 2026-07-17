@@ -8,7 +8,7 @@ use proptest::prelude::*;
 /// container for component's incoming port values
 pub struct PreStateContainer {
   pub api_current_temp: Isolette_Data_Model::Temp,
-  pub api_temp_changed: Option<Isolette_Data_Model::Temp>,
+  pub api_temp_changed: Option<u8>,
   pub api_desired_temp: Option<Isolette_Data_Model::Set_Points>
 }
 
@@ -17,7 +17,7 @@ pub struct PreStateContainer_wGSV {
   pub In_currentSetPoints: Isolette_Data_Model::Set_Points,
   pub In_lastCmd: Isolette_Data_Model::On_Off,
   pub api_current_temp: Isolette_Data_Model::Temp,
-  pub api_temp_changed: Option<Isolette_Data_Model::Temp>,
+  pub api_temp_changed: Option<u8>,
   pub api_desired_temp: Option<Isolette_Data_Model::Set_Points>
 }
 
@@ -42,7 +42,7 @@ pub fn put_concrete_inputs_container_wGSV(container: PreStateContainer_wGSV)
 /// setter for component's incoming port values
 pub fn put_concrete_inputs(
   current_temp: Isolette_Data_Model::Temp,
-  temp_changed: Option<Isolette_Data_Model::Temp>,
+  temp_changed: Option<u8>,
   desired_temp: Option<Isolette_Data_Model::Set_Points>)
 {
   put_current_temp(current_temp);
@@ -55,7 +55,7 @@ pub fn put_concrete_inputs_wGSV(
   In_currentSetPoints: Isolette_Data_Model::Set_Points,
   In_lastCmd: Isolette_Data_Model::On_Off,
   current_temp: Isolette_Data_Model::Temp,
-  temp_changed: Option<Isolette_Data_Model::Temp>,
+  temp_changed: Option<u8>,
   desired_temp: Option<Isolette_Data_Model::Set_Points>)
 {
   put_lastCmd(In_lastCmd);
@@ -71,8 +71,8 @@ pub fn put_current_temp(value: Isolette_Data_Model::Temp)
   *extern_api::IN_current_temp.lock().unwrap_or_else(|e| e.into_inner()) = Some(value)
 }
 
-/// setter for IN EventDataPort
-pub fn put_temp_changed(value: Option<Isolette_Data_Model::Temp>)
+/// setter for IN EventPort
+pub fn put_temp_changed(value: Option<u8>)
 {
   *extern_api::IN_temp_changed.lock().unwrap_or_else(|e| e.into_inner()) = value
 }

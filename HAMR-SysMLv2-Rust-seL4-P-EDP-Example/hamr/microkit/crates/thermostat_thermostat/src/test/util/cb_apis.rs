@@ -64,13 +64,13 @@ testInitializeCB_macro {
 
 /** Contract-based test harness for the compute entry point
   *
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   */
 pub fn testComputeCB(
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp) -> HarnessResult
 {
   // Initialize the app
@@ -82,13 +82,13 @@ pub fn testComputeCB(
   let In_lastCmd: Isolette_Data_Model::On_Off = get_lastCmd();
 
   // [CheckPre]: check/filter based on pre-condition.
-  if !GUMBOX::compute_CEP_Pre (In_currentSetPoints, In_lastCmd, api_desired_temp, api_temp_changed, api_current_temp) {
+  if !GUMBOX::compute_CEP_Pre (In_currentSetPoints, In_lastCmd, api_temp_changed, api_desired_temp, api_current_temp) {
     return HarnessResult::RejectedPrecondition;
   }
 
   // [PutInPorts]: Set values on the input ports
-  put_desired_temp(api_desired_temp);
   put_temp_changed(api_temp_changed);
+  put_desired_temp(api_desired_temp);
   put_current_temp(api_current_temp);
 
   // [InvokeEntryPoint]: Invoke the entry point
@@ -100,7 +100,7 @@ pub fn testComputeCB(
   let api_heat_control = get_heat_control();
 
   // [CheckPost]: invoke the oracle function
-  if !GUMBOX::compute_CEP_Post(In_currentSetPoints, In_lastCmd, currentSetPoints, lastCmd, api_desired_temp, api_temp_changed, api_current_temp, api_heat_control) {
+  if !GUMBOX::compute_CEP_Post(In_currentSetPoints, In_lastCmd, currentSetPoints, lastCmd, api_temp_changed, api_desired_temp, api_current_temp, api_heat_control) {
     return HarnessResult::FailedPostcondition(TestCaseError::Fail("Postcondition failed: incorrect output behavior".into()));
   }
 
@@ -111,7 +111,7 @@ pub fn testComputeCB(
   */
 pub fn testComputeCB_container(container: PreStateContainer) -> HarnessResult
 {
-  return testComputeCB(container.api_desired_temp, container.api_temp_changed, container.api_current_temp)
+  return testComputeCB(container.api_temp_changed, container.api_desired_temp, container.api_current_temp)
 }
 
 #[macro_export]
@@ -120,8 +120,8 @@ testComputeCB_macro {
   (
     $test_name: ident,
     config: $config:expr,
-    api_desired_temp: $api_desired_temp_strat:expr,
     api_temp_changed: $api_temp_changed_strat:expr,
+    api_desired_temp: $api_desired_temp_strat:expr,
     api_current_temp: $api_current_temp_strat:expr
   ) => {
     proptest!{
@@ -129,10 +129,10 @@ testComputeCB_macro {
       #[test]
       #[serial]
       fn $test_name(
-        (api_desired_temp, api_temp_changed, api_current_temp)
-            in ($api_desired_temp_strat, $api_temp_changed_strat, $api_current_temp_strat)
+        (api_temp_changed, api_desired_temp, api_current_temp)
+            in ($api_temp_changed_strat, $api_desired_temp_strat, $api_current_temp_strat)
       ) {
-        match$crate::test::util::cb_apis::testComputeCB(api_desired_temp, api_temp_changed, api_current_temp) {
+        match$crate::test::util::cb_apis::testComputeCB(api_temp_changed, api_desired_temp, api_current_temp) {
           $crate::test::util::cb_apis::HarnessResult::RejectedPrecondition => {
             return Err(proptest::test_runner::TestCaseError::reject(
               "Precondition failed: invalid input combination",
@@ -152,28 +152,28 @@ testComputeCB_macro {
   *
   * @param In_currentSetPoints pre-state state variable
   * @param In_lastCmd pre-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   */
 pub fn testComputeCBwGSV(
   In_currentSetPoints: Isolette_Data_Model::Set_Points,
   In_lastCmd: Isolette_Data_Model::On_Off,
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp) -> HarnessResult
 {
   // Initialize the app
   crate::thermostat_thermostat_initialize();
 
   // [CheckPre]: check/filter based on pre-condition.
-  if !GUMBOX::compute_CEP_Pre (In_currentSetPoints, In_lastCmd, api_desired_temp, api_temp_changed, api_current_temp) {
+  if !GUMBOX::compute_CEP_Pre (In_currentSetPoints, In_lastCmd, api_temp_changed, api_desired_temp, api_current_temp) {
     return HarnessResult::RejectedPrecondition;
   }
 
   // [PutInPorts]: Set values on the input ports
-  put_desired_temp(api_desired_temp);
   put_temp_changed(api_temp_changed);
+  put_desired_temp(api_desired_temp);
   put_current_temp(api_current_temp);
 
   // [SetInStateVars]: set the pre-state values of state variables
@@ -189,7 +189,7 @@ pub fn testComputeCBwGSV(
   let api_heat_control = get_heat_control();
 
   // [CheckPost]: invoke the oracle function
-  if !GUMBOX::compute_CEP_Post(In_currentSetPoints, In_lastCmd, currentSetPoints, lastCmd, api_desired_temp, api_temp_changed, api_current_temp, api_heat_control) {
+  if !GUMBOX::compute_CEP_Post(In_currentSetPoints, In_lastCmd, currentSetPoints, lastCmd, api_temp_changed, api_desired_temp, api_current_temp, api_heat_control) {
     return HarnessResult::FailedPostcondition(TestCaseError::Fail("Postcondition failed: incorrect output behavior".into()));
   }
 
@@ -200,7 +200,7 @@ pub fn testComputeCBwGSV(
   */
 pub fn testComputeCBwGSV_container(container: PreStateContainer_wGSV) -> HarnessResult
 {
-  return testComputeCBwGSV(container.In_currentSetPoints, container.In_lastCmd, container.api_desired_temp, container.api_temp_changed, container.api_current_temp)
+  return testComputeCBwGSV(container.In_currentSetPoints, container.In_lastCmd, container.api_temp_changed, container.api_desired_temp, container.api_current_temp)
 }
 
 #[macro_export]
@@ -211,8 +211,8 @@ testComputeCBwGSV_macro {
     config: $config:expr,
     In_currentSetPoints: $In_currentSetPoints_strat:expr,
     In_lastCmd: $In_lastCmd_strat:expr,
-    api_desired_temp: $api_desired_temp_strat:expr,
     api_temp_changed: $api_temp_changed_strat:expr,
+    api_desired_temp: $api_desired_temp_strat:expr,
     api_current_temp: $api_current_temp_strat:expr
   ) => {
     proptest!{
@@ -220,10 +220,10 @@ testComputeCBwGSV_macro {
       #[test]
       #[serial]
       fn $test_name(
-        (In_currentSetPoints, In_lastCmd, api_desired_temp, api_temp_changed, api_current_temp)
-            in ($In_currentSetPoints_strat, $In_lastCmd_strat, $api_desired_temp_strat, $api_temp_changed_strat, $api_current_temp_strat)
+        (In_currentSetPoints, In_lastCmd, api_temp_changed, api_desired_temp, api_current_temp)
+            in ($In_currentSetPoints_strat, $In_lastCmd_strat, $api_temp_changed_strat, $api_desired_temp_strat, $api_current_temp_strat)
       ) {
-        match $crate::test::util::cb_apis::testComputeCBwGSV(In_currentSetPoints, In_lastCmd, api_desired_temp, api_temp_changed, api_current_temp) {
+        match $crate::test::util::cb_apis::testComputeCBwGSV(In_currentSetPoints, In_lastCmd, api_temp_changed, api_desired_temp, api_current_temp) {
           $crate::test::util::cb_apis::HarnessResult::RejectedPrecondition => {
             return Err(proptest::test_runner::TestCaseError::reject(
               "Precondition failed: invalid input combination",

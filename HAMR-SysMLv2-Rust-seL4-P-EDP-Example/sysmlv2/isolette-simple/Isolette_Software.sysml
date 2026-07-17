@@ -40,16 +40,16 @@ package Isolette_Software {
     //
     // EDP variant of the original (all-DataPort) Thermostat:
     //  - current_temp remains a sampled data port (always has the latest reading)
-    //  - temp_changed is an event announcing that the sensed value changed
-    //    (its payload carries the new value; the control law below samples the
-    //    current_temp data port and uses the event only as a trigger)
+    //  - temp_changed is a pure (payload-less) event announcing that the sensed
+    //    value changed (the control law below samples the current_temp data
+    //    port and uses the event only as a trigger)
     //  - desired_temp is now an event data port: set points arrive as messages
     //    only when the operator changes them, so the most recent message is
     //    latched in the GUMBO state variable `currentSetPoints`
     //  - heat_control is now an event data port with a SEND-ON-CHANGE policy:
     //    a command message is emitted exactly when the commanded state changes
     port current_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
-    port temp_changed : EventDataPort { in :>> type : Isolette_Data_Model::Temp; }
+    in port temp_changed : EventPort;
     port desired_temp : EventDataPort { in :>> type : Isolette_Data_Model::Set_Points; }
     port heat_control : EventDataPort { out :>> type : Isolette_Data_Model::On_Off; }
 

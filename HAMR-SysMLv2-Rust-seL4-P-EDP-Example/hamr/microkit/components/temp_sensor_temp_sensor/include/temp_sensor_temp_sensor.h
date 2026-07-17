@@ -10,4 +10,4 @@
 
 
 bool put_current_temp(const Isolette_Data_Model_Temp *data);
-bool put_temp_changed(const Isolette_Data_Model_Temp *data);
+bool put_temp_changed();

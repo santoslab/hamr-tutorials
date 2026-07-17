@@ -5,8 +5,8 @@
 //
 //  This Thread component implements a (simulated) air temperature sensor.
 //  The "sensed" value is placed on the component's current_temp output data
-//  port, and -- new in this EDP variant -- a temp_changed event data message
-//  (carrying the new value) is emitted exactly when the sensed value changes.
+//  port, and -- new in this EDP variant -- a pure (payload-less) temp_changed
+//  event is emitted exactly when the sensed value changes.
 //
 //  There is no software application level input.  The component encapsulates
 //  a hardware driver that fetches information from a simulated hardware
@@ -29,8 +29,8 @@
 //      the trajectory is reversed.  This ensures the simulated temperature
 //      value stays within a declared range.
 //
-//  Verus notes: the temp_range / temp_changed_range integration guarantees
-//  from the model become `requires` clauses on the put_ API methods, so the
+//  Verus notes: the temp_range integration guarantee from the model becomes a
+//  `requires` clause on the put_current_temp API method, so the
 //  simulation arithmetic below is written with explicit range guards
 //  (see clamp_to_sensed_range) that let Verus prove the sent values lie in
 //  [sensed_temp_lower_bound, sensed_temp_upper_bound] and that the +/-1
@@ -114,9 +114,9 @@ verus! {
       self.activations_until_change = activations_between_changes;
 
       // put the "sensed value" on the current_temp output data port
-      // (output DATA ports must be initialized; the temp_changed event data
-      //  port needs no initialization message, and semantically nothing has
-      //  "changed" yet, so no event is emitted here)
+      // (output DATA ports must be initialized; the temp_changed event
+      //  port needs no initialization, and semantically nothing has
+      //  "changed" yet, so no event is raised here)
       api.put_current_temp(Temp { degrees: self.latest_temp });
     }
 
@@ -167,10 +167,10 @@ verus! {
         // put the "sensed" value on the current_temp output data port
         api.put_current_temp(Temp { degrees: next });
 
-        // announce the change on the temp_changed event data port -- exactly
+        // announce the change on the temp_changed event port -- exactly
         // when the sensed value actually differs from the previous value
         if next != prev {
-          api.put_temp_changed(Temp { degrees: next });
+          api.put_temp_changed();
         }
         log_temp_simulation(next, self.temp_trajectory, next != prev);
       }

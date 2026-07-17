@@ -151,15 +151,15 @@ pub fn compute_CEP_T_Assm(In_currentSetPoints: Isolette_Data_Model::Set_Points) 
   *
   * @param In_currentSetPoints pre-state state variable
   * @param In_lastCmd pre-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   */
 pub fn compute_CEP_Pre(
   In_currentSetPoints: Isolette_Data_Model::Set_Points,
   In_lastCmd: Isolette_Data_Model::On_Off,
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp) -> bool
 {
   // I-Assm-Guard: Integration constraints for thermostat's incoming ports
@@ -226,14 +226,14 @@ pub fn compute_spec_invCSPMaintained_guarantee(currentSetPoints: Isolette_Data_M
   *   new set points) the commanded state is unchanged.
   * @param In_lastCmd pre-state state variable
   * @param lastCmd post-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   */
 pub fn compute_spec_noTriggerNoChange_guarantee(
   In_lastCmd: Isolette_Data_Model::On_Off,
   lastCmd: Isolette_Data_Model::On_Off,
-  api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>) -> bool
+  api_temp_changed: Option<u8>,
+  api_desired_temp: Option<Isolette_Data_Model::Set_Points>) -> bool
 {
   implies!(
     !(api_temp_changed.is_some() || api_desired_temp.is_some()),
@@ -248,15 +248,15 @@ pub fn compute_spec_noTriggerNoChange_guarantee(
   *   shall be set to On.
   * @param currentSetPoints post-state state variable
   * @param lastCmd post-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   */
 pub fn compute_spec_REQ_THERM_2_guarantee(
   currentSetPoints: Isolette_Data_Model::Set_Points,
   lastCmd: Isolette_Data_Model::On_Off,
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp) -> bool
 {
   implies!(
@@ -273,15 +273,15 @@ pub fn compute_spec_REQ_THERM_2_guarantee(
   *   shall be set to Off.
   * @param currentSetPoints post-state state variable
   * @param lastCmd post-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   */
 pub fn compute_spec_REQ_THERM_3_guarantee(
   currentSetPoints: Isolette_Data_Model::Set_Points,
   lastCmd: Isolette_Data_Model::On_Off,
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp) -> bool
 {
   implies!(
@@ -300,16 +300,16 @@ pub fn compute_spec_REQ_THERM_3_guarantee(
   * @param In_lastCmd pre-state state variable
   * @param currentSetPoints post-state state variable
   * @param lastCmd post-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   */
 pub fn compute_spec_REQ_THERM_4_guarantee(
   In_lastCmd: Isolette_Data_Model::On_Off,
   currentSetPoints: Isolette_Data_Model::Set_Points,
   lastCmd: Isolette_Data_Model::On_Off,
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp) -> bool
 {
   implies!(
@@ -363,8 +363,8 @@ pub fn compute_spec_noSendNoChange_guarantee(
   * @param In_lastCmd pre-state state variable
   * @param currentSetPoints post-state state variable
   * @param lastCmd post-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   * @param api_heat_control outgoing event data port
   */
@@ -373,18 +373,18 @@ pub fn compute_CEP_T_Guar(
   In_lastCmd: Isolette_Data_Model::On_Off,
   currentSetPoints: Isolette_Data_Model::Set_Points,
   lastCmd: Isolette_Data_Model::On_Off,
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp,
   api_heat_control: Option<Isolette_Data_Model::On_Off>) -> bool
 {
   let r0: bool = compute_spec_latchSetPointsOnEvent_guarantee(currentSetPoints, api_desired_temp);
   let r1: bool = compute_spec_latchSetPointsNoEvent_guarantee(In_currentSetPoints, currentSetPoints, api_desired_temp);
   let r2: bool = compute_spec_invCSPMaintained_guarantee(currentSetPoints);
-  let r3: bool = compute_spec_noTriggerNoChange_guarantee(In_lastCmd, lastCmd, api_desired_temp, api_temp_changed);
-  let r4: bool = compute_spec_REQ_THERM_2_guarantee(currentSetPoints, lastCmd, api_desired_temp, api_temp_changed, api_current_temp);
-  let r5: bool = compute_spec_REQ_THERM_3_guarantee(currentSetPoints, lastCmd, api_desired_temp, api_temp_changed, api_current_temp);
-  let r6: bool = compute_spec_REQ_THERM_4_guarantee(In_lastCmd, currentSetPoints, lastCmd, api_desired_temp, api_temp_changed, api_current_temp);
+  let r3: bool = compute_spec_noTriggerNoChange_guarantee(In_lastCmd, lastCmd, api_temp_changed, api_desired_temp);
+  let r4: bool = compute_spec_REQ_THERM_2_guarantee(currentSetPoints, lastCmd, api_temp_changed, api_desired_temp, api_current_temp);
+  let r5: bool = compute_spec_REQ_THERM_3_guarantee(currentSetPoints, lastCmd, api_temp_changed, api_desired_temp, api_current_temp);
+  let r6: bool = compute_spec_REQ_THERM_4_guarantee(In_lastCmd, currentSetPoints, lastCmd, api_temp_changed, api_desired_temp, api_current_temp);
   let r7: bool = compute_spec_mustSendOnChange_guarantee(In_lastCmd, lastCmd, api_heat_control);
   let r8: bool = compute_spec_noSendNoChange_guarantee(In_lastCmd, lastCmd, api_heat_control);
 
@@ -397,8 +397,8 @@ pub fn compute_CEP_T_Guar(
   * @param In_lastCmd pre-state state variable
   * @param currentSetPoints post-state state variable
   * @param lastCmd post-state state variable
+  * @param api_temp_changed incoming event port
   * @param api_desired_temp incoming event data port
-  * @param api_temp_changed incoming event data port
   * @param api_current_temp incoming data port
   * @param api_heat_control outgoing event data port
   */
@@ -407,13 +407,13 @@ pub fn compute_CEP_Post(
   In_lastCmd: Isolette_Data_Model::On_Off,
   currentSetPoints: Isolette_Data_Model::Set_Points,
   lastCmd: Isolette_Data_Model::On_Off,
+  api_temp_changed: Option<u8>,
   api_desired_temp: Option<Isolette_Data_Model::Set_Points>,
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
   api_current_temp: Isolette_Data_Model::Temp,
   api_heat_control: Option<Isolette_Data_Model::On_Off>) -> bool
 {
   // CEP-Guar: guarantee clauses of thermostat's compute entrypoint
-  let r0: bool = compute_CEP_T_Guar(In_currentSetPoints, In_lastCmd, currentSetPoints, lastCmd, api_desired_temp, api_temp_changed, api_current_temp, api_heat_control);
+  let r0: bool = compute_CEP_T_Guar(In_currentSetPoints, In_lastCmd, currentSetPoints, lastCmd, api_temp_changed, api_desired_temp, api_current_temp, api_heat_control);
 
   return r0;
 }

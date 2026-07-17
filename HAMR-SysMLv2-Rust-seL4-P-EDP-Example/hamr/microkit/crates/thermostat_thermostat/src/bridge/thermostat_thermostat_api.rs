@@ -35,9 +35,9 @@ verus! {
     #[verifier::external_body]
     fn unverified_get_temp_changed(
       &mut self,
-      value: &Ghost<Option<Isolette_Data_Model::Temp>>) -> (res : Option<Isolette_Data_Model::Temp>)
+      value: &Ghost<Option<u8>>) -> (res : bool)
       ensures
-        res == value@,
+        res == value@.is_some(),
     {
       return extern_api::unsafe_get_temp_changed();
     }
@@ -64,7 +64,7 @@ verus! {
     pub api: API,
 
     pub ghost current_temp: Isolette_Data_Model::Temp,
-    pub ghost temp_changed: Option<Isolette_Data_Model::Temp>,
+    pub ghost temp_changed: Option<u8>,
     pub ghost desired_temp: Option<Isolette_Data_Model::Set_Points>,
     pub ghost heat_control: Option<Isolette_Data_Model::On_Off>
   }
@@ -98,11 +98,11 @@ verus! {
     {
       self.api.unverified_get_current_temp(&Ghost(self.current_temp))
     }
-    pub fn get_temp_changed(&mut self) -> (res : Option<Isolette_Data_Model::Temp>)
+    pub fn get_temp_changed(&mut self) -> (res : bool)
       ensures
         old(self).current_temp == self.current_temp,
         old(self).temp_changed == self.temp_changed,
-        res == self.temp_changed,
+        res == self.temp_changed.is_some(),
         old(self).desired_temp == self.desired_temp,
         old(self).heat_control == self.heat_control,
     {

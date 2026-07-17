@@ -8,8 +8,8 @@ void thermostat_thermostat_timeTriggered(void);
 
 volatile sb_queue_Isolette_Data_Model_Temp_1_t *current_temp_queue_1;
 sb_queue_Isolette_Data_Model_Temp_1_Recv_t current_temp_recv_queue;
-volatile sb_queue_Isolette_Data_Model_Temp_1_t *temp_changed_queue_1;
-sb_queue_Isolette_Data_Model_Temp_1_Recv_t temp_changed_recv_queue;
+volatile sb_queue_uint8_t_1_t *temp_changed_queue_1;
+sb_queue_uint8_t_1_Recv_t temp_changed_recv_queue;
 volatile sb_queue_Isolette_Data_Model_Set_Points_1_t *desired_temp_queue_1;
 sb_queue_Isolette_Data_Model_Set_Points_1_Recv_t desired_temp_recv_queue;
 volatile sb_queue_Isolette_Data_Model_On_Off_1_t *heat_control_queue_1;
@@ -30,16 +30,18 @@ bool get_current_temp(Isolette_Data_Model_Temp *data) {
 }
 
 bool temp_changed_is_empty(void) {
-  return sb_queue_Isolette_Data_Model_Temp_1_is_empty(&temp_changed_recv_queue);
+  return sb_queue_uint8_t_1_is_empty(&temp_changed_recv_queue);
 }
 
-bool get_temp_changed_poll(sb_event_counter_t *numDropped, Isolette_Data_Model_Temp *data) {
-  return sb_queue_Isolette_Data_Model_Temp_1_dequeue((sb_queue_Isolette_Data_Model_Temp_1_Recv_t *) &temp_changed_recv_queue, numDropped, data);
+bool get_temp_changed_poll(sb_event_counter_t *numDropped) {
+  uint8_t eventPortPayload;
+  uint8_t *data = &eventPortPayload;
+  return sb_queue_uint8_t_1_dequeue((sb_queue_uint8_t_1_Recv_t *) &temp_changed_recv_queue, numDropped, data);
 }
 
-bool get_temp_changed(Isolette_Data_Model_Temp *data) {
+bool get_temp_changed() {
   sb_event_counter_t numDropped;
-  return get_temp_changed_poll (&numDropped, data);
+  return get_temp_changed_poll (&numDropped);
 }
 
 bool desired_temp_is_empty(void) {
@@ -64,7 +66,7 @@ bool put_heat_control(const Isolette_Data_Model_On_Off *data) {
 void init(void) {
   sb_queue_Isolette_Data_Model_Temp_1_Recv_init(&current_temp_recv_queue, (sb_queue_Isolette_Data_Model_Temp_1_t *) current_temp_queue_1);
 
-  sb_queue_Isolette_Data_Model_Temp_1_Recv_init(&temp_changed_recv_queue, (sb_queue_Isolette_Data_Model_Temp_1_t *) temp_changed_queue_1);
+  sb_queue_uint8_t_1_Recv_init(&temp_changed_recv_queue, (sb_queue_uint8_t_1_t *) temp_changed_queue_1);
 
   sb_queue_Isolette_Data_Model_Set_Points_1_Recv_init(&desired_temp_recv_queue, (sb_queue_Isolette_Data_Model_Set_Points_1_t *) desired_temp_queue_1);
 

@@ -26,15 +26,12 @@ package Devices {
   part def TempSensor :> Thread {
     //-- I n t e r f a c e  --
     port current_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
-    // EDP variant: an event data message announcing that the sensed temperature
-    // value changed (the payload carries the new value).  Downstream components
-    // (e.g., the Thermostat) use the event as a trigger to run their control
-    // logic instead of re-sampling on every dispatch.
-    // NOTE: conceptually this could be a pure (payload-less) EventPort -- and the
-    // Microkit/Rust backend supports pure event ports in general -- but the current
-    // codegen version does not yet support a component that has BOTH integration
-    // constraints and a pure event port, so the event carries the new Temp value.
-    port temp_changed : EventDataPort { out :>> type : Isolette_Data_Model::Temp; }
+    // EDP variant: a pure (payload-less) event announcing that the sensed
+    // temperature value changed.  Downstream components (e.g., the Thermostat)
+    // use the event as a trigger to run their control logic instead of
+    // re-sampling on every dispatch; the new value itself is sampled from the
+    // current_temp data port.
+    out port temp_changed : EventPort;
 
     //-- P r o p e r t i e s  --
     attribute :>> Period = 1000 [ms];
@@ -46,11 +43,6 @@ package Devices {
        integration
           guarantee temp_range:
               96 [i32] <= current_temp.degrees & current_temp.degrees <= 103 [i32];
-          // -- integration constraints on an event data port constrain the message
-          //    payload whenever a message is present: any announced temperature
-          //    change carries a value in the same sensed range
-          guarantee temp_changed_range:
-              96 [i32] <= temp_changed.degrees & temp_changed.degrees <= 103 [i32];
     }*/
   }
 

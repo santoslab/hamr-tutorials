@@ -24,54 +24,30 @@ pub fn I_Guar_current_temp(current_temp: Isolette_Data_Model::Temp) -> bool
     (current_temp.degrees <= 103i32)
 }
 
-/** I-Guar: Integration constraint on temp_sensor's outgoing event data port temp_changed
-  *
-  * guarantee temp_changed_range
-  */
-pub fn I_Guar_temp_changed(temp_changed: Isolette_Data_Model::Temp) -> bool
-{
-  (96i32 <= temp_changed.degrees) &
-    (temp_changed.degrees <= 103i32)
-}
-
-/** I-Guar: Integration constraint on temp_sensor's outgoing event data port temp_changed
-  *
-  * guarantee temp_changed_range
-  */
-pub fn I_Guar_Guard_temp_changed(temp_changed: Option<Isolette_Data_Model::Temp>) -> bool
-{
-  implies!(
-    temp_changed.is_some(),
-    I_Guar_temp_changed(temp_changed.unwrap())
-  )
-}
-
 /** IEP-Post: Initialize Entrypoint Post-Condition
   *
-  * @param api_temp_changed outgoing event data port
+  * @param api_temp_changed outgoing event port
   * @param api_current_temp outgoing data port
   */
 pub fn initialize_IEP_Post(
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
+  api_temp_changed: Option<u8>,
   api_current_temp: Isolette_Data_Model::Temp) -> bool
 {
   // I-Guar-Guard: Integration constraints for temp_sensor's outgoing ports"
-  I_Guar_current_temp(api_current_temp) &
-  I_Guar_Guard_temp_changed(api_temp_changed)
+  I_Guar_current_temp(api_current_temp)
 }
 
 /** CEP-Post: Compute Entrypoint Post-Condition for temp_sensor
   *
-  * @param api_temp_changed outgoing event data port
+  * @param api_temp_changed outgoing event port
   * @param api_current_temp outgoing data port
   */
 pub fn compute_CEP_Post(
-  api_temp_changed: Option<Isolette_Data_Model::Temp>,
+  api_temp_changed: Option<u8>,
   api_current_temp: Isolette_Data_Model::Temp) -> bool
 {
   // I-Guar-Guard: Integration constraints for temp_sensor's outgoing ports
   let r0: bool = I_Guar_current_temp(api_current_temp);
-  let r1: bool = I_Guar_Guard_temp_changed(api_temp_changed);
 
-  return r0 && r1;
+  return r0;
 }

@@ -152,13 +152,13 @@ verus! {
       log_info("compute entrypoint invoked");
 
       // -------------- Get values of input ports ------------------
-      let temp_changed: Option<Temp> = api.get_temp_changed();
+      let temp_changed: bool = api.get_temp_changed();
       let desired_temp: Option<Set_Points> = api.get_desired_temp();
       let current_temp: Temp = api.get_current_temp();
 
       // a triggering event: the sensed temperature changed, or new set
       // points arrived
-      let triggered: bool = temp_changed.is_some() || desired_temp.is_some();
+      let triggered: bool = temp_changed || desired_temp.is_some();
 
       // -------- Latch newly received set points (if any) ----------
       match desired_temp {

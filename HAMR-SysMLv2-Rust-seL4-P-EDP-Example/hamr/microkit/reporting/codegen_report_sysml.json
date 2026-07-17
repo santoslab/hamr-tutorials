@@ -7,7 +7,7 @@
         "KEY_TOOL_REPORT",
         {
           "type" : "ToolReport",
-          "commandLineArgs" : "--sourcepath \/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2 --system-name Isolette::Isolette_System --verbose --platform Microkit --output-dir ..\/..\/hamr --package-name isolette --no-proyek-ive --workspace-root-dir \/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2",
+          "commandLineArgs" : "--sourcepath \/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2 --system-name Isolette::Isolette_System --verbose --platform Microkit --output-dir ..\/..\/hamr --package-name isolette --no-proyek-ive --workspace-root-dir \/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2",
           "status" : {
             "type" : "Status",
             "value" : "Success"
@@ -39,12 +39,12 @@
             },
             {
               "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_Isolette_Data_Model_Temp_1.h",
+              "path" : "types\/include\/sb_queue_uint8_t_1.h",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_Isolette_Data_Model_Temp_1.c",
+              "path" : "types\/src\/sb_queue_uint8_t_1.c",
               "overwrittenIfExists" : true
             },
             {
@@ -620,13 +620,13 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 56,
                       "beginColumn" : 4,
                       "endLine" : 56,
                       "endColumn" : 41,
-                      "offset" : 2454,
+                      "offset" : 2409,
                       "length" : 37
                     }
                   },
@@ -682,11 +682,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
                                 },
-                                "beginLine" : 42,
+                                "beginLine" : 40,
                                 "beginColumn" : 5,
-                                "endLine" : 55,
+                                "endLine" : 53,
                                 "endColumn" : 5,
-                                "offset" : 1183,
+                                "offset" : 1107,
                                 "length" : 399
                               }
                             },
@@ -722,7 +722,7 @@
                                 "beginColumn" : 1,
                                 "endLine" : 23,
                                 "endColumn" : 1,
-                                "offset" : 456,
+                                "offset" : 419,
                                 "length" : 197
                               }
                             },
@@ -758,7 +758,7 @@
                                 "beginColumn" : 1,
                                 "endLine" : 18,
                                 "endColumn" : 1,
-                                "offset" : 443,
+                                "offset" : 426,
                                 "length" : 224
                               }
                             },
@@ -811,15 +811,14 @@
                           "name" : ["Isolette_System_Instance", "temp_sensor", "temp_sensor", "temp_changed"],
                           "kind" : {
                             "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
-                            "value" : "EventData"
+                            "value" : "Event"
                           },
                           "direction" : {
                             "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
                             "value" : "Out"
                           },
                           "payload" : {
-                            "type" : "Some",
-                            "value" : "Isolette_Data_Model::Temp"
+                            "type" : "None"
                           },
                           "modelPos" : {
                             "type" : "Position",
@@ -827,12 +826,12 @@
                               "type" : "Some",
                               "value" : "..\/..\/sysmlv2\/isolette-simple\/Devices.sysml"
                             },
-                            "beginLine" : 37,
+                            "beginLine" : 34,
                             "beginColumn" : 4,
-                            "endLine" : 37,
-                            "endColumn" : 82,
-                            "offset" : 1734,
-                            "length" : 78
+                            "endLine" : 34,
+                            "endColumn" : 37,
+                            "offset" : 1443,
+                            "length" : 33
                           },
                           "languageRealizations" : [
                             {
@@ -845,12 +844,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
                                 },
-                                "beginLine" : 56,
+                                "beginLine" : 54,
                                 "beginColumn" : 5,
-                                "endLine" : 69,
+                                "endLine" : 61,
                                 "endColumn" : 5,
-                                "offset" : 1588,
-                                "length" : 419
+                                "offset" : 1512,
+                                "length" : 235
                               }
                             },
                             {
@@ -865,10 +864,10 @@
                                 },
                                 "beginLine" : 21,
                                 "beginColumn" : 5,
-                                "endLine" : 26,
+                                "endLine" : 24,
                                 "endColumn" : 5,
                                 "offset" : 504,
-                                "length" : 150
+                                "length" : 97
                               }
                             },
                             {
@@ -885,8 +884,8 @@
                                 "beginColumn" : 1,
                                 "endLine" : 30,
                                 "endColumn" : 1,
-                                "offset" : 656,
-                                "length" : 197
+                                "offset" : 619,
+                                "length" : 89
                               }
                             },
                             {
@@ -902,9 +901,9 @@
                                 "beginLine" : 15,
                                 "beginColumn" : 3,
                                 "endLine" : 15,
-                                "endColumn" : 69,
+                                "endColumn" : 32,
                                 "offset" : 385,
-                                "length" : 66
+                                "length" : 29
                               }
                             },
                             {
@@ -919,10 +918,10 @@
                                 },
                                 "beginLine" : 20,
                                 "beginColumn" : 1,
-                                "endLine" : 24,
+                                "endLine" : 26,
                                 "endColumn" : 1,
-                                "offset" : 670,
-                                "length" : 224
+                                "offset" : 653,
+                                "length" : 236
                               }
                             },
                             {
@@ -938,9 +937,9 @@
                                 "beginLine" : 10,
                                 "beginColumn" : 1,
                                 "endLine" : 10,
-                                "endColumn" : 69,
+                                "endColumn" : 52,
                                 "offset" : 346,
-                                "length" : 68
+                                "length" : 51
                               }
                             },
                             {
@@ -985,12 +984,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/temp_sensor_temp_sensor\/src\/component\/temp_sensor_temp_sensor_app.rs"
                               },
-                              "beginLine" : 21,
+                              "beginLine" : 103,
                               "beginColumn" : 5,
-                              "endLine" : 28,
+                              "endLine" : 121,
                               "endColumn" : 5,
-                              "offset" : 382,
-                              "length" : 263
+                              "offset" : 4550,
+                              "length" : 833
                             }
                           ],
                           [
@@ -1001,12 +1000,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/temp_sensor_temp_sensor\/src\/component\/temp_sensor_temp_sensor_app.rs"
                               },
-                              "beginLine" : 30,
+                              "beginLine" : 126,
                               "beginColumn" : 5,
-                              "endLine" : 39,
+                              "endLine" : 177,
                               "endColumn" : 5,
-                              "offset" : 652,
-                              "length" : 333
+                              "offset" : 5518,
+                              "length" : 2280
                             }
                           ]
                         ]
@@ -1059,7 +1058,7 @@
                           },
                           "guaranteesReport" : {
                             "type" : "HashSMap",
-                            "size" : 2,
+                            "size" : 1,
                             "entries" : [
                               [
                                 "temp_range",
@@ -1069,27 +1068,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
                                   },
-                                  "beginLine" : 46,
+                                  "beginLine" : 44,
                                   "beginColumn" : 11,
-                                  "endLine" : 48,
+                                  "endLine" : 46,
                                   "endColumn" : 35,
-                                  "offset" : 1310,
-                                  "length" : 72
-                                }
-                              ],
-                              [
-                                "temp_changed_range",
-                                {
-                                  "type" : "Position",
-                                  "uriOpt" : {
-                                    "type" : "Some",
-                                    "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_api.rs"
-                                  },
-                                  "beginLine" : 60,
-                                  "beginColumn" : 11,
-                                  "endLine" : 62,
-                                  "endColumn" : 35,
-                                  "offset" : 1723,
+                                  "offset" : 1234,
                                   "length" : 72
                                 }
                               ]
@@ -1114,7 +1097,7 @@
                       "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
                       "gumboxMethods" : {
                         "type" : "HashSMap",
-                        "size" : 5,
+                        "size" : 3,
                         "entries" : [
                           [
                             "I_Guar_current_temp",
@@ -1133,38 +1116,6 @@
                             }
                           ],
                           [
-                            "I_Guar_temp_changed",
-                            {
-                              "type" : "Position",
-                              "uriOpt" : {
-                                "type" : "Some",
-                                "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
-                              },
-                              "beginLine" : 31,
-                              "beginColumn" : 1,
-                              "endLine" : 35,
-                              "endColumn" : 1,
-                              "offset" : 657,
-                              "length" : 151
-                            }
-                          ],
-                          [
-                            "I_Guar_Guard_temp_changed",
-                            {
-                              "type" : "Position",
-                              "uriOpt" : {
-                                "type" : "Some",
-                                "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
-                              },
-                              "beginLine" : 41,
-                              "beginColumn" : 1,
-                              "endLine" : 47,
-                              "endColumn" : 1,
-                              "offset" : 943,
-                              "length" : 183
-                            }
-                          ],
-                          [
                             "initialize_IEP_Post",
                             {
                               "type" : "Position",
@@ -1172,12 +1123,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
                               },
-                              "beginLine" : 54,
+                              "beginLine" : 32,
                               "beginColumn" : 1,
-                              "endLine" : 61,
+                              "endLine" : 38,
                               "endColumn" : 1,
-                              "offset" : 1289,
-                              "length" : 305
+                              "offset" : 680,
+                              "length" : 234
                             }
                           ],
                           [
@@ -1188,12 +1139,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/temp_sensor_temp_sensor\/src\/bridge\/temp_sensor_temp_sensor_GUMBOX.rs"
                               },
-                              "beginLine" : 68,
+                              "beginLine" : 45,
                               "beginColumn" : 1,
-                              "endLine" : 77,
+                              "endLine" : 53,
                               "endColumn" : 1,
-                              "offset" : 1770,
-                              "length" : 351
+                              "offset" : 1085,
+                              "length" : 260
                             }
                           ]
                         ]
@@ -1224,13 +1175,13 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 91,
                       "beginColumn" : 4,
                       "endLine" : 91,
                       "endColumn" : 46,
-                      "offset" : 3859,
+                      "offset" : 3814,
                       "length" : 42
                     }
                   },
@@ -1272,7 +1223,7 @@
                             "beginColumn" : 6,
                             "endLine" : 170,
                             "endColumn" : 90,
-                            "offset" : 9524,
+                            "offset" : 9463,
                             "length" : 84
                           },
                           "languageRealizations" : [
@@ -1426,12 +1377,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/operator_interface_operator_interface\/src\/component\/operator_interface_operator_interface_app.rs"
                               },
-                              "beginLine" : 21,
+                              "beginLine" : 94,
                               "beginColumn" : 5,
-                              "endLine" : 28,
+                              "endLine" : 112,
                               "endColumn" : 5,
-                              "offset" : 424,
-                              "length" : 291
+                              "offset" : 3889,
+                              "length" : 827
                             }
                           ],
                           [
@@ -1442,12 +1393,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/operator_interface_operator_interface\/src\/component\/operator_interface_operator_interface_app.rs"
                               },
-                              "beginLine" : 30,
+                              "beginLine" : 117,
                               "beginColumn" : 5,
-                              "endLine" : 39,
+                              "endLine" : 199,
                               "endColumn" : 5,
-                              "offset" : 722,
-                              "length" : 361
+                              "offset" : 4851,
+                              "length" : 3846
                             }
                           ]
                         ]
@@ -1633,13 +1584,13 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 110,
                       "beginColumn" : 4,
                       "endLine" : 110,
                       "endColumn" : 31,
-                      "offset" : 4739,
+                      "offset" : 4649,
                       "length" : 27
                     }
                   },
@@ -1681,7 +1632,7 @@
                             "beginColumn" : 4,
                             "endLine" : 51,
                             "endColumn" : 76,
-                            "offset" : 2292,
+                            "offset" : 2276,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1699,7 +1650,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 100,
                                 "endColumn" : 5,
-                                "offset" : 2935,
+                                "offset" : 2870,
                                 "length" : 628
                               }
                             },
@@ -1735,7 +1686,7 @@
                                 "beginColumn" : 1,
                                 "endLine" : 27,
                                 "endColumn" : 1,
-                                "offset" : 604,
+                                "offset" : 567,
                                 "length" : 218
                               }
                             },
@@ -1771,7 +1722,7 @@
                                 "beginColumn" : 1,
                                 "endLine" : 30,
                                 "endColumn" : 1,
-                                "offset" : 846,
+                                "offset" : 812,
                                 "length" : 409
                               }
                             },
@@ -1824,15 +1775,14 @@
                           "name" : ["Isolette_System_Instance", "thermostat", "thermostat", "temp_changed"],
                           "kind" : {
                             "type" : "org.sireum.hamr.codegen.microkit.reporting.PortKind",
-                            "value" : "EventData"
+                            "value" : "Event"
                           },
                           "direction" : {
                             "type" : "org.sireum.hamr.codegen.microkit.reporting.PortDirection",
                             "value" : "In"
                           },
                           "payload" : {
-                            "type" : "Some",
-                            "value" : "Isolette_Data_Model::Temp"
+                            "type" : "None"
                           },
                           "modelPos" : {
                             "type" : "Position",
@@ -1843,9 +1793,9 @@
                             "beginLine" : 52,
                             "beginColumn" : 4,
                             "endLine" : 52,
-                            "endColumn" : 81,
-                            "offset" : 2370,
-                            "length" : 77
+                            "endColumn" : 36,
+                            "offset" : 2354,
+                            "length" : 32
                           },
                           "languageRealizations" : [
                             {
@@ -1862,8 +1812,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 110,
                                 "endColumn" : 5,
-                                "offset" : 3569,
-                                "length" : 420
+                                "offset" : 3504,
+                                "length" : 401
                               }
                             },
                             {
@@ -1881,7 +1831,7 @@
                                 "endLine" : 43,
                                 "endColumn" : 5,
                                 "offset" : 1062,
-                                "length" : 249
+                                "length" : 207
                               }
                             },
                             {
@@ -1896,10 +1846,10 @@
                                 },
                                 "beginLine" : 29,
                                 "beginColumn" : 1,
-                                "endLine" : 39,
+                                "endLine" : 34,
                                 "endColumn" : 1,
-                                "offset" : 825,
-                                "length" : 278
+                                "offset" : 788,
+                                "length" : 89
                               }
                             },
                             {
@@ -1915,9 +1865,9 @@
                                 "beginLine" : 15,
                                 "beginColumn" : 3,
                                 "endLine" : 15,
-                                "endColumn" : 69,
+                                "endColumn" : 32,
                                 "offset" : 385,
-                                "length" : 66
+                                "length" : 29
                               }
                             },
                             {
@@ -1930,12 +1880,12 @@
                                   "type" : "Some",
                                   "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
                                 },
-                                "beginLine" : 40,
+                                "beginLine" : 42,
                                 "beginColumn" : 1,
-                                "endLine" : 43,
+                                "endLine" : 45,
                                 "endColumn" : 1,
-                                "offset" : 1618,
-                                "length" : 141
+                                "offset" : 1566,
+                                "length" : 105
                               }
                             },
                             {
@@ -1951,9 +1901,9 @@
                                 "beginLine" : 11,
                                 "beginColumn" : 1,
                                 "endLine" : 11,
-                                "endColumn" : 69,
+                                "endColumn" : 52,
                                 "offset" : 406,
-                                "length" : 68
+                                "length" : 51
                               }
                             },
                             {
@@ -2007,7 +1957,7 @@
                             "beginColumn" : 4,
                             "endLine" : 53,
                             "endColumn" : 87,
-                            "offset" : 2453,
+                            "offset" : 2392,
                             "length" : 83
                           },
                           "languageRealizations" : [
@@ -2025,7 +1975,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 125,
                                 "endColumn" : 5,
-                                "offset" : 3995,
+                                "offset" : 3911,
                                 "length" : 684
                               }
                             },
@@ -2043,7 +1993,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 58,
                                 "endColumn" : 5,
-                                "offset" : 1349,
+                                "offset" : 1307,
                                 "length" : 519
                               }
                             },
@@ -2057,11 +2007,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 41,
+                                "beginLine" : 36,
                                 "beginColumn" : 1,
-                                "endLine" : 51,
+                                "endLine" : 46,
                                 "endColumn" : 1,
-                                "offset" : 1106,
+                                "offset" : 880,
                                 "length" : 296
                               }
                             },
@@ -2079,7 +2029,7 @@
                                 "beginColumn" : 3,
                                 "endLine" : 16,
                                 "endColumn" : 75,
-                                "offset" : 455,
+                                "offset" : 418,
                                 "length" : 72
                               }
                             },
@@ -2093,11 +2043,11 @@
                                   "type" : "Some",
                                   "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
                                 },
-                                "beginLine" : 53,
+                                "beginLine" : 55,
                                 "beginColumn" : 1,
-                                "endLine" : 56,
+                                "endLine" : 58,
                                 "endColumn" : 1,
-                                "offset" : 2146,
+                                "offset" : 2058,
                                 "length" : 147
                               }
                             },
@@ -2115,7 +2065,7 @@
                                 "beginColumn" : 1,
                                 "endLine" : 13,
                                 "endColumn" : 75,
-                                "offset" : 544,
+                                "offset" : 510,
                                 "length" : 74
                               }
                             },
@@ -2170,7 +2120,7 @@
                             "beginColumn" : 4,
                             "endLine" : 54,
                             "endColumn" : 84,
-                            "offset" : 2542,
+                            "offset" : 2481,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -2188,7 +2138,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 84,
                                 "endColumn" : 5,
-                                "offset" : 2437,
+                                "offset" : 2372,
                                 "length" : 399
                               }
                             },
@@ -2220,11 +2170,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 53,
+                                "beginLine" : 48,
                                 "beginColumn" : 1,
-                                "endLine" : 58,
+                                "endLine" : 53,
                                 "endColumn" : 1,
-                                "offset" : 1405,
+                                "offset" : 1179,
                                 "length" : 203
                               }
                             },
@@ -2242,7 +2192,7 @@
                                 "beginColumn" : 3,
                                 "endLine" : 17,
                                 "endColumn" : 71,
-                                "offset" : 531,
+                                "offset" : 494,
                                 "length" : 68
                               }
                             },
@@ -2256,11 +2206,11 @@
                                   "type" : "Some",
                                   "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
                                 },
-                                "beginLine" : 58,
+                                "beginLine" : 60,
                                 "beginColumn" : 1,
-                                "endLine" : 62,
+                                "endLine" : 64,
                                 "endColumn" : 1,
-                                "offset" : 2296,
+                                "offset" : 2208,
                                 "length" : 232
                               }
                             },
@@ -2278,7 +2228,7 @@
                                 "beginColumn" : 1,
                                 "endLine" : 15,
                                 "endColumn" : 71,
-                                "offset" : 694,
+                                "offset" : 660,
                                 "length" : 70
                               }
                             },
@@ -2324,12 +2274,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 27,
+                              "beginLine" : 51,
                               "beginColumn" : 5,
-                              "endLine" : 46,
+                              "endLine" : 83,
                               "endColumn" : 5,
-                              "offset" : 662,
-                              "length" : 959
+                              "offset" : 2119,
+                              "length" : 1591
                             }
                           ],
                           [
@@ -2340,12 +2290,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 48,
+                              "beginLine" : 85,
                               "beginColumn" : 5,
-                              "endLine" : 116,
+                              "endLine" : 199,
                               "endColumn" : 5,
-                              "offset" : 1628,
-                              "length" : 3663
+                              "offset" : 3717,
+                              "length" : 5485
                             }
                           ]
                         ]
@@ -2380,11 +2330,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 11,
+                              "beginLine" : 35,
                               "beginColumn" : 5,
-                              "endLine" : 11,
+                              "endLine" : 35,
                               "endColumn" : 57,
-                              "offset" : 230,
+                              "offset" : 1687,
                               "length" : 52
                             }
                           ],
@@ -2396,11 +2346,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 12,
+                              "beginLine" : 36,
                               "beginColumn" : 5,
-                              "endLine" : 12,
+                              "endLine" : 36,
                               "endColumn" : 44,
-                              "offset" : 289,
+                              "offset" : 1746,
                               "length" : 39
                             }
                           ]
@@ -2418,11 +2368,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 144,
+                              "beginLine" : 261,
                               "beginColumn" : 3,
-                              "endLine" : 147,
+                              "endLine" : 264,
                               "endColumn" : 3,
-                              "offset" : 5816,
+                              "offset" : 10849,
                               "length" : 59
                             }
                           ],
@@ -2434,11 +2384,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 149,
+                              "beginLine" : 266,
                               "beginColumn" : 3,
-                              "endLine" : 152,
+                              "endLine" : 269,
                               "endColumn" : 3,
-                              "offset" : 5880,
+                              "offset" : 10913,
                               "length" : 60
                             }
                           ],
@@ -2450,11 +2400,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 154,
+                              "beginLine" : 271,
                               "beginColumn" : 3,
-                              "endLine" : 157,
+                              "endLine" : 274,
                               "endColumn" : 3,
-                              "offset" : 5945,
+                              "offset" : 10978,
                               "length" : 66
                             }
                           ],
@@ -2466,11 +2416,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 159,
+                              "beginLine" : 276,
                               "beginColumn" : 3,
-                              "endLine" : 162,
+                              "endLine" : 279,
                               "endColumn" : 3,
-                              "offset" : 6016,
+                              "offset" : 11049,
                               "length" : 67
                             }
                           ]
@@ -2502,7 +2452,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 97,
                                   "endColumn" : 90,
-                                  "offset" : 3297,
+                                  "offset" : 3232,
                                   "length" : 183
                                 }
                               ],
@@ -2518,7 +2468,7 @@
                                   "beginColumn" : 13,
                                   "endLine" : 122,
                                   "endColumn" : 67,
-                                  "offset" : 4401,
+                                  "offset" : 4317,
                                   "length" : 195
                                 }
                               ]
@@ -2544,11 +2494,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 32,
+                              "beginLine" : 56,
                               "beginColumn" : 11,
-                              "endLine" : 35,
+                              "endLine" : 59,
                               "endColumn" : 76,
-                              "offset" : 896,
+                              "offset" : 2353,
                               "length" : 219
                             }
                           ],
@@ -2560,11 +2510,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                               },
-                              "beginLine" : 36,
+                              "beginLine" : 60,
                               "beginColumn" : 11,
-                              "endLine" : 42,
+                              "endLine" : 66,
                               "endColumn" : 56,
-                              "offset" : 1149,
+                              "offset" : 2606,
                               "length" : 365
                             }
                           ]
@@ -2586,11 +2536,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 56,
+                                  "beginLine" : 93,
                                   "beginColumn" : 11,
-                                  "endLine" : 58,
+                                  "endLine" : 95,
                                   "endColumn" : 96,
-                                  "offset" : 1980,
+                                  "offset" : 4069,
                                   "length" : 150
                                 }
                               ]
@@ -2608,11 +2558,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 62,
+                                  "beginLine" : 99,
                                   "beginColumn" : 11,
-                                  "endLine" : 66,
+                                  "endLine" : 103,
                                   "endColumn" : 92,
-                                  "offset" : 2281,
+                                  "offset" : 4370,
                                   "length" : 286
                                 }
                               ],
@@ -2624,11 +2574,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 67,
+                                  "beginLine" : 104,
                                   "beginColumn" : 11,
-                                  "endLine" : 70,
+                                  "endLine" : 107,
                                   "endColumn" : 63,
-                                  "offset" : 2611,
+                                  "offset" : 4700,
                                   "length" : 167
                                 }
                               ],
@@ -2640,11 +2590,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 71,
+                                  "beginLine" : 108,
                                   "beginColumn" : 11,
-                                  "endLine" : 74,
+                                  "endLine" : 111,
                                   "endColumn" : 82,
-                                  "offset" : 2817,
+                                  "offset" : 4906,
                                   "length" : 192
                                 }
                               ],
@@ -2656,11 +2606,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 75,
+                                  "beginLine" : 112,
                                   "beginColumn" : 11,
-                                  "endLine" : 79,
+                                  "endLine" : 116,
                                   "endColumn" : 45,
-                                  "offset" : 3049,
+                                  "offset" : 5138,
                                   "length" : 244
                                 }
                               ],
@@ -2672,11 +2622,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 80,
+                                  "beginLine" : 117,
                                   "beginColumn" : 11,
-                                  "endLine" : 86,
+                                  "endLine" : 123,
                                   "endColumn" : 60,
-                                  "offset" : 3327,
+                                  "offset" : 5416,
                                   "length" : 379
                                 }
                               ],
@@ -2688,11 +2638,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 87,
+                                  "beginLine" : 124,
                                   "beginColumn" : 11,
-                                  "endLine" : 93,
+                                  "endLine" : 130,
                                   "endColumn" : 60,
-                                  "offset" : 3740,
+                                  "offset" : 5829,
                                   "length" : 383
                                 }
                               ],
@@ -2704,11 +2654,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 94,
+                                  "beginLine" : 131,
                                   "beginColumn" : 11,
-                                  "endLine" : 102,
+                                  "endLine" : 139,
                                   "endColumn" : 45,
-                                  "offset" : 4157,
+                                  "offset" : 6246,
                                   "length" : 530
                                 }
                               ],
@@ -2720,11 +2670,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 103,
+                                  "beginLine" : 140,
                                   "beginColumn" : 11,
-                                  "endLine" : 108,
+                                  "endLine" : 145,
                                   "endColumn" : 55,
-                                  "offset" : 4726,
+                                  "offset" : 6815,
                                   "length" : 268
                                 }
                               ],
@@ -2736,11 +2686,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/component\/thermostat_thermostat_app.rs"
                                   },
-                                  "beginLine" : 109,
+                                  "beginLine" : 146,
                                   "beginColumn" : 11,
-                                  "endLine" : 112,
+                                  "endLine" : 149,
                                   "endColumn" : 36,
-                                  "offset" : 5031,
+                                  "offset" : 7120,
                                   "length" : 156
                                 }
                               ]
@@ -2990,8 +2940,8 @@
                               "beginColumn" : 1,
                               "endLine" : 173,
                               "endColumn" : 1,
-                              "offset" : 4437,
-                              "length" : 639
+                              "offset" : 4432,
+                              "length" : 616
                             }
                           ],
                           [
@@ -3006,7 +2956,7 @@
                               "beginColumn" : 1,
                               "endLine" : 190,
                               "endColumn" : 1,
-                              "offset" : 5316,
+                              "offset" : 5288,
                               "length" : 387
                             }
                           ],
@@ -3022,7 +2972,7 @@
                               "beginColumn" : 1,
                               "endLine" : 208,
                               "endColumn" : 1,
-                              "offset" : 6000,
+                              "offset" : 5972,
                               "length" : 327
                             }
                           ],
@@ -3038,7 +2988,7 @@
                               "beginColumn" : 1,
                               "endLine" : 220,
                               "endColumn" : 1,
-                              "offset" : 6551,
+                              "offset" : 6523,
                               "length" : 175
                             }
                           ],
@@ -3054,8 +3004,8 @@
                               "beginColumn" : 1,
                               "endLine" : 241,
                               "endColumn" : 1,
-                              "offset" : 7112,
-                              "length" : 364
+                              "offset" : 7079,
+                              "length" : 341
                             }
                           ],
                           [
@@ -3070,8 +3020,8 @@
                               "beginColumn" : 1,
                               "endLine" : 266,
                               "endColumn" : 1,
-                              "offset" : 7946,
-                              "length" : 505
+                              "offset" : 7885,
+                              "length" : 482
                             }
                           ],
                           [
@@ -3086,8 +3036,8 @@
                               "beginColumn" : 1,
                               "endLine" : 291,
                               "endColumn" : 1,
-                              "offset" : 8925,
-                              "length" : 505
+                              "offset" : 8836,
+                              "length" : 482
                             }
                           ],
                           [
@@ -3102,8 +3052,8 @@
                               "beginColumn" : 1,
                               "endLine" : 320,
                               "endColumn" : 1,
-                              "offset" : 10026,
-                              "length" : 597
+                              "offset" : 9909,
+                              "length" : 574
                             }
                           ],
                           [
@@ -3118,7 +3068,7 @@
                               "beginColumn" : 1,
                               "endLine" : 340,
                               "endColumn" : 1,
-                              "offset" : 10953,
+                              "offset" : 10813,
                               "length" : 319
                             }
                           ],
@@ -3134,7 +3084,7 @@
                               "beginColumn" : 1,
                               "endLine" : 358,
                               "endColumn" : 1,
-                              "offset" : 11554,
+                              "offset" : 11414,
                               "length" : 269
                             }
                           ],
@@ -3150,8 +3100,8 @@
                               "beginColumn" : 1,
                               "endLine" : 392,
                               "endColumn" : 1,
-                              "offset" : 12325,
-                              "length" : 1528
+                              "offset" : 12180,
+                              "length" : 1505
                             }
                           ],
                           [
@@ -3166,8 +3116,8 @@
                               "beginColumn" : 1,
                               "endLine" : 419,
                               "endColumn" : 1,
-                              "offset" : 14336,
-                              "length" : 698
+                              "offset" : 14163,
+                              "length" : 675
                             }
                           ]
                         ]
@@ -3198,13 +3148,13 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-Example\/sysmlv2\/isolette-simple\/Isolette.sysml"
                       },
                       "beginLine" : 74,
                       "beginColumn" : 4,
                       "endLine" : 74,
                       "endColumn" : 41,
-                      "offset" : 3184,
+                      "offset" : 3139,
                       "length" : 37
                     }
                   },
@@ -3242,11 +3192,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/sysmlv2\/isolette-simple\/Devices.sysml"
                             },
-                            "beginLine" : 69,
+                            "beginLine" : 61,
                             "beginColumn" : 4,
-                            "endLine" : 69,
+                            "endLine" : 61,
                             "endColumn" : 83,
-                            "offset" : 3263,
+                            "offset" : 2574,
                             "length" : 79
                           },
                           "languageRealizations" : [
@@ -3400,12 +3350,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
                               },
-                              "beginLine" : 25,
+                              "beginLine" : 47,
                               "beginColumn" : 5,
-                              "endLine" : 39,
+                              "endLine" : 64,
                               "endColumn" : 5,
-                              "offset" : 549,
-                              "length" : 652
+                              "offset" : 1698,
+                              "length" : 756
                             }
                           ],
                           [
@@ -3416,12 +3366,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
                               },
-                              "beginLine" : 41,
+                              "beginLine" : 66,
                               "beginColumn" : 5,
-                              "endLine" : 59,
+                              "endLine" : 103,
                               "endColumn" : 5,
-                              "offset" : 1208,
-                              "length" : 770
+                              "offset" : 2461,
+                              "length" : 1392
                             }
                           ]
                         ]
@@ -3456,11 +3406,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
                               },
-                              "beginLine" : 11,
+                              "beginLine" : 33,
                               "beginColumn" : 5,
-                              "endLine" : 11,
+                              "endLine" : 33,
                               "endColumn" : 49,
-                              "offset" : 234,
+                              "offset" : 1383,
                               "length" : 44
                             }
                           ]
@@ -3493,11 +3443,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
                               },
-                              "beginLine" : 30,
+                              "beginLine" : 52,
                               "beginColumn" : 11,
-                              "endLine" : 35,
+                              "endLine" : 57,
                               "endColumn" : 61,
-                              "offset" : 781,
+                              "offset" : 1930,
                               "length" : 313
                             }
                           ]
@@ -3525,11 +3475,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
                                   },
-                                  "beginLine" : 48,
+                                  "beginLine" : 73,
                                   "beginColumn" : 11,
-                                  "endLine" : 51,
+                                  "endLine" : 76,
                                   "endColumn" : 58,
-                                  "offset" : 1511,
+                                  "offset" : 2764,
                                   "length" : 164
                                 }
                               ],
@@ -3541,11 +3491,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/heat_source_heat_source\/src\/component\/heat_source_heat_source_app.rs"
                                   },
-                                  "beginLine" : 52,
+                                  "beginLine" : 77,
                                   "beginColumn" : 11,
-                                  "endLine" : 55,
+                                  "endLine" : 80,
                                   "endColumn" : 55,
-                                  "offset" : 1709,
+                                  "offset" : 2962,
                                   "length" : 165
                                 }
                               ]

@@ -7,7 +7,7 @@ void temp_sensor_temp_sensor_notify(microkit_channel channel);
 void temp_sensor_temp_sensor_timeTriggered(void);
 
 volatile sb_queue_Isolette_Data_Model_Temp_1_t *current_temp_queue_1;
-volatile sb_queue_Isolette_Data_Model_Temp_1_t *temp_changed_queue_1;
+volatile sb_queue_uint8_t_1_t *temp_changed_queue_1;
 
 #define PORT_FROM_MON 60
 
@@ -17,8 +17,10 @@ bool put_current_temp(const Isolette_Data_Model_Temp *data) {
   return true;
 }
 
-bool put_temp_changed(const Isolette_Data_Model_Temp *data) {
-  sb_queue_Isolette_Data_Model_Temp_1_enqueue((sb_queue_Isolette_Data_Model_Temp_1_t *) temp_changed_queue_1, (Isolette_Data_Model_Temp *) data);
+bool put_temp_changed() {
+  uint8_t eventPayload = 0; // always send 0 as the event payload
+  uint8_t *data = &eventPayload;
+  sb_queue_uint8_t_1_enqueue((sb_queue_uint8_t_1_t *) temp_changed_queue_1, (uint8_t *) data);
 
   return true;
 }
@@ -26,7 +28,7 @@ bool put_temp_changed(const Isolette_Data_Model_Temp *data) {
 void init(void) {
   sb_queue_Isolette_Data_Model_Temp_1_init((sb_queue_Isolette_Data_Model_Temp_1_t *) current_temp_queue_1);
 
-  sb_queue_Isolette_Data_Model_Temp_1_init((sb_queue_Isolette_Data_Model_Temp_1_t *) temp_changed_queue_1);
+  sb_queue_uint8_t_1_init((sb_queue_uint8_t_1_t *) temp_changed_queue_1);
 
   temp_sensor_temp_sensor_initialize();
 }

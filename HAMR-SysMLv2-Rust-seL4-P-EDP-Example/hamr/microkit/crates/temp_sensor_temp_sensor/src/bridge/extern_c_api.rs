@@ -12,7 +12,7 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn put_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
-  fn put_temp_changed(value: *mut Isolette_Data_Model::Temp) -> bool;
+  fn put_temp_changed() -> bool;
 }
 
 pub fn unsafe_put_current_temp(value: &Isolette_Data_Model::Temp) -> bool
@@ -22,10 +22,10 @@ pub fn unsafe_put_current_temp(value: &Isolette_Data_Model::Temp) -> bool
   }
 }
 
-pub fn unsafe_put_temp_changed(value: &Isolette_Data_Model::Temp) -> bool
+pub fn unsafe_put_temp_changed() -> bool
 {
   unsafe {
-    return put_temp_changed(value as *const Isolette_Data_Model::Temp as *mut Isolette_Data_Model::Temp);
+    return put_temp_changed();
   }
 }
 
@@ -39,7 +39,7 @@ lazy_static::lazy_static! {
   // microkit system we would be able to mutate the shared memory for out ports since they're r/w,
   // but we couldn't do that for in ports since they are read-only
   pub static ref OUT_current_temp: Mutex<Option<Isolette_Data_Model::Temp>> = Mutex::new(None);
-  pub static ref OUT_temp_changed: Mutex<Option<Isolette_Data_Model::Temp>> = Mutex::new(None);
+  pub static ref OUT_temp_changed: Mutex<Option<u8>> = Mutex::new(None);
 }
 
 #[cfg(test)]
@@ -60,10 +60,10 @@ pub fn put_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 }
 
 #[cfg(test)]
-pub fn put_temp_changed(value: *mut Isolette_Data_Model::Temp) -> bool
+pub fn put_temp_changed() -> bool
 {
   unsafe {
-    *OUT_temp_changed.lock().unwrap_or_else(|e| e.into_inner()) = Some(*value);
+    *OUT_temp_changed.lock().unwrap_or_else(|e| e.into_inner()) = Some(0u8);
     return true;
   }
 }

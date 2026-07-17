@@ -24,7 +24,7 @@ REPORT_FILE = report.txt
 UTIL_OBJS = printf.o util.o
 
 TYPES_DIR = $(TOP_DIR)/types
-TYPE_OBJS := $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Temp_1.o $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Set_Points_1.o $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_On_Off_1.o
+TYPE_OBJS := $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Temp_1.o $(TOP_DIR)/build/sb_queue_uint8_t_1.o $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Set_Points_1.o $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_On_Off_1.o
 
 # exporting TOP_TYPES_INCLUDE in case other makefiles need it
 export TOP_TYPES_INCLUDE = -I$(TYPES_DIR)/include
@@ -42,6 +42,10 @@ ${CHECK_FLAGS_BOARD_MD5}:
 	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_DIR)/util/include
 
 $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Temp_1.o: $(TOP_DIR)/types/src/sb_queue_Isolette_Data_Model_Temp_1.c Makefile
+	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
+
+
+$(TOP_DIR)/build/sb_queue_uint8_t_1.o: $(TOP_DIR)/types/src/sb_queue_uint8_t_1.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
 
 

@@ -27,8 +27,8 @@ pub fn get_current_temp() -> Isolette_Data_Model::Temp
   return extern_api::OUT_current_temp.lock().unwrap_or_else(|e| e.into_inner()).expect("Not expecting None")
 }
 
-/// getter for OUT EventDataPort
-pub fn get_temp_changed() -> Option<Isolette_Data_Model::Temp>
+/// getter for OUT EventPort
+pub fn get_temp_changed() -> Option<u8>
 {
   return extern_api::OUT_temp_changed.lock().unwrap_or_else(|e| e.into_inner()).clone()
 }
