@@ -218,4 +218,4 @@ verus:
 	make -C ${CRATES_DIR}/consume_consume verus
 
 verus-sys-proof: 
-	make -C ${CRATES_DIR}/sys_proof_nominal all
+	make -C ${CRATES_DIR}/sys_nominal_proof all

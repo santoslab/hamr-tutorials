@@ -249,177 +249,177 @@
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/Cargo.toml",
+              "path" : "crates\/sys_nominal_proof\/Cargo.toml",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/rust-toolchain.toml",
+              "path" : "crates\/sys_nominal_proof\/rust-toolchain.toml",
               "overwrittenIfExists" : false
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/lib.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/lib.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/system_state.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/system_state.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/contracts.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/contracts.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/write_frames.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/write_frames.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/actions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/actions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/vc_commutativity.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/vc_commutativity.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/vc_integration.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/vc_integration.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/Makefile",
+              "path" : "crates\/sys_nominal_proof\/Makefile",
               "overwrittenIfExists" : true
             },
             {
@@ -1130,7 +1130,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-agent-context-git\/examples\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-Example\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 294,
                       "beginColumn" : 4,
@@ -1571,7 +1571,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-agent-context-git\/examples\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-Example\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 313,
                       "beginColumn" : 4,
@@ -2477,7 +2477,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-agent-context-git\/examples\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-Example\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 333,
                       "beginColumn" : 4,
@@ -2844,10 +2844,10 @@
                               },
                               "beginLine" : 21,
                               "beginColumn" : 5,
-                              "endLine" : 31,
+                              "endLine" : 30,
                               "endColumn" : 5,
                               "offset" : 340,
-                              "length" : 384
+                              "length" : 314
                             }
                           ],
                           [
@@ -2858,12 +2858,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/incx_incx\/src\/component\/incx_incx_app.rs"
                               },
-                              "beginLine" : 33,
+                              "beginLine" : 32,
                               "beginColumn" : 5,
-                              "endLine" : 56,
+                              "endLine" : 55,
                               "endColumn" : 5,
-                              "offset" : 731,
-                              "length" : 988
+                              "offset" : 661,
+                              "length" : 954
                             }
                           ]
                         ]
@@ -2929,11 +2929,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/incx_incx\/src\/component\/incx_incx_app.rs"
                                   },
-                                  "beginLine" : 38,
+                                  "beginLine" : 37,
                                   "beginColumn" : 11,
-                                  "endLine" : 42,
+                                  "endLine" : 41,
                                   "endColumn" : 40,
-                                  "offset" : 940,
+                                  "offset" : 870,
                                   "length" : 221
                                 }
                               ]
@@ -2951,11 +2951,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/incx_incx\/src\/component\/incx_incx_app.rs"
                                   },
-                                  "beginLine" : 46,
+                                  "beginLine" : 45,
                                   "beginColumn" : 11,
-                                  "endLine" : 48,
+                                  "endLine" : 47,
                                   "endColumn" : 44,
-                                  "offset" : 1295,
+                                  "offset" : 1225,
                                   "length" : 98
                                 }
                               ]
@@ -3109,7 +3109,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-agent-context-git\/examples\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-Example\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 352,
                       "beginColumn" : 4,
@@ -3476,10 +3476,10 @@
                               },
                               "beginLine" : 21,
                               "beginColumn" : 5,
-                              "endLine" : 31,
+                              "endLine" : 30,
                               "endColumn" : 5,
                               "offset" : 352,
-                              "length" : 393
+                              "length" : 322
                             }
                           ],
                           [
@@ -3490,11 +3490,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/clampx_clampx\/src\/component\/clampx_clampx_app.rs"
                               },
-                              "beginLine" : 33,
+                              "beginLine" : 32,
                               "beginColumn" : 5,
-                              "endLine" : 68,
+                              "endLine" : 67,
                               "endColumn" : 5,
-                              "offset" : 752,
+                              "offset" : 681,
                               "length" : 1253
                             }
                           ]
@@ -3573,11 +3573,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/clampx_clampx\/src\/component\/clampx_clampx_app.rs"
                                   },
-                                  "beginLine" : 40,
+                                  "beginLine" : 39,
                                   "beginColumn" : 11,
-                                  "endLine" : 44,
+                                  "endLine" : 43,
                                   "endColumn" : 41,
-                                  "offset" : 1026,
+                                  "offset" : 955,
                                   "length" : 196
                                 }
                               ],
@@ -3589,11 +3589,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/clampx_clampx\/src\/component\/clampx_clampx_app.rs"
                                   },
-                                  "beginLine" : 45,
+                                  "beginLine" : 44,
                                   "beginColumn" : 11,
-                                  "endLine" : 48,
+                                  "endLine" : 47,
                                   "endColumn" : 35,
-                                  "offset" : 1245,
+                                  "offset" : 1174,
                                   "length" : 123
                                 }
                               ],
@@ -3605,11 +3605,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/clampx_clampx\/src\/component\/clampx_clampx_app.rs"
                                   },
-                                  "beginLine" : 49,
+                                  "beginLine" : 48,
                                   "beginColumn" : 11,
-                                  "endLine" : 52,
+                                  "endLine" : 51,
                                   "endColumn" : 36,
-                                  "offset" : 1391,
+                                  "offset" : 1320,
                                   "length" : 127
                                 }
                               ]
@@ -3741,7 +3741,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-agent-context-git\/examples\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-Example\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 371,
                       "beginColumn" : 4,
@@ -4108,10 +4108,10 @@
                               },
                               "beginLine" : 21,
                               "beginColumn" : 5,
-                              "endLine" : 31,
+                              "endLine" : 30,
                               "endColumn" : 5,
                               "offset" : 340,
-                              "length" : 384
+                              "length" : 314
                             }
                           ],
                           [
@@ -4122,12 +4122,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/decy_decy\/src\/component\/decy_decy_app.rs"
                               },
-                              "beginLine" : 33,
+                              "beginLine" : 32,
                               "beginColumn" : 5,
-                              "endLine" : 56,
+                              "endLine" : 55,
                               "endColumn" : 5,
-                              "offset" : 731,
-                              "length" : 990
+                              "offset" : 661,
+                              "length" : 957
                             }
                           ]
                         ]
@@ -4193,11 +4193,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/decy_decy\/src\/component\/decy_decy_app.rs"
                                   },
-                                  "beginLine" : 38,
+                                  "beginLine" : 37,
                                   "beginColumn" : 11,
-                                  "endLine" : 42,
+                                  "endLine" : 41,
                                   "endColumn" : 40,
-                                  "offset" : 940,
+                                  "offset" : 870,
                                   "length" : 223
                                 }
                               ]
@@ -4215,11 +4215,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/decy_decy\/src\/component\/decy_decy_app.rs"
                                   },
-                                  "beginLine" : 46,
+                                  "beginLine" : 45,
                                   "beginColumn" : 11,
-                                  "endLine" : 48,
+                                  "endLine" : 47,
                                   "endColumn" : 44,
-                                  "offset" : 1297,
+                                  "offset" : 1227,
                                   "length" : 98
                                 }
                               ]
@@ -4373,7 +4373,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-agent-context-git\/examples\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-Example\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 391,
                       "beginColumn" : 4,
@@ -4421,7 +4421,7 @@
                             "beginColumn" : 4,
                             "endLine" : 204,
                             "endColumn" : 69,
-                            "offset" : 9155,
+                            "offset" : 9191,
                             "length" : 65
                           },
                           "languageRealizations" : [
@@ -4584,7 +4584,7 @@
                             "beginColumn" : 4,
                             "endLine" : 205,
                             "endColumn" : 69,
-                            "offset" : 9226,
+                            "offset" : 9262,
                             "length" : 65
                           },
                           "languageRealizations" : [
@@ -4747,7 +4747,7 @@
                             "beginColumn" : 4,
                             "endLine" : 206,
                             "endColumn" : 88,
-                            "offset" : 9297,
+                            "offset" : 9333,
                             "length" : 84
                           },
                           "languageRealizations" : [
@@ -5136,7 +5136,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-agent-context-git\/examples\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-Example\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 410,
                       "beginColumn" : 4,
@@ -5184,7 +5184,7 @@
                             "beginColumn" : 4,
                             "endLine" : 230,
                             "endColumn" : 86,
-                            "offset" : 10404,
+                            "offset" : 10440,
                             "length" : 82
                           },
                           "languageRealizations" : [

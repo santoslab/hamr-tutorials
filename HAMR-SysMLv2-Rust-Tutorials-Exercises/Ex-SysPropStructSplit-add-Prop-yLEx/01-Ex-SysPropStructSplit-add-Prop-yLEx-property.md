@@ -73,9 +73,9 @@ As in the other HAMR exercises, it is useful to see (via file diffs) the updates
 
 ## Activity 2 - Run a Baseline Verification
 
-Before changing anything, confirm that the starting system proof verifies. The example ships with four concrete properties (`Gen_Range_Sanity`, `Merged_In_Consume_Range`, `End_To_End_Functional`, `Consume_Range_Loop_Invariant`) whose generated proof crate is `hamr/microkit/crates/sys_proof_nominal`.
+Before changing anything, confirm that the starting system proof verifies. The example ships with four concrete properties (`Gen_Range_Sanity`, `Merged_In_Consume_Range`, `End_To_End_Functional`, `Consume_Range_Loop_Invariant`) whose generated proof crate is `hamr/microkit/crates/sys_nominal_proof`.
 
-* **Task:** In a terminal, from `hamr/microkit/crates/sys_proof_nominal`, run `make`. The first run compiles the Verus dependencies and takes a few minutes; at the end you should see:
+* **Task:** In a terminal, from `hamr/microkit/crates/sys_nominal_proof`, run `make`. The first run compiles the Verus dependencies and takes a few minutes; at the end you should see:
 
 ```
 verification results:: 111 verified, 0 errors
@@ -153,9 +153,9 @@ sireum hamr sysml codegen --sourcepath ../aadl-lib:. --platform Microkit \
   SysPropStructSplit.sysml
 ```
 
-* **Task:** Run `git status` and look at what changed. Since your model edit touched only the system-level GUMBO block, note what did *not* change: no component crate was touched, no C bridge code, no Microkit system description, no schedule. The system-property layer is generated entirely into the proof crate. You should see (under `hamr/microkit/crates/sys_proof_nominal/`):
+* **Task:** Run `git status` and look at what changed. Since your model edit touched only the system-level GUMBO block, note what did *not* change: no component crate was touched, no C bridge code, no Microkit system description, no schedule. The system-property layer is generated entirely into the proof crate. You should see (under `hamr/microkit/crates/sys_nominal_proof/`):
 
-- a **new directory** `src/y_stays_strictly_below_x/` -- your property's VC module (the module name is the lowercased property name), containing `assertions.rs`, `vc_init.rs`, `vc_sequential.rs`, `vc_post_pre.rs`, `vc_independence.rs`, and `mod.rs`;
+- a **new directory** `src/y_stays_strictly_below_x/` -- your property's VC module (the module name is the lowercased property name), containing `assertions.rs`, `vc_init.rs`, `vc_sequential.rs`, `vc_post_pre.rs`, `vc_non_disabling.rs`, and `mod.rs`;
 - **modified** `src/assertions.rs` -- your `yStaysBelowX` function, compiled to a shared Verus spec function;
 - **modified** `src/lib.rs` -- wiring for the new module;
 - **modified** `Makefile` -- a new per-property target `y_stays_strictly_below_x`;
@@ -167,7 +167,7 @@ sireum hamr sysml codegen --sourcepath ../aadl-lib:. --platform Microkit \
 
 Before running the verifier, take the time to read what it will be asked to prove. This is the heart of the exercise: the generated VC module is a *machine-checkable rendering of the informal proof you sketched in the Exercise Overview*.
 
-* **Task:** Open `hamr/microkit/crates/sys_proof_nominal/src/assertions.rs` and find your function:
+* **Task:** Open `hamr/microkit/crates/sys_nominal_proof/src/assertions.rs` and find your function:
 
 ```rust
 pub open spec fn yStaysBelowX(

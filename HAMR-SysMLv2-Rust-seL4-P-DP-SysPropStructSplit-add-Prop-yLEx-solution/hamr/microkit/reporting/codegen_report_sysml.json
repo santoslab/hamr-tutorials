@@ -249,207 +249,207 @@
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/gen_range_sanity\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/gen_range_sanity\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/merged_in_consume_range\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/merged_in_consume_range\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/end_to_end_functional\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/end_to_end_functional\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/consume_range_loop_invariant\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/consume_range_loop_invariant\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/y_stays_strictly_below_x\/mod.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/y_stays_strictly_below_x\/mod.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/y_stays_strictly_below_x\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/y_stays_strictly_below_x\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/y_stays_strictly_below_x\/vc_init.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/y_stays_strictly_below_x\/vc_init.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/y_stays_strictly_below_x\/vc_sequential.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/y_stays_strictly_below_x\/vc_sequential.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/y_stays_strictly_below_x\/vc_post_pre.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/y_stays_strictly_below_x\/vc_post_pre.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/y_stays_strictly_below_x\/vc_independence.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/y_stays_strictly_below_x\/vc_non_disabling.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/Cargo.toml",
+              "path" : "crates\/sys_nominal_proof\/Cargo.toml",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/rust-toolchain.toml",
+              "path" : "crates\/sys_nominal_proof\/rust-toolchain.toml",
               "overwrittenIfExists" : false
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/lib.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/lib.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/system_state.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/system_state.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/contracts.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/contracts.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/assertions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/assertions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/write_frames.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/write_frames.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/actions.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/actions.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/vc_commutativity.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/vc_commutativity.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/src\/vc_integration.rs",
+              "path" : "crates\/sys_nominal_proof\/src\/vc_integration.rs",
               "overwrittenIfExists" : true
             },
             {
               "type" : "ResourceReport",
-              "path" : "crates\/sys_proof_nominal\/Makefile",
+              "path" : "crates\/sys_nominal_proof\/Makefile",
               "overwrittenIfExists" : true
             },
             {
@@ -1160,7 +1160,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 324,
                       "beginColumn" : 4,
@@ -1601,7 +1601,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 343,
                       "beginColumn" : 4,
@@ -2507,7 +2507,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 363,
                       "beginColumn" : 4,
@@ -3139,7 +3139,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 382,
                       "beginColumn" : 4,
@@ -3771,7 +3771,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 401,
                       "beginColumn" : 4,
@@ -4403,7 +4403,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 421,
                       "beginColumn" : 4,
@@ -5166,7 +5166,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/Users\/hatcliff\/Dev\/git-repos\/hamr-tutorials-main-temp-git\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "file:\/\/\/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 440,
                       "beginColumn" : 4,

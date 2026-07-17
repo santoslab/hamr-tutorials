@@ -26,7 +26,7 @@ Running `make` without re-running codegen verifies the *stale* VCs of your previ
 
 The generated Makefile has a target per concrete property, so you can verify just yours without re-verifying the other four.
 
-* **Task:** In a terminal, from `hamr/microkit/crates/sys_proof_nominal`, run:
+* **Task:** In a terminal, from `hamr/microkit/crates/sys_nominal_proof`, run:
 
 ```
 make y_stays_strictly_below_x
@@ -37,17 +37,19 @@ You should see something like the following...
 ```
 note: verifying module y_stays_strictly_below_x::vc_init
 
+note: verifying module y_stays_strictly_below_x::vc_non_disabling
+
 note: verifying module y_stays_strictly_below_x::vc_post_pre
 
 note: verifying module y_stays_strictly_below_x::vc_sequential
 
 error: postcondition not satisfied
-   --> src/y_stays_strictly_below_x/vc_sequential.rs:156:5
+   --> src/y_stays_strictly_below_x/vc_sequential.rs:161:5
     |
-148 | pub proof fn vc_next_assert_task_merge_stage(pre: SystemState, post: SystemState)
+153 | pub proof fn vc_next_assert_task_merge_stage(pre: SystemState, post: SystemState)
     | --------------------------------------------------------------------------------- at the end of the function body
 ...
-156 |     sys_assert_y_stays_strictly_below_x_after_merge_stage(post),
+161 |     sys_assert_y_stays_strictly_below_x_after_merge_stage(post),
     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
 
 verification results:: 26 verified, 1 errors (partial verification with `--verify-*`)
@@ -167,9 +169,9 @@ Suppose you had reasoned: "IncX adds one to `x` and DecY subtracts one from `y`,
 
 ```
 error: postcondition not satisfied
-   --> src/y_stays_strictly_below_x/vc_sequential.rs:156:5
+   --> src/y_stays_strictly_below_x/vc_sequential.rs:161:5
 ...
-156 |     sys_assert_y_stays_strictly_below_x_after_merge_stage(post),
+161 |     sys_assert_y_stays_strictly_below_x_after_merge_stage(post),
     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
 
 verification results:: 26 verified, 1 errors (partial verification with `--verify-*`)
@@ -198,13 +200,13 @@ The practical lesson for diagnosing any failing system-property VC:
 
 ## Activity 6 - Verify the Whole System Proof
 
-* **Task:** From `hamr/microkit/crates/sys_proof_nominal`, run `make` (all properties plus the shared Integration and Commutativity VCs):
+* **Task:** From `hamr/microkit/crates/sys_nominal_proof`, run `make` (all properties plus the shared Integration and Commutativity VCs):
 
 ```
 verification results:: 138 verified, 0 errors
 ```
 
-That is the baseline 111 from Part 1 Activity 2, plus the 27 VCs of your new property (1 Init-State + 17 Sequential + 1 Post-Pre + 8 Independence). Note that the other four properties were untouched by everything you did -- each property's VCs see only its own assertions, so properties can be added (and debugged) without entangling existing proofs.
+That is the baseline 111 from Part 1 Activity 2, plus the 27 VCs of your new property (1 Init-State + 17 Sequential + 1 Post-Pre + 8 Non-Disabling). Note that the other four properties were untouched by everything you did -- each property's VCs see only its own assertions, so properties can be added (and debugged) without entangling existing proofs.
 
 Remember what this proof does and does not establish: the system property holds *relative to* each component satisfying its own GUMBO contract -- obligations discharged separately by the per-component Verus runs. If you have the time (the full run takes a while), run `make verus` from `hamr/microkit/` to discharge the component-level proofs together with the system proof.
 
