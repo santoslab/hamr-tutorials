@@ -44,15 +44,24 @@ val projects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-add-DT-solution",
   "HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution",
 
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
+
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
 )
 
 // SysMLv2 system-property projects: their model directory is "struct-split" rather than
-// "isolette-simple", they do not commit codegen's attestation artifacts, and verification
-// runs project-level `make verus` (every component crate plus the system-property proof
-// crate) instead of a single crate
+// "isolette-simple", and they do not commit codegen's attestation artifacts
 val sysPropProjects = ISZ(
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
+)
+
+// SysMLv2 projects verified via project-level `make verus` (every component crate --
+// plus, for the system-property projects, the system-property proof crate) instead of
+// the single thermostat crate
+val projectLevelVerusProjects = ISZ(
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
 )
@@ -69,7 +78,8 @@ for (p <- projects) {
       val ret = buildSysmlProject(
         root = root,
         modelDirName = if (isSysProp) "struct-split" else "isolette-simple",
-        systemLevelVerus = isSysProp)
+        removeAttestation = isSysProp,
+        systemLevelVerus = ops.ISZOps(projectLevelVerusProjects).contains(p))
       assert(ret)
     }
   }
@@ -129,7 +139,7 @@ object Helper {
     return r.exitCode
   }
 
-  def buildSysmlProject(root: Os.Path, modelDirName: String, systemLevelVerus: B): B = {
+  def buildSysmlProject(root: Os.Path, modelDirName: String, removeAttestation: B, systemLevelVerus: B): B = {
     if (Os.env("MICROKIT_SDK").isEmpty) {
       println("MICROKIT_SDK environment variable not set")
       return F
@@ -162,7 +172,7 @@ object Helper {
     }
 
     if (ret == 0) {
-      if (systemLevelVerus) {
+      if (removeAttestation) {
         // the system-property projects do not commit codegen's attestation artifacts
         (microkitDir / "attestation").removeAll()
       }
@@ -171,7 +181,7 @@ object Helper {
 
       if (ret == 0) {
         if (systemLevelVerus) {
-          ret = run("Verifying the component crates and the system-property proof crate", F, proc"make verus".at(microkitDir))
+          ret = run("Verifying the project's crates", F, proc"make verus".at(microkitDir))
         } else {
           val thermCrateDir = microkitDir / "crates" / "thermostat_thermostat"
           ret = run("Verifying thermostat", F, proc"make verus".at(thermCrateDir))
