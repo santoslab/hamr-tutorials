@@ -23,6 +23,24 @@ pub fn option_strategy_bias
   ]
 }
 
+/// default proptest strategy for i32: any value of the type
+pub fn i32_strategy_default() -> impl Strategy<Value = i32>
+{
+  any::<i32>()
+}
+
+/// custom proptest strategy for i32 restricted to an inclusive range
+pub fn i32_strategy_cust(range: core::ops::RangeInclusive<i32>) -> impl Strategy<Value = i32>
+{
+  range
+}
+
+/// default proptest strategy for bool: any value of the type
+pub fn bool_strategy_default() -> impl Strategy<Value = bool>
+{
+  any::<bool>()
+}
+
 pub fn SysPropStructSplit_Data_Model_StructXY_strategy_default() -> impl Strategy<Value = SysPropStructSplit_Data_Model::StructXY>
 {
   SysPropStructSplit_Data_Model_StructXY_strategy_cust(

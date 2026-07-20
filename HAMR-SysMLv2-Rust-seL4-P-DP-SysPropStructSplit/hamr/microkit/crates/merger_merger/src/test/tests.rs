@@ -62,13 +62,19 @@ mod GUMBOX_tests {
   use crate::testInitializeCB_macro;
   use crate::testComputeCB_macro;
 
+  // number of valid (i.e., non-rejected) test cases that must be executed for the compute method.
   const numValidComputeTestCases: u32 = 100;
+
+  // how many total test cases (valid + rejected) that may be attempted.
+  //   0 means all inputs must satisfy the precondition (if present),
+  //   5 means at most 5 rejected inputs are allowed per valid test case
   const computeRejectRatio: u32 = 5;
-  const verbosity: u32 = 0;
+
+  const verbosity: u32 = 2;
 
   testInitializeCB_macro! {
-    prop_testInitializeCB_macro,
-    config: ProptestConfig {
+    prop_testInitializeCB_macro, // test name
+    config: ProptestConfig { // proptest configuration, built by overriding fields from default config
       cases: numValidComputeTestCases,
       max_global_rejects: numValidComputeTestCases * computeRejectRatio,
       verbose: verbosity,
@@ -76,16 +82,16 @@ mod GUMBOX_tests {
     }
   }
 
-  // Merge has no input assumptions, so generate across the full i32 range.
   testComputeCB_macro! {
-    prop_testComputeCB_macro,
-    config: ProptestConfig {
+    prop_testComputeCB_macro, // test name
+    config: ProptestConfig { // proptest configuration, built by overriding fields from default config
       cases: numValidComputeTestCases,
       max_global_rejects: numValidComputeTestCases * computeRejectRatio,
       verbose: verbosity,
       ..ProptestConfig::default()
     },
-    api_inxfield: any::<i32>(),
-    api_inyfield: any::<i32>()
+    // strategies for generating each component input
+    api_inxfield: generators::i32_strategy_default(),
+    api_inyfield: generators::i32_strategy_default()
   }
 }

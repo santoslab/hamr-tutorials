@@ -69,13 +69,15 @@ mod GUMBOX_tests {
   const numValidComputeTestCases: u32 = 100;
 
   // how many total test cases (valid + rejected) that may be attempted.
+  //   0 means all inputs must satisfy the precondition (if present),
+  //   5 means at most 5 rejected inputs are allowed per valid test case
   const computeRejectRatio: u32 = 5;
 
-  const verbosity: u32 = 0;
+  const verbosity: u32 = 2;
 
   testInitializeCB_macro! {
     prop_testInitializeCB_macro, // test name
-    config: ProptestConfig {
+    config: ProptestConfig { // proptest configuration, built by overriding fields from default config
       cases: numValidComputeTestCases,
       max_global_rejects: numValidComputeTestCases * computeRejectRatio,
       verbose: verbosity,
@@ -83,10 +85,9 @@ mod GUMBOX_tests {
     }
   }
 
-  // Gen has no inputs, so the compute harness takes no generated strategy.
   testComputeCB_macro! {
     prop_testComputeCB_macro, // test name
-    config: ProptestConfig {
+    config: ProptestConfig { // proptest configuration, built by overriding fields from default config
       cases: numValidComputeTestCases,
       max_global_rejects: numValidComputeTestCases * computeRejectRatio,
       verbose: verbosity,

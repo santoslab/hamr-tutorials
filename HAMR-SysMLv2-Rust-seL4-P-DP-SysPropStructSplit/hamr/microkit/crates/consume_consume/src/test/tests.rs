@@ -55,14 +55,21 @@ mod GUMBOX_tests {
   use crate::test::util::*;
   use crate::testInitializeCB_macro;
   use crate::testComputeCB_macro;
+    use crate::testComputeCBwGSV_macro;
 
+  // number of valid (i.e., non-rejected) test cases that must be executed for the compute method.
   const numValidComputeTestCases: u32 = 100;
+
+  // how many total test cases (valid + rejected) that may be attempted.
+  //   0 means all inputs must satisfy the precondition (if present),
+  //   5 means at most 5 rejected inputs are allowed per valid test case
   const computeRejectRatio: u32 = 5;
-  const verbosity: u32 = 0;
+
+  const verbosity: u32 = 2;
 
   testInitializeCB_macro! {
-    prop_testInitializeCB_macro,
-    config: ProptestConfig {
+    prop_testInitializeCB_macro, // test name
+    config: ProptestConfig { // proptest configuration, built by overriding fields from default config
       cases: numValidComputeTestCases,
       max_global_rejects: numValidComputeTestCases * computeRejectRatio,
       verbose: verbosity,
@@ -72,16 +79,36 @@ mod GUMBOX_tests {
 
   // Generate the incoming struct within the [-200, 200] assumption.
   testComputeCB_macro! {
-    prop_testComputeCB_macro,
-    config: ProptestConfig {
+    prop_testComputeCB_macro, // test name
+    config: ProptestConfig { // proptest configuration, built by overriding fields from default config
       cases: numValidComputeTestCases,
       max_global_rejects: numValidComputeTestCases * computeRejectRatio,
       verbose: verbosity,
       ..ProptestConfig::default()
     },
+    // strategies for generating each component input
+    // field range(s) derived from GUMBO assume clause(s) constraining instruct
     api_instruct: generators::SysPropStructSplit_Data_Model_StructXY_strategy_cust(
-      -200i32..=200i32,
-      -200i32..=200i32
-    )
+      (-200i32..=200i32),
+      (-200i32..=200i32))
+  }
+
+  testComputeCBwGSV_macro! {
+    prop_testComputeCBwGSV_macro, // test name
+    config: ProptestConfig { // proptest configuration, built by overriding fields from default config
+      cases: numValidComputeTestCases,
+      max_global_rejects: numValidComputeTestCases * computeRejectRatio,
+      verbose: verbosity,
+      ..ProptestConfig::default()
+    },
+    // strategies for generating each component input
+    // TODO: full-range default; if last_x is constrained by a GUMBO assume clause then
+    //       narrow this strategy (e.g. generators::i32_strategy_cust(loi32..=hii32))
+    //       to avoid exhausting the proptest rejection budget
+    In_last_x: generators::i32_strategy_default(),
+    // field range(s) derived from GUMBO assume clause(s) constraining instruct
+    api_instruct: generators::SysPropStructSplit_Data_Model_StructXY_strategy_cust(
+      (-200i32..=200i32),
+      (-200i32..=200i32))
   }
 }
