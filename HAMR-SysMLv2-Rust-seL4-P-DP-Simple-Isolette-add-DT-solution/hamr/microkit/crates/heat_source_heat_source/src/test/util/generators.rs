@@ -23,6 +23,18 @@ pub fn option_strategy_bias
   ]
 }
 
+/// default proptest strategy for i32: any value of the type
+pub fn i32_strategy_default() -> impl Strategy<Value = i32>
+{
+  any::<i32>()
+}
+
+/// custom proptest strategy for i32 restricted to an inclusive range
+pub fn i32_strategy_cust(range: core::ops::RangeInclusive<i32>) -> impl Strategy<Value = i32>
+{
+  range
+}
+
 pub fn Isolette_Data_Model_On_Off_strategy_default() -> impl Strategy<Value = Isolette_Data_Model::On_Off>
 {
   Isolette_Data_Model_On_Off_strategy_cust(1, 1)
