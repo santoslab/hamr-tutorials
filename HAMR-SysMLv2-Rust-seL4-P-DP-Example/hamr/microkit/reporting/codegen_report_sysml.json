@@ -7,7 +7,7 @@
         "KEY_TOOL_REPORT",
         {
           "type" : "ToolReport",
-          "commandLineArgs" : "--sourcepath \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Example\/sysmlv2 --system-name Isolette::Isolette_System --verbose --platform Microkit --output-dir ..\/..\/hamr --package-name isolette --no-proyek-ive --workspace-root-dir \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Example\/sysmlv2",
+          "commandLineArgs" : "--sourcepath \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Example\/sysmlv2 --system-name Isolette::Isolette_System --verbose --platform Microkit --output-dir \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Example\/hamr --package-name isolette --no-proyek-ive --workspace-root-dir \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-Example\/sysmlv2 --ros2-nodes-language Cpp",
           "status" : {
             "type" : "Status",
             "value" : "Success"
