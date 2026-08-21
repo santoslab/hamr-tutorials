@@ -10,6 +10,12 @@ jobs:
     uses: ./.github/workflows/ci-linux.yml
     with:
       branch_name: '${{ github.run_id }}-${{github.run_attempt}}'
+  # The same build inside the published container.  Deliberately not given a
+  # branch_name: linux is the one that pushes what change detection finds, and
+  # two workflows racing to create and push the same branch is what handing it
+  # to both would mean.
+  docker:
+    uses: ./.github/workflows/ci-docker.yml
   mac:
     uses: ./.github/workflows/ci-mac.yml
   win:
@@ -17,7 +23,7 @@ jobs:
   
   updateRepo:
     runs-on: ubuntu-latest
-    needs: [linux, mac, win]
+    needs: [linux, docker, mac, win]
     env:
       branch_name: ${{ github.run_id }}-${{github.run_attempt}}
     steps: 

@@ -1,4 +1,4 @@
-name: Mac
+name: Windows
 
 on: 
    workflow_call:
@@ -53,14 +53,14 @@ jobs:
         uses: actions/cache@v4
         with:
           path: kekinian\bin\win\fmide
-          key: ${{ runner.os }}-${{ hashFiles('Kekinian/bin/install/fmide*') }}-fmide          
+          key: ${{ runner.os }}-${{ hashFiles('kekinian\bin\win\fmide*') }}-fmide          
       - name: Test
         shell: cmd
         run: |
           set COURSIER_CACHE=%GITHUB_WORKSPACE%\cache\coursier
           cd /d %GITHUB_WORKSPACE%
 
-          # see https://github.com/sireum/osate-plugin/blob/57785407d84793cf1f8d5926647e4dc75ab197a9/org.sireum.aadl.osate.cli/src/org/sireum/aadl/osate/cli/Phantom.java#L508-L517
+          REM see https://github.com/sireum/osate-plugin/blob/57785407d84793cf1f8d5926647e4dc75ab197a9/org.sireum.aadl.osate.cli/src/org/sireum/aadl/osate/cli/Phantom.java#L508-L517
           set CHECK_PHANTOM_HAMR_API_COMPATIBILITY=true
 
           set SIREUM_HOME=%cd%\kekinian
@@ -81,12 +81,19 @@ jobs:
           )
 
           set JAVA_HOME=%SIREUM_HOME%\bin\win\java
-          set PATH=%SIREUM_HOME%\bin;%JAVA_HOME%\bin:%PATH%
+          set PATH=%SIREUM_HOME%\bin;%JAVA_HOME%\bin;%PATH%
 
           call sireum -v
 
           call %SIREUM_HOME%\bin\install\fmide.cmd -v
 
+          git clone --depth 1 https://github.com/santoslab/sysml-aadl-libraries.git sysml-aadl-libraries
+          REM Remove .git to save space and to prevent actions/checkout post-job
+          REM cleanup from mistaking this for a submodule (which causes a fatal
+          REM error since there is no .gitmodules entry for it)
+          rmdir /s /q sysml-aadl-libraries\.git
+          set SYSML_AADL_LIBRARIES=%cd%\sysml-aadl-libraries
+          
           call bin\build.cmd || goto :error
 
           goto :EOF

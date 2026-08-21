@@ -1,21 +1,26 @@
 name: Linux
 
-on: 
+# The build against an environment installed on the runner by INSPECTA-models'
+# provers-env/provers-setup.sh, rather than one baked into a container.  The
+# container is still exercised, by ci-docker.yml, which runs the same build.
+#
+# This is the workflow that owns the repository update: it is handed branch_name,
+# and bin/build.cmd pushes what change detection finds to that branch.  No other
+# workflow is given it, so no other one pushes.
+on:
    workflow_call:
      inputs:
        branch_name:
          required: true
          type: string
-         
+
 jobs:
   ci:
-    runs-on: ubuntu-latest
-    container:
-      image: jasonbelt/microkit_provers:latest
+    # provers-setup.sh supports Ubuntu 24.04 and macOS on Apple Silicon; pinned
+    # rather than ubuntu-latest so that moving the label to a newer Ubuntu is a
+    # decision taken here rather than one that arrives on its own.
+    runs-on: ubuntu-24.04
     name: HAMR-codegen
-    env:
-        HOME: /home/microkit
-        TAR_OPTIONS: "--warning=no-unknown-keyword"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,13 +31,21 @@ jobs:
         with:
           repository: sireum/kekinian
           path: kekinian
-          submodules: recursive          
+          submodules: recursive
+      - name: Checkout provers-env
+        uses: actions/checkout@v4
+        with:
+          repository: loonwerks/INSPECTA-models
+          path: INSPECTA-models
+          # provers-env is all this needs; the models themselves are the bulk of
+          # that repository and nothing here reads them.
+          sparse-checkout: provers-env
       - name: Cache Java
         id: cache-java
         uses: actions/cache@v4
         with:
           path: kekinian/bin/linux/java
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-java          
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-java
       - name: Cache Scala
         id: cache-scala
         uses: actions/cache@v4
@@ -55,13 +68,23 @@ jobs:
             kekinian/bin/linux/cvc5
             kekinian/bin/linux/.cvc5.ver
             kekinian/bin/linux/z3
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-smt2          
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-smt2
       - name: Cache FMIDE
         id: cache-fmide
         uses: actions/cache@v4
         with:
           path: kekinian/bin/linux/fmide
-          key: ${{ runner.os }}-${{ hashFiles('kekinian/bin/install/fmide*') }}-fmide          
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/bin/install/fmide*') }}-fmide
+      - name: Install the PROVERS environment
+        run: |
+          # provers-env adopts an existing Sireum rather than installing the one
+          # it pins: bin/sireum.sh sees SIREUM_HOME already set and leaves that
+          # tree alone, so Verus, the Microkit SDK, LionsOS and sdfgen are
+          # installed around the kekinian checked out above -- which is the
+          # Sireum this build is meant to test -- and the Test step below is what
+          # bootstraps it.
+          export SIREUM_HOME=$GITHUB_WORKSPACE/kekinian
+          bash INSPECTA-models/provers-env/provers-setup.sh
       - name: Test
         run: |
           export COURSIER_CACHE=$GITHUB_WORKSPACE/cache/coursier
@@ -77,18 +100,25 @@ jobs:
           git config user.email github-actions@github.com
 
           export branch_name=${{ inputs.branch_name }}
-          
 
-          rm -rf ${PROVERS_DIR}/kekinian # remove bootstrap version
-          export SIREUM_HOME=$(pwd)/kekinian
-          export PATH=${SIREUM_HOME}/bin:${PATH}
+          # provers-setup.sh wires the environment into the shell startup file,
+          # which the non-interactive shell a workflow step runs in never reads,
+          # so it is sourced here instead.  SIREUM_HOME is exported first for the
+          # same reason as in the step above: env.sh keeps the one it is given
+          # and would otherwise name ${PROVERS_DIR}/Sireum.  It is env.sh that
+          # supplies MICROKIT_SDK, MICROKIT_BOARD and LIONSOS, which bin/build.cmd
+          # and the generated makefiles require, and that puts Verus, Sireum and
+          # sdfgen on PATH.
+          export SIREUM_HOME=$GITHUB_WORKSPACE/kekinian
+          export PROVERS_BIN_DIR=$GITHUB_WORKSPACE/INSPECTA-models/provers-env/bin
+          . ${PROVERS_BIN_DIR}/env.sh
 
           ${SIREUM_HOME}/bin/build.cmd setup
           rm -rf ${SIREUM_HOME}/.git
           rm -rf ${SIREUM_HOME}/out
-          
+
           sireum -v
-          
+
           ${SIREUM_HOME}/bin/install/fmide.cmd -v
 
           git clone --depth 1 https://github.com/santoslab/sysml-aadl-libraries.git sysml-aadl-libraries

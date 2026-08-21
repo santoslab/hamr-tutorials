@@ -76,7 +76,7 @@ for (p <- projects) {
     assert(ret)
   }
   if ((root / "sysmlv2" / "bin").exists) {
-    if (Os.isLinux) {
+    if (Os.isLinux || Os.isMac) {
       val ret = buildSysmlProject(
         root = root,
         removeAttestation = ops.ISZOps(sysPropProjects).contains(p),
@@ -101,13 +101,24 @@ if (Os.isLinux) {
       assert (ret, s"$p failed during zip")
     }
 
-    if (isCI()) {
+    // Only the caller that supplies branch_name pushes the changes.  More than
+    // one workflow runs this build -- see .github/workflows -- and they would
+    // otherwise each detect the same differences and race to push them to the
+    // same branch, so the branch is named by the one workflow that owns the
+    // update and left unset by the others.
+    val branchOpt = Os.env("branch_name")
+    if (isCI() && branchOpt.nonEmpty) {
       // everything zipped up okay so commit all the changes to the branch specified via the caller
-      val branch = Os.env("branch_name").get
+      val branch = branchOpt.get
       proc"git checkout -b $branch".at(home).runCheck()
       proc"git add $home".at(home).runCheck()
       Os.proc(ISZ[String]("git", "commit", "-m", "GITHUB ACTIONS: Updating repo due to change detection.  See commit diff for more info")).at(home).runCheck()
       proc"git push --set-upstream origin $branch".at(home).runCheck()
+    } else if (isCI()) {
+      println(
+        st"""Changes were detected and projects re-zipped, but branch_name is not set,
+            |so they are not pushed -- the workflow that supplies it is the one that
+            |updates the repository""".render)
     } else {
       println(
         st"""Changes were detected and projects re-zipped.  You'll need to manually

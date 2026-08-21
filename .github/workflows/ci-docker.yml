@@ -1,0 +1,93 @@
+name: Docker
+
+# The same build as ci-linux.yml, run inside the published container rather than
+# against an environment provers-setup.sh installs on the runner, so that the
+# image keeps being exercised.  It does not take branch_name: only ci-linux.yml
+# pushes what change detection finds, and bin/build.cmd leaves the changes
+# uncommitted where that variable is unset.
+on: 
+   workflow_call:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    container:
+      image: jasonbelt/microkit_provers:latest
+    name: HAMR-codegen
+    env:
+        HOME: /home/microkit
+        TAR_OPTIONS: "--warning=no-unknown-keyword"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: sireum/kekinian
+          path: kekinian
+          submodules: recursive          
+      - name: Cache Java
+        id: cache-java
+        uses: actions/cache@v4
+        with:
+          path: kekinian/bin/linux/java
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-java          
+      - name: Cache Scala
+        id: cache-scala
+        uses: actions/cache@v4
+        with:
+          path: kekinian/bin/scala
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-scala
+      - name: Cache Coursier
+        id: cache-coursier
+        uses: actions/cache@v4
+        with:
+          path: cache/coursier
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-coursier
+      - name: Cache SMT2 solvers
+        id: cache-smt2
+        uses: actions/cache@v4
+        with:
+          path: |
+            kekinian/bin/linux/cvc
+            kekinian/bin/linux/.cvc.ver
+            kekinian/bin/linux/cvc5
+            kekinian/bin/linux/.cvc5.ver
+            kekinian/bin/linux/z3
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/versions.properties') }}-smt2          
+      - name: Cache FMIDE
+        id: cache-fmide
+        uses: actions/cache@v4
+        with:
+          path: kekinian/bin/linux/fmide
+          key: ${{ runner.os }}-${{ hashFiles('kekinian/bin/install/fmide*') }}-fmide          
+      - name: Test
+        run: |
+          export COURSIER_CACHE=$GITHUB_WORKSPACE/cache/coursier
+
+          # see https://github.com/sireum/osate-plugin/blob/57785407d84793cf1f8d5926647e4dc75ab197a9/org.sireum.aadl.osate.cli/src/org/sireum/aadl/osate/cli/Phantom.java#L508-L517
+          export CHECK_PHANTOM_HAMR_API_COMPATIBILITY=true
+
+
+          rm -rf ${PROVERS_DIR}/kekinian # remove bootstrap version
+          export SIREUM_HOME=$(pwd)/kekinian
+          export PATH=${SIREUM_HOME}/bin:${PATH}
+
+          ${SIREUM_HOME}/bin/build.cmd setup
+          rm -rf ${SIREUM_HOME}/.git
+          rm -rf ${SIREUM_HOME}/out
+          
+          sireum -v
+          
+          ${SIREUM_HOME}/bin/install/fmide.cmd -v
+
+          git clone --depth 1 https://github.com/santoslab/sysml-aadl-libraries.git sysml-aadl-libraries
+          # Remove .git to save space and to prevent actions/checkout post-job
+          # cleanup from mistaking this for a submodule (which causes a fatal
+          # error since there is no .gitmodules entry for it)
+          rm -rf sysml-aadl-libraries/.git
+          export SYSML_AADL_LIBRARIES=$(pwd)/sysml-aadl-libraries
+
+          bin/build.cmd

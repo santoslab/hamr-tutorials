@@ -44,9 +44,6 @@ val toKeep = ISZ(
   KeepPattern("clean.cmd"),
   KeepPattern("run-hamr.cmd"),
   KeepPattern("run-logika.cmd"),
-  
-  KeepPattern("attestation"), // attestation files
-  KeepPattern("reporting"), // reporting files
 
   KeepPattern(".md"), // readmes
 
