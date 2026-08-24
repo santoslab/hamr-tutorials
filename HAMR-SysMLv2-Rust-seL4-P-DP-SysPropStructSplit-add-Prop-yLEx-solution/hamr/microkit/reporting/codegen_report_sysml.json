@@ -7,7 +7,7 @@
         "KEY_TOOL_REPORT",
         {
           "type" : "ToolReport",
-          "commandLineArgs" : "--sourcepath ..\/aadl-lib:. --platform Microkit --output-dir \/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/hamr --package-name base --workspace-root-dir ..\/.. --ros2-nodes-language Cpp",
+          "commandLineArgs" : "--sourcepath ..\/aadl-lib:. --platform Microkit --output-dir \/home\/runner\/work\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/hamr --package-name base --sel4-output-dir \/home\/runner\/work\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/hamr\/microkit --workspace-root-dir ..\/.. --ros2-nodes-language Cpp",
           "status" : {
             "type" : "Status",
             "value" : "Success"
