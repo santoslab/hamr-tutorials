@@ -87,6 +87,17 @@ for (p <- projects) {
 }
 
 if (Os.isLinux) {
+  // CI checks INSPECTA-models out into the workspace, for the provers-env it
+  // carries -- see .github/workflows/ci-linux.yml.  Nothing tracks or ignores it
+  // here, so 'git status -s' below would report it as a change of its own and
+  // 'git add $home' would commit the whole checkout.  Everything that needed it
+  // has run by this point, so it goes.
+  val inspectaModels = home / "INSPECTA-models"
+  if (isCI() && inspectaModels.exists) {
+    println(s"Removing the INSPECTA-models checkout at $inspectaModels")
+    inspectaModels.removeAll()
+  }
+
   val results = proc"git status -s".at(home).run()
   if (results.out.size != 0) {
     // Something has changed since the last codegen.  We'll accept those changes
