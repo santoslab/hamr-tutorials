@@ -1,5 +1,7 @@
 # HAMR Tutorials
 
+[![Updater](https://github.com/santoslab/hamr-tutorials/actions/workflows/ci-root.yml/badge.svg)](https://github.com/santoslab/hamr-tutorials/actions/workflows/ci-root.yml)
+
 This repository provides tutorials and small examples for the HAMR high-assurance model-driven development environment ([HAMR web site](https://hamr.sireum.org)).
 
 Please see the [HAMR documentation tutorial guide](https://hamr.sireum.org/hamr-doc/reading-order/) for how to use these files.
