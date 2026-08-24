@@ -44,7 +44,7 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee incx
         //   Output is the input incremented by one.
-        api.outxfield == api.inxfield + 1i32,
+        final(api).outxfield == final(api).inxfield + 1i32,
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

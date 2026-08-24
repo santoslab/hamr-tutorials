@@ -54,7 +54,7 @@ verus! {
         //   This preserves the system-level intent of REQ_THERM_1:
         //   event data ports need no initialization message, so
         //   the heat source itself guarantees the initial Off state.
-        self.heater_state == Isolette_Data_Model::On_Off::Off,
+        final(self).heater_state == Isolette_Data_Model::On_Off::Off,
         // END MARKER INITIALIZATION ENSURES
     {
       log_info("initialize entrypoint invoked");
@@ -72,12 +72,12 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee HS_latch_cmd
         //   A received command is latched into the heater state.
-        api.heat_control.is_some() ==>
-          (self.heater_state == api.heat_control.unwrap()),
+        final(api).heat_control.is_some() ==>
+          (final(self).heater_state == final(api).heat_control.unwrap()),
         // guarantee HS_hold_cmd
         //   If no command arrives, the heater state is unchanged.
-        !(api.heat_control.is_some()) ==>
-          (self.heater_state == old(self).heater_state),
+        !(final(api).heat_control.is_some()) ==>
+          (final(self).heater_state == old(self).heater_state),
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

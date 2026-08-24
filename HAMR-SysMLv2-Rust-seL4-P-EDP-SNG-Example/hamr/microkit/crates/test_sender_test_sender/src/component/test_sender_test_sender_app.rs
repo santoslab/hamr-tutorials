@@ -75,7 +75,7 @@ verus! {
       api: &mut test_sender_test_sender_Application_Api<API>)
       ensures
         // PLACEHOLDER MARKER INITIALIZATION ENSURES
-        test_case_index_inv(self.test_case_index), // manual invariant: established by init
+        test_case_index_inv(final(self).test_case_index), // manual invariant: established by init
     {
       log_info("initialize entrypoint invoked");
       self.test_case_index = 0;
@@ -92,7 +92,7 @@ verus! {
         test_case_index_inv(old(self).test_case_index), // manual invariant: assumed at entry
       ensures
         // PLACEHOLDER MARKER TIME TRIGGERED ENSURES
-        test_case_index_inv(self.test_case_index), // manual invariant: re-established at exit
+        test_case_index_inv(final(self).test_case_index), // manual invariant: re-established at exit
     {
       // Generate test messages that exercise all requirements:
       //   Case 0: Public,     payload=42   -> Gate passes, Filter passes unchanged

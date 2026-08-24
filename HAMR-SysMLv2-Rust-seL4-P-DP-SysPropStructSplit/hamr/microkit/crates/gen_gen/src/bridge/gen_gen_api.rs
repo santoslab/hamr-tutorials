@@ -41,10 +41,10 @@ verus! {
           (-100i32 <= value.y)) &&
           (value.y <= 100i32),
       ensures
-        self.outstruct == value,
+        final(self).outstruct == value,
     {
       self.api.unverified_put_outstruct(value);
-      self.outstruct = value;
+      proof { self.outstruct = value; }
     }
   }
 

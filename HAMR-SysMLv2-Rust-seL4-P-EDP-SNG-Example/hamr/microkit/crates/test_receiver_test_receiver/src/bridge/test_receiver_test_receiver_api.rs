@@ -37,8 +37,8 @@ verus! {
   impl<API: test_receiver_test_receiver_Get_Api> test_receiver_test_receiver_Application_Api<API> {
     pub fn get_input(&mut self) -> (res : Option<SNG_Data_Model::Message>)
       ensures
-        old(self).input == self.input,
-        res == self.input,
+        old(self).input == final(self).input,
+        res == final(self).input,
     {
       self.api.unverified_get_input(&Ghost(self.input))
     }

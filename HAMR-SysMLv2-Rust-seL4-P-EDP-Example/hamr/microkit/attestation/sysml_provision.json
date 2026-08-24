@@ -66,7 +66,6 @@
           "%%codegen_dir%%/system.mk",
           "%%codegen_dir%%/util/include/printf.h",
           "%%codegen_dir%%/util/src/printf.c",
-          "%%codegen_dir%%/util/include/util.h",
           "%%codegen_dir%%/util/src/util.c",
           "%%codegen_dir%%/crates/data/src/Isolette_Data_Model/On_Off.rs",
           "%%codegen_dir%%/crates/data/src/Isolette_Data_Model/Temp.rs",

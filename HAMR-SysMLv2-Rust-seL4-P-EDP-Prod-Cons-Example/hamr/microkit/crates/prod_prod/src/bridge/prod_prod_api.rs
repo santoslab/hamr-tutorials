@@ -38,10 +38,10 @@ verus! {
         (0i32 <= value.payload) &&
           (value.payload <= 90i32),
       ensures
-        self.output == Some(value),
+        final(self).output == Some(value),
     {
       self.api.unverified_put_output(value);
-      self.output = Some(value);
+      proof { self.output = Some(value); }
     }
   }
 

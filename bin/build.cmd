@@ -187,12 +187,53 @@ object Helper {
     (aadlLibsDir / ".gitignore").removeAll()
 
     val hamrDir = root / "hamr"
-    val microkitDir = hamrDir / "microkit"
+
+    var ok = buildMicrokitTree(
+      root = root,
+      microkitDir = hamrDir / "microkit",
+      removeAttestation = removeAttestation,
+      systemLevelVerus = systemLevelVerus,
+      verify = T,
+      test = T)
+
+    // A tutorial that ships a starting point has hamr/microkit-initial beside
+    // the hamr/microkit its steps build up to.  Both come from the same model --
+    // codegen writes wherever --sel4-output-dir points -- so both are cleaned and
+    // regenerated here rather than only the one, which is how the starting point
+    // came to hold output from a codegen several releases old.
+    //
+    // It is built but neither verified nor tested.  Its entry points are the
+    // skeletons a reader begins from, logging and returning, while the contracts
+    // woven into them are the finished ones: 'make verus' answers with
+    // 'postcondition not satisfied' for initialize and timeTriggered, and the
+    // GUMBOX property tests fail for the same reason (the plain unit tests pass).
+    // That it compiles is the part worth checking -- a reader has to be able to
+    // build the tree before writing a line of it.
+    val initialDir = hamrDir / "microkit-initial"
+    if (ok && initialDir.exists) {
+      ok = buildMicrokitTree(
+        root = root,
+        microkitDir = initialDir,
+        removeAttestation = removeAttestation,
+        systemLevelVerus = systemLevelVerus,
+        verify = F,
+        test = F)
+    }
+
+    return ok
+  }
+
+  // Clean, regenerate and build one of a project's generated Microkit trees.
+  def buildMicrokitTree(root: Os.Path, microkitDir: Os.Path, removeAttestation: B,
+                        systemLevelVerus: B, verify: B, test: B): B = {
+    println(s"Processing $microkitDir")
+
+    val sysmlv2Dir = root / "sysmlv2"
 
     var ret = run(s"Cleaning $microkitDir", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "clean.cmd"} $microkitDir")
 
     if (ret == 0) {
-      ret = run(s"Running HAMR codegen", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "run-hamr.cmd"} --platform Microkit".at(findModelDir(sysmlv2Dir)))
+      ret = run(s"Running HAMR codegen", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "run-hamr.cmd"} --platform Microkit --sel4-output-dir $microkitDir".at(findModelDir(sysmlv2Dir)))
     }
 
     if (ret == 0) {
@@ -203,7 +244,7 @@ object Helper {
 
       ret = run("Building the image", F, proc"make RUST_MAKE_TARGET=build-release".at(microkitDir))
 
-      if (ret == 0) {
+      if (ret == 0 && verify) {
         if (systemLevelVerus) {
           ret = run("Verifying the project's crates", F, proc"make verus".at(microkitDir))
         } else {
@@ -212,7 +253,7 @@ object Helper {
         }
       }
 
-      if (ret == 0) {
+      if (ret == 0 && test) {
         ret = run("Running the microkit unit tests", F, proc"make test".at(microkitDir))
       }
 
@@ -224,7 +265,7 @@ object Helper {
 
   def buildAadlProject(root: Os.Path): B = {
     println(s"Processing $root")
-    def run(cmd: String): B = {
+    def runit(cmd: String): B = {
       val results = proc"$cmd".env(buildEnv).at(root).echo.run()
       if (!results.ok) {
         println(results.out)
@@ -232,15 +273,15 @@ object Helper {
       }
       return results.ok
     }
-    var ret = run((root / "aadl" / "bin" / "clean.cmd").string)
+    var ret = runit((root / "aadl" / "bin" / "clean.cmd").string)
     if (ret) {
-      ret = run((root / "aadl" / "bin" / "run-hamr.cmd").string)
+      ret = runit((root / "aadl" / "bin" / "run-hamr.cmd").string)
     }
     if (ret) {
-      ret = run(s"$sireum proyek tipe ${root / "hamr" / "slang" }")
+      ret = runit(s"$sireum proyek tipe ${root / "hamr" / "slang" }")
     }
     if (ret) {
-      ret = run(s"$sireum proyek test ${root / "hamr" / "slang" }")
+      ret = runit(s"$sireum proyek test ${root / "hamr" / "slang" }")
     }
 
     println()

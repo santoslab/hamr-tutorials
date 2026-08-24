@@ -55,15 +55,15 @@ verus! {
         // BEGIN MARKER INITIALIZATION ENSURES
         // guarantee initCurrentSetPoints
         //   The latched set points start at the default range.
-        (self.currentSetPoints.lower.degrees == Default_Lower_Set_Point()) &&
-          (self.currentSetPoints.upper.degrees == Default_Upper_Set_Point()),
+        (final(self).currentSetPoints.lower.degrees == Default_Lower_Set_Point()) &&
+          (final(self).currentSetPoints.upper.degrees == Default_Upper_Set_Point()),
         // guarantee REQ_THERM_1
         //   The commanded heat state shall be Off initially.
         //   Adapted from the original REQ_THERM_1: no message is
         //   sent during initialization (event data ports need no
         //   initialization), and the Heat Source independently
         //   initializes its heater state to Off.
-        self.lastCmd == Isolette_Data_Model::On_Off::Off,
+        final(self).lastCmd == Isolette_Data_Model::On_Off::Off,
         // END MARKER INITIALIZATION ENSURES
     {
       log_info("initialize entrypoint invoked");
@@ -98,55 +98,55 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee latchSetPointsOnEvent
         //   A newly received set point message is latched.
-        api.desired_temp.is_some() ==>
-          (self.currentSetPoints.lower.degrees == api.desired_temp.unwrap().lower.degrees) &&
-            (self.currentSetPoints.upper.degrees == api.desired_temp.unwrap().upper.degrees),
+        final(api).desired_temp.is_some() ==>
+          (final(self).currentSetPoints.lower.degrees == final(api).desired_temp.unwrap().lower.degrees) &&
+            (final(self).currentSetPoints.upper.degrees == final(api).desired_temp.unwrap().upper.degrees),
         // guarantee latchSetPointsNoEvent
         //   Otherwise the latched set points are unchanged.
-        !(api.desired_temp.is_some()) ==>
-          (self.currentSetPoints == old(self).currentSetPoints),
+        !(final(api).desired_temp.is_some()) ==>
+          (final(self).currentSetPoints == old(self).currentSetPoints),
         // guarantee invCSPMaintained
         //   Well-formedness of the latched set points is
         //   re-established for the next dispatch.
-        self.currentSetPoints.lower.degrees <= self.currentSetPoints.upper.degrees,
+        final(self).currentSetPoints.lower.degrees <= final(self).currentSetPoints.upper.degrees,
         // guarantee noTriggerNoChange
         //   Without a triggering event (temperature change or
         //   new set points) the commanded state is unchanged.
-        !(api.temp_changed.is_some() || api.desired_temp.is_some()) ==>
-          (self.lastCmd == old(self).lastCmd),
+        !(final(api).temp_changed.is_some() || final(api).desired_temp.is_some()) ==>
+          (final(self).lastCmd == old(self).lastCmd),
         // guarantee REQ_THERM_2
         //   If triggered and the Current Temperature is less than
         //   the Lower Desired Temperature, the commanded heat state
         //   shall be set to On.
-        (api.temp_changed.is_some() || api.desired_temp.is_some()) &&
-          (api.current_temp.degrees < self.currentSetPoints.lower.degrees) ==>
-          (self.lastCmd == Isolette_Data_Model::On_Off::Onn),
+        (final(api).temp_changed.is_some() || final(api).desired_temp.is_some()) &&
+          (final(api).current_temp.degrees < final(self).currentSetPoints.lower.degrees) ==>
+          (final(self).lastCmd == Isolette_Data_Model::On_Off::Onn),
         // guarantee REQ_THERM_3
         //   If triggered and the Current Temperature is greater than
         //   the Upper Desired Temperature, the commanded heat state
         //   shall be set to Off.
-        (api.temp_changed.is_some() || api.desired_temp.is_some()) &&
-          (api.current_temp.degrees > self.currentSetPoints.upper.degrees) ==>
-          (self.lastCmd == Isolette_Data_Model::On_Off::Off),
+        (final(api).temp_changed.is_some() || final(api).desired_temp.is_some()) &&
+          (final(api).current_temp.degrees > final(self).currentSetPoints.upper.degrees) ==>
+          (final(self).lastCmd == Isolette_Data_Model::On_Off::Off),
         // guarantee REQ_THERM_4
         //   If triggered and the Current Temperature is greater than
         //   or equal to the Lower Desired Temperature and less than
         //   or equal to the Upper Desired Temperature, the commanded
         //   heat state shall not be changed.
-        (api.temp_changed.is_some() || api.desired_temp.is_some()) &&
-          (api.current_temp.degrees >= self.currentSetPoints.lower.degrees) &&
-          (api.current_temp.degrees <= self.currentSetPoints.upper.degrees) ==>
-          (self.lastCmd == old(self).lastCmd),
+        (final(api).temp_changed.is_some() || final(api).desired_temp.is_some()) &&
+          (final(api).current_temp.degrees >= final(self).currentSetPoints.lower.degrees) &&
+          (final(api).current_temp.degrees <= final(self).currentSetPoints.upper.degrees) ==>
+          (final(self).lastCmd == old(self).lastCmd),
         // guarantee mustSendOnChange
         //   A command message is sent exactly when the commanded
         //   state changes, and it carries the new state.
-        (self.lastCmd != old(self).lastCmd) ==>
-          api.heat_control.is_some() &&
-            (api.heat_control.unwrap() == self.lastCmd),
+        (final(self).lastCmd != old(self).lastCmd) ==>
+          final(api).heat_control.is_some() &&
+            (final(api).heat_control.unwrap() == final(self).lastCmd),
         // guarantee noSendNoChange
         //   No message is sent when the commanded state is unchanged.
-        (self.lastCmd == old(self).lastCmd) ==>
-          api.heat_control.is_none(),
+        (final(self).lastCmd == old(self).lastCmd) ==>
+          final(api).heat_control.is_none(),
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

@@ -7,7 +7,7 @@
         "KEY_TOOL_REPORT",
         {
           "type" : "ToolReport",
-          "commandLineArgs" : "--sourcepath ..\/aadl-lib:. --platform Microkit --output-dir \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/hamr --package-name base --workspace-root-dir ..\/.. --ros2-nodes-language Cpp",
+          "commandLineArgs" : "--sourcepath ..\/aadl-lib:. --platform Microkit --output-dir \/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/hamr --package-name base --workspace-root-dir ..\/.. --ros2-nodes-language Cpp",
           "status" : {
             "type" : "Status",
             "value" : "Success"
@@ -25,26 +25,6 @@
             {
               "type" : "ResourceReport",
               "path" : "types\/include\/sb_event_counter.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_SNG_Data_Model_Message_1.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_SNG_Data_Model_Message_1.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_SNG_Data_Model_Message_1.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_SNG_Data_Model_Message_1.c",
               "overwrittenIfExists" : true
             },
             {
@@ -165,11 +145,6 @@
             {
               "type" : "ResourceReport",
               "path" : "util\/src\/printf.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "util\/include\/util.h",
               "overwrittenIfExists" : true
             },
             {
@@ -600,7 +575,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "..\/..\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 80,
                       "beginColumn" : 8,
@@ -666,8 +641,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 66,
                                 "endColumn" : 5,
-                                "offset" : 1505,
-                                "length" : 258
+                                "offset" : 1529,
+                                "length" : 279
                               }
                             },
                             {
@@ -770,9 +745,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 16,
+                                "beginLine" : 19,
                                 "beginColumn" : 7,
-                                "endLine" : 20,
+                                "endLine" : 23,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -830,7 +805,7 @@
                                 "endLine" : 55,
                                 "endColumn" : 5,
                                 "offset" : 1072,
-                                "length" : 358
+                                "length" : 382
                               }
                             },
                             {
@@ -933,9 +908,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 11,
+                                "beginLine" : 14,
                                 "beginColumn" : 7,
-                                "endLine" : 15,
+                                "endLine" : 18,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -986,7 +961,7 @@
                               "endLine" : 103,
                               "endColumn" : 5,
                               "offset" : 1576,
-                              "length" : 2087
+                              "length" : 2192
                             }
                           ]
                         ]
@@ -1092,9 +1067,9 @@
                                   "beginLine" : 63,
                                   "beginColumn" : 11,
                                   "endLine" : 66,
-                                  "endColumn" : 30,
+                                  "endColumn" : 37,
                                   "offset" : 2020,
-                                  "length" : 155
+                                  "length" : 176
                                 }
                               ],
                               [
@@ -1108,9 +1083,9 @@
                                   "beginLine" : 67,
                                   "beginColumn" : 11,
                                   "endLine" : 70,
-                                  "endColumn" : 80,
-                                  "offset" : 2220,
-                                  "length" : 207
+                                  "endColumn" : 94,
+                                  "offset" : 2241,
+                                  "length" : 235
                                 }
                               ],
                               [
@@ -1124,9 +1099,9 @@
                                   "beginLine" : 71,
                                   "beginColumn" : 11,
                                   "endLine" : 74,
-                                  "endColumn" : 80,
-                                  "offset" : 2489,
-                                  "length" : 203
+                                  "endColumn" : 94,
+                                  "offset" : 2545,
+                                  "length" : 231
                                 }
                               ],
                               [
@@ -1140,9 +1115,9 @@
                                   "beginLine" : 75,
                                   "beginColumn" : 11,
                                   "endLine" : 76,
-                                  "endColumn" : 55,
-                                  "offset" : 2755,
-                                  "length" : 56
+                                  "endColumn" : 69,
+                                  "offset" : 2846,
+                                  "length" : 70
                                 }
                               ]
                             ]
@@ -1343,7 +1318,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "..\/..\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 99,
                       "beginColumn" : 8,
@@ -1409,8 +1384,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 69,
                                 "endColumn" : 5,
-                                "offset" : 1692,
-                                "length" : 384
+                                "offset" : 1716,
+                                "length" : 405
                               }
                             },
                             {
@@ -1513,9 +1488,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 34,
+                                "beginLine" : 37,
                                 "beginColumn" : 7,
-                                "endLine" : 38,
+                                "endLine" : 41,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -1573,7 +1548,7 @@
                                 "endLine" : 55,
                                 "endColumn" : 5,
                                 "offset" : 1342,
-                                "length" : 251
+                                "length" : 275
                               }
                             },
                             {
@@ -1676,9 +1651,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 39,
+                                "beginLine" : 42,
                                 "beginColumn" : 7,
-                                "endLine" : 43,
+                                "endLine" : 46,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -1729,7 +1704,7 @@
                               "endLine" : 121,
                               "endColumn" : 5,
                               "offset" : 1797,
-                              "length" : 2926
+                              "length" : 3003
                             }
                           ]
                         ]
@@ -1790,7 +1765,7 @@
                                   "beginColumn" : 13,
                                   "endLine" : 66,
                                   "endColumn" : 60,
-                                  "offset" : 1946,
+                                  "offset" : 1991,
                                   "length" : 61
                                 }
                               ]
@@ -1841,9 +1816,9 @@
                                   "beginLine" : 65,
                                   "beginColumn" : 11,
                                   "endLine" : 68,
-                                  "endColumn" : 81,
+                                  "endColumn" : 95,
                                   "offset" : 2258,
-                                  "length" : 216
+                                  "length" : 230
                                 }
                               ],
                               [
@@ -1857,9 +1832,9 @@
                                   "beginLine" : 69,
                                   "beginColumn" : 11,
                                   "endLine" : 72,
-                                  "endColumn" : 87,
-                                  "offset" : 2538,
-                                  "length" : 226
+                                  "endColumn" : 101,
+                                  "offset" : 2559,
+                                  "length" : 240
                                 }
                               ],
                               [
@@ -1873,9 +1848,9 @@
                                   "beginLine" : 75,
                                   "beginColumn" : 11,
                                   "endLine" : 77,
-                                  "endColumn" : 32,
-                                  "offset" : 3021,
-                                  "length" : 75
+                                  "endColumn" : 39,
+                                  "offset" : 3091,
+                                  "length" : 82
                                 }
                               ]
                             ]
@@ -2054,7 +2029,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "..\/..\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 117,
                       "beginColumn" : 8,
@@ -2121,7 +2096,7 @@
                                 "endLine" : 41,
                                 "endColumn" : 5,
                                 "offset" : 918,
-                                "length" : 212
+                                "length" : 229
                               }
                             },
                             {
@@ -2224,9 +2199,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 57,
+                                "beginLine" : 60,
                                 "beginColumn" : 7,
-                                "endLine" : 61,
+                                "endLine" : 64,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -2326,7 +2301,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example\/sysmlv2\/sng\/SNG.sysml"
+                        "value" : "..\/..\/sysmlv2\/sng\/SNG.sysml"
                       },
                       "beginLine" : 134,
                       "beginColumn" : 8,
@@ -2393,7 +2368,7 @@
                                 "endLine" : 44,
                                 "endColumn" : 5,
                                 "offset" : 1165,
-                                "length" : 217
+                                "length" : 231
                               }
                             },
                             {
@@ -2496,9 +2471,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 75,
+                                "beginLine" : 78,
                                 "beginColumn" : 7,
-                                "endLine" : 79,
+                                "endLine" : 82,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0

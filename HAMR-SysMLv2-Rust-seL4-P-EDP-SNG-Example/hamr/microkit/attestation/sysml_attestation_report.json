@@ -39,9 +39,9 @@
                   "beginLine": 63,
                   "beginCol": 11,
                   "endLine": 66,
-                  "endCol": 30,
+                  "endCol": 37,
                   "offset": 2020,
-                  "length": 155
+                  "length": 176
                 }
             }
           ]
@@ -127,9 +127,9 @@
                   "beginLine": 67,
                   "beginCol": 11,
                   "endLine": 70,
-                  "endCol": 80,
-                  "offset": 2220,
-                  "length": 207
+                  "endCol": 94,
+                  "offset": 2241,
+                  "length": 235
                 }
             }
           ]
@@ -215,9 +215,9 @@
                   "beginLine": 71,
                   "beginCol": 11,
                   "endLine": 74,
-                  "endCol": 80,
-                  "offset": 2489,
-                  "length": 203
+                  "endCol": 94,
+                  "offset": 2545,
+                  "length": 231
                 }
             }
           ]
@@ -255,9 +255,9 @@
                   "beginLine": 75,
                   "beginCol": 11,
                   "endLine": 76,
-                  "endCol": 55,
-                  "offset": 2755,
-                  "length": 56
+                  "endCol": 69,
+                  "offset": 2846,
+                  "length": 70
                 }
             }
           ]

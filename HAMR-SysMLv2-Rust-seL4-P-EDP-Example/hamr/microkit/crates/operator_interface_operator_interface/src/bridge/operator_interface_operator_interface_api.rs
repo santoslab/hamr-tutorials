@@ -39,10 +39,10 @@ verus! {
         //   upper desired temperature in every emitted message.
         value.lower.degrees <= value.upper.degrees,
       ensures
-        self.desired_temp == Some(value),
+        final(self).desired_temp == Some(value),
     {
       self.api.unverified_put_desired_temp(value);
-      self.desired_temp = Some(value);
+      proof { self.desired_temp = Some(value); }
     }
   }
 

@@ -44,20 +44,20 @@ verus! {
       &mut self,
       value: i32)
       ensures
-        old(self).inxfield == self.inxfield,
-        self.outxfield == value,
+        old(self).inxfield == final(self).inxfield,
+        final(self).outxfield == value,
     {
       self.api.unverified_put_outxfield(value);
-      self.outxfield = value;
+      proof { self.outxfield = value; }
     }
   }
 
   impl<API: clampx_clampx_Get_Api> clampx_clampx_Application_Api<API> {
     pub fn get_inxfield(&mut self) -> (res : i32)
       ensures
-        old(self).inxfield == self.inxfield,
-        res == self.inxfield,
-        old(self).outxfield == self.outxfield,
+        old(self).inxfield == final(self).inxfield,
+        res == final(self).inxfield,
+        old(self).outxfield == final(self).outxfield,
     {
       self.api.unverified_get_inxfield(&Ghost(self.inxfield))
     }

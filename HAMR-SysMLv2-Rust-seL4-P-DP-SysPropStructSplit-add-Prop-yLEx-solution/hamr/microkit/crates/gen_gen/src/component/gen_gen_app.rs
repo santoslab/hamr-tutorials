@@ -29,8 +29,8 @@ verus! {
         // BEGIN MARKER INITIALIZATION ENSURES
         // guarantee init_outstruct
         //   The output data port must be initialized.
-        (api.outstruct.x == 0i32) &&
-          (api.outstruct.y == 0i32),
+        (final(api).outstruct.x == 0i32) &&
+          (final(api).outstruct.y == 0i32),
         // END MARKER INITIALIZATION ENSURES
     {
       log_info("initialize entrypoint invoked");

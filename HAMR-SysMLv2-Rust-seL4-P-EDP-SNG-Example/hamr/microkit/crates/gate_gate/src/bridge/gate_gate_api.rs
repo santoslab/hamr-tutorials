@@ -47,20 +47,20 @@ verus! {
         // guarantee No_Critical_Output
         GumboLib::allowedSecurityLevel_spec(value),
       ensures
-        old(self).input == self.input,
-        self.output == Some(value),
+        old(self).input == final(self).input,
+        final(self).output == Some(value),
     {
       self.api.unverified_put_output(value);
-      self.output = Some(value);
+      proof { self.output = Some(value); }
     }
   }
 
   impl<API: gate_gate_Get_Api> gate_gate_Application_Api<API> {
     pub fn get_input(&mut self) -> (res : Option<SNG_Data_Model::Message>)
       ensures
-        old(self).input == self.input,
-        res == self.input,
-        old(self).output == self.output,
+        old(self).input == final(self).input,
+        res == final(self).input,
+        old(self).output == final(self).output,
     {
       self.api.unverified_get_input(&Ghost(self.input))
     }

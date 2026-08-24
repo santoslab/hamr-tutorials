@@ -64,12 +64,12 @@ verus! {
         (-100i32 <= value) &&
           (value <= 100i32),
       ensures
-        old(self).instruct == self.instruct,
-        self.xfield == value,
-        old(self).yfield == self.yfield,
+        old(self).instruct == final(self).instruct,
+        final(self).xfield == value,
+        old(self).yfield == final(self).yfield,
     {
       self.api.unverified_put_xfield(value);
-      self.xfield = value;
+      proof { self.xfield = value; }
     }
     pub fn put_yfield(
       &mut self,
@@ -80,22 +80,22 @@ verus! {
         (-100i32 <= value) &&
           (value <= 100i32),
       ensures
-        old(self).instruct == self.instruct,
-        old(self).xfield == self.xfield,
-        self.yfield == value,
+        old(self).instruct == final(self).instruct,
+        old(self).xfield == final(self).xfield,
+        final(self).yfield == value,
     {
       self.api.unverified_put_yfield(value);
-      self.yfield = value;
+      proof { self.yfield = value; }
     }
   }
 
   impl<API: splitter_splitter_Get_Api> splitter_splitter_Application_Api<API> {
     pub fn get_instruct(&mut self) -> (res : SysPropStructSplit_Data_Model::StructXY)
       ensures
-        old(self).instruct == self.instruct,
-        res == self.instruct,
-        old(self).xfield == self.xfield,
-        old(self).yfield == self.yfield,
+        old(self).instruct == final(self).instruct,
+        res == final(self).instruct,
+        old(self).xfield == final(self).xfield,
+        old(self).yfield == final(self).yfield,
         // assume instruct_range
         //   Incoming struct fields lie in [-100, 100].
         (((-100i32 <= res.x) &&

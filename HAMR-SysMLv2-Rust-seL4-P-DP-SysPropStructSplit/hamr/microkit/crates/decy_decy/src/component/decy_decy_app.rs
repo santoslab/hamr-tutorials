@@ -44,7 +44,7 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee decy
         //   Output is the input decremented by one.
-        api.outyfield == api.inyfield - 1i32,
+        final(api).outyfield == final(api).inyfield - 1i32,
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

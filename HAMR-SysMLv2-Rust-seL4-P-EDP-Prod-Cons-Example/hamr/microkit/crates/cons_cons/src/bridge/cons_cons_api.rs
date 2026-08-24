@@ -41,8 +41,8 @@ verus! {
   impl<API: cons_cons_Get_Api> cons_cons_Application_Api<API> {
     pub fn get_input(&mut self) -> (res : Option<ProdCons::Message>)
       ensures
-        old(self).input == self.input,
-        res == self.input,
+        old(self).input == final(self).input,
+        res == final(self).input,
         (res.is_none() ||
           // assume Payload_Range
           (0i32 <= res.unwrap().payload) &&

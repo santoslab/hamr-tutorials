@@ -44,20 +44,20 @@ verus! {
       &mut self,
       value: i32)
       ensures
-        old(self).inyfield == self.inyfield,
-        self.outyfield == value,
+        old(self).inyfield == final(self).inyfield,
+        final(self).outyfield == value,
     {
       self.api.unverified_put_outyfield(value);
-      self.outyfield = value;
+      proof { self.outyfield = value; }
     }
   }
 
   impl<API: decy_decy_Get_Api> decy_decy_Application_Api<API> {
     pub fn get_inyfield(&mut self) -> (res : i32)
       ensures
-        old(self).inyfield == self.inyfield,
-        res == self.inyfield,
-        old(self).outyfield == self.outyfield,
+        old(self).inyfield == final(self).inyfield,
+        res == final(self).inyfield,
+        old(self).outyfield == final(self).outyfield,
     {
       self.api.unverified_get_inyfield(&Ghost(self.inyfield))
     }

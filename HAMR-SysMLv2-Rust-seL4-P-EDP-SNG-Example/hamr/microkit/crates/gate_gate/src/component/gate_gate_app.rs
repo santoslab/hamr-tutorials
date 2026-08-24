@@ -61,19 +61,19 @@ verus! {
       ensures
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee Req_C_Drop_Critical
-        api.input.is_some() &&
-          (api.input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Critical) ==>
-          api.output.is_none(),
+        final(api).input.is_some() &&
+          (final(api).input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Critical) ==>
+          final(api).output.is_none(),
         // guarantee Req_R1_Pass_Restricted
-        api.input.is_some() &&
-          (api.input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Restricted) ==>
-          api.output.is_some() && GumboLib::equalMessage_spec(api.input.unwrap(), api.output.unwrap()),
+        final(api).input.is_some() &&
+          (final(api).input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Restricted) ==>
+          final(api).output.is_some() && GumboLib::equalMessage_spec(final(api).input.unwrap(), final(api).output.unwrap()),
         // guarantee Req_P_Pass_Public
-        api.input.is_some() &&
-          (api.input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Public) ==>
-          api.output.is_some() && GumboLib::equalMessage_spec(api.input.unwrap(), api.output.unwrap()),
+        final(api).input.is_some() &&
+          (final(api).input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Public) ==>
+          final(api).output.is_some() && GumboLib::equalMessage_spec(final(api).input.unwrap(), final(api).output.unwrap()),
         // guarantee No_Input_No_Output
-        !(api.input.is_some()) ==> api.output.is_none(),
+        !(final(api).input.is_some()) ==> final(api).output.is_none(),
         // END MARKER TIME TRIGGERED ENSURES
     {
       // Gate implements message drop/pass policies:

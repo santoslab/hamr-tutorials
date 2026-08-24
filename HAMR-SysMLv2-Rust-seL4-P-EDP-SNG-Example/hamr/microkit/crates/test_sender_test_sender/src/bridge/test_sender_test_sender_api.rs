@@ -34,10 +34,10 @@ verus! {
       &mut self,
       value: SNG_Data_Model::Message)
       ensures
-        self.output == Some(value),
+        final(self).output == Some(value),
     {
       self.api.unverified_put_output(value);
-      self.output = Some(value);
+      proof { self.output = Some(value); }
     }
   }
 

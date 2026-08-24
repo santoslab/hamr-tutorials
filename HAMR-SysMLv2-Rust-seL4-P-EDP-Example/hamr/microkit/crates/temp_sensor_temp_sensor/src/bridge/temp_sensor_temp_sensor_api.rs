@@ -45,19 +45,19 @@ verus! {
         (96i32 <= value.degrees) &&
           (value.degrees <= 103i32),
       ensures
-        self.current_temp == value,
-        old(self).temp_changed == self.temp_changed,
+        final(self).current_temp == value,
+        old(self).temp_changed == final(self).temp_changed,
     {
       self.api.unverified_put_current_temp(value);
-      self.current_temp = value;
+      proof { self.current_temp = value; }
     }
     pub fn put_temp_changed(&mut self)
       ensures
-        old(self).current_temp == self.current_temp,
-        self.temp_changed == Some(0u8),
+        old(self).current_temp == final(self).current_temp,
+        final(self).temp_changed == Some(0u8),
     {
       self.api.unverified_put_temp_changed();
-      self.temp_changed = Some(0u8);
+      proof { self.temp_changed = Some(0u8); }
     }
   }
 

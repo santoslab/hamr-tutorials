@@ -34,10 +34,10 @@ verus! {
       &mut self,
       value: Isolette_Data_Model::Set_Points)
       ensures
-        self.desired_temp == value,
+        final(self).desired_temp == value,
     {
       self.api.unverified_put_desired_temp(value);
-      self.desired_temp = value;
+      proof { self.desired_temp = value; }
     }
   }
 

@@ -98,7 +98,7 @@ heat_source_heat_source.o: $(TOP_DIR)/components/heat_source_heat_source/src/hea
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE) -I$(TOP_DIR)/components/heat_source_heat_source/include
 
 pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
-	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_INCLUDE)
+	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
 
 temp_sensor_temp_sensor_MON.elf: temp_sensor_temp_sensor_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@

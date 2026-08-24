@@ -64,7 +64,7 @@ verus! {
       api: &mut test_receiver_test_receiver_Application_Api<API>)
       ensures
         // PLACEHOLDER MARKER INITIALIZATION ENSURES
-        num_received_inv(self.num_received), // manual invariant: established by init
+        num_received_inv(final(self).num_received), // manual invariant: established by init
     {
       log_info("initialize entrypoint invoked");
       self.num_received = 0;
@@ -81,7 +81,7 @@ verus! {
         num_received_inv(old(self).num_received), // manual invariant: assumed at entry
       ensures
         // PLACEHOLDER MARKER TIME TRIGGERED ENSURES
-        num_received_inv(self.num_received), // manual invariant: re-established at exit
+        num_received_inv(final(self).num_received), // manual invariant: re-established at exit
     {
       let input_contents = api.get_input();
       match input_contents {

@@ -40,15 +40,15 @@ verus! {
         //   values already in [-100, 100] pass through unchanged
         ((-100i32 <= old(api).inxfield) &&
           (old(api).inxfield <= 100i32)) ==>
-          (api.outxfield == api.inxfield),
+          (final(api).outxfield == final(api).inxfield),
         // case Above
         //   values above 100 saturate to 100
         (old(api).inxfield > 100i32) ==>
-          (api.outxfield == 100i32),
+          (final(api).outxfield == 100i32),
         // case Below
         //   values below -100 saturate to -100
         (old(api).inxfield < -100i32) ==>
-          (api.outxfield == -100i32),
+          (final(api).outxfield == -100i32),
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

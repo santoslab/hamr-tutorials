@@ -74,24 +74,24 @@ verus! {
       &mut self,
       value: Isolette_Data_Model::On_Off)
       ensures
-        old(self).current_temp == self.current_temp,
-        old(self).temp_changed == self.temp_changed,
-        old(self).desired_temp == self.desired_temp,
-        self.heat_control == Some(value),
+        old(self).current_temp == final(self).current_temp,
+        old(self).temp_changed == final(self).temp_changed,
+        old(self).desired_temp == final(self).desired_temp,
+        final(self).heat_control == Some(value),
     {
       self.api.unverified_put_heat_control(value);
-      self.heat_control = Some(value);
+      proof { self.heat_control = Some(value); }
     }
   }
 
   impl<API: thermostat_thermostat_Get_Api> thermostat_thermostat_Application_Api<API> {
     pub fn get_current_temp(&mut self) -> (res : Isolette_Data_Model::Temp)
       ensures
-        old(self).current_temp == self.current_temp,
-        res == self.current_temp,
-        old(self).temp_changed == self.temp_changed,
-        old(self).desired_temp == self.desired_temp,
-        old(self).heat_control == self.heat_control,
+        old(self).current_temp == final(self).current_temp,
+        res == final(self).current_temp,
+        old(self).temp_changed == final(self).temp_changed,
+        old(self).desired_temp == final(self).desired_temp,
+        old(self).heat_control == final(self).heat_control,
         // assume ASSM_CT_Range
         (crate::component::thermostat_thermostat_app::Temp_Lower_Bound() <= res.degrees) &&
           (res.degrees <= crate::component::thermostat_thermostat_app::Temp_Upper_Bound()),
@@ -100,21 +100,21 @@ verus! {
     }
     pub fn get_temp_changed(&mut self) -> (res : bool)
       ensures
-        old(self).current_temp == self.current_temp,
-        old(self).temp_changed == self.temp_changed,
-        res == self.temp_changed.is_some(),
-        old(self).desired_temp == self.desired_temp,
-        old(self).heat_control == self.heat_control,
+        old(self).current_temp == final(self).current_temp,
+        old(self).temp_changed == final(self).temp_changed,
+        res == final(self).temp_changed.is_some(),
+        old(self).desired_temp == final(self).desired_temp,
+        old(self).heat_control == final(self).heat_control,
     {
       self.api.unverified_get_temp_changed(&Ghost(self.temp_changed))
     }
     pub fn get_desired_temp(&mut self) -> (res : Option<Isolette_Data_Model::Set_Points>)
       ensures
-        old(self).current_temp == self.current_temp,
-        old(self).temp_changed == self.temp_changed,
-        old(self).desired_temp == self.desired_temp,
-        res == self.desired_temp,
-        old(self).heat_control == self.heat_control,
+        old(self).current_temp == final(self).current_temp,
+        old(self).temp_changed == final(self).temp_changed,
+        old(self).desired_temp == final(self).desired_temp,
+        res == final(self).desired_temp,
+        old(self).heat_control == final(self).heat_control,
         (res.is_none() ||
           // assume ASSM_LDT_LE_UDT
           //   Incoming set point messages must be well-formed

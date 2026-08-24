@@ -29,7 +29,7 @@ verus! {
         // BEGIN MARKER INITIALIZATION ENSURES
         // guarantee init_last_x
         //   The state variable starts at zero.
-        self.last_x == 0i32,
+        final(self).last_x == 0i32,
         // END MARKER INITIALIZATION ENSURES
     {
       log_info("initialize entrypoint invoked");
@@ -53,7 +53,7 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee track_x
         //   last_x records the x field of the most recently consumed struct.
-        self.last_x == api.instruct.x,
+        final(self).last_x == final(api).instruct.x,
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

@@ -68,7 +68,7 @@ cons_cons.o: $(TOP_DIR)/components/cons_cons/src/cons_cons.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE) -I$(TOP_DIR)/components/cons_cons/include
 
 pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
-	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_INCLUDE)
+	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
 
 prod_prod_MON.elf: prod_prod_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@

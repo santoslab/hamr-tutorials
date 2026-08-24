@@ -47,20 +47,20 @@ verus! {
       &mut self,
       value: Isolette_Data_Model::Set_Points)
       ensures
-        self.desired_temp == value,
-        old(self).display_temp == self.display_temp,
+        final(self).desired_temp == value,
+        old(self).display_temp == final(self).display_temp,
     {
       self.api.unverified_put_desired_temp(value);
-      self.desired_temp = value;
+      proof { self.desired_temp = value; }
     }
   }
 
   impl<API: operator_interface_operator_interface_Get_Api> operator_interface_operator_interface_Application_Api<API> {
     pub fn get_display_temp(&mut self) -> (res : Isolette_Data_Model::Temp)
       ensures
-        old(self).desired_temp == self.desired_temp,
-        old(self).display_temp == self.display_temp,
-        res == self.display_temp,
+        old(self).desired_temp == final(self).desired_temp,
+        old(self).display_temp == final(self).display_temp,
+        res == final(self).display_temp,
         // assume REQ_OP_5
         (90i32 <= res.degrees) &&
           (res.degrees <= 110i32),

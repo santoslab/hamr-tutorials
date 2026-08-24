@@ -40,10 +40,10 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee split_x
         //   xfield equals the x field of the incoming struct.
-        api.xfield == api.instruct.x,
+        final(api).xfield == final(api).instruct.x,
         // guarantee split_y
         //   yfield equals the y field of the incoming struct.
-        api.yfield == api.instruct.y,
+        final(api).yfield == final(api).instruct.y,
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

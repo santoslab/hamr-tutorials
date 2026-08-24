@@ -37,8 +37,8 @@ verus! {
   impl<API: consume_consume_Get_Api> consume_consume_Application_Api<API> {
     pub fn get_instruct(&mut self) -> (res : SysPropStructSplit_Data_Model::StructXY)
       ensures
-        old(self).instruct == self.instruct,
-        res == self.instruct,
+        old(self).instruct == final(self).instruct,
+        res == final(self).instruct,
     {
       self.api.unverified_get_instruct(&Ghost(self.instruct))
     }

@@ -1,0 +1,662 @@
+{
+  "type": "AttestationReport",
+  "reports": [
+    {
+      "type": "ComponentReport",
+      "idPath": ["StructSplit_System_Instance", "gen", "gen"],
+      "classifier": ["SysPropStructSplit_Software", "GenStruct"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "init_outstruct",
+          "kind": "Initialize",
+          "meta": "Initializes contract for SysPropStructSplit_Software::GenStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 59,
+                  "beginCol": 8,
+                  "endLine": 60,
+                  "endCol": 61,
+                  "offset": 2559,
+                  "length": 131
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/gen_gen\/src\/component\/gen_gen_app.rs",
+                  "beginLine": 30,
+                  "beginCol": 11,
+                  "endLine": 33,
+                  "endCol": 42,
+                  "offset": 700,
+                  "length": 142
+                }
+            }
+          ]
+        }
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["StructSplit_System_Instance", "splitter", "splitter"],
+      "classifier": ["SysPropStructSplit_Software", "SplitStruct"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "split_x",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SysPropStructSplit_Software::SplitStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 89,
+                  "beginCol": 8,
+                  "endLine": 90,
+                  "endCol": 30,
+                  "offset": 3905,
+                  "length": 101
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO integration constraint 'xfield_range' on touched outgoing port xfield",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 83,
+                  "beginCol": 8,
+                  "endLine": 84,
+                  "endCol": 56,
+                  "offset": 3650,
+                  "length": 110
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/splitter_splitter\/src\/component\/splitter_splitter_app.rs",
+                  "beginLine": 41,
+                  "beginCol": 11,
+                  "endLine": 43,
+                  "endCol": 50,
+                  "offset": 1091,
+                  "length": 114
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO integration constraint 'xfield_range' on touched outgoing port xfield",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs",
+                  "beginLine": 62,
+                  "beginCol": 11,
+                  "endLine": 65,
+                  "endCol": 27,
+                  "offset": 1650,
+                  "length": 99
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "split_y",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SysPropStructSplit_Software::SplitStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 91,
+                  "beginCol": 8,
+                  "endLine": 92,
+                  "endCol": 30,
+                  "offset": 4016,
+                  "length": 101
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO integration constraint 'yfield_range' on touched outgoing port yfield",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 85,
+                  "beginCol": 8,
+                  "endLine": 86,
+                  "endCol": 56,
+                  "offset": 3770,
+                  "length": 110
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/splitter_splitter\/src\/component\/splitter_splitter_app.rs",
+                  "beginLine": 44,
+                  "beginCol": 11,
+                  "endLine": 46,
+                  "endCol": 50,
+                  "offset": 1235,
+                  "length": 114
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO integration constraint 'yfield_range' on touched outgoing port yfield",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs",
+                  "beginLine": 78,
+                  "beginCol": 11,
+                  "endLine": 81,
+                  "endCol": 27,
+                  "offset": 2102,
+                  "length": 99
+                }
+            }
+          ]
+        }
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["StructSplit_System_Instance", "incx", "incx"],
+      "classifier": ["SysPropStructSplit_Software", "IncX"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "inxfield_bounded",
+          "kind": "Assume",
+          "meta": "General assume contract for SysPropStructSplit_Software::IncX",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 117,
+                  "beginCol": 8,
+                  "endLine": 119,
+                  "endCol": 62,
+                  "offset": 5146,
+                  "length": 211
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/incx_incx\/src\/component\/incx_incx_app.rs",
+                  "beginLine": 37,
+                  "beginCol": 11,
+                  "endLine": 41,
+                  "endCol": 40,
+                  "offset": 870,
+                  "length": 221
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "incx",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SysPropStructSplit_Software::IncX",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 120,
+                  "beginCol": 8,
+                  "endLine": 121,
+                  "endCol": 41,
+                  "offset": 5367,
+                  "length": 99
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/incx_incx\/src\/component\/incx_incx_app.rs",
+                  "beginLine": 45,
+                  "beginCol": 11,
+                  "endLine": 47,
+                  "endCol": 58,
+                  "offset": 1225,
+                  "length": 112
+                }
+            }
+          ]
+        }
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["StructSplit_System_Instance", "clampx", "clampx"],
+      "classifier": ["SysPropStructSplit_Software", "ClampX"],
+      "reports": [
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["StructSplit_System_Instance", "decy", "decy"],
+      "classifier": ["SysPropStructSplit_Software", "DecY"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "inyfield_bounded",
+          "kind": "Assume",
+          "meta": "General assume contract for SysPropStructSplit_Software::DecY",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 181,
+                  "beginCol": 8,
+                  "endLine": 183,
+                  "endCol": 62,
+                  "offset": 8071,
+                  "length": 213
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/decy_decy\/src\/component\/decy_decy_app.rs",
+                  "beginLine": 37,
+                  "beginCol": 11,
+                  "endLine": 41,
+                  "endCol": 40,
+                  "offset": 870,
+                  "length": 223
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "decy",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SysPropStructSplit_Software::DecY",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 184,
+                  "beginCol": 8,
+                  "endLine": 185,
+                  "endCol": 41,
+                  "offset": 8294,
+                  "length": 99
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/decy_decy\/src\/component\/decy_decy_app.rs",
+                  "beginLine": 45,
+                  "beginCol": 11,
+                  "endLine": 47,
+                  "endCol": 58,
+                  "offset": 1227,
+                  "length": 112
+                }
+            }
+          ]
+        }
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["StructSplit_System_Instance", "merger", "merger"],
+      "classifier": ["SysPropStructSplit_Software", "MergeStruct"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "merge_x",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SysPropStructSplit_Software::MergeStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 211,
+                  "beginCol": 8,
+                  "endLine": 212,
+                  "endCol": 33,
+                  "offset": 9520,
+                  "length": 105
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/merger_merger\/src\/component\/merger_merger_app.rs",
+                  "beginLine": 40,
+                  "beginCol": 11,
+                  "endLine": 42,
+                  "endCol": 53,
+                  "offset": 1111,
+                  "length": 118
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "merge_y",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SysPropStructSplit_Software::MergeStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 213,
+                  "beginCol": 8,
+                  "endLine": 214,
+                  "endCol": 33,
+                  "offset": 9635,
+                  "length": 105
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/merger_merger\/src\/component\/merger_merger_app.rs",
+                  "beginLine": 43,
+                  "beginCol": 11,
+                  "endLine": 45,
+                  "endCol": 53,
+                  "offset": 1259,
+                  "length": 118
+                }
+            }
+          ]
+        }
+       ]
+    },
+    {
+      "type": "ComponentReport",
+      "idPath": ["StructSplit_System_Instance", "consume", "consume"],
+      "classifier": ["SysPropStructSplit_Software", "ConsumeStruct"],
+      "reports": [
+        {
+          "type": "ComponentContractReport",
+          "id": "init_last_x",
+          "kind": "Initialize",
+          "meta": "Initializes contract for SysPropStructSplit_Software::ConsumeStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 238,
+                  "beginCol": 8,
+                  "endLine": 239,
+                  "endCol": 27,
+                  "offset": 10681,
+                  "length": 87
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Touched GUMBO state variable: last_x",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 235,
+                  "beginCol": 8,
+                  "endLine": 235,
+                  "endCol": 38,
+                  "offset": 10623,
+                  "length": 30
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO initializes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/consume_consume\/src\/component\/consume_consume_app.rs",
+                  "beginLine": 30,
+                  "beginCol": 11,
+                  "endLine": 32,
+                  "endCol": 34,
+                  "offset": 665,
+                  "length": 83
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Rust",
+              "meta": "Touched Rust realization of GUMBO state variable: last_x",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/consume_consume\/src\/component\/consume_consume_app.rs",
+                  "beginLine": 11,
+                  "beginCol": 5,
+                  "endLine": 11,
+                  "endCol": 19,
+                  "offset": 218,
+                  "length": 14
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "instruct_range",
+          "kind": "Assume",
+          "meta": "General assume contract for SysPropStructSplit_Software::ConsumeStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 242,
+                  "beginCol": 8,
+                  "endLine": 244,
+                  "endCol": 64,
+                  "offset": 10793,
+                  "length": 199
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general assumes contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/consume_consume\/src\/component\/consume_consume_app.rs",
+                  "beginLine": 45,
+                  "beginCol": 11,
+                  "endLine": 50,
+                  "endCol": 41,
+                  "offset": 1177,
+                  "length": 237
+                }
+            }
+          ]
+        },
+        {
+          "type": "ComponentContractReport",
+          "id": "track_x",
+          "kind": "Guarantee",
+          "meta": "General guarantee contract for SysPropStructSplit_Software::ConsumeStruct",
+          "slices": [
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 245,
+                  "beginCol": 8,
+                  "endLine": 246,
+                  "endCol": 30,
+                  "offset": 11002,
+                  "length": 116
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Model",
+              "meta": "Touched GUMBO state variable: last_x",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/..\/..\/sysmlv2\/struct-split\/SysPropStructSplit_Software.sysml",
+                  "beginLine": 235,
+                  "beginCol": 8,
+                  "endLine": 235,
+                  "endCol": 38,
+                  "offset": 10623,
+                  "length": 30
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Verus",
+              "meta": "Verus realization of GUMBO general guarantees contract",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/consume_consume\/src\/component\/consume_consume_app.rs",
+                  "beginLine": 54,
+                  "beginCol": 11,
+                  "endLine": 56,
+                  "endCol": 51,
+                  "offset": 1551,
+                  "length": 130
+                }
+            },
+            {
+              "type": "Slice",
+              "kind": "Rust",
+              "meta": "Touched Rust realization of GUMBO state variable: last_x",
+              "pos":
+                {
+                  "type": "Position",
+                  "uri": "..\/crates\/consume_consume\/src\/component\/consume_consume_app.rs",
+                  "beginLine": 11,
+                  "beginCol": 5,
+                  "endLine": 11,
+                  "endCol": 19,
+                  "offset": 218,
+                  "length": 14
+                }
+            }
+          ]
+        }
+       ]
+    }
+  ]
+}

@@ -127,7 +127,7 @@ consume_consume.o: $(TOP_DIR)/components/consume_consume/src/consume_consume.c M
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE) -I$(TOP_DIR)/components/consume_consume/include
 
 pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
-	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_INCLUDE)
+	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
 
 gen_gen_MON.elf: gen_gen_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@

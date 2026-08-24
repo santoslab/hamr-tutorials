@@ -55,31 +55,31 @@ verus! {
       &mut self,
       value: SysPropStructSplit_Data_Model::StructXY)
       ensures
-        old(self).inxfield == self.inxfield,
-        old(self).inyfield == self.inyfield,
-        self.outstruct == value,
+        old(self).inxfield == final(self).inxfield,
+        old(self).inyfield == final(self).inyfield,
+        final(self).outstruct == value,
     {
       self.api.unverified_put_outstruct(value);
-      self.outstruct = value;
+      proof { self.outstruct = value; }
     }
   }
 
   impl<API: merger_merger_Get_Api> merger_merger_Application_Api<API> {
     pub fn get_inxfield(&mut self) -> (res : i32)
       ensures
-        old(self).inxfield == self.inxfield,
-        res == self.inxfield,
-        old(self).inyfield == self.inyfield,
-        old(self).outstruct == self.outstruct,
+        old(self).inxfield == final(self).inxfield,
+        res == final(self).inxfield,
+        old(self).inyfield == final(self).inyfield,
+        old(self).outstruct == final(self).outstruct,
     {
       self.api.unverified_get_inxfield(&Ghost(self.inxfield))
     }
     pub fn get_inyfield(&mut self) -> (res : i32)
       ensures
-        old(self).inxfield == self.inxfield,
-        old(self).inyfield == self.inyfield,
-        res == self.inyfield,
-        old(self).outstruct == self.outstruct,
+        old(self).inxfield == final(self).inxfield,
+        old(self).inyfield == final(self).inyfield,
+        res == final(self).inyfield,
+        old(self).outstruct == final(self).outstruct,
     {
       self.api.unverified_get_inyfield(&Ghost(self.inyfield))
     }

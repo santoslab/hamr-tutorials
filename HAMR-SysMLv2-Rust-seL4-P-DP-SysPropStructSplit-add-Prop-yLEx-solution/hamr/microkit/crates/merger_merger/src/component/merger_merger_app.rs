@@ -39,10 +39,10 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee merge_x
         //   Output struct's x field equals the inxfield input.
-        api.outstruct.x == api.inxfield,
+        final(api).outstruct.x == final(api).inxfield,
         // guarantee merge_y
         //   Output struct's y field equals the inyfield input.
-        api.outstruct.y == api.inyfield,
+        final(api).outstruct.y == final(api).inyfield,
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

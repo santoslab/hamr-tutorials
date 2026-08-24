@@ -65,16 +65,16 @@ verus! {
         // case Req_P_Public_Pass
         (old(api).input.is_some() &&
           (old(api).input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Public)) ==>
-          (api.output.is_some() && GumboLib::equalMessage_spec(api.input.unwrap(), api.output.unwrap())),
+          (final(api).output.is_some() && GumboLib::equalMessage_spec(final(api).input.unwrap(), final(api).output.unwrap())),
         // case Req_R2_Restricted_Clamp
         (old(api).input.is_some() &&
           (old(api).input.unwrap().security_level == SNG_Data_Model::SecurityLevel::Restricted)) ==>
-          (api.output.is_some() && GumboLib::equalSecurityLevel_spec(api.input.unwrap(), api.output.unwrap()) &&
-             GumboLib::clampedPayload_spec(api.output.unwrap()) &&
-             (GumboLib::clampedPayload_spec(api.input.unwrap()) ==> GumboLib::equalPayload_spec(api.input.unwrap(), api.output.unwrap()))),
+          (final(api).output.is_some() && GumboLib::equalSecurityLevel_spec(final(api).input.unwrap(), final(api).output.unwrap()) &&
+             GumboLib::clampedPayload_spec(final(api).output.unwrap()) &&
+             (GumboLib::clampedPayload_spec(final(api).input.unwrap()) ==> GumboLib::equalPayload_spec(final(api).input.unwrap(), final(api).output.unwrap()))),
         // case No_Input
         (!(old(api).input.is_some())) ==>
-          (api.output.is_none()),
+          (final(api).output.is_none()),
         // END MARKER TIME TRIGGERED ENSURES
     {
       // Filter implements payload sanitization:

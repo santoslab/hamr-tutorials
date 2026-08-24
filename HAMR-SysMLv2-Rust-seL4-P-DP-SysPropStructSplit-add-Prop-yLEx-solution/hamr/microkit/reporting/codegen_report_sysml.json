@@ -7,7 +7,7 @@
         "KEY_TOOL_REPORT",
         {
           "type" : "ToolReport",
-          "commandLineArgs" : "--sourcepath ..\/aadl-lib:. --platform Microkit --output-dir \/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/hamr --package-name base --workspace-root-dir ..\/.. --ros2-nodes-language Cpp",
+          "commandLineArgs" : "--sourcepath ..\/aadl-lib:. --platform Microkit --output-dir \/Users\/belt\/devel\/git\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/hamr --package-name base --workspace-root-dir ..\/.. --ros2-nodes-language Cpp",
           "status" : {
             "type" : "Status",
             "value" : "Success"
@@ -45,56 +45,6 @@
             {
               "type" : "ResourceReport",
               "path" : "types\/src\/sb_queue_int32_t_1.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_int32_t_1.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_int32_t_1.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_int32_t_1.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_int32_t_1.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_int32_t_1.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_int32_t_1.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_int32_t_1.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_int32_t_1.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/include\/sb_queue_SysPropStructSplit_Data_Model_StructXY_1.h",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "types\/src\/sb_queue_SysPropStructSplit_Data_Model_StructXY_1.c",
               "overwrittenIfExists" : true
             },
             {
@@ -470,11 +420,6 @@
             {
               "type" : "ResourceReport",
               "path" : "util\/src\/printf.c",
-              "overwrittenIfExists" : true
-            },
-            {
-              "type" : "ResourceReport",
-              "path" : "util\/include\/util.h",
               "overwrittenIfExists" : true
             },
             {
@@ -1160,7 +1105,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "..\/..\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 324,
                       "beginColumn" : 4,
@@ -1227,7 +1172,7 @@
                                 "endLine" : 48,
                                 "endColumn" : 5,
                                 "offset" : 759,
-                                "length" : 483
+                                "length" : 500
                               }
                             },
                             {
@@ -1330,9 +1275,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 11,
+                                "beginLine" : 14,
                                 "beginColumn" : 7,
-                                "endLine" : 15,
+                                "endLine" : 18,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -1367,7 +1312,7 @@
                               "endLine" : 41,
                               "endColumn" : 5,
                               "offset" : 500,
-                              "length" : 700
+                              "length" : 714
                             }
                           ],
                           [
@@ -1382,7 +1327,7 @@
                               "beginColumn" : 5,
                               "endLine" : 59,
                               "endColumn" : 5,
-                              "offset" : 1207,
+                              "offset" : 1221,
                               "length" : 656
                             }
                           ]
@@ -1473,9 +1418,9 @@
                               "beginLine" : 30,
                               "beginColumn" : 11,
                               "endLine" : 33,
-                              "endColumn" : 35,
+                              "endColumn" : 42,
                               "offset" : 700,
-                              "length" : 128
+                              "length" : 142
                             }
                           ]
                         ]
@@ -1601,7 +1546,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "..\/..\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 343,
                       "beginColumn" : 4,
@@ -1667,8 +1612,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 107,
                                 "endColumn" : 5,
-                                "offset" : 2476,
-                                "length" : 540
+                                "offset" : 2538,
+                                "length" : 568
                               }
                             },
                             {
@@ -1771,9 +1716,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 29,
+                                "beginLine" : 32,
                                 "beginColumn" : 7,
-                                "endLine" : 33,
+                                "endLine" : 36,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -1831,7 +1776,7 @@
                                 "endLine" : 73,
                                 "endColumn" : 5,
                                 "offset" : 1549,
-                                "length" : 415
+                                "length" : 446
                               }
                             },
                             {
@@ -1934,9 +1879,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 34,
+                                "beginLine" : 37,
                                 "beginColumn" : 7,
-                                "endLine" : 38,
+                                "endLine" : 41,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -1993,8 +1938,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 89,
                                 "endColumn" : 5,
-                                "offset" : 1970,
-                                "length" : 415
+                                "offset" : 2001,
+                                "length" : 446
                               }
                             },
                             {
@@ -2097,9 +2042,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 39,
+                                "beginLine" : 42,
                                 "beginColumn" : 7,
-                                "endLine" : 43,
+                                "endLine" : 46,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -2150,7 +2095,7 @@
                               "endLine" : 56,
                               "endColumn" : 5,
                               "offset" : 805,
-                              "length" : 922
+                              "length" : 950
                             }
                           ]
                         ]
@@ -2211,7 +2156,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 104,
                                   "endColumn" : 27,
-                                  "offset" : 2760,
+                                  "offset" : 2850,
                                   "length" : 181
                                 }
                               ]
@@ -2249,7 +2194,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 81,
                                   "endColumn" : 27,
-                                  "offset" : 2071,
+                                  "offset" : 2102,
                                   "length" : 99
                                 }
                               ]
@@ -2288,9 +2233,9 @@
                                   "beginLine" : 41,
                                   "beginColumn" : 11,
                                   "endLine" : 43,
-                                  "endColumn" : 36,
+                                  "endColumn" : 50,
                                   "offset" : 1091,
-                                  "length" : 100
+                                  "length" : 114
                                 }
                               ],
                               [
@@ -2304,9 +2249,9 @@
                                   "beginLine" : 44,
                                   "beginColumn" : 11,
                                   "endLine" : 46,
-                                  "endColumn" : 36,
-                                  "offset" : 1221,
-                                  "length" : 100
+                                  "endColumn" : 50,
+                                  "offset" : 1235,
+                                  "length" : 114
                                 }
                               ]
                             ]
@@ -2507,7 +2452,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "..\/..\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 363,
                       "beginColumn" : 4,
@@ -2573,8 +2518,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 63,
                                 "endColumn" : 5,
-                                "offset" : 1270,
-                                "length" : 254
+                                "offset" : 1294,
+                                "length" : 275
                               }
                             },
                             {
@@ -2677,9 +2622,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 57,
+                                "beginLine" : 60,
                                 "beginColumn" : 7,
-                                "endLine" : 61,
+                                "endLine" : 64,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -2737,7 +2682,7 @@
                                 "endLine" : 52,
                                 "endColumn" : 5,
                                 "offset" : 958,
-                                "length" : 237
+                                "length" : 261
                               }
                             },
                             {
@@ -2840,9 +2785,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 62,
+                                "beginLine" : 65,
                                 "beginColumn" : 7,
-                                "endLine" : 66,
+                                "endLine" : 69,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -2893,7 +2838,7 @@
                               "endLine" : 55,
                               "endColumn" : 5,
                               "offset" : 661,
-                              "length" : 954
+                              "length" : 968
                             }
                           ]
                         ]
@@ -2984,9 +2929,9 @@
                                   "beginLine" : 45,
                                   "beginColumn" : 11,
                                   "endLine" : 47,
-                                  "endColumn" : 44,
+                                  "endColumn" : 58,
                                   "offset" : 1225,
-                                  "length" : 98
+                                  "length" : 112
                                 }
                               ]
                             ]
@@ -3139,7 +3084,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "..\/..\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 382,
                       "beginColumn" : 4,
@@ -3205,8 +3150,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 63,
                                 "endColumn" : 5,
-                                "offset" : 1326,
-                                "length" : 254
+                                "offset" : 1350,
+                                "length" : 275
                               }
                             },
                             {
@@ -3309,9 +3254,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 80,
+                                "beginLine" : 83,
                                 "beginColumn" : 7,
-                                "endLine" : 84,
+                                "endLine" : 87,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -3369,7 +3314,7 @@
                                 "endLine" : 52,
                                 "endColumn" : 5,
                                 "offset" : 1006,
-                                "length" : 237
+                                "length" : 261
                               }
                             },
                             {
@@ -3472,9 +3417,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 85,
+                                "beginLine" : 88,
                                 "beginColumn" : 7,
-                                "endLine" : 89,
+                                "endLine" : 92,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -3525,7 +3470,7 @@
                               "endLine" : 67,
                               "endColumn" : 5,
                               "offset" : 681,
-                              "length" : 1253
+                              "length" : 1281
                             }
                           ]
                         ]
@@ -3606,9 +3551,9 @@
                                   "beginLine" : 39,
                                   "beginColumn" : 11,
                                   "endLine" : 43,
-                                  "endColumn" : 41,
+                                  "endColumn" : 55,
                                   "offset" : 955,
-                                  "length" : 196
+                                  "length" : 210
                                 }
                               ],
                               [
@@ -3622,9 +3567,9 @@
                                   "beginLine" : 44,
                                   "beginColumn" : 11,
                                   "endLine" : 47,
-                                  "endColumn" : 35,
-                                  "offset" : 1174,
-                                  "length" : 123
+                                  "endColumn" : 42,
+                                  "offset" : 1188,
+                                  "length" : 130
                                 }
                               ],
                               [
@@ -3638,9 +3583,9 @@
                                   "beginLine" : 48,
                                   "beginColumn" : 11,
                                   "endLine" : 51,
-                                  "endColumn" : 36,
-                                  "offset" : 1320,
-                                  "length" : 127
+                                  "endColumn" : 43,
+                                  "offset" : 1341,
+                                  "length" : 134
                                 }
                               ]
                             ]
@@ -3771,7 +3716,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "..\/..\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 401,
                       "beginColumn" : 4,
@@ -3837,8 +3782,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 63,
                                 "endColumn" : 5,
-                                "offset" : 1270,
-                                "length" : 254
+                                "offset" : 1294,
+                                "length" : 275
                               }
                             },
                             {
@@ -3941,9 +3886,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 103,
+                                "beginLine" : 106,
                                 "beginColumn" : 7,
-                                "endLine" : 107,
+                                "endLine" : 110,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -4001,7 +3946,7 @@
                                 "endLine" : 52,
                                 "endColumn" : 5,
                                 "offset" : 958,
-                                "length" : 237
+                                "length" : 261
                               }
                             },
                             {
@@ -4104,9 +4049,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 108,
+                                "beginLine" : 111,
                                 "beginColumn" : 7,
-                                "endLine" : 112,
+                                "endLine" : 115,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -4157,7 +4102,7 @@
                               "endLine" : 55,
                               "endColumn" : 5,
                               "offset" : 661,
-                              "length" : 957
+                              "length" : 971
                             }
                           ]
                         ]
@@ -4248,9 +4193,9 @@
                                   "beginLine" : 45,
                                   "beginColumn" : 11,
                                   "endLine" : 47,
-                                  "endColumn" : 44,
+                                  "endColumn" : 58,
                                   "offset" : 1227,
-                                  "length" : 98
+                                  "length" : 112
                                 }
                               ]
                             ]
@@ -4403,7 +4348,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "..\/..\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 421,
                       "beginColumn" : 4,
@@ -4469,8 +4414,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 76,
                                 "endColumn" : 5,
-                                "offset" : 1727,
-                                "length" : 299
+                                "offset" : 1758,
+                                "length" : 327
                               }
                             },
                             {
@@ -4573,9 +4518,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 126,
+                                "beginLine" : 129,
                                 "beginColumn" : 7,
-                                "endLine" : 130,
+                                "endLine" : 133,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -4632,8 +4577,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 85,
                                 "endColumn" : 5,
-                                "offset" : 2032,
-                                "length" : 299
+                                "offset" : 2091,
+                                "length" : 327
                               }
                             },
                             {
@@ -4736,9 +4681,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 131,
+                                "beginLine" : 134,
                                 "beginColumn" : 7,
-                                "endLine" : 135,
+                                "endLine" : 138,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -4796,7 +4741,7 @@
                                 "endLine" : 64,
                                 "endColumn" : 5,
                                 "offset" : 1326,
-                                "length" : 318
+                                "length" : 349
                               }
                             },
                             {
@@ -4899,9 +4844,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 136,
+                                "beginLine" : 139,
                                 "beginColumn" : 7,
-                                "endLine" : 140,
+                                "endLine" : 143,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -4952,7 +4897,7 @@
                               "endLine" : 55,
                               "endColumn" : 5,
                               "offset" : 833,
-                              "length" : 867
+                              "length" : 895
                             }
                           ]
                         ]
@@ -5027,9 +4972,9 @@
                                   "beginLine" : 40,
                                   "beginColumn" : 11,
                                   "endLine" : 42,
-                                  "endColumn" : 39,
+                                  "endColumn" : 53,
                                   "offset" : 1111,
-                                  "length" : 104
+                                  "length" : 118
                                 }
                               ],
                               [
@@ -5043,9 +4988,9 @@
                                   "beginLine" : 43,
                                   "beginColumn" : 11,
                                   "endLine" : 45,
-                                  "endColumn" : 39,
-                                  "offset" : 1245,
-                                  "length" : 104
+                                  "endColumn" : 53,
+                                  "offset" : 1259,
+                                  "length" : 118
                                 }
                               ]
                             ]
@@ -5166,7 +5111,7 @@
                       "type" : "Position",
                       "uriOpt" : {
                         "type" : "Some",
-                        "value" : "file:\/\/\/__w\/hamr-tutorials\/hamr-tutorials\/HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
+                        "value" : "..\/..\/sysmlv2\/struct-split\/SysPropStructSplit.sysml"
                       },
                       "beginLine" : 440,
                       "beginColumn" : 4,
@@ -5233,7 +5178,7 @@
                                 "endLine" : 44,
                                 "endColumn" : 5,
                                 "offset" : 1030,
-                                "length" : 243
+                                "length" : 257
                               }
                             },
                             {
@@ -5336,9 +5281,9 @@
                                   "type" : "Some",
                                   "value" : "microkit.system"
                                 },
-                                "beginLine" : 154,
+                                "beginLine" : 157,
                                 "beginColumn" : 7,
-                                "endLine" : 158,
+                                "endLine" : 161,
                                 "endColumn" : 9,
                                 "offset" : 0,
                                 "length" : 0
@@ -5373,7 +5318,7 @@
                               "endLine" : 38,
                               "endColumn" : 5,
                               "offset" : 452,
-                              "length" : 492
+                              "length" : 499
                             }
                           ],
                           [
@@ -5388,8 +5333,8 @@
                               "beginColumn" : 5,
                               "endLine" : 65,
                               "endColumn" : 5,
-                              "offset" : 951,
-                              "length" : 1003
+                              "offset" : 958,
+                              "length" : 1017
                             }
                           ]
                         ]
@@ -5464,9 +5409,9 @@
                               "beginLine" : 30,
                               "beginColumn" : 11,
                               "endLine" : 32,
-                              "endColumn" : 27,
+                              "endColumn" : 34,
                               "offset" : 665,
-                              "length" : 76
+                              "length" : 83
                             }
                           ]
                         ]
@@ -5491,7 +5436,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 50,
                                   "endColumn" : 41,
-                                  "offset" : 1170,
+                                  "offset" : 1177,
                                   "length" : 237
                                 }
                               ]
@@ -5512,9 +5457,9 @@
                                   "beginLine" : 54,
                                   "beginColumn" : 11,
                                   "endLine" : 56,
-                                  "endColumn" : 37,
-                                  "offset" : 1544,
-                                  "length" : 116
+                                  "endColumn" : 51,
+                                  "offset" : 1551,
+                                  "length" : 130
                                 }
                               ]
                             ]

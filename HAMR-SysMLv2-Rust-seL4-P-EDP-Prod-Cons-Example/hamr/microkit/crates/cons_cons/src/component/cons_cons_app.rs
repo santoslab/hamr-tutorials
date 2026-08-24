@@ -38,7 +38,7 @@ verus! {
       ensures
         // BEGIN MARKER INITIALIZATION ENSURES
         // guarantee initSum
-        self.payload_sum == Init_Payload_Sum(),
+        final(self).payload_sum == Init_Payload_Sum(),
         // END MARKER INITIALIZATION ENSURES
     {
       log_info("initialize entrypoint invoked");

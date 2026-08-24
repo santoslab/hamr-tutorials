@@ -38,10 +38,10 @@ verus! {
         (96i32 <= value.degrees) &&
           (value.degrees <= 103i32),
       ensures
-        self.current_temp == value,
+        final(self).current_temp == value,
     {
       self.api.unverified_put_current_temp(value);
-      self.current_temp = value;
+      proof { self.current_temp = value; }
     }
   }
 

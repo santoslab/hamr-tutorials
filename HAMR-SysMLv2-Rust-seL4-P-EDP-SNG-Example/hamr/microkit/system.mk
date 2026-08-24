@@ -90,7 +90,7 @@ test_receiver_test_receiver.o: $(TOP_DIR)/components/test_receiver_test_receiver
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE) -I$(TOP_DIR)/components/test_receiver_test_receiver/include
 
 pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
-	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_INCLUDE)
+	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
 
 gate_gate_MON.elf: gate_gate_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@

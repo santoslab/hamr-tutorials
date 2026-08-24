@@ -1,0 +1,17 @@
+<!-- This file will not be overwritten if HAMR codegen is rerun -->
+
+<domains>
+  <domain name="domain_0" id="0" />
+  <domain name="domain_1" id="1" />
+  <domain name="domain_2" id="2" />
+  <domain name="domain_3" id="3" />
+
+  <domain_schedule>
+    <schedule_entry domain="domain_1" duration="30000 us" /> <!-- pacer -->
+    <schedule_entry domain="domain_2" duration="10000 us" /> <!-- prod_prod_MON -->
+    <schedule_entry domain="domain_1" duration="30000 us" /> <!-- pacer -->
+    <schedule_entry domain="domain_3" duration="10000 us" /> <!-- cons_cons_MON -->
+    <schedule_entry domain="domain_0" duration="40000 us" /> <!-- padding -->
+    <schedule_end_marker />
+  </domain_schedule>
+</domains>

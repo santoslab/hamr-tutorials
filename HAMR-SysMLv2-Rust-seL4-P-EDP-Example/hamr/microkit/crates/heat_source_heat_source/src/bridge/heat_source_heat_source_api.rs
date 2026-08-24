@@ -37,8 +37,8 @@ verus! {
   impl<API: heat_source_heat_source_Get_Api> heat_source_heat_source_Application_Api<API> {
     pub fn get_heat_control(&mut self) -> (res : Option<Isolette_Data_Model::On_Off>)
       ensures
-        old(self).heat_control == self.heat_control,
-        res == self.heat_control,
+        old(self).heat_control == final(self).heat_control,
+        res == final(self).heat_control,
     {
       self.api.unverified_get_heat_control(&Ghost(self.heat_control))
     }

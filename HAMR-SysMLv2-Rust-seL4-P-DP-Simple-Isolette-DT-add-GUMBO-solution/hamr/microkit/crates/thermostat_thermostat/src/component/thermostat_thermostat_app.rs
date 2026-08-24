@@ -60,10 +60,10 @@ verus! {
       ensures
         // BEGIN MARKER INITIALIZATION ENSURES
         // guarantee initlastCmd
-        self.lastCmd == Isolette_Data_Model::On_Off::Off,
+        final(self).lastCmd == Isolette_Data_Model::On_Off::Off,
         // guarantee REQ_THERM_1
         //   The Heat Control command shall be Off initially.
-        api.heat_control == Isolette_Data_Model::On_Off::Off,
+        final(api).heat_control == Isolette_Data_Model::On_Off::Off,
         // END MARKER INITIALIZATION ENSURES
     {
       log_info("initialize entrypoint invoked");
@@ -92,21 +92,21 @@ verus! {
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee lastCmd
         //   Set lastCmd to value of output Cmd port
-        self.lastCmd == api.heat_control,
+        final(self).lastCmd == final(api).heat_control,
         // guarantee REQ_THERM_7
         //   The Display Temperature output shall be set 
         //   to the value of the input Current Temperature
-        api.display_temp == api.current_temp,
+        final(api).display_temp == final(api).current_temp,
         // case REQ_THERM_2
         //   If Current Temperature is less than
         //   the Lower Desired Temperature, the Heat Control shall be set to On.
         (old(api).current_temp.degrees < old(api).desired_temp.lower.degrees) ==>
-          (api.heat_control == Isolette_Data_Model::On_Off::Onn),
+          (final(api).heat_control == Isolette_Data_Model::On_Off::Onn),
         // case REQ_THERM_3
         //   If the Current Temperature is greater than
         //   the Upper Desired Temperature, the Heat Control shall be set to Off.
         (old(api).current_temp.degrees > old(api).desired_temp.upper.degrees) ==>
-          (api.heat_control == Isolette_Data_Model::On_Off::Off),
+          (final(api).heat_control == Isolette_Data_Model::On_Off::Off),
         // case REQ_THERM_4
         //   If the Current Temperature is greater than or equal 
         //   to the Lower Desired Temperature
@@ -114,7 +114,7 @@ verus! {
         //   the Heat Control shall not be changed.
         ((old(api).current_temp.degrees >= old(api).desired_temp.lower.degrees) &&
           (old(api).current_temp.degrees <= old(api).desired_temp.upper.degrees)) ==>
-          (api.heat_control == old(self).lastCmd),
+          (final(api).heat_control == old(self).lastCmd),
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

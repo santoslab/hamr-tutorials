@@ -62,9 +62,9 @@
                   "beginLine": 55,
                   "beginCol": 11,
                   "endLine": 56,
-                  "endCol": 56,
+                  "endCol": 63,
                   "offset": 1925,
-                  "length": 57
+                  "length": 64
                 }
             },
             {
@@ -118,9 +118,9 @@
                   "beginLine": 57,
                   "beginCol": 11,
                   "endLine": 59,
-                  "endCol": 60,
-                  "offset": 2016,
-                  "length": 123
+                  "endCol": 67,
+                  "offset": 2023,
+                  "length": 130
                 }
             }
           ]
@@ -159,7 +159,7 @@
                   "beginCol": 11,
                   "endLine": 79,
                   "endCol": 82,
-                  "offset": 2786,
+                  "offset": 2800,
                   "length": 83
                 }
             }
@@ -214,9 +214,9 @@
                   "beginLine": 83,
                   "beginCol": 11,
                   "endLine": 85,
-                  "endCol": 40,
-                  "offset": 3006,
-                  "length": 94
+                  "endCol": 54,
+                  "offset": 3020,
+                  "length": 108
                 }
             },
             {

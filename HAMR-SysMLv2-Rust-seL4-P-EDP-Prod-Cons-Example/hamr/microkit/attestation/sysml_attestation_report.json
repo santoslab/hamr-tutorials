@@ -78,9 +78,9 @@
                   "beginLine": 40,
                   "beginCol": 11,
                   "endLine": 41,
-                  "endCol": 46,
+                  "endCol": 53,
                   "offset": 1066,
-                  "length": 47
+                  "length": 54
                 }
             },
             {
@@ -111,7 +111,7 @@
                   "beginCol": 3,
                   "endLine": 125,
                   "endCol": 3,
-                  "offset": 3723,
+                  "offset": 3730,
                   "length": 58
                 }
             }
