@@ -98,6 +98,38 @@ if (Os.isLinux) {
     inspectaModels.removeAll()
   }
 
+  // The archives are rebuilt on every run rather than only when 'git status -s'
+  // reports something, because that check cannot see every way one goes out of
+  // date: a zip carries files git is not tracking -- the crates' Cargo.lock are
+  // gitignored and land in it -- so codegen output can change inside an archive
+  // while the working tree stays clean, and the stale zip would then be the one
+  // that ships.
+  //
+  // Rebuilding them all would be its own problem, since 7z records each entry's
+  // modification time and a checkout gives every file a fresh one, so an archive
+  // rebuilt from unchanged sources differs byte-for-byte and all twelve would be
+  // committed on every run.  So each is compared by content -- the per-entry
+  // path/size/CRC listing, which those timestamps do not enter -- and one whose
+  // contents did not change is restored, leaving nothing for git to see.
+  println("Rezipping the projects")
+  val zipTool = appDir.up / "7zz"
+  for (p <- projects) {
+    val zipFile = zipDir / s"$p.zip"
+    val before = zipContents(zipFile, zipTool)
+    val ret = zipit(home / p)
+    assert (ret, s"$p failed during zip")
+    if (before.nonEmpty && before == zipContents(zipFile, zipTool)) {
+      // Identical contents.  An untracked archive has nothing to restore from,
+      // and is left as built.
+      if (proc"git ls-files --error-unmatch $zipFile".at(home).run().ok) {
+        proc"git checkout -- $zipFile".at(home).runCheck()
+      }
+    } else {
+      println(s"  contents of $p.zip changed")
+    }
+  }
+  println()
+
   val results = proc"git status -s".at(home).run()
   if (results.out.size != 0) {
     // Something has changed since the last codegen.  We'll accept those changes
@@ -106,11 +138,6 @@ if (Os.isLinux) {
     println("Detected the following changes:")
     println(results.out)
     println()
-
-    for (p <- projects) {
-      val ret = zipit(home / p)
-      assert (ret, s"$p failed during zip")
-    }
 
     // Only the caller that supplies branch_name pushes the changes.  More than
     // one workflow runs this build -- see .github/workflows -- and they would
@@ -297,6 +324,45 @@ object Helper {
 
     println()
     return ret
+  }
+
+  /** The archive's contents, as the per-entry path/size/CRC listing 7z reports.
+    *
+    * Deliberately not a hash of the file: 7z stores each entry's modification
+    * time, and a fresh checkout stamps every file with the time it was written,
+    * so two archives built from identical sources do not match byte-for-byte.
+    * The listing below holds nothing that varies that way.
+    *
+    * None() when the archive does not exist or cannot be read, which reads as
+    * "no previous contents to compare against".
+    *
+    * zipTool is passed in rather than derived here: script-level vals are not in
+    * scope inside this object.
+    */
+  def zipContents(zipFile: Os.Path, zipTool: Os.Path): Option[String] = {
+    if (!zipFile.exists) {
+      return None()
+    }
+    val r = proc"$zipTool l -slt $zipFile".run()
+    if (!r.ok) {
+      return None()
+    }
+    var entries = ISZ[String]()
+    var inEntries = F
+    for (line <- ops.StringOps(r.out).split(c => c == '\n')) {
+      val l = ops.StringOps(line).trim
+      if (l == "----------") {
+        // everything before this describes the archive itself, including its
+        // own path, which differs between a checked-in zip and a rebuilt one
+        inEntries = T
+      } else if (inEntries) {
+        val lo = ops.StringOps(l)
+        if (lo.startsWith("Path = ") || lo.startsWith("Size = ") || lo.startsWith("CRC = ")) {
+          entries = entries :+ l
+        }
+      }
+    }
+    return Some(st"${(entries, "\n")}".render)
   }
 
   def zipit(root: Os.Path) : B = {
