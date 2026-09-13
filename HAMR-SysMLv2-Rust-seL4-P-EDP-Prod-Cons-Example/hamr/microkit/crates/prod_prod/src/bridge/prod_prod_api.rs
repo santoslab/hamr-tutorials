@@ -26,7 +26,7 @@ verus! {
   pub struct prod_prod_Application_Api<API: prod_prod_Api> {
     pub api: API,
 
-    pub ghost output: Option<ProdCons::Message>
+    pub ghost output: Option<ProdCons::Message>,
   }
 
   impl<API: prod_prod_Put_Api> prod_prod_Application_Api<API> {

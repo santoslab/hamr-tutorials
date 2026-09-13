@@ -26,7 +26,7 @@ verus! {
   pub struct test_sender_test_sender_Application_Api<API: test_sender_test_sender_Api> {
     pub api: API,
 
-    pub ghost output: Option<SNG_Data_Model::Message>
+    pub ghost output: Option<SNG_Data_Model::Message>,
   }
 
   impl<API: test_sender_test_sender_Put_Api> test_sender_test_sender_Application_Api<API> {

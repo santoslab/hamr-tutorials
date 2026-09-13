@@ -10,7 +10,7 @@ verus! {
   #[derive(Debug, Clone, Copy, PartialEq, Eq)]
   pub struct Message {
     pub payload: i32,
-    pub security_level: SecurityLevel
+    pub security_level: SecurityLevel,
   }
 
   impl Default for Message {

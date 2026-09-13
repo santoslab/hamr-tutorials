@@ -28,7 +28,7 @@ verus! {
   pub struct heat_source_heat_source_Application_Api<API: heat_source_heat_source_Api> {
     pub api: API,
 
-    pub ghost heat_control: Option<Isolette_Data_Model::On_Off>
+    pub ghost heat_control: Option<Isolette_Data_Model::On_Off>,
   }
 
   impl<API: heat_source_heat_source_Put_Api> heat_source_heat_source_Application_Api<API> {

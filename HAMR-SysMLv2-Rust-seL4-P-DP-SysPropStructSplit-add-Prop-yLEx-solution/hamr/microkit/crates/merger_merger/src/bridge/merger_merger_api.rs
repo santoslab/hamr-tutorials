@@ -47,7 +47,7 @@ verus! {
 
     pub ghost inxfield: i32,
     pub ghost inyfield: i32,
-    pub ghost outstruct: SysPropStructSplit_Data_Model::StructXY
+    pub ghost outstruct: SysPropStructSplit_Data_Model::StructXY,
   }
 
   impl<API: merger_merger_Put_Api> merger_merger_Application_Api<API> {

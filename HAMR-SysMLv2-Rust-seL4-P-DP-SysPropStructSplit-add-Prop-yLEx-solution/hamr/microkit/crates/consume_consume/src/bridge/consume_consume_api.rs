@@ -28,7 +28,7 @@ verus! {
   pub struct consume_consume_Application_Api<API: consume_consume_Api> {
     pub api: API,
 
-    pub ghost instruct: SysPropStructSplit_Data_Model::StructXY
+    pub ghost instruct: SysPropStructSplit_Data_Model::StructXY,
   }
 
   impl<API: consume_consume_Put_Api> consume_consume_Application_Api<API> {

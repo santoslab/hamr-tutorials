@@ -7,13 +7,13 @@ use proptest::prelude::*;
 
 /// container for component's incoming port values
 pub struct PreStateContainer {
-  pub api_heat_control: Option<Isolette_Data_Model::On_Off>
+  pub api_heat_control: Option<Isolette_Data_Model::On_Off>,
 }
 
 /// container for component's incoming port values and GUMBO state variables
 pub struct PreStateContainer_wGSV {
   pub In_heater_state: Isolette_Data_Model::On_Off,
-  pub api_heat_control: Option<Isolette_Data_Model::On_Off>
+  pub api_heat_control: Option<Isolette_Data_Model::On_Off>,
 }
 
 /// setter for component's incoming port values

@@ -7,7 +7,7 @@ use proptest::prelude::*;
 
 /// container for component's incoming port values
 pub struct PreStateContainer {
-  pub api_input: Option<SNG_Data_Model::Message>
+  pub api_input: Option<SNG_Data_Model::Message>,
 }
 
 /// setter for component's incoming port values

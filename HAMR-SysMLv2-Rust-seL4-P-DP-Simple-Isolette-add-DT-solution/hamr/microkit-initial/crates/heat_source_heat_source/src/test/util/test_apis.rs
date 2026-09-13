@@ -7,7 +7,7 @@ use proptest::prelude::*;
 
 /// container for component's incoming port values
 pub struct PreStateContainer {
-  pub api_heat_control: Isolette_Data_Model::On_Off
+  pub api_heat_control: Isolette_Data_Model::On_Off,
 }
 
 /// setter for component's incoming port values

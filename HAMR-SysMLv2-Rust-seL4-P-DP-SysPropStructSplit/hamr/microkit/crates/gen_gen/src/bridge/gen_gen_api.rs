@@ -26,7 +26,7 @@ verus! {
   pub struct gen_gen_Application_Api<API: gen_gen_Api> {
     pub api: API,
 
-    pub ghost outstruct: SysPropStructSplit_Data_Model::StructXY
+    pub ghost outstruct: SysPropStructSplit_Data_Model::StructXY,
   }
 
   impl<API: gen_gen_Put_Api> gen_gen_Application_Api<API> {

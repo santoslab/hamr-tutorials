@@ -8,14 +8,14 @@ use proptest::prelude::*;
 /// container for component's incoming port values
 pub struct PreStateContainer {
   pub api_current_temp: Isolette_Data_Model::Temp,
-  pub api_desired_temp: Isolette_Data_Model::Set_Points
+  pub api_desired_temp: Isolette_Data_Model::Set_Points,
 }
 
 /// container for component's incoming port values and GUMBO state variables
 pub struct PreStateContainer_wGSV {
   pub In_lastCmd: Isolette_Data_Model::On_Off,
   pub api_current_temp: Isolette_Data_Model::Temp,
-  pub api_desired_temp: Isolette_Data_Model::Set_Points
+  pub api_desired_temp: Isolette_Data_Model::Set_Points,
 }
 
 /// setter for component's incoming port values

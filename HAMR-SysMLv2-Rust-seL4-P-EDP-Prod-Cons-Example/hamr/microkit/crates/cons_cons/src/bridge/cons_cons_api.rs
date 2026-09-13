@@ -32,7 +32,7 @@ verus! {
   pub struct cons_cons_Application_Api<API: cons_cons_Api> {
     pub api: API,
 
-    pub ghost input: Option<ProdCons::Message>
+    pub ghost input: Option<ProdCons::Message>,
   }
 
   impl<API: cons_cons_Put_Api> cons_cons_Application_Api<API> {

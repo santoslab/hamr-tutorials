@@ -7,7 +7,7 @@ use proptest::prelude::*;
 
 /// container for component's incoming port values
 pub struct PreStateContainer {
-  pub api_instruct: SysPropStructSplit_Data_Model::StructXY
+  pub api_instruct: SysPropStructSplit_Data_Model::StructXY,
 }
 
 /// setter for component's incoming port values

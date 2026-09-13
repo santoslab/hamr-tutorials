@@ -50,7 +50,7 @@ verus! {
 
     pub ghost current_temp: Isolette_Data_Model::Temp,
     pub ghost desired_temp: Isolette_Data_Model::Set_Points,
-    pub ghost heat_control: Isolette_Data_Model::On_Off
+    pub ghost heat_control: Isolette_Data_Model::On_Off,
   }
 
   impl<API: thermostat_thermostat_Put_Api> thermostat_thermostat_Application_Api<API> {

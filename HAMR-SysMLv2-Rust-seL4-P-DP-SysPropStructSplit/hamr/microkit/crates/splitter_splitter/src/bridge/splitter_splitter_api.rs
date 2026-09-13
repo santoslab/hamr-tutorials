@@ -51,7 +51,7 @@ verus! {
 
     pub ghost instruct: SysPropStructSplit_Data_Model::StructXY,
     pub ghost xfield: i32,
-    pub ghost yfield: i32
+    pub ghost yfield: i32,
   }
 
   impl<API: splitter_splitter_Put_Api> splitter_splitter_Application_Api<API> {

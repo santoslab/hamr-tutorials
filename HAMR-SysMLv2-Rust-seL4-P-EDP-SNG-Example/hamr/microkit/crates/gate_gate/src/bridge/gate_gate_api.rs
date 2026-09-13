@@ -36,7 +36,7 @@ verus! {
     pub api: API,
 
     pub ghost input: Option<SNG_Data_Model::Message>,
-    pub ghost output: Option<SNG_Data_Model::Message>
+    pub ghost output: Option<SNG_Data_Model::Message>,
   }
 
   impl<API: gate_gate_Put_Api> gate_gate_Application_Api<API> {

@@ -33,7 +33,7 @@ verus! {
     pub api: API,
 
     pub ghost current_temp: Isolette_Data_Model::Temp,
-    pub ghost temp_changed: Option<u8>
+    pub ghost temp_changed: Option<u8>,
   }
 
   impl<API: temp_sensor_temp_sensor_Put_Api> temp_sensor_temp_sensor_Application_Api<API> {

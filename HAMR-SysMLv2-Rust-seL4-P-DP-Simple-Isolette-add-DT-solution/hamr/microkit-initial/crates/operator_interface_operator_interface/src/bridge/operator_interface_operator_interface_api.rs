@@ -36,7 +36,7 @@ verus! {
     pub api: API,
 
     pub ghost display_temp: Isolette_Data_Model::Temp,
-    pub ghost desired_temp: Isolette_Data_Model::Set_Points
+    pub ghost desired_temp: Isolette_Data_Model::Set_Points,
   }
 
   impl<API: operator_interface_operator_interface_Put_Api> operator_interface_operator_interface_Application_Api<API> {

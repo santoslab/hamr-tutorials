@@ -7,13 +7,13 @@ use proptest::prelude::*;
 
 /// container for component's incoming port values
 pub struct PreStateContainer {
-  pub api_instruct: SysPropStructSplit_Data_Model::StructXY
+  pub api_instruct: SysPropStructSplit_Data_Model::StructXY,
 }
 
 /// container for component's incoming port values and GUMBO state variables
 pub struct PreStateContainer_wGSV {
   pub In_last_x: i32,
-  pub api_instruct: SysPropStructSplit_Data_Model::StructXY
+  pub api_instruct: SysPropStructSplit_Data_Model::StructXY,
 }
 
 /// setter for component's incoming port values

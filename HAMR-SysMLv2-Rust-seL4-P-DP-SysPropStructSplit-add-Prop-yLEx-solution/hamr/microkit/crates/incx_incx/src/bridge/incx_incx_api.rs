@@ -36,7 +36,7 @@ verus! {
     pub api: API,
 
     pub ghost inxfield: i32,
-    pub ghost outxfield: i32
+    pub ghost outxfield: i32,
   }
 
   impl<API: incx_incx_Put_Api> incx_incx_Application_Api<API> {

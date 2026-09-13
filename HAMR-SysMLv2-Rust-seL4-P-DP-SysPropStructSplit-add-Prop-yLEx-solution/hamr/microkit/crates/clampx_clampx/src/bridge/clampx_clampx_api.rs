@@ -36,7 +36,7 @@ verus! {
     pub api: API,
 
     pub ghost inxfield: i32,
-    pub ghost outxfield: i32
+    pub ghost outxfield: i32,
   }
 
   impl<API: clampx_clampx_Put_Api> clampx_clampx_Application_Api<API> {

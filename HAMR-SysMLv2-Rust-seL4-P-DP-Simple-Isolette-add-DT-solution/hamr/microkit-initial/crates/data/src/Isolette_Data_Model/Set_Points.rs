@@ -10,7 +10,7 @@ verus! {
   #[derive(Debug, Clone, Copy, PartialEq, Eq)]
   pub struct Set_Points {
     pub lower: Temp,
-    pub upper: Temp
+    pub upper: Temp,
   }
 
   impl Default for Set_Points {

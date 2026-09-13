@@ -28,7 +28,7 @@ verus! {
   pub struct test_receiver_test_receiver_Application_Api<API: test_receiver_test_receiver_Api> {
     pub api: API,
 
-    pub ghost input: Option<SNG_Data_Model::Message>
+    pub ghost input: Option<SNG_Data_Model::Message>,
   }
 
   impl<API: test_receiver_test_receiver_Put_Api> test_receiver_test_receiver_Application_Api<API> {

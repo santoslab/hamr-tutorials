@@ -26,7 +26,7 @@ verus! {
   pub struct temp_sensor_temp_sensor_Application_Api<API: temp_sensor_temp_sensor_Api> {
     pub api: API,
 
-    pub ghost current_temp: Isolette_Data_Model::Temp
+    pub ghost current_temp: Isolette_Data_Model::Temp,
   }
 
   impl<API: temp_sensor_temp_sensor_Put_Api> temp_sensor_temp_sensor_Application_Api<API> {
