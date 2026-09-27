@@ -2,6 +2,13 @@
 
 MICROKIT_TOOL ?= $(MICROKIT_SDK)/bin/microkit
 
+# Which cargo profile directory the Rust staticlibs land in.  The crate Makefiles'
+# default target is build-verus-release, and the *-release targets pass --release, so
+# those produce target/<triple>/release; the plain build / build-verus targets do not
+# and produce target/<triple>/debug.  The link rules below have to look in whichever
+# one RUST_MAKE_TARGET actually populated.
+RUST_PROFILE_DIR := $(if $(RUST_MAKE_TARGET),$(if $(filter %-release,$(RUST_MAKE_TARGET)),release,debug),release)
+
 CFLAGS := -mcpu=$(CPU) \
 	-mstrict-align \
 	-ffreestanding \
@@ -26,6 +33,10 @@ UTIL_OBJS = printf.o util.o
 TYPES_DIR = $(TOP_DIR)/types
 TYPE_OBJS := $(TOP_DIR)/build/sb_queue_ProdCons_Message_1.o
 
+# The queue objects as an archive: each protection domain's link pulls in only the
+# queues it uses, not every queue in the system
+TYPES_LIB := libhamr_types.a
+
 # exporting TOP_TYPES_INCLUDE in case other makefiles need it
 export TOP_TYPES_INCLUDE = -I$(TYPES_DIR)/include
 
@@ -40,6 +51,10 @@ ${CHECK_FLAGS_BOARD_MD5}:
 
 %.o: ${TOP_DIR}/util/src/%.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_DIR)/util/include
+
+$(TYPES_LIB): $(TYPE_OBJS)
+	rm -f $@
+	$(AR) rcs $@ $^
 
 $(TOP_DIR)/build/sb_queue_ProdCons_Message_1.o: $(TOP_DIR)/types/src/sb_queue_ProdCons_Message_1.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
@@ -73,16 +88,16 @@ pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
 prod_prod_MON.elf: prod_prod_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-prod_prod.elf: $(UTIL_OBJS) $(TYPE_OBJS) prod_prod_rust prod_prod.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/prod_prod/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lprod_prod -o $@
+prod_prod.elf: $(UTIL_OBJS) prod_prod_rust prod_prod.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/prod_prod/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lprod_prod -o $@
 
 cons_cons_MON.elf: cons_cons_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-cons_cons.elf: $(UTIL_OBJS) $(TYPE_OBJS) cons_cons_rust cons_cons.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/cons_cons/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lcons_cons -o $@
+cons_cons.elf: $(UTIL_OBJS) cons_cons_rust cons_cons.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/cons_cons/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lcons_cons -o $@
 
-pacer.elf: $(UTIL_OBJS) $(TYPE_OBJS) pacer.o
+pacer.elf: $(UTIL_OBJS) pacer.o $(TYPES_LIB)
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
 $(IMAGE_FILE): $(IMAGES) $(TOP_DIR)/$(MSD)

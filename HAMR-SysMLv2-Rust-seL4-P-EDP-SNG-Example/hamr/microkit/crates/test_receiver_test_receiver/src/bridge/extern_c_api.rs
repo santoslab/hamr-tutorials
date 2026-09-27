@@ -12,6 +12,7 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn get_input(value: *mut SNG_Data_Model::Message) -> bool;
+  fn get_input_num_invalid() -> u64;
 }
 
 pub fn unsafe_get_input() -> Option<SNG_Data_Model::Message>
@@ -23,6 +24,13 @@ pub fn unsafe_get_input() -> Option<SNG_Data_Model::Message>
     } else {
       return None;
     }
+  }
+}
+
+pub fn unsafe_get_input_num_invalid() -> u64
+{
+  unsafe {
+    return get_input_num_invalid();
   }
 }
 
@@ -57,4 +65,10 @@ pub fn get_input(value: *mut SNG_Data_Model::Message) -> bool
       None => return false,
     }
   }
+}
+
+#[cfg(test)]
+pub fn get_input_num_invalid() -> u64
+{
+  return 0;
 }

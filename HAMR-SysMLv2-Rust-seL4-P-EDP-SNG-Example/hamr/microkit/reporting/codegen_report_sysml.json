@@ -637,11 +637,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
                                 },
-                                "beginLine" : 59,
+                                "beginLine" : 65,
                                 "beginColumn" : 5,
-                                "endLine" : 66,
+                                "endLine" : 72,
                                 "endColumn" : 5,
-                                "offset" : 1530,
+                                "offset" : 1685,
                                 "length" : 279
                               }
                             },
@@ -673,11 +673,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 18,
+                                "beginLine" : 19,
                                 "beginColumn" : 1,
-                                "endLine" : 28,
+                                "endLine" : 29,
                                 "endColumn" : 1,
-                                "offset" : 439,
+                                "offset" : 476,
                                 "length" : 258
                               }
                             },
@@ -800,11 +800,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
                                 },
-                                "beginLine" : 43,
+                                "beginLine" : 49,
                                 "beginColumn" : 5,
-                                "endLine" : 55,
+                                "endLine" : 61,
                                 "endColumn" : 5,
-                                "offset" : 1073,
+                                "offset" : 1228,
                                 "length" : 382
                               }
                             },
@@ -836,11 +836,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 30,
+                                "beginLine" : 38,
                                 "beginColumn" : 1,
-                                "endLine" : 35,
+                                "endLine" : 43,
                                 "endColumn" : 1,
-                                "offset" : 700,
+                                "offset" : 838,
                                 "length" : 179
                               }
                             },
@@ -854,11 +854,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/gate_gate\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 61,
-                                "offset" : 376,
+                                "offset" : 413,
                                 "length" : 58
                               }
                             },
@@ -1024,11 +1024,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/gate_gate\/src\/bridge\/gate_gate_api.rs"
                                   },
-                                  "beginLine" : 47,
+                                  "beginLine" : 53,
                                   "beginColumn" : 11,
-                                  "endLine" : 48,
+                                  "endLine" : 54,
                                   "endColumn" : 50,
-                                  "offset" : 1200,
+                                  "offset" : 1355,
                                   "length" : 51
                                 }
                               ]
@@ -1380,11 +1380,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
                                 },
-                                "beginLine" : 59,
+                                "beginLine" : 65,
                                 "beginColumn" : 5,
-                                "endLine" : 69,
+                                "endLine" : 75,
                                 "endColumn" : 5,
-                                "offset" : 1717,
+                                "offset" : 1872,
                                 "length" : 405
                               }
                             },
@@ -1416,11 +1416,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 18,
+                                "beginLine" : 19,
                                 "beginColumn" : 1,
-                                "endLine" : 28,
+                                "endLine" : 29,
                                 "endColumn" : 1,
-                                "offset" : 439,
+                                "offset" : 476,
                                 "length" : 258
                               }
                             },
@@ -1543,11 +1543,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
                                 },
-                                "beginLine" : 46,
+                                "beginLine" : 52,
                                 "beginColumn" : 5,
-                                "endLine" : 55,
+                                "endLine" : 61,
                                 "endColumn" : 5,
-                                "offset" : 1343,
+                                "offset" : 1498,
                                 "length" : 275
                               }
                             },
@@ -1579,11 +1579,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 30,
+                                "beginLine" : 38,
                                 "beginColumn" : 1,
-                                "endLine" : 35,
+                                "endLine" : 43,
                                 "endColumn" : 1,
-                                "offset" : 700,
+                                "offset" : 838,
                                 "length" : 179
                               }
                             },
@@ -1597,11 +1597,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 61,
-                                "offset" : 376,
+                                "offset" : 413,
                                 "length" : 58
                               }
                             },
@@ -1615,11 +1615,11 @@
                                   "type" : "Some",
                                   "value" : "components\/msg_filter_msg_filter\/src\/msg_filter_msg_filter.c"
                                 },
-                                "beginLine" : 28,
+                                "beginLine" : 32,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 36,
                                 "endColumn" : 1,
-                                "offset" : 929,
+                                "offset" : 1091,
                                 "length" : 204
                               }
                             },
@@ -1761,11 +1761,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/msg_filter_msg_filter\/src\/bridge\/msg_filter_msg_filter_api.rs"
                                   },
-                                  "beginLine" : 65,
+                                  "beginLine" : 71,
                                   "beginColumn" : 13,
-                                  "endLine" : 66,
+                                  "endLine" : 72,
                                   "endColumn" : 60,
-                                  "offset" : 1992,
+                                  "offset" : 2147,
                                   "length" : 61
                                 }
                               ]
@@ -2363,11 +2363,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/test_receiver_test_receiver\/src\/bridge\/test_receiver_test_receiver_api.rs"
                                 },
-                                "beginLine" : 38,
+                                "beginLine" : 44,
                                 "beginColumn" : 5,
-                                "endLine" : 44,
+                                "endLine" : 50,
                                 "endColumn" : 5,
-                                "offset" : 1166,
+                                "offset" : 1321,
                                 "length" : 231
                               }
                             },
@@ -2399,11 +2399,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/test_receiver_test_receiver\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 17,
+                                "beginLine" : 18,
                                 "beginColumn" : 1,
-                                "endLine" : 27,
+                                "endLine" : 28,
                                 "endColumn" : 1,
-                                "offset" : 377,
+                                "offset" : 414,
                                 "length" : 258
                               }
                             },

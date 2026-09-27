@@ -1608,11 +1608,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs"
                                 },
-                                "beginLine" : 93,
+                                "beginLine" : 99,
                                 "beginColumn" : 5,
-                                "endLine" : 107,
+                                "endLine" : 113,
                                 "endColumn" : 5,
-                                "offset" : 2539,
+                                "offset" : 2700,
                                 "length" : 568
                               }
                             },
@@ -1644,11 +1644,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 19,
+                                "beginLine" : 20,
                                 "beginColumn" : 1,
-                                "endLine" : 26,
+                                "endLine" : 27,
                                 "endColumn" : 1,
-                                "offset" : 480,
+                                "offset" : 520,
                                 "length" : 252
                               }
                             },
@@ -1771,11 +1771,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs"
                                 },
-                                "beginLine" : 58,
+                                "beginLine" : 64,
                                 "beginColumn" : 5,
-                                "endLine" : 73,
+                                "endLine" : 79,
                                 "endColumn" : 5,
-                                "offset" : 1550,
+                                "offset" : 1711,
                                 "length" : 446
                               }
                             },
@@ -1807,11 +1807,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 28,
+                                "beginLine" : 36,
                                 "beginColumn" : 1,
-                                "endLine" : 33,
+                                "endLine" : 41,
                                 "endColumn" : 1,
-                                "offset" : 735,
+                                "offset" : 882,
                                 "length" : 119
                               }
                             },
@@ -1825,11 +1825,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 41,
-                                "offset" : 395,
+                                "offset" : 435,
                                 "length" : 38
                               }
                             },
@@ -1843,11 +1843,11 @@
                                   "type" : "Some",
                                   "value" : "components\/splitter_splitter\/src\/splitter_splitter.c"
                                 },
-                                "beginLine" : 29,
+                                "beginLine" : 33,
                                 "beginColumn" : 1,
-                                "endLine" : 33,
+                                "endLine" : 37,
                                 "endColumn" : 1,
-                                "offset" : 1046,
+                                "offset" : 1246,
                                 "length" : 144
                               }
                             },
@@ -1934,11 +1934,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs"
                                 },
-                                "beginLine" : 74,
+                                "beginLine" : 80,
                                 "beginColumn" : 5,
-                                "endLine" : 89,
+                                "endLine" : 95,
                                 "endColumn" : 5,
-                                "offset" : 2002,
+                                "offset" : 2163,
                                 "length" : 446
                               }
                             },
@@ -1970,11 +1970,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 35,
+                                "beginLine" : 43,
                                 "beginColumn" : 1,
-                                "endLine" : 40,
+                                "endLine" : 48,
                                 "endColumn" : 1,
-                                "offset" : 857,
+                                "offset" : 1004,
                                 "length" : 119
                               }
                             },
@@ -1988,11 +1988,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/splitter_splitter\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 16,
+                                "beginLine" : 17,
                                 "beginColumn" : 3,
-                                "endLine" : 16,
+                                "endLine" : 17,
                                 "endColumn" : 41,
-                                "offset" : 437,
+                                "offset" : 477,
                                 "length" : 38
                               }
                             },
@@ -2006,11 +2006,11 @@
                                   "type" : "Some",
                                   "value" : "components\/splitter_splitter\/src\/splitter_splitter.c"
                                 },
-                                "beginLine" : 35,
+                                "beginLine" : 39,
                                 "beginColumn" : 1,
-                                "endLine" : 39,
+                                "endLine" : 43,
                                 "endColumn" : 1,
-                                "offset" : 1193,
+                                "offset" : 1393,
                                 "length" : 144
                               }
                             },
@@ -2152,11 +2152,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs"
                                   },
-                                  "beginLine" : 99,
+                                  "beginLine" : 105,
                                   "beginColumn" : 11,
-                                  "endLine" : 104,
+                                  "endLine" : 110,
                                   "endColumn" : 27,
-                                  "offset" : 2851,
+                                  "offset" : 3012,
                                   "length" : 181
                                 }
                               ]
@@ -2174,11 +2174,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs"
                                   },
-                                  "beginLine" : 62,
+                                  "beginLine" : 68,
                                   "beginColumn" : 11,
-                                  "endLine" : 65,
+                                  "endLine" : 71,
                                   "endColumn" : 27,
-                                  "offset" : 1651,
+                                  "offset" : 1812,
                                   "length" : 99
                                 }
                               ],
@@ -2190,11 +2190,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/splitter_splitter\/src\/bridge\/splitter_splitter_api.rs"
                                   },
-                                  "beginLine" : 78,
+                                  "beginLine" : 84,
                                   "beginColumn" : 11,
-                                  "endLine" : 81,
+                                  "endLine" : 87,
                                   "endColumn" : 27,
-                                  "offset" : 2103,
+                                  "offset" : 2264,
                                   "length" : 99
                                 }
                               ]
@@ -2514,11 +2514,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/incx_incx\/src\/bridge\/incx_incx_api.rs"
                                 },
-                                "beginLine" : 56,
+                                "beginLine" : 62,
                                 "beginColumn" : 5,
-                                "endLine" : 63,
+                                "endLine" : 69,
                                 "endColumn" : 5,
-                                "offset" : 1295,
+                                "offset" : 1456,
                                 "length" : 275
                               }
                             },
@@ -2550,11 +2550,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/incx_incx\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 18,
+                                "beginLine" : 19,
                                 "beginColumn" : 1,
-                                "endLine" : 25,
+                                "endLine" : 26,
                                 "endColumn" : 1,
-                                "offset" : 405,
+                                "offset" : 445,
                                 "length" : 131
                               }
                             },
@@ -2677,11 +2677,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/incx_incx\/src\/bridge\/incx_incx_api.rs"
                                 },
-                                "beginLine" : 43,
+                                "beginLine" : 49,
                                 "beginColumn" : 5,
-                                "endLine" : 52,
+                                "endLine" : 58,
                                 "endColumn" : 5,
-                                "offset" : 959,
+                                "offset" : 1120,
                                 "length" : 261
                               }
                             },
@@ -2713,11 +2713,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/incx_incx\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 27,
+                                "beginLine" : 35,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 40,
                                 "endColumn" : 1,
-                                "offset" : 539,
+                                "offset" : 686,
                                 "length" : 125
                               }
                             },
@@ -2731,11 +2731,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/incx_incx\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 44,
-                                "offset" : 359,
+                                "offset" : 399,
                                 "length" : 41
                               }
                             },
@@ -2749,11 +2749,11 @@
                                   "type" : "Some",
                                   "value" : "components\/incx_incx\/src\/incx_incx.c"
                                 },
-                                "beginLine" : 28,
+                                "beginLine" : 32,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 36,
                                 "endColumn" : 1,
-                                "offset" : 753,
+                                "offset" : 891,
                                 "length" : 150
                               }
                             },
@@ -3146,11 +3146,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/clampx_clampx\/src\/bridge\/clampx_clampx_api.rs"
                                 },
-                                "beginLine" : 56,
+                                "beginLine" : 62,
                                 "beginColumn" : 5,
-                                "endLine" : 63,
+                                "endLine" : 69,
                                 "endColumn" : 5,
-                                "offset" : 1351,
+                                "offset" : 1512,
                                 "length" : 275
                               }
                             },
@@ -3182,11 +3182,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/clampx_clampx\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 18,
+                                "beginLine" : 19,
                                 "beginColumn" : 1,
-                                "endLine" : 25,
+                                "endLine" : 26,
                                 "endColumn" : 1,
-                                "offset" : 405,
+                                "offset" : 445,
                                 "length" : 131
                               }
                             },
@@ -3309,11 +3309,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/clampx_clampx\/src\/bridge\/clampx_clampx_api.rs"
                                 },
-                                "beginLine" : 43,
+                                "beginLine" : 49,
                                 "beginColumn" : 5,
-                                "endLine" : 52,
+                                "endLine" : 58,
                                 "endColumn" : 5,
-                                "offset" : 1007,
+                                "offset" : 1168,
                                 "length" : 261
                               }
                             },
@@ -3345,11 +3345,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/clampx_clampx\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 27,
+                                "beginLine" : 35,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 40,
                                 "endColumn" : 1,
-                                "offset" : 539,
+                                "offset" : 686,
                                 "length" : 125
                               }
                             },
@@ -3363,11 +3363,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/clampx_clampx\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 44,
-                                "offset" : 359,
+                                "offset" : 399,
                                 "length" : 41
                               }
                             },
@@ -3381,11 +3381,11 @@
                                   "type" : "Some",
                                   "value" : "components\/clampx_clampx\/src\/clampx_clampx.c"
                                 },
-                                "beginLine" : 28,
+                                "beginLine" : 32,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 36,
                                 "endColumn" : 1,
-                                "offset" : 769,
+                                "offset" : 907,
                                 "length" : 150
                               }
                             },
@@ -3778,11 +3778,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/decy_decy\/src\/bridge\/decy_decy_api.rs"
                                 },
-                                "beginLine" : 56,
+                                "beginLine" : 62,
                                 "beginColumn" : 5,
-                                "endLine" : 63,
+                                "endLine" : 69,
                                 "endColumn" : 5,
-                                "offset" : 1295,
+                                "offset" : 1456,
                                 "length" : 275
                               }
                             },
@@ -3814,11 +3814,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/decy_decy\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 18,
+                                "beginLine" : 19,
                                 "beginColumn" : 1,
-                                "endLine" : 25,
+                                "endLine" : 26,
                                 "endColumn" : 1,
-                                "offset" : 405,
+                                "offset" : 445,
                                 "length" : 131
                               }
                             },
@@ -3941,11 +3941,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/decy_decy\/src\/bridge\/decy_decy_api.rs"
                                 },
-                                "beginLine" : 43,
+                                "beginLine" : 49,
                                 "beginColumn" : 5,
-                                "endLine" : 52,
+                                "endLine" : 58,
                                 "endColumn" : 5,
-                                "offset" : 959,
+                                "offset" : 1120,
                                 "length" : 261
                               }
                             },
@@ -3977,11 +3977,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/decy_decy\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 27,
+                                "beginLine" : 35,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 40,
                                 "endColumn" : 1,
-                                "offset" : 539,
+                                "offset" : 686,
                                 "length" : 125
                               }
                             },
@@ -3995,11 +3995,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/decy_decy\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 44,
-                                "offset" : 359,
+                                "offset" : 399,
                                 "length" : 41
                               }
                             },
@@ -4013,11 +4013,11 @@
                                   "type" : "Some",
                                   "value" : "components\/decy_decy\/src\/decy_decy.c"
                                 },
-                                "beginLine" : 28,
+                                "beginLine" : 32,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 36,
                                 "endColumn" : 1,
-                                "offset" : 753,
+                                "offset" : 891,
                                 "length" : 150
                               }
                             },
@@ -4410,11 +4410,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/merger_merger_api.rs"
                                 },
-                                "beginLine" : 68,
+                                "beginLine" : 80,
                                 "beginColumn" : 5,
-                                "endLine" : 76,
+                                "endLine" : 88,
                                 "endColumn" : 5,
-                                "offset" : 1759,
+                                "offset" : 2081,
                                 "length" : 327
                               }
                             },
@@ -4446,11 +4446,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 19,
+                                "beginLine" : 21,
                                 "beginColumn" : 1,
-                                "endLine" : 26,
+                                "endLine" : 28,
                                 "endColumn" : 1,
-                                "offset" : 485,
+                                "offset" : 565,
                                 "length" : 131
                               }
                             },
@@ -4573,11 +4573,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/merger_merger_api.rs"
                                 },
-                                "beginLine" : 77,
+                                "beginLine" : 95,
                                 "beginColumn" : 5,
-                                "endLine" : 85,
+                                "endLine" : 103,
                                 "endColumn" : 5,
-                                "offset" : 2092,
+                                "offset" : 2743,
                                 "length" : 327
                               }
                             },
@@ -4591,11 +4591,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/merger_merger_api.rs"
                                 },
-                                "beginLine" : 33,
+                                "beginLine" : 39,
                                 "beginColumn" : 5,
-                                "endLine" : 40,
+                                "endLine" : 46,
                                 "endColumn" : 5,
-                                "offset" : 760,
+                                "offset" : 921,
                                 "length" : 181
                               }
                             },
@@ -4609,11 +4609,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 28,
+                                "beginLine" : 37,
                                 "beginColumn" : 1,
-                                "endLine" : 35,
+                                "endLine" : 44,
                                 "endColumn" : 1,
-                                "offset" : 619,
+                                "offset" : 806,
                                 "length" : 131
                               }
                             },
@@ -4627,11 +4627,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 43,
-                                "offset" : 359,
+                                "offset" : 399,
                                 "length" : 40
                               }
                             },
@@ -4645,11 +4645,11 @@
                                   "type" : "Some",
                                   "value" : "components\/merger_merger\/src\/merger_merger.c"
                                 },
-                                "beginLine" : 32,
+                                "beginLine" : 36,
                                 "beginColumn" : 1,
-                                "endLine" : 41,
+                                "endLine" : 45,
                                 "endColumn" : 1,
-                                "offset" : 928,
+                                "offset" : 1066,
                                 "length" : 325
                               }
                             },
@@ -4736,11 +4736,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/merger_merger_api.rs"
                                 },
-                                "beginLine" : 54,
+                                "beginLine" : 66,
                                 "beginColumn" : 5,
-                                "endLine" : 64,
+                                "endLine" : 76,
                                 "endColumn" : 5,
-                                "offset" : 1327,
+                                "offset" : 1649,
                                 "length" : 349
                               }
                             },
@@ -4772,11 +4772,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 37,
+                                "beginLine" : 53,
                                 "beginColumn" : 1,
-                                "endLine" : 42,
+                                "endLine" : 58,
                                 "endColumn" : 1,
-                                "offset" : 753,
+                                "offset" : 1047,
                                 "length" : 233
                               }
                             },
@@ -4790,11 +4790,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/merger_merger\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 16,
+                                "beginLine" : 18,
                                 "beginColumn" : 3,
-                                "endLine" : 16,
+                                "endLine" : 18,
                                 "endColumn" : 80,
-                                "offset" : 403,
+                                "offset" : 483,
                                 "length" : 77
                               }
                             },
@@ -4808,11 +4808,11 @@
                                   "type" : "Some",
                                   "value" : "components\/merger_merger\/src\/merger_merger.c"
                                 },
-                                "beginLine" : 43,
+                                "beginLine" : 51,
                                 "beginColumn" : 1,
-                                "endLine" : 47,
+                                "endLine" : 55,
                                 "endColumn" : 1,
-                                "offset" : 1256,
+                                "offset" : 1532,
                                 "length" : 274
                               }
                             },
@@ -5173,11 +5173,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/consume_consume\/src\/bridge\/consume_consume_api.rs"
                                 },
-                                "beginLine" : 38,
+                                "beginLine" : 44,
                                 "beginColumn" : 5,
-                                "endLine" : 44,
+                                "endLine" : 50,
                                 "endColumn" : 5,
-                                "offset" : 1031,
+                                "offset" : 1192,
                                 "length" : 257
                               }
                             },
@@ -5209,11 +5209,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/consume_consume\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 17,
+                                "beginLine" : 18,
                                 "beginColumn" : 1,
-                                "endLine" : 24,
+                                "endLine" : 25,
                                 "endColumn" : 1,
-                                "offset" : 396,
+                                "offset" : 436,
                                 "length" : 252
                               }
                             },

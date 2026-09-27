@@ -21,3 +21,9 @@ verus! {
   }
 
 }
+
+// Memory layout as HAMR computes it
+const _: () = assert!(core::mem::size_of::<Message>() == 8);
+const _: () = assert!(core::mem::align_of::<Message>() == 4);
+const _: () = assert!(core::mem::offset_of!(Message, payload) == 0);
+const _: () = assert!(core::mem::offset_of!(Message, security_level) == 4);

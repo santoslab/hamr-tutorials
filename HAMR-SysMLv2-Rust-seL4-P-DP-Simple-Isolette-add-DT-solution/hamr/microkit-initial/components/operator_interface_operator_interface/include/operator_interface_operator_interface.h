@@ -26,3 +26,4 @@ void *memset(void *dest, int c, size_t n);
 
 bool put_desired_temp(const Isolette_Data_Model_Set_Points *data);
 bool get_display_temp(Isolette_Data_Model_Temp *data);
+uintmax_t get_display_temp_num_invalid(void);

@@ -25,3 +25,4 @@ void *memset(void *dest, int c, size_t n);
 
 
 bool get_instruct(SysPropStructSplit_Data_Model_StructXY *data);
+uintmax_t get_instruct_num_invalid(void);

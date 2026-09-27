@@ -25,6 +25,10 @@ bool get_inxfield(int32_t *data) {
   return isFresh;
 }
 
+uintmax_t get_inxfield_num_invalid(void) {
+  return sb_queue_int32_t_1_numInvalid((sb_queue_int32_t_1_Recv_t *) &inxfield_recv_queue);
+}
+
 bool put_outxfield(const int32_t *data) {
   sb_queue_int32_t_1_enqueue((sb_queue_int32_t_1_t *) outxfield_queue_1, (int32_t *) data);
 

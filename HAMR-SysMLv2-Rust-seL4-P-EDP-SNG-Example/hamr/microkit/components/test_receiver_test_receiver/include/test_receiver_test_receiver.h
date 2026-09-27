@@ -27,3 +27,4 @@ void *memset(void *dest, int c, size_t n);
 bool input_is_empty(void);
 bool get_input_poll(sb_event_counter_t *numDropped, SNG_Data_Model_Message *data);
 bool get_input(SNG_Data_Model_Message *data);
+uintmax_t get_input_num_invalid(void);

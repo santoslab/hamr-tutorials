@@ -28,6 +28,12 @@ verus! {
     {
       return extern_api::unsafe_get_inxfield();
     }
+
+    #[verifier::external_body]
+    fn unverified_get_inxfield_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_inxfield_num_invalid();
+    }
   }
 
   pub trait clampx_clampx_Full_Api: clampx_clampx_Put_Api + clampx_clampx_Get_Api {}
@@ -60,6 +66,12 @@ verus! {
         old(self).outxfield == final(self).outxfield,
     {
       self.api.unverified_get_inxfield(&Ghost(self.inxfield))
+    }/// The number of messages received on inxfield that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_inxfield_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_inxfield_num_invalid()
     }
   }
 

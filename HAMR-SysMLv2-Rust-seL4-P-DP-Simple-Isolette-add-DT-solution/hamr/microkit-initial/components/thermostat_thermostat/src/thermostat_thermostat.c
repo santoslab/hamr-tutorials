@@ -28,6 +28,10 @@ bool get_current_temp(Isolette_Data_Model_Temp *data) {
   return isFresh;
 }
 
+uintmax_t get_current_temp_num_invalid(void) {
+  return sb_queue_Isolette_Data_Model_Temp_1_numInvalid((sb_queue_Isolette_Data_Model_Temp_1_Recv_t *) &current_temp_recv_queue);
+}
+
 Isolette_Data_Model_Set_Points last_desired_temp_payload;
 
 bool get_desired_temp(Isolette_Data_Model_Set_Points *data) {
@@ -39,6 +43,10 @@ bool get_desired_temp(Isolette_Data_Model_Set_Points *data) {
   }
   *data = last_desired_temp_payload;
   return isFresh;
+}
+
+uintmax_t get_desired_temp_num_invalid(void) {
+  return sb_queue_Isolette_Data_Model_Set_Points_1_numInvalid((sb_queue_Isolette_Data_Model_Set_Points_1_Recv_t *) &desired_temp_recv_queue);
 }
 
 bool put_heat_control(const Isolette_Data_Model_On_Off *data) {

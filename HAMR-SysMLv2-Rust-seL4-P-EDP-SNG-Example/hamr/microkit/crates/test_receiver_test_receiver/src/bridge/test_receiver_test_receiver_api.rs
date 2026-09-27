@@ -21,6 +21,12 @@ verus! {
     {
       return extern_api::unsafe_get_input();
     }
+
+    #[verifier::external_body]
+    fn unverified_get_input_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_input_num_invalid();
+    }
   }
 
   pub trait test_receiver_test_receiver_Full_Api: test_receiver_test_receiver_Put_Api + test_receiver_test_receiver_Get_Api {}
@@ -41,6 +47,12 @@ verus! {
         res == final(self).input,
     {
       self.api.unverified_get_input(&Ghost(self.input))
+    }/// The number of messages received on input that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_input_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_input_num_invalid()
     }
   }
 

@@ -24,6 +24,10 @@ bool get_heat_control(Isolette_Data_Model_On_Off *data) {
   return get_heat_control_poll (&numDropped, data);
 }
 
+uintmax_t get_heat_control_num_invalid(void) {
+  return sb_queue_Isolette_Data_Model_On_Off_1_numInvalid((sb_queue_Isolette_Data_Model_On_Off_1_Recv_t *) &heat_control_recv_queue);
+}
+
 void init(void) {
   sb_queue_Isolette_Data_Model_On_Off_1_Recv_init(&heat_control_recv_queue, (sb_queue_Isolette_Data_Model_On_Off_1_t *) heat_control_queue_1);
 

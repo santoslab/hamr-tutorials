@@ -25,5 +25,7 @@ void *memset(void *dest, int c, size_t n);
 
 
 bool get_inxfield(int32_t *data);
+uintmax_t get_inxfield_num_invalid(void);
 bool get_inyfield(int32_t *data);
+uintmax_t get_inyfield_num_invalid(void);
 bool put_outstruct(const SysPropStructSplit_Data_Model_StructXY *data);

@@ -24,6 +24,10 @@ bool get_input(ProdCons_Message *data) {
   return get_input_poll (&numDropped, data);
 }
 
+uintmax_t get_input_num_invalid(void) {
+  return sb_queue_ProdCons_Message_1_numInvalid((sb_queue_ProdCons_Message_1_Recv_t *) &input_recv_queue);
+}
+
 void init(void) {
   sb_queue_ProdCons_Message_1_Recv_init(&input_recv_queue, (sb_queue_ProdCons_Message_1_t *) input_queue_1);
 

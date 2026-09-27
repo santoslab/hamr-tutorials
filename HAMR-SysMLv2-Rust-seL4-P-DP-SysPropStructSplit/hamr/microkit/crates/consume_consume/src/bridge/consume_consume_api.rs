@@ -21,6 +21,12 @@ verus! {
     {
       return extern_api::unsafe_get_instruct();
     }
+
+    #[verifier::external_body]
+    fn unverified_get_instruct_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_instruct_num_invalid();
+    }
   }
 
   pub trait consume_consume_Full_Api: consume_consume_Put_Api + consume_consume_Get_Api {}
@@ -41,6 +47,12 @@ verus! {
         res == final(self).instruct,
     {
       self.api.unverified_get_instruct(&Ghost(self.instruct))
+    }/// The number of messages received on instruct that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_instruct_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_instruct_num_invalid()
     }
   }
 

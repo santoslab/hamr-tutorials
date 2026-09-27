@@ -12,6 +12,7 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn get_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool;
+  fn get_heat_control_num_invalid() -> u64;
 }
 
 pub fn unsafe_get_heat_control() -> Option<Isolette_Data_Model::On_Off>
@@ -23,6 +24,13 @@ pub fn unsafe_get_heat_control() -> Option<Isolette_Data_Model::On_Off>
     } else {
       return None;
     }
+  }
+}
+
+pub fn unsafe_get_heat_control_num_invalid() -> u64
+{
+  unsafe {
+    return get_heat_control_num_invalid();
   }
 }
 
@@ -57,4 +65,10 @@ pub fn get_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool
       None => return false,
     }
   }
+}
+
+#[cfg(test)]
+pub fn get_heat_control_num_invalid() -> u64
+{
+  return 0;
 }

@@ -12,7 +12,9 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
+  fn get_current_temp_num_invalid() -> u64;
   fn get_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool;
+  fn get_desired_temp_num_invalid() -> u64;
   fn put_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool;
   fn put_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
 }
@@ -26,12 +28,26 @@ pub fn unsafe_get_current_temp() -> Isolette_Data_Model::Temp
   }
 }
 
+pub fn unsafe_get_current_temp_num_invalid() -> u64
+{
+  unsafe {
+    return get_current_temp_num_invalid();
+  }
+}
+
 pub fn unsafe_get_desired_temp() -> Isolette_Data_Model::Set_Points
 {
   unsafe {
     let value: *mut Isolette_Data_Model::Set_Points = &mut Isolette_Data_Model::Set_Points::default();
     get_desired_temp(value);
     return *value;
+  }
+}
+
+pub fn unsafe_get_desired_temp_num_invalid() -> u64
+{
+  unsafe {
+    return get_desired_temp_num_invalid();
   }
 }
 
@@ -85,6 +101,12 @@ pub fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 }
 
 #[cfg(test)]
+pub fn get_current_temp_num_invalid() -> u64
+{
+  return 0;
+}
+
+#[cfg(test)]
 pub fn get_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool
 {
   unsafe {
@@ -92,6 +114,12 @@ pub fn get_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool
     *value = guard.expect("Not expecting None");
     true
   }
+}
+
+#[cfg(test)]
+pub fn get_desired_temp_num_invalid() -> u64
+{
+  return 0;
 }
 
 #[cfg(test)]

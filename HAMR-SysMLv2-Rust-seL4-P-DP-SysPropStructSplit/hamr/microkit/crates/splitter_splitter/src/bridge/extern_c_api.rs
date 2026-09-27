@@ -12,6 +12,7 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn get_instruct(value: *mut SysPropStructSplit_Data_Model::StructXY) -> bool;
+  fn get_instruct_num_invalid() -> u64;
   fn put_xfield(value: *mut i32) -> bool;
   fn put_yfield(value: *mut i32) -> bool;
 }
@@ -22,6 +23,13 @@ pub fn unsafe_get_instruct() -> SysPropStructSplit_Data_Model::StructXY
     let value: *mut SysPropStructSplit_Data_Model::StructXY = &mut SysPropStructSplit_Data_Model::StructXY::default();
     get_instruct(value);
     return *value;
+  }
+}
+
+pub fn unsafe_get_instruct_num_invalid() -> u64
+{
+  unsafe {
+    return get_instruct_num_invalid();
   }
 }
 
@@ -70,6 +78,12 @@ pub fn get_instruct(value: *mut SysPropStructSplit_Data_Model::StructXY) -> bool
     *value = guard.expect("Not expecting None");
     true
   }
+}
+
+#[cfg(test)]
+pub fn get_instruct_num_invalid() -> u64
+{
+  return 0;
 }
 
 #[cfg(test)]

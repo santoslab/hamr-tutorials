@@ -42,6 +42,12 @@ verus! {
     {
       return extern_api::unsafe_get_instruct();
     }
+
+    #[verifier::external_body]
+    fn unverified_get_instruct_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_instruct_num_invalid();
+    }
   }
 
   pub trait splitter_splitter_Full_Api: splitter_splitter_Put_Api + splitter_splitter_Get_Api {}
@@ -104,6 +110,12 @@ verus! {
           (res.y <= 100i32),
     {
       self.api.unverified_get_instruct(&Ghost(self.instruct))
+    }/// The number of messages received on instruct that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_instruct_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_instruct_num_invalid()
     }
   }
 

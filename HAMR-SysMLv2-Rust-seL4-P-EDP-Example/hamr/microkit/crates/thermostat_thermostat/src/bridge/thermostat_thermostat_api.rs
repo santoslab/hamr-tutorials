@@ -33,6 +33,12 @@ verus! {
     }
 
     #[verifier::external_body]
+    fn unverified_get_current_temp_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_current_temp_num_invalid();
+    }
+
+    #[verifier::external_body]
     fn unverified_get_temp_changed(
       &mut self,
       value: &Ghost<Option<u8>>) -> (res : bool)
@@ -55,6 +61,12 @@ verus! {
           res.unwrap().lower.degrees <= res.unwrap().upper.degrees),
     {
       return extern_api::unsafe_get_desired_temp();
+    }
+
+    #[verifier::external_body]
+    fn unverified_get_desired_temp_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_desired_temp_num_invalid();
     }
   }
 
@@ -97,6 +109,12 @@ verus! {
           (res.degrees <= crate::component::thermostat_thermostat_app::Temp_Upper_Bound()),
     {
       self.api.unverified_get_current_temp(&Ghost(self.current_temp))
+    }/// The number of messages received on current_temp that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_current_temp_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_current_temp_num_invalid()
     }
     pub fn get_temp_changed(&mut self) -> (res : bool)
       ensures
@@ -122,6 +140,12 @@ verus! {
           res.unwrap().lower.degrees <= res.unwrap().upper.degrees),
     {
       self.api.unverified_get_desired_temp(&Ghost(self.desired_temp))
+    }/// The number of messages received on desired_temp that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_desired_temp_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_desired_temp_num_invalid()
     }
   }
 

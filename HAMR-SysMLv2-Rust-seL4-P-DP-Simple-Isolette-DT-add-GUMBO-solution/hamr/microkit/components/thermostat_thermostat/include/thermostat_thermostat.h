@@ -25,6 +25,8 @@ void *memset(void *dest, int c, size_t n);
 
 
 bool get_current_temp(Isolette_Data_Model_Temp *data);
+uintmax_t get_current_temp_num_invalid(void);
 bool get_desired_temp(Isolette_Data_Model_Set_Points *data);
+uintmax_t get_desired_temp_num_invalid(void);
 bool put_heat_control(const Isolette_Data_Model_On_Off *data);
 bool put_display_temp(const Isolette_Data_Model_Temp *data);

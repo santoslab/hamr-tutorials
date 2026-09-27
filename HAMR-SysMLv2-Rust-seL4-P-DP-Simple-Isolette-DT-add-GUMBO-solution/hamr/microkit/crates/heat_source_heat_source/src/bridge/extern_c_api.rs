@@ -12,6 +12,7 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn get_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool;
+  fn get_heat_control_num_invalid() -> u64;
 }
 
 pub fn unsafe_get_heat_control() -> Isolette_Data_Model::On_Off
@@ -20,6 +21,13 @@ pub fn unsafe_get_heat_control() -> Isolette_Data_Model::On_Off
     let value: *mut Isolette_Data_Model::On_Off = &mut Isolette_Data_Model::On_Off::default();
     get_heat_control(value);
     return *value;
+  }
+}
+
+pub fn unsafe_get_heat_control_num_invalid() -> u64
+{
+  unsafe {
+    return get_heat_control_num_invalid();
   }
 }
 
@@ -50,4 +58,10 @@ pub fn get_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool
     *value = guard.expect("Not expecting None");
     true
   }
+}
+
+#[cfg(test)]
+pub fn get_heat_control_num_invalid() -> u64
+{
+  return 0;
 }

@@ -27,6 +27,10 @@ bool get_inxfield(int32_t *data) {
   return isFresh;
 }
 
+uintmax_t get_inxfield_num_invalid(void) {
+  return sb_queue_int32_t_1_numInvalid((sb_queue_int32_t_1_Recv_t *) &inxfield_recv_queue);
+}
+
 int32_t last_inyfield_payload;
 
 bool get_inyfield(int32_t *data) {
@@ -38,6 +42,10 @@ bool get_inyfield(int32_t *data) {
   }
   *data = last_inyfield_payload;
   return isFresh;
+}
+
+uintmax_t get_inyfield_num_invalid(void) {
+  return sb_queue_int32_t_1_numInvalid((sb_queue_int32_t_1_Recv_t *) &inyfield_recv_queue);
 }
 
 bool put_outstruct(const SysPropStructSplit_Data_Model_StructXY *data) {

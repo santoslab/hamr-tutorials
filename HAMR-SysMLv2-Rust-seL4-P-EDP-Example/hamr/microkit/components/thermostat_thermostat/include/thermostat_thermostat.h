@@ -25,10 +25,12 @@ void *memset(void *dest, int c, size_t n);
 
 
 bool get_current_temp(Isolette_Data_Model_Temp *data);
+uintmax_t get_current_temp_num_invalid(void);
 bool temp_changed_is_empty(void);
 bool get_temp_changed_poll(sb_event_counter_t *numDropped);
 bool get_temp_changed();
 bool desired_temp_is_empty(void);
 bool get_desired_temp_poll(sb_event_counter_t *numDropped, Isolette_Data_Model_Set_Points *data);
 bool get_desired_temp(Isolette_Data_Model_Set_Points *data);
+uintmax_t get_desired_temp_num_invalid(void);
 bool put_heat_control(const Isolette_Data_Model_On_Off *data);

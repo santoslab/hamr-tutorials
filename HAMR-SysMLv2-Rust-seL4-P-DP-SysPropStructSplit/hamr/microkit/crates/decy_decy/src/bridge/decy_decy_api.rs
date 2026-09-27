@@ -28,6 +28,12 @@ verus! {
     {
       return extern_api::unsafe_get_inyfield();
     }
+
+    #[verifier::external_body]
+    fn unverified_get_inyfield_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_inyfield_num_invalid();
+    }
   }
 
   pub trait decy_decy_Full_Api: decy_decy_Put_Api + decy_decy_Get_Api {}
@@ -60,6 +66,12 @@ verus! {
         old(self).outyfield == final(self).outyfield,
     {
       self.api.unverified_get_inyfield(&Ghost(self.inyfield))
+    }/// The number of messages received on inyfield that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_inyfield_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_inyfield_num_invalid()
     }
   }
 

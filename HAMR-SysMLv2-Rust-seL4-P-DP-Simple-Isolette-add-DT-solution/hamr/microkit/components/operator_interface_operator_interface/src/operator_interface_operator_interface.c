@@ -31,6 +31,10 @@ bool get_display_temp(Isolette_Data_Model_Temp *data) {
   return isFresh;
 }
 
+uintmax_t get_display_temp_num_invalid(void) {
+  return sb_queue_Isolette_Data_Model_Temp_1_numInvalid((sb_queue_Isolette_Data_Model_Temp_1_Recv_t *) &display_temp_recv_queue);
+}
+
 void init(void) {
   sb_queue_Isolette_Data_Model_Set_Points_1_init((sb_queue_Isolette_Data_Model_Set_Points_1_t *) desired_temp_queue_1);
 

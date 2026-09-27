@@ -21,6 +21,12 @@ verus! {
     {
       return extern_api::unsafe_get_heat_control();
     }
+
+    #[verifier::external_body]
+    fn unverified_get_heat_control_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_heat_control_num_invalid();
+    }
   }
 
   pub trait heat_source_heat_source_Full_Api: heat_source_heat_source_Put_Api + heat_source_heat_source_Get_Api {}
@@ -41,6 +47,12 @@ verus! {
         res == final(self).heat_control,
     {
       self.api.unverified_get_heat_control(&Ghost(self.heat_control))
+    }/// The number of messages received on heat_control that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_heat_control_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_heat_control_num_invalid()
     }
   }
 

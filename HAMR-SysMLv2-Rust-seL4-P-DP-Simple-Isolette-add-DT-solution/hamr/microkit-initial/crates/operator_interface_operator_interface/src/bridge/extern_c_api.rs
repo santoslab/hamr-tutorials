@@ -12,6 +12,7 @@ use std::sync::Mutex;
 #[cfg(not(test))]
 extern "C" {
   fn get_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool;
+  fn get_display_temp_num_invalid() -> u64;
   fn put_desired_temp(value: *mut Isolette_Data_Model::Set_Points) -> bool;
 }
 
@@ -21,6 +22,13 @@ pub fn unsafe_get_display_temp() -> Isolette_Data_Model::Temp
     let value: *mut Isolette_Data_Model::Temp = &mut Isolette_Data_Model::Temp::default();
     get_display_temp(value);
     return *value;
+  }
+}
+
+pub fn unsafe_get_display_temp_num_invalid() -> u64
+{
+  unsafe {
+    return get_display_temp_num_invalid();
   }
 }
 
@@ -60,6 +68,12 @@ pub fn get_display_temp(value: *mut Isolette_Data_Model::Temp) -> bool
     *value = guard.expect("Not expecting None");
     true
   }
+}
+
+#[cfg(test)]
+pub fn get_display_temp_num_invalid() -> u64
+{
+  return 0;
 }
 
 #[cfg(test)]

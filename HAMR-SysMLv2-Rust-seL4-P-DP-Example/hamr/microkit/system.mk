@@ -2,6 +2,13 @@
 
 MICROKIT_TOOL ?= $(MICROKIT_SDK)/bin/microkit
 
+# Which cargo profile directory the Rust staticlibs land in.  The crate Makefiles'
+# default target is build-verus-release, and the *-release targets pass --release, so
+# those produce target/<triple>/release; the plain build / build-verus targets do not
+# and produce target/<triple>/debug.  The link rules below have to look in whichever
+# one RUST_MAKE_TARGET actually populated.
+RUST_PROFILE_DIR := $(if $(RUST_MAKE_TARGET),$(if $(filter %-release,$(RUST_MAKE_TARGET)),release,debug),release)
+
 CFLAGS := -mcpu=$(CPU) \
 	-mstrict-align \
 	-ffreestanding \
@@ -26,6 +33,10 @@ UTIL_OBJS = printf.o util.o
 TYPES_DIR = $(TOP_DIR)/types
 TYPE_OBJS := $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Temp_1.o $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Set_Points_1.o $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_On_Off_1.o
 
+# The queue objects as an archive: each protection domain's link pulls in only the
+# queues it uses, not every queue in the system
+TYPES_LIB := libhamr_types.a
+
 # exporting TOP_TYPES_INCLUDE in case other makefiles need it
 export TOP_TYPES_INCLUDE = -I$(TYPES_DIR)/include
 
@@ -40,6 +51,10 @@ ${CHECK_FLAGS_BOARD_MD5}:
 
 %.o: ${TOP_DIR}/util/src/%.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_DIR)/util/include
+
+$(TYPES_LIB): $(TYPE_OBJS)
+	rm -f $@
+	$(AR) rcs $@ $^
 
 $(TOP_DIR)/build/sb_queue_Isolette_Data_Model_Temp_1.o: $(TOP_DIR)/types/src/sb_queue_Isolette_Data_Model_Temp_1.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
@@ -103,28 +118,28 @@ pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
 temp_sensor_temp_sensor_MON.elf: temp_sensor_temp_sensor_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-temp_sensor_temp_sensor.elf: $(UTIL_OBJS) $(TYPE_OBJS) temp_sensor_temp_sensor_rust temp_sensor_temp_sensor.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/temp_sensor_temp_sensor/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -ltemp_sensor_temp_sensor -o $@
+temp_sensor_temp_sensor.elf: $(UTIL_OBJS) temp_sensor_temp_sensor_rust temp_sensor_temp_sensor.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/temp_sensor_temp_sensor/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -ltemp_sensor_temp_sensor -o $@
 
 operator_interface_operator_interface_MON.elf: operator_interface_operator_interface_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-operator_interface_operator_interface.elf: $(UTIL_OBJS) $(TYPE_OBJS) operator_interface_operator_interface_rust operator_interface_operator_interface.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/operator_interface_operator_interface/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -loperator_interface_operator_interface -o $@
+operator_interface_operator_interface.elf: $(UTIL_OBJS) operator_interface_operator_interface_rust operator_interface_operator_interface.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/operator_interface_operator_interface/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -loperator_interface_operator_interface -o $@
 
 thermostat_thermostat_MON.elf: thermostat_thermostat_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-thermostat_thermostat.elf: $(UTIL_OBJS) $(TYPE_OBJS) thermostat_thermostat_rust thermostat_thermostat.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/thermostat_thermostat/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lthermostat_thermostat -o $@
+thermostat_thermostat.elf: $(UTIL_OBJS) thermostat_thermostat_rust thermostat_thermostat.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/thermostat_thermostat/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lthermostat_thermostat -o $@
 
 heat_source_heat_source_MON.elf: heat_source_heat_source_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-heat_source_heat_source.elf: $(UTIL_OBJS) $(TYPE_OBJS) heat_source_heat_source_rust heat_source_heat_source.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/heat_source_heat_source/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lheat_source_heat_source -o $@
+heat_source_heat_source.elf: $(UTIL_OBJS) heat_source_heat_source_rust heat_source_heat_source.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/heat_source_heat_source/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lheat_source_heat_source -o $@
 
-pacer.elf: $(UTIL_OBJS) $(TYPE_OBJS) pacer.o
+pacer.elf: $(UTIL_OBJS) pacer.o $(TYPES_LIB)
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
 $(IMAGE_FILE): $(IMAGES) $(TOP_DIR)/$(MSD)

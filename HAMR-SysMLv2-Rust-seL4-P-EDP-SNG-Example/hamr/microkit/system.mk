@@ -2,6 +2,13 @@
 
 MICROKIT_TOOL ?= $(MICROKIT_SDK)/bin/microkit
 
+# Which cargo profile directory the Rust staticlibs land in.  The crate Makefiles'
+# default target is build-verus-release, and the *-release targets pass --release, so
+# those produce target/<triple>/release; the plain build / build-verus targets do not
+# and produce target/<triple>/debug.  The link rules below have to look in whichever
+# one RUST_MAKE_TARGET actually populated.
+RUST_PROFILE_DIR := $(if $(RUST_MAKE_TARGET),$(if $(filter %-release,$(RUST_MAKE_TARGET)),release,debug),release)
+
 CFLAGS := -mcpu=$(CPU) \
 	-mstrict-align \
 	-ffreestanding \
@@ -26,6 +33,10 @@ UTIL_OBJS = printf.o util.o
 TYPES_DIR = $(TOP_DIR)/types
 TYPE_OBJS := $(TOP_DIR)/build/sb_queue_SNG_Data_Model_Message_1.o
 
+# The queue objects as an archive: each protection domain's link pulls in only the
+# queues it uses, not every queue in the system
+TYPES_LIB := libhamr_types.a
+
 # exporting TOP_TYPES_INCLUDE in case other makefiles need it
 export TOP_TYPES_INCLUDE = -I$(TYPES_DIR)/include
 
@@ -40,6 +51,10 @@ ${CHECK_FLAGS_BOARD_MD5}:
 
 %.o: ${TOP_DIR}/util/src/%.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_DIR)/util/include
+
+$(TYPES_LIB): $(TYPE_OBJS)
+	rm -f $@
+	$(AR) rcs $@ $^
 
 $(TOP_DIR)/build/sb_queue_SNG_Data_Model_Message_1.o: $(TOP_DIR)/types/src/sb_queue_SNG_Data_Model_Message_1.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
@@ -95,28 +110,28 @@ pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
 gate_gate_MON.elf: gate_gate_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-gate_gate.elf: $(UTIL_OBJS) $(TYPE_OBJS) gate_gate_rust gate_gate.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/gate_gate/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lgate_gate -o $@
+gate_gate.elf: $(UTIL_OBJS) gate_gate_rust gate_gate.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/gate_gate/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lgate_gate -o $@
 
 msg_filter_msg_filter_MON.elf: msg_filter_msg_filter_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-msg_filter_msg_filter.elf: $(UTIL_OBJS) $(TYPE_OBJS) msg_filter_msg_filter_rust msg_filter_msg_filter.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/msg_filter_msg_filter/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lmsg_filter_msg_filter -o $@
+msg_filter_msg_filter.elf: $(UTIL_OBJS) msg_filter_msg_filter_rust msg_filter_msg_filter.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/msg_filter_msg_filter/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lmsg_filter_msg_filter -o $@
 
 test_sender_test_sender_MON.elf: test_sender_test_sender_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-test_sender_test_sender.elf: $(UTIL_OBJS) $(TYPE_OBJS) test_sender_test_sender_rust test_sender_test_sender.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/test_sender_test_sender/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -ltest_sender_test_sender -o $@
+test_sender_test_sender.elf: $(UTIL_OBJS) test_sender_test_sender_rust test_sender_test_sender.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/test_sender_test_sender/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -ltest_sender_test_sender -o $@
 
 test_receiver_test_receiver_MON.elf: test_receiver_test_receiver_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-test_receiver_test_receiver.elf: $(UTIL_OBJS) $(TYPE_OBJS) test_receiver_test_receiver_rust test_receiver_test_receiver.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/test_receiver_test_receiver/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -ltest_receiver_test_receiver -o $@
+test_receiver_test_receiver.elf: $(UTIL_OBJS) test_receiver_test_receiver_rust test_receiver_test_receiver.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/test_receiver_test_receiver/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -ltest_receiver_test_receiver -o $@
 
-pacer.elf: $(UTIL_OBJS) $(TYPE_OBJS) pacer.o
+pacer.elf: $(UTIL_OBJS) pacer.o $(TYPES_LIB)
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
 $(IMAGE_FILE): $(IMAGES) $(TOP_DIR)/$(MSD)

@@ -354,11 +354,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs",
-                  "beginLine": 82,
+                  "beginLine": 94,
                   "beginCol": 11,
-                  "endLine": 84,
+                  "endLine": 96,
                   "endCol": 92,
-                  "offset": 2600,
+                  "offset": 2938,
                   "length": 187
                 }
             },
@@ -370,11 +370,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs",
-                  "beginLine": 104,
+                  "beginLine": 116,
                   "beginCol": 11,
-                  "endLine": 106,
+                  "endLine": 118,
                   "endCol": 90,
-                  "offset": 3627,
+                  "offset": 3965,
                   "length": 183
                 }
             },

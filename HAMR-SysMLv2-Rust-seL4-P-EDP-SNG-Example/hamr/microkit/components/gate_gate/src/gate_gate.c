@@ -31,6 +31,10 @@ bool get_input(SNG_Data_Model_Message *data) {
   return get_input_poll (&numDropped, data);
 }
 
+uintmax_t get_input_num_invalid(void) {
+  return sb_queue_SNG_Data_Model_Message_1_numInvalid((sb_queue_SNG_Data_Model_Message_1_Recv_t *) &input_recv_queue);
+}
+
 void init(void) {
   sb_queue_SNG_Data_Model_Message_1_init((sb_queue_SNG_Data_Model_Message_1_t *) output_queue_1);
 

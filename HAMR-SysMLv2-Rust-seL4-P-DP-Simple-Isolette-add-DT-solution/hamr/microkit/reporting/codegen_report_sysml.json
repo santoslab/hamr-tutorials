@@ -1040,11 +1040,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_api.rs"
                                 },
-                                "beginLine" : 56,
+                                "beginLine" : 62,
                                 "beginColumn" : 5,
-                                "endLine" : 63,
+                                "endLine" : 69,
                                 "endColumn" : 5,
-                                "offset" : 1878,
+                                "offset" : 2047,
                                 "length" : 327
                               }
                             },
@@ -1076,11 +1076,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 18,
+                                "beginLine" : 19,
                                 "beginColumn" : 1,
-                                "endLine" : 25,
+                                "endLine" : 26,
                                 "endColumn" : 1,
-                                "offset" : 462,
+                                "offset" : 506,
                                 "length" : 218
                               }
                             },
@@ -1203,11 +1203,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/operator_interface_operator_interface_api.rs"
                                 },
-                                "beginLine" : 43,
+                                "beginLine" : 49,
                                 "beginColumn" : 5,
-                                "endLine" : 52,
+                                "endLine" : 58,
                                 "endColumn" : 5,
-                                "offset" : 1438,
+                                "offset" : 1607,
                                 "length" : 309
                               }
                             },
@@ -1239,11 +1239,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 27,
+                                "beginLine" : 35,
                                 "beginColumn" : 1,
-                                "endLine" : 32,
+                                "endLine" : 40,
                                 "endColumn" : 1,
-                                "offset" : 683,
+                                "offset" : 842,
                                 "length" : 215
                               }
                             },
@@ -1257,11 +1257,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/operator_interface_operator_interface\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 75,
-                                "offset" : 385,
+                                "offset" : 429,
                                 "length" : 72
                               }
                             },
@@ -1475,11 +1475,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
                                 },
-                                "beginLine" : 93,
+                                "beginLine" : 105,
                                 "beginColumn" : 5,
-                                "endLine" : 105,
+                                "endLine" : 117,
                                 "endColumn" : 5,
-                                "offset" : 2994,
+                                "offset" : 3332,
                                 "length" : 663
                               }
                             },
@@ -1511,11 +1511,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 20,
+                                "beginLine" : 22,
                                 "beginColumn" : 1,
-                                "endLine" : 27,
+                                "endLine" : 29,
                                 "endColumn" : 1,
-                                "offset" : 604,
+                                "offset" : 692,
                                 "length" : 218
                               }
                             },
@@ -1638,11 +1638,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
                                 },
-                                "beginLine" : 106,
+                                "beginLine" : 124,
                                 "beginColumn" : 5,
-                                "endLine" : 115,
+                                "endLine" : 133,
                                 "endColumn" : 5,
-                                "offset" : 3663,
+                                "offset" : 4342,
                                 "length" : 453
                               }
                             },
@@ -1656,11 +1656,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
                                 },
-                                "beginLine" : 44,
+                                "beginLine" : 50,
                                 "beginColumn" : 5,
-                                "endLine" : 51,
+                                "endLine" : 57,
                                 "endColumn" : 5,
-                                "offset" : 1250,
+                                "offset" : 1419,
                                 "length" : 245
                               }
                             },
@@ -1674,11 +1674,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 29,
+                                "beginLine" : 38,
                                 "beginColumn" : 1,
-                                "endLine" : 36,
+                                "endLine" : 45,
                                 "endColumn" : 1,
-                                "offset" : 825,
+                                "offset" : 1028,
                                 "length" : 236
                               }
                             },
@@ -1692,11 +1692,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 15,
+                                "beginLine" : 16,
                                 "beginColumn" : 3,
-                                "endLine" : 15,
+                                "endLine" : 16,
                                 "endColumn" : 75,
-                                "offset" : 385,
+                                "offset" : 429,
                                 "length" : 72
                               }
                             },
@@ -1710,11 +1710,11 @@
                                   "type" : "Some",
                                   "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
                                 },
-                                "beginLine" : 33,
+                                "beginLine" : 37,
                                 "beginColumn" : 1,
-                                "endLine" : 42,
+                                "endLine" : 46,
                                 "endColumn" : 1,
-                                "offset" : 1249,
+                                "offset" : 1429,
                                 "length" : 433
                               }
                             },
@@ -1801,11 +1801,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
                                 },
-                                "beginLine" : 66,
+                                "beginLine" : 78,
                                 "beginColumn" : 5,
-                                "endLine" : 77,
+                                "endLine" : 89,
                                 "endColumn" : 5,
-                                "offset" : 2041,
+                                "offset" : 2379,
                                 "length" : 425
                               }
                             },
@@ -1837,11 +1837,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 38,
+                                "beginLine" : 54,
                                 "beginColumn" : 1,
-                                "endLine" : 43,
+                                "endLine" : 59,
                                 "endColumn" : 1,
-                                "offset" : 1064,
+                                "offset" : 1382,
                                 "length" : 203
                               }
                             },
@@ -1855,11 +1855,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 16,
+                                "beginLine" : 18,
                                 "beginColumn" : 3,
-                                "endLine" : 16,
+                                "endLine" : 18,
                                 "endColumn" : 71,
-                                "offset" : 461,
+                                "offset" : 549,
                                 "length" : 68
                               }
                             },
@@ -1873,11 +1873,11 @@
                                   "type" : "Some",
                                   "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
                                 },
-                                "beginLine" : 44,
+                                "beginLine" : 52,
                                 "beginColumn" : 1,
-                                "endLine" : 48,
+                                "endLine" : 56,
                                 "endColumn" : 1,
-                                "offset" : 1685,
+                                "offset" : 2057,
                                 "length" : 232
                               }
                             },
@@ -1964,11 +1964,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
                                 },
-                                "beginLine" : 78,
+                                "beginLine" : 90,
                                 "beginColumn" : 5,
-                                "endLine" : 89,
+                                "endLine" : 101,
                                 "endColumn" : 5,
-                                "offset" : 2472,
+                                "offset" : 2810,
                                 "length" : 423
                               }
                             },
@@ -2000,11 +2000,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 45,
+                                "beginLine" : 61,
                                 "beginColumn" : 1,
-                                "endLine" : 50,
+                                "endLine" : 66,
                                 "endColumn" : 1,
-                                "offset" : 1270,
+                                "offset" : 1588,
                                 "length" : 197
                               }
                             },
@@ -2018,11 +2018,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/thermostat_thermostat\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 17,
+                                "beginLine" : 19,
                                 "beginColumn" : 3,
-                                "endLine" : 17,
+                                "endLine" : 19,
                                 "endColumn" : 69,
-                                "offset" : 533,
+                                "offset" : 621,
                                 "length" : 66
                               }
                             },
@@ -2036,11 +2036,11 @@
                                   "type" : "Some",
                                   "value" : "components\/thermostat_thermostat\/src\/thermostat_thermostat.c"
                                 },
-                                "beginLine" : 50,
+                                "beginLine" : 58,
                                 "beginColumn" : 1,
-                                "endLine" : 54,
+                                "endLine" : 62,
                                 "endColumn" : 1,
-                                "offset" : 1920,
+                                "offset" : 2292,
                                 "length" : 224
                               }
                             },
@@ -2230,11 +2230,11 @@
                                     "type" : "Some",
                                     "value" : "crates\/thermostat_thermostat\/src\/bridge\/thermostat_thermostat_api.rs"
                                   },
-                                  "beginLine" : 100,
+                                  "beginLine" : 112,
                                   "beginColumn" : 11,
-                                  "endLine" : 102,
+                                  "endLine" : 114,
                                   "endColumn" : 90,
-                                  "offset" : 3391,
+                                  "offset" : 3729,
                                   "length" : 183
                                 }
                               ]
@@ -2768,11 +2768,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/heat_source_heat_source\/src\/bridge\/heat_source_heat_source_api.rs"
                                 },
-                                "beginLine" : 38,
+                                "beginLine" : 44,
                                 "beginColumn" : 5,
-                                "endLine" : 44,
+                                "endLine" : 50,
                                 "endColumn" : 5,
-                                "offset" : 1119,
+                                "offset" : 1288,
                                 "length" : 269
                               }
                             },
@@ -2804,11 +2804,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/heat_source_heat_source\/src\/bridge\/extern_c_api.rs"
                                 },
-                                "beginLine" : 17,
+                                "beginLine" : 18,
                                 "beginColumn" : 1,
-                                "endLine" : 24,
+                                "endLine" : 25,
                                 "endColumn" : 1,
-                                "offset" : 388,
+                                "offset" : 432,
                                 "length" : 224
                               }
                             },
