@@ -3,6 +3,7 @@
 package TempControlMixedUI
 
 import org.sireum._
+import org.sireum.S64._
 import art._
 import art.PortMode._
 import art.DispatchPropertyProtocol._
@@ -19,7 +20,7 @@ object Arch {
     TempControlMixedUI.TempSensor.TempSensor_i_tcproc_tempSensor_Bridge(
       id = bridgeId"0",
       name = "TempControlSystem_i_Instance_tcproc_tempSensor",
-      dispatchProtocol = Periodic(period = 1000),
+      dispatchProtocol = Periodic(period = s64"1000000000"),
       dispatchTriggers = None(),
 
       currentTemp = currentTemp,
@@ -33,7 +34,7 @@ object Arch {
     TempControlMixedUI.CoolingFan.Fan_i_tcproc_fan_Bridge(
       id = bridgeId"1",
       name = "TempControlSystem_i_Instance_tcproc_fan",
-      dispatchProtocol = Sporadic(min = 1000),
+      dispatchProtocol = Sporadic(min = s64"1000000000"),
       dispatchTriggers = None(),
 
       fanCmd = fanCmd,
@@ -50,7 +51,7 @@ object Arch {
     TempControlMixedUI.TempControlSystem.TempControl_i_tcproc_tempControl_Bridge(
       id = bridgeId"2",
       name = "TempControlSystem_i_Instance_tcproc_tempControl",
-      dispatchProtocol = Sporadic(min = 1000),
+      dispatchProtocol = Sporadic(min = s64"1000000000"),
       dispatchTriggers = None(),
 
       currentTemp = currentTemp,
@@ -68,7 +69,7 @@ object Arch {
     TempControlMixedUI.TempControlSystem.OperatorInterface_i_tcproc_operatorInterface_Bridge(
       id = bridgeId"3",
       name = "TempControlSystem_i_Instance_tcproc_operatorInterface",
-      dispatchProtocol = Periodic(period = 1000),
+      dispatchProtocol = Periodic(period = s64"1000000000"),
       dispatchTriggers = None(),
 
       currentTemp = currentTemp,

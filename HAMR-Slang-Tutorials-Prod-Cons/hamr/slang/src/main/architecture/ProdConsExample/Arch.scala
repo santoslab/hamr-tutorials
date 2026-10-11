@@ -3,6 +3,7 @@
 package ProdConsExample
 
 import org.sireum._
+import org.sireum.S64._
 import art._
 import art.PortMode._
 import art.DispatchPropertyProtocol._
@@ -18,7 +19,7 @@ object Arch {
     ProdConsExample.Producer.ProducerThr_i_prod_producerThr_Bridge(
       id = bridgeId"0",
       name = "ProdConsSystem_i_Instance_prod_producerThr",
-      dispatchProtocol = Periodic(period = 1000),
+      dispatchProtocol = Periodic(period = s64"1000000000"),
       dispatchTriggers = None(),
 
       outMessage = outMessage
@@ -30,7 +31,7 @@ object Arch {
     ProdConsExample.Consumer.ConsumerThr_i_cons_consumerThr_Bridge(
       id = bridgeId"1",
       name = "ProdConsSystem_i_Instance_cons_consumerThr",
-      dispatchProtocol = Sporadic(min = 1000),
+      dispatchProtocol = Sporadic(min = s64"1000000000"),
       dispatchTriggers = None(),
 
       inMessage = inMessage
