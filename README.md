@@ -26,6 +26,10 @@ Please see the [HAMR documentation tutorial guide](https://hamr.sireum.org/hamr-
   - Part 1: [Specifying a system-level property](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-SysPropStructSplit-add-Prop-yLEx/01-Ex-SysPropStructSplit-add-Prop-yLEx-property.md) (stating an end-to-end property as a GUMBO spec function and `property` block, type checking, generating and reading the verification conditions)
   - Part 2: [Verifying, diagnosing, and repairing the property](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-SysPropStructSplit-add-Prop-yLEx/02-Ex-SysPropStructSplit-add-Prop-yLEx-verify.md) (running Verus, reading a failing verification condition back to a missing carry assertion, and contrasting the two reasons a VC can fail)
 
+- Tutorial: System Testing the Struct Split Example (running the composed system on seL4 under QEMU with the test scheduler, injecting values and checking each component's output, with every dispatch checked against the GUMBO contracts and system assertions)
+  - Part 1: [Writing and running system tests](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-SysPropStructSplit-add-SysTest/01-Ex-SysPropStructSplit-add-SysTest-write.md) (the generated test infrastructure and API, injecting a struct and stepping the schedule, expected results from the contracts, failing tests, filters and listing)
+  - Part 2: [Property-based tests and contract checking](./HAMR-SysMLv2-Rust-Tutorials-Exercises/Ex-SysPropStructSplit-add-SysTest/02-Ex-SysPropStructSplit-add-SysTest-checks.md) (a property-based end-to-end test, a seeded bug reported by both layers of contract checking, reproducing a random failure, and robustness tests that break a component assumption and a system property on purpose)
+
   
 
 
@@ -46,7 +50,11 @@ All of these examples use Rust component implementations deployable on seL4 via 
 
 - [HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution](./HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution) -- solution project for the "Specifying and Verifying System-Level Properties" tutorial: the Struct Split example with an additional end-to-end system property specified, generated, and verified.
 
+- [HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-SysTest-solution](./HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-SysTest-solution) -- solution project for the "System Testing the Struct Split Example" tutorial: system tests in `hamr/microkit_mcs`, the MCS user-land scheduled build of the Struct Split example generated with system testing enabled (the example itself carries the same build, with only the generated smoke tests).
+
 - [HAMR-SysMLv2-Rust-seL4-P-EDP-Example](./HAMR-SysMLv2-Rust-seL4-P-EDP-Example) -- an event/event-data-port variant of the Simple Isolette example (periodic components communicating via data ports, event data ports with GUMBO `HasEvent`/`MustSend`/`NoSend` contracts, latched GUMBO state variables, and a send-on-change output policy). Worked end-to-end: GUMBO component contracts, Rust component implementations, manual unit tests, manual GUMBOX tests, property-based GUMBOX tests, and Verus verification of all component crates.
+
+- [HAMR-SysMLv2-Rust-seL4-P-EDP-Example-add-SysTest-solution](./HAMR-SysMLv2-Rust-seL4-P-EDP-Example-add-SysTest-solution) -- the running example of the [HAMR System Testing](https://hamr.sireum.org/hamr-doc/hamr-system-testing/) documentation chapter: the event/event-data-port Simple Isolette with a GUMBO `composition` added (the heater always agrees with the commanded state), verified by Verus, and system tests in `hamr/microkit_mcs` covering event inputs, send-on-change, and both layers of contract checking.
 
 - [HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example](./HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example) -- a minimal producer/consumer example introducing event data ports: two periodic threads with different periods connected by an event data port, GUMBO integration constraints on the message payload, and a GUMBO state variable on the consumer (illustrating `Option`-valued port APIs and state-variable-aware GUMBOX testing).
 

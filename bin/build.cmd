@@ -45,17 +45,20 @@ val projects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-DP-Simple-Isolette-DT-add-GUMBO-solution",
 
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-Example-add-SysTest-solution",
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example",
   "HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example",
 
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
-  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution",
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-SysTest-solution"
 )
 
 // SysMLv2 system-property projects: they do not commit codegen's attestation artifacts
 val sysPropProjects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
-  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution",
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-SysTest-solution"
 )
 
 // SysMLv2 projects verified via project-level `make verus` (every component crate --
@@ -63,10 +66,12 @@ val sysPropProjects = ISZ(
 // the single thermostat crate
 val projectLevelVerusProjects = ISZ(
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Example",
+  "HAMR-SysMLv2-Rust-seL4-P-EDP-Example-add-SysTest-solution",
   "HAMR-SysMLv2-Rust-seL4-P-EDP-Prod-Cons-Example",
   "HAMR-SysMLv2-Rust-seL4-P-EDP-SNG-Example",
   "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit",
-  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution"
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-Prop-yLEx-solution",
+  "HAMR-SysMLv2-Rust-seL4-P-DP-SysPropStructSplit-add-SysTest-solution"
 )
 
 for (p <- projects) {
@@ -232,7 +237,9 @@ object Helper {
       removeAttestation = removeAttestation,
       systemLevelVerus = systemLevelVerus,
       verify = T,
-      test = T)
+      test = T,
+      extraCodegenArgs = ISZ(),
+      systemTest = F)
 
     // A tutorial that ships a starting point has hamr/microkit-initial beside
     // the hamr/microkit its steps build up to.  Both come from the same model --
@@ -255,15 +262,37 @@ object Helper {
         removeAttestation = removeAttestation,
         systemLevelVerus = systemLevelVerus,
         verify = F,
-        test = F)
+        test = F,
+        extraCodegenArgs = ISZ(),
+        systemTest = F)
+    }
+
+    // A project that is system tested has hamr/microkit_mcs beside hamr/microkit: the
+    // same model generated for the MCS user-land scheduler, which the test scheduler
+    // needs -- the kernel's domain schedule offers nothing a test can pause or step.
+    // Its test_scheduler.mk variant runs the system tests in crates/test_controller.
+    val mcsDir = hamrDir / "microkit_mcs"
+    if (ok && mcsDir.exists) {
+      ok = buildMicrokitTree(
+        root = root,
+        microkitDir = mcsDir,
+        removeAttestation = removeAttestation,
+        systemLevelVerus = systemLevelVerus,
+        verify = T,
+        test = T,
+        extraCodegenArgs = ISZ("--scheduling", "UserLand", "--experimental-options", "ENABLE_TEST_SCHEDULER"),
+        systemTest = T)
     }
 
     return ok
   }
 
   // Clean, regenerate and build one of a project's generated Microkit trees.
+  // extraCodegenArgs are appended to the codegen options; systemTest also runs the
+  // tree's system tests under QEMU (bin/run-tests.cmd), when QEMU is installed.
   def buildMicrokitTree(root: Os.Path, microkitDir: Os.Path, removeAttestation: B,
-                        systemLevelVerus: B, verify: B, test: B): B = {
+                        systemLevelVerus: B, verify: B, test: B,
+                        extraCodegenArgs: ISZ[String], systemTest: B): B = {
     println(s"Processing $microkitDir")
 
     val sysmlv2Dir = root / "sysmlv2"
@@ -271,7 +300,9 @@ object Helper {
     var ret = run(s"Cleaning $microkitDir", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "clean.cmd"} $microkitDir")
 
     if (ret == 0) {
-      ret = run(s"Running HAMR codegen", F, proc"sireum slang run ${sysmlv2Dir / "bin" / "run-hamr.cmd"} --platform Microkit --sel4-output-dir $microkitDir".at(findModelDir(sysmlv2Dir)))
+      val codegen = ISZ[String]("sireum", "slang", "run", (sysmlv2Dir / "bin" / "run-hamr.cmd").value,
+        "--platform", "Microkit", "--sel4-output-dir", microkitDir.value) ++ extraCodegenArgs
+      ret = run(s"Running HAMR codegen", F, Os.proc(codegen).at(findModelDir(sysmlv2Dir)))
     }
 
     if (ret == 0) {
@@ -293,6 +324,17 @@ object Helper {
 
       if (ret == 0 && test) {
         ret = run("Running the microkit unit tests", F, proc"make test".at(microkitDir))
+      }
+
+      if (ret == 0 && systemTest) {
+        if (proc"which qemu-system-aarch64".run().ok) {
+          // run-tests.cmd builds the test_scheduler.mk image itself and fails unless
+          // every selected test passes
+          ret = run("Running the system tests under QEMU", F,
+            proc"sireum slang run ${microkitDir / "bin" / "run-tests.cmd"}".at(microkitDir))
+        } else {
+          println("Running the system tests under QEMU ... skipped: qemu-system-aarch64 not found")
+        }
       }
 
       removeBuildArtifacts(microkitDir)
