@@ -25,5 +25,6 @@ void *memset(void *dest, int c, size_t n);
 
 
 bool get_instruct(SysPropStructSplit_Data_Model_StructXY *data);
+uintmax_t get_instruct_num_invalid(void);
 bool put_xfield(const int32_t *data);
 bool put_yfield(const int32_t *data);

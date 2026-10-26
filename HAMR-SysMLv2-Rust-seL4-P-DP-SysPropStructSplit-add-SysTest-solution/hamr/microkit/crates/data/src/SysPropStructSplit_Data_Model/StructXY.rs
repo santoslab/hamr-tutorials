@@ -10,7 +10,7 @@ verus! {
   #[derive(Debug, Clone, Copy, PartialEq, Eq)]
   pub struct StructXY {
     pub x: i32,
-    pub y: i32
+    pub y: i32,
   }
 
   impl Default for StructXY {
@@ -21,3 +21,9 @@ verus! {
   }
 
 }
+
+// Memory layout as HAMR computes it
+const _: () = assert!(core::mem::size_of::<StructXY>() == 8);
+const _: () = assert!(core::mem::align_of::<StructXY>() == 4);
+const _: () = assert!(core::mem::offset_of!(StructXY, x) == 0);
+const _: () = assert!(core::mem::offset_of!(StructXY, y) == 4);

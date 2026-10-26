@@ -2,6 +2,13 @@
 
 MICROKIT_TOOL ?= $(MICROKIT_SDK)/bin/microkit
 
+# Which cargo profile directory the Rust staticlibs land in.  The crate Makefiles'
+# default target is build-verus-release, and the *-release targets pass --release, so
+# those produce target/<triple>/release; the plain build / build-verus targets do not
+# and produce target/<triple>/debug.  The link rules below have to look in whichever
+# one RUST_MAKE_TARGET actually populated.
+RUST_PROFILE_DIR := $(if $(RUST_MAKE_TARGET),$(if $(filter %-release,$(RUST_MAKE_TARGET)),release,debug),release)
+
 CFLAGS := -mcpu=$(CPU) \
 	-mstrict-align \
 	-ffreestanding \
@@ -26,20 +33,28 @@ UTIL_OBJS = printf.o util.o
 TYPES_DIR = $(TOP_DIR)/types
 TYPE_OBJS := $(TOP_DIR)/build/sb_queue_SysPropStructSplit_Data_Model_StructXY_1.o $(TOP_DIR)/build/sb_queue_int32_t_1.o
 
+# The queue objects as an archive: each protection domain's link pulls in only the
+# queues it uses, not every queue in the system
+TYPES_LIB := libhamr_types.a
+
 # exporting TOP_TYPES_INCLUDE in case other makefiles need it
 export TOP_TYPES_INCLUDE = -I$(TYPES_DIR)/include
 
 TOP_INCLUDE = $(TOP_TYPES_INCLUDE) -I$(TOP_DIR)/util/include
 
 all: $(IMAGE_FILE)
-	CHECK_FLAGS_BOARD_MD5:=.board_cflags-$(shell echo -- ${CFLAGS} ${MICROKIT_BOARD} ${MICROKIT_CONFIG}| shasum | sed 's/ *-//')
+	CHECK_FLAGS_BOARD_MD5:=.hamr_flags-$(shell echo -- ${CFLAGS} ${MICROKIT_BOARD} ${MICROKIT_CONFIG}| shasum | sed 's/ *-//')
 
 ${CHECK_FLAGS_BOARD_MD5}:
-	-rm -f .board_cflags-*
+	-rm -f .hamr_flags-*
 	touch $@
 
 %.o: ${TOP_DIR}/util/src/%.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ -I$(TOP_DIR)/util/include
+
+$(TYPES_LIB): $(TYPE_OBJS)
+	rm -f $@
+	$(AR) rcs $@ $^
 
 $(TOP_DIR)/build/sb_queue_SysPropStructSplit_Data_Model_StructXY_1.o: $(TOP_DIR)/types/src/sb_queue_SysPropStructSplit_Data_Model_StructXY_1.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@ $(TOP_INCLUDE)
@@ -132,46 +147,46 @@ pacer.o: $(TOP_DIR)/components/pacer/src/pacer.c Makefile
 gen_gen_MON.elf: gen_gen_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-gen_gen.elf: $(UTIL_OBJS) $(TYPE_OBJS) gen_gen_rust gen_gen.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/gen_gen/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lgen_gen -o $@
+gen_gen.elf: $(UTIL_OBJS) gen_gen_rust gen_gen.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/gen_gen/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lgen_gen -o $@
 
 splitter_splitter_MON.elf: splitter_splitter_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-splitter_splitter.elf: $(UTIL_OBJS) $(TYPE_OBJS) splitter_splitter_rust splitter_splitter.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/splitter_splitter/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lsplitter_splitter -o $@
+splitter_splitter.elf: $(UTIL_OBJS) splitter_splitter_rust splitter_splitter.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/splitter_splitter/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lsplitter_splitter -o $@
 
 incx_incx_MON.elf: incx_incx_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-incx_incx.elf: $(UTIL_OBJS) $(TYPE_OBJS) incx_incx_rust incx_incx.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/incx_incx/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lincx_incx -o $@
+incx_incx.elf: $(UTIL_OBJS) incx_incx_rust incx_incx.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/incx_incx/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lincx_incx -o $@
 
 clampx_clampx_MON.elf: clampx_clampx_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-clampx_clampx.elf: $(UTIL_OBJS) $(TYPE_OBJS) clampx_clampx_rust clampx_clampx.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/clampx_clampx/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lclampx_clampx -o $@
+clampx_clampx.elf: $(UTIL_OBJS) clampx_clampx_rust clampx_clampx.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/clampx_clampx/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lclampx_clampx -o $@
 
 decy_decy_MON.elf: decy_decy_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-decy_decy.elf: $(UTIL_OBJS) $(TYPE_OBJS) decy_decy_rust decy_decy.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/decy_decy/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -ldecy_decy -o $@
+decy_decy.elf: $(UTIL_OBJS) decy_decy_rust decy_decy.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/decy_decy/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -ldecy_decy -o $@
 
 merger_merger_MON.elf: merger_merger_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-merger_merger.elf: $(UTIL_OBJS) $(TYPE_OBJS) merger_merger_rust merger_merger.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/merger_merger/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lmerger_merger -o $@
+merger_merger.elf: $(UTIL_OBJS) merger_merger_rust merger_merger.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/merger_merger/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lmerger_merger -o $@
 
 consume_consume_MON.elf: consume_consume_MON.o
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
-consume_consume.elf: $(UTIL_OBJS) $(TYPE_OBJS) consume_consume_rust consume_consume.o
-	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/consume_consume/target/aarch64-unknown-none/release $(filter %.o, $^) $(LIBS) -lconsume_consume -o $@
+consume_consume.elf: $(UTIL_OBJS) consume_consume_rust consume_consume.o $(TYPES_LIB)
+	$(LD) $(LDFLAGS) -L ${CRATES_DIR}/consume_consume/target/aarch64-unknown-none/$(RUST_PROFILE_DIR) $(filter %.o, $^) $(TYPES_LIB) $(LIBS) -lconsume_consume -o $@
 
-pacer.elf: $(UTIL_OBJS) $(TYPE_OBJS) pacer.o
+pacer.elf: $(UTIL_OBJS) pacer.o $(TYPES_LIB)
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
 $(IMAGE_FILE): $(IMAGES) $(TOP_DIR)/$(MSD)

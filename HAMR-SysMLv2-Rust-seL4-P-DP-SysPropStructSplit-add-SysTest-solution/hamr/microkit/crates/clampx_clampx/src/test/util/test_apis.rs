@@ -7,7 +7,7 @@ use proptest::prelude::*;
 
 /// container for component's incoming port values
 pub struct PreStateContainer {
-  pub api_inxfield: i32
+  pub api_inxfield: i32,
 }
 
 /// setter for component's incoming port values

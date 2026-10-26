@@ -25,4 +25,5 @@ void *memset(void *dest, int c, size_t n);
 
 
 bool get_inxfield(int32_t *data);
+uintmax_t get_inxfield_num_invalid(void);
 bool put_outxfield(const int32_t *data);

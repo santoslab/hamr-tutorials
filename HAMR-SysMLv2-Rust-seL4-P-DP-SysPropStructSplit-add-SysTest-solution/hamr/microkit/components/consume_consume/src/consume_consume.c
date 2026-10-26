@@ -24,6 +24,10 @@ bool get_instruct(SysPropStructSplit_Data_Model_StructXY *data) {
   return isFresh;
 }
 
+uintmax_t get_instruct_num_invalid(void) {
+  return sb_queue_SysPropStructSplit_Data_Model_StructXY_1_numInvalid((sb_queue_SysPropStructSplit_Data_Model_StructXY_1_Recv_t *) &instruct_recv_queue);
+}
+
 void init(void) {
   sb_queue_SysPropStructSplit_Data_Model_StructXY_1_Recv_init(&instruct_recv_queue, (sb_queue_SysPropStructSplit_Data_Model_StructXY_1_t *) instruct_queue_1);
 

@@ -30,6 +30,12 @@ verus! {
     }
 
     #[verifier::external_body]
+    fn unverified_get_inxfield_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_inxfield_num_invalid();
+    }
+
+    #[verifier::external_body]
     fn unverified_get_inyfield(
       &mut self,
       value: &Ghost<i32>) -> (res : i32)
@@ -37,6 +43,12 @@ verus! {
         res == value@,
     {
       return extern_api::unsafe_get_inyfield();
+    }
+
+    #[verifier::external_body]
+    fn unverified_get_inyfield_num_invalid(&self) -> u64
+    {
+      return extern_api::unsafe_get_inyfield_num_invalid();
     }
   }
 
@@ -47,7 +59,7 @@ verus! {
 
     pub ghost inxfield: i32,
     pub ghost inyfield: i32,
-    pub ghost outstruct: SysPropStructSplit_Data_Model::StructXY
+    pub ghost outstruct: SysPropStructSplit_Data_Model::StructXY,
   }
 
   impl<API: merger_merger_Put_Api> merger_merger_Application_Api<API> {
@@ -73,6 +85,12 @@ verus! {
         old(self).outstruct == final(self).outstruct,
     {
       self.api.unverified_get_inxfield(&Ghost(self.inxfield))
+    }/// The number of messages received on inxfield that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_inxfield_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_inxfield_num_invalid()
     }
     pub fn get_inyfield(&mut self) -> (res : i32)
       ensures
@@ -82,6 +100,12 @@ verus! {
         old(self).outstruct == final(self).outstruct,
     {
       self.api.unverified_get_inyfield(&Ghost(self.inyfield))
+    }/// The number of messages received on inyfield that were dropped because they held
+    /// an invalid bit pattern (an out-of-range enum, a bool that is neither 0 nor 1, or a
+    /// string with no terminating NUL)
+    pub fn get_inyfield_num_invalid(&self) -> u64
+    {
+      self.api.unverified_get_inyfield_num_invalid()
     }
   }
 

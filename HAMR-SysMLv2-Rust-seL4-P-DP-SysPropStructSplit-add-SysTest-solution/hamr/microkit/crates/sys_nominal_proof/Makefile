@@ -12,6 +12,13 @@ CARGO_FLAGS = -Z build-std=core,alloc,compiler_builtins \
               -Z build-std-features=compiler-builtins-mem \
               --target aarch64-unknown-none
 
+# Extra options for cargo-verus itself, for every cargo-verus target below.
+# Empty by default. For example
+#   CARGO_VERUS_OPTS="--fwd-verus-args-to roots"
+# forwards SMT_OPTS to this crate only, so its dependencies (notably vstd) are
+# verified with Verus' defaults rather than with options meant for this crate.
+CARGO_VERUS_OPTS ?=
+
 # Extra arguments forwarded to Verus (placed after `--`), for every
 # cargo-verus target below. These apply to dependency crates too -- notably
 # vstd, which is verified from source on a clean build, so its proofs must
@@ -32,7 +39,7 @@ SMT_OPTS ?= --rlimit 100 --smt-option smt.random_seed=7
 # verify the entire crate (every property plus the shared Commutativity VCs)
 .PHONY: all
 all:
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS) -- $(SMT_OPTS)
+	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS)
 
 # Compile every crate WITHOUT verification so the dependency crates (vstd,
 # data, the GUMBO library crates) are cached as Verus import libraries before
@@ -40,27 +47,27 @@ all:
 # to the dependency crates too and fails on a clean build (see header note).
 .PHONY: warm-deps
 warm-deps:
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS) -- $(SMT_OPTS) --no-verify
+	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --no-verify
 
 # verify only property 'gen_range_sanity'
 .PHONY: gen_range_sanity
 gen_range_sanity: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module gen_range_sanity::vc_init --verify-module gen_range_sanity::vc_sequential --verify-module gen_range_sanity::vc_post_pre --verify-module gen_range_sanity::vc_non_disabling
+	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module gen_range_sanity::vc_init --verify-module gen_range_sanity::vc_sequential --verify-module gen_range_sanity::vc_post_pre --verify-module gen_range_sanity::vc_non_disabling
 
 # verify only property 'merged_in_consume_range'
 .PHONY: merged_in_consume_range
 merged_in_consume_range: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module merged_in_consume_range::vc_init --verify-module merged_in_consume_range::vc_sequential --verify-module merged_in_consume_range::vc_post_pre --verify-module merged_in_consume_range::vc_non_disabling
+	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module merged_in_consume_range::vc_init --verify-module merged_in_consume_range::vc_sequential --verify-module merged_in_consume_range::vc_post_pre --verify-module merged_in_consume_range::vc_non_disabling
 
 # verify only property 'end_to_end_functional'
 .PHONY: end_to_end_functional
 end_to_end_functional: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module end_to_end_functional::vc_init --verify-module end_to_end_functional::vc_sequential --verify-module end_to_end_functional::vc_post_pre --verify-module end_to_end_functional::vc_non_disabling
+	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module end_to_end_functional::vc_init --verify-module end_to_end_functional::vc_sequential --verify-module end_to_end_functional::vc_post_pre --verify-module end_to_end_functional::vc_non_disabling
 
 # verify only property 'consume_range_loop_invariant'
 .PHONY: consume_range_loop_invariant
 consume_range_loop_invariant: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module consume_range_loop_invariant::vc_init --verify-module consume_range_loop_invariant::vc_sequential --verify-module consume_range_loop_invariant::vc_post_pre --verify-module consume_range_loop_invariant::vc_non_disabling
+	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module consume_range_loop_invariant::vc_init --verify-module consume_range_loop_invariant::vc_sequential --verify-module consume_range_loop_invariant::vc_post_pre --verify-module consume_range_loop_invariant::vc_non_disabling
 
 .PHONY: clean
 clean:
