@@ -59,10 +59,10 @@ Both are generated from the same model, and the component crates contain the sam
 
 ```
 sireum hamr sysml codegen ... --platform Microkit --scheduling UserLand \
-  --experimental-options ENABLE_TEST_SCHEDULER --sel4-output-dir ../../hamr/microkit_mcs
+  --system-testing --sel4-output-dir ../../hamr/microkit_mcs
 ```
 
-(If you ever need to regenerate it, run `../bin/run-hamr.cmd` with those options from `sysmlv2/struct-split`; see section 4 of the documentation chapter.)
+(If you ever need to regenerate it, run `../bin/run-hamr.cmd` with those options from `sysmlv2/struct-split`; see section 4 of the documentation chapter, which also gives the option to use with Sireum releases older than `--system-testing`.)
 
 * **Task:** Find the files system testing added to `hamr/microkit_mcs`:
   - `crates/test_controller/src/system_tests/` -- the test API for this model (`api.rs`, `inspect.rs`, `observe.rs`, `harness.rs`) and **`tests.rs`**, the file you will edit.  Codegen writes `tests.rs` once and never overwrites it; every other file in the crate is regenerated.
