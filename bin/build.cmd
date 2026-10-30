@@ -280,7 +280,7 @@ object Helper {
         systemLevelVerus = systemLevelVerus,
         verify = T,
         test = T,
-        extraCodegenArgs = ISZ("--scheduling", "UserLand", "--experimental-options", "ENABLE_TEST_SCHEDULER"),
+        extraCodegenArgs = ISZ("--scheduling", "UserLand", "--system-testing"),
         systemTest = T)
     }
 
