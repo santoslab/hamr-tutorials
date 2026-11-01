@@ -82,3 +82,15 @@ pub fn Isolette_Data_Model_Set_Points_strategy_cust
     Isolette_Data_Model::Set_Points { lower, upper }
   })
 }
+
+/// default proptest strategy for u8: any value of the type
+pub fn u8_strategy_default() -> impl Strategy<Value = u8>
+{
+  any::<u8>()
+}
+
+/// custom proptest strategy for u8 restricted to an inclusive range
+pub fn u8_strategy_cust(range: core::ops::RangeInclusive<u8>) -> impl Strategy<Value = u8>
+{
+  range
+}

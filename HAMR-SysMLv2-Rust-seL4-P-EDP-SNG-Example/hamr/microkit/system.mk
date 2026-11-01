@@ -162,6 +162,13 @@ clean::
 	make -C ${CRATES_DIR}/test_sender_test_sender clean
 	make -C ${CRATES_DIR}/test_receiver_test_receiver clean
 
+coverage: 
+	@open=; if [ ! -f $(TOP_DIR)/target/coverage/report/index.html ]; then open=open; fi; \
+	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/gate_gate ${CRATES_DIR}/msg_filter_msg_filter ${CRATES_DIR}/test_sender_test_sender ${CRATES_DIR}/test_receiver_test_receiver out=$(TOP_DIR)/target/coverage $$open $(args)
+
+coverage-report: 
+	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/gate_gate ${CRATES_DIR}/msg_filter_msg_filter ${CRATES_DIR}/test_sender_test_sender ${CRATES_DIR}/test_receiver_test_receiver out=$(TOP_DIR)/target/coverage no-run
+
 verus: 
 	make -C ${CRATES_DIR}/gate_gate verus
 	make -C ${CRATES_DIR}/msg_filter_msg_filter verus

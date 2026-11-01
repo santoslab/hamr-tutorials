@@ -31,10 +31,8 @@ void test_put_gen_gen_outstruct(SysPropStructSplit_Data_Model_StructXY *value) {
 
 sb_queue_SysPropStructSplit_Data_Model_StructXY_1_Recv_t tc_obs_gen_gen_outstruct_recv;
 
-
 bool test_obs_get_gen_gen_outstruct(SysPropStructSplit_Data_Model_StructXY *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_SysPropStructSplit_Data_Model_StructXY_1_dequeue(&tc_obs_gen_gen_outstruct_recv, &numDropped, value);
 }
 
@@ -52,10 +50,8 @@ void test_put_splitter_splitter_xfield(int32_t *value) {
 
 sb_queue_int32_t_1_Recv_t tc_obs_splitter_splitter_xfield_recv;
 
-
 bool test_obs_get_splitter_splitter_xfield(int32_t *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_int32_t_1_dequeue(&tc_obs_splitter_splitter_xfield_recv, &numDropped, value);
 }
 
@@ -73,10 +69,8 @@ void test_put_splitter_splitter_yfield(int32_t *value) {
 
 sb_queue_int32_t_1_Recv_t tc_obs_splitter_splitter_yfield_recv;
 
-
 bool test_obs_get_splitter_splitter_yfield(int32_t *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_int32_t_1_dequeue(&tc_obs_splitter_splitter_yfield_recv, &numDropped, value);
 }
 
@@ -94,10 +88,8 @@ void test_put_incx_incx_outxfield(int32_t *value) {
 
 sb_queue_int32_t_1_Recv_t tc_obs_incx_incx_outxfield_recv;
 
-
 bool test_obs_get_incx_incx_outxfield(int32_t *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_int32_t_1_dequeue(&tc_obs_incx_incx_outxfield_recv, &numDropped, value);
 }
 
@@ -115,10 +107,8 @@ void test_put_clampx_clampx_outxfield(int32_t *value) {
 
 sb_queue_int32_t_1_Recv_t tc_obs_clampx_clampx_outxfield_recv;
 
-
 bool test_obs_get_clampx_clampx_outxfield(int32_t *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_int32_t_1_dequeue(&tc_obs_clampx_clampx_outxfield_recv, &numDropped, value);
 }
 
@@ -136,10 +126,8 @@ void test_put_decy_decy_outyfield(int32_t *value) {
 
 sb_queue_int32_t_1_Recv_t tc_obs_decy_decy_outyfield_recv;
 
-
 bool test_obs_get_decy_decy_outyfield(int32_t *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_int32_t_1_dequeue(&tc_obs_decy_decy_outyfield_recv, &numDropped, value);
 }
 
@@ -157,10 +145,8 @@ void test_put_merger_merger_outstruct(SysPropStructSplit_Data_Model_StructXY *va
 
 sb_queue_SysPropStructSplit_Data_Model_StructXY_1_Recv_t tc_obs_merger_merger_outstruct_recv;
 
-
 bool test_obs_get_merger_merger_outstruct(SysPropStructSplit_Data_Model_StructXY *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_SysPropStructSplit_Data_Model_StructXY_1_dequeue(&tc_obs_merger_merger_outstruct_recv, &numDropped, value);
 }
 
@@ -174,10 +160,8 @@ bool test_get_consume_consume_sv_last_x(int32_t *value) {
 
 sb_queue_int32_t_1_Recv_t tc_obs_consume_consume_sv_last_x_recv;
 
-
 bool test_obs_get_consume_consume_sv_last_x(int32_t *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_int32_t_1_dequeue(&tc_obs_consume_consume_sv_last_x_recv, &numDropped, value);
 }
 

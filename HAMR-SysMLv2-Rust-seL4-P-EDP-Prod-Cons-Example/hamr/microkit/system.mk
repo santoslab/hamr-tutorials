@@ -124,6 +124,13 @@ clean::
 	make -C ${CRATES_DIR}/prod_prod clean
 	make -C ${CRATES_DIR}/cons_cons clean
 
+coverage: 
+	@open=; if [ ! -f $(TOP_DIR)/target/coverage/report/index.html ]; then open=open; fi; \
+	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/prod_prod ${CRATES_DIR}/cons_cons out=$(TOP_DIR)/target/coverage $$open $(args)
+
+coverage-report: 
+	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/prod_prod ${CRATES_DIR}/cons_cons out=$(TOP_DIR)/target/coverage no-run
+
 verus: 
 	make -C ${CRATES_DIR}/prod_prod verus
 	make -C ${CRATES_DIR}/cons_cons verus

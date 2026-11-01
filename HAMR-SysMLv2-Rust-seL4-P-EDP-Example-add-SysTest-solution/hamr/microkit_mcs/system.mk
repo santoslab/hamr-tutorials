@@ -259,6 +259,13 @@ clean::
 	make -C ${CRATES_DIR}/heat_source_heat_source clean
 	make -C ${CRATES_DIR}/test_controller clean
 
+coverage: 
+	@open=; if [ ! -f $(TOP_DIR)/target/coverage/report/index.html ]; then open=open; fi; \
+	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/temp_sensor_temp_sensor ${CRATES_DIR}/operator_interface_operator_interface ${CRATES_DIR}/thermostat_thermostat ${CRATES_DIR}/heat_source_heat_source out=$(TOP_DIR)/target/coverage $$open $(args)
+
+coverage-report: 
+	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/temp_sensor_temp_sensor ${CRATES_DIR}/operator_interface_operator_interface ${CRATES_DIR}/thermostat_thermostat ${CRATES_DIR}/heat_source_heat_source out=$(TOP_DIR)/target/coverage no-run
+
 verus: 
 	make -C ${CRATES_DIR}/temp_sensor_temp_sensor verus
 	make -C ${CRATES_DIR}/operator_interface_operator_interface verus

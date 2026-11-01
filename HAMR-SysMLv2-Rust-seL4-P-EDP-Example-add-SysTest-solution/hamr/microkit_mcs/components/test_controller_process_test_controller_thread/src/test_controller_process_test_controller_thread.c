@@ -31,10 +31,8 @@ void test_put_temp_sensor_temp_sensor_current_temp(Isolette_Data_Model_Temp *val
 
 sb_queue_Isolette_Data_Model_Temp_1_Recv_t tc_obs_temp_sensor_temp_sensor_current_temp_recv;
 
-
 bool test_obs_get_temp_sensor_temp_sensor_current_temp(Isolette_Data_Model_Temp *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_Isolette_Data_Model_Temp_1_dequeue(&tc_obs_temp_sensor_temp_sensor_current_temp_recv, &numDropped, value);
 }
 
@@ -318,10 +316,8 @@ bool test_get_thermostat_thermostat_sv_currentSetPoints(Isolette_Data_Model_Set_
 
 sb_queue_Isolette_Data_Model_Set_Points_1_Recv_t tc_obs_thermostat_thermostat_sv_currentSetPoints_recv;
 
-
 bool test_obs_get_thermostat_thermostat_sv_currentSetPoints(Isolette_Data_Model_Set_Points *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_Isolette_Data_Model_Set_Points_1_dequeue(&tc_obs_thermostat_thermostat_sv_currentSetPoints_recv, &numDropped, value);
 }
 
@@ -335,10 +331,8 @@ bool test_get_thermostat_thermostat_sv_lastCmd(Isolette_Data_Model_On_Off *value
 
 sb_queue_Isolette_Data_Model_On_Off_1_Recv_t tc_obs_thermostat_thermostat_sv_lastCmd_recv;
 
-
 bool test_obs_get_thermostat_thermostat_sv_lastCmd(Isolette_Data_Model_On_Off *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_Isolette_Data_Model_On_Off_1_dequeue(&tc_obs_thermostat_thermostat_sv_lastCmd_recv, &numDropped, value);
 }
 
@@ -352,10 +346,8 @@ bool test_get_heat_source_heat_source_sv_heater_state(Isolette_Data_Model_On_Off
 
 sb_queue_Isolette_Data_Model_On_Off_1_Recv_t tc_obs_heat_source_heat_source_sv_heater_state_recv;
 
-
 bool test_obs_get_heat_source_heat_source_sv_heater_state(Isolette_Data_Model_On_Off *value) {
   sb_event_counter_t numDropped;
-
   return sb_queue_Isolette_Data_Model_On_Off_1_dequeue(&tc_obs_heat_source_heat_source_sv_heater_state_recv, &numDropped, value);
 }
 
