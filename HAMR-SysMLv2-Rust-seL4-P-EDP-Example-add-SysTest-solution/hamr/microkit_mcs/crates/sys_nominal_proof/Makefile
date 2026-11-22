@@ -2,9 +2,9 @@
 
 # `make all` (or `make`) verifies the whole crate -- every property plus the
 # shared, property-independent Commutativity VCs -- in one `cargo-verus
-# verify`. `make <property>` runs `cargo-verus verify` on just that
-# property's generated VCs (its vc_init / vc_sequential / vc_post_pre /
-# vc_non_disabling modules).
+# verify`. `make <property>` runs `cargo-verus focus` on just that
+# property's generated VCs (those of its vc_init / vc_sequential /
+# vc_post_pre / vc_non_disabling modules that have any).
 
 ENV_VARS = RUSTC_BOOTSTRAP=1
 
@@ -36,28 +36,35 @@ CARGO_VERUS_OPTS ?=
 #   be off the default and identical on every machine, not this number.
 SMT_OPTS ?= --rlimit 100 --smt-option smt.random_seed=7
 
+# Run before every cargo-verus verify target below. cargo-verus caches
+# verification like any build: with nothing changed, `cargo-verus verify`
+# finishes without re-verifying and prints no `verification results::`
+# line. Removing only this crate's dev-profile artifacts makes each run
+# re-verify this crate and print its results; its dependencies (notably
+# vstd), the release build and the test/coverage artifacts are kept.
+VERUS_FRESH = $(ENV_VARS) cargo clean --quiet -p sys_nominal_proof --profile dev $(CARGO_FLAGS)
+
+# The same for the per-property targets: `cargo-verus focus` builds under
+# target/verus-partial, apart from `cargo-verus verify`.
+VERUS_FRESH_FOCUS = $(ENV_VARS) cargo clean --quiet -p sys_nominal_proof --profile dev --target-dir target/verus-partial $(CARGO_FLAGS)
+
 # verify the entire crate (every property plus the shared Commutativity VCs)
 .PHONY: all
 all:
+	$(VERUS_FRESH)
 	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS)
-
-# Compile every crate WITHOUT verification so the dependency crates (vstd,
-# data, the GUMBO library crates) are cached as Verus import libraries before
-# any per-property `--verify-module` run -- that flag is otherwise forwarded
-# to the dependency crates too and fails on a clean build (see header note).
-.PHONY: warm-deps
-warm-deps:
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --no-verify
 
 # verify only property 'heater_agreement'
 .PHONY: heater_agreement
-heater_agreement: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module heater_agreement::vc_init --verify-module heater_agreement::vc_sequential --verify-module heater_agreement::vc_post_pre --verify-module heater_agreement::vc_non_disabling
+heater_agreement:
+	$(VERUS_FRESH_FOCUS)
+	$(ENV_VARS) cargo-verus focus $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module heater_agreement::vc_init --verify-module heater_agreement::vc_sequential --verify-module heater_agreement::vc_post_pre
 
 # verify only property 'too_cold_heats'
 .PHONY: too_cold_heats
-too_cold_heats: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module too_cold_heats::vc_init --verify-module too_cold_heats::vc_sequential --verify-module too_cold_heats::vc_post_pre --verify-module too_cold_heats::vc_non_disabling
+too_cold_heats:
+	$(VERUS_FRESH_FOCUS)
+	$(ENV_VARS) cargo-verus focus $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module too_cold_heats::vc_init --verify-module too_cold_heats::vc_sequential --verify-module too_cold_heats::vc_post_pre
 
 .PHONY: clean
 clean:

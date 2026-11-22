@@ -35,21 +35,6 @@ pub fn i32_strategy_cust(range: core::ops::RangeInclusive<i32>) -> impl Strategy
   range
 }
 
-pub fn Isolette_Data_Model_On_Off_strategy_default() -> impl Strategy<Value = Isolette_Data_Model::On_Off>
-{
-  Isolette_Data_Model_On_Off_strategy_cust(1, 1)
-}
-
-pub fn Isolette_Data_Model_On_Off_strategy_cust(
-  Onn_bias: u32,
-  Off_bias: u32) -> impl Strategy<Value = Isolette_Data_Model::On_Off>
-{
-  prop_oneof![
-    Onn_bias => Just(Isolette_Data_Model::On_Off::Onn),
-    Off_bias => Just(Isolette_Data_Model::On_Off::Off)
-  ]
-}
-
 pub fn Isolette_Data_Model_Temp_strategy_default() -> impl Strategy<Value = Isolette_Data_Model::Temp>
 {
   Isolette_Data_Model_Temp_strategy_cust(

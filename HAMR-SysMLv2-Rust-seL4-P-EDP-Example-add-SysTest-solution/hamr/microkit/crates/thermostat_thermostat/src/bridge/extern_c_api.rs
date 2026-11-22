@@ -98,7 +98,7 @@ pub fn get_current_temp(value: *mut Isolette_Data_Model::Temp) -> bool
 {
   unsafe {
     let guard = IN_current_temp.lock().unwrap_or_else(|e| e.into_inner());
-    *value = guard.expect("Not expecting None");
+    *value = guard.expect("incoming data port 'current_temp' has no value: set it before calling the entry point (in a component test, with test_apis::put_current_temp(..))");
     true
   }
 }

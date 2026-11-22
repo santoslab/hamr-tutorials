@@ -2,9 +2,9 @@
 
 # `make all` (or `make`) verifies the whole crate -- every property plus the
 # shared, property-independent Commutativity VCs -- in one `cargo-verus
-# verify`. `make <property>` runs `cargo-verus verify` on just that
-# property's generated VCs (its vc_init / vc_sequential / vc_post_pre /
-# vc_non_disabling modules).
+# verify`. `make <property>` runs `cargo-verus focus` on just that
+# property's generated VCs (those of its vc_init / vc_sequential /
+# vc_post_pre / vc_non_disabling modules that have any).
 
 ENV_VARS = RUSTC_BOOTSTRAP=1
 
@@ -36,38 +36,47 @@ CARGO_VERUS_OPTS ?=
 #   be off the default and identical on every machine, not this number.
 SMT_OPTS ?= --rlimit 100 --smt-option smt.random_seed=7
 
+# Run before every cargo-verus verify target below. cargo-verus caches
+# verification like any build: with nothing changed, `cargo-verus verify`
+# finishes without re-verifying and prints no `verification results::`
+# line. Removing only this crate's dev-profile artifacts makes each run
+# re-verify this crate and print its results; its dependencies (notably
+# vstd), the release build and the test/coverage artifacts are kept.
+VERUS_FRESH = $(ENV_VARS) cargo clean --quiet -p sys_nominal_proof --profile dev $(CARGO_FLAGS)
+
+# The same for the per-property targets: `cargo-verus focus` builds under
+# target/verus-partial, apart from `cargo-verus verify`.
+VERUS_FRESH_FOCUS = $(ENV_VARS) cargo clean --quiet -p sys_nominal_proof --profile dev --target-dir target/verus-partial $(CARGO_FLAGS)
+
 # verify the entire crate (every property plus the shared Commutativity VCs)
 .PHONY: all
 all:
+	$(VERUS_FRESH)
 	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS)
-
-# Compile every crate WITHOUT verification so the dependency crates (vstd,
-# data, the GUMBO library crates) are cached as Verus import libraries before
-# any per-property `--verify-module` run -- that flag is otherwise forwarded
-# to the dependency crates too and fails on a clean build (see header note).
-.PHONY: warm-deps
-warm-deps:
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --no-verify
 
 # verify only property 'gen_range_sanity'
 .PHONY: gen_range_sanity
-gen_range_sanity: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module gen_range_sanity::vc_init --verify-module gen_range_sanity::vc_sequential --verify-module gen_range_sanity::vc_post_pre --verify-module gen_range_sanity::vc_non_disabling
+gen_range_sanity:
+	$(VERUS_FRESH_FOCUS)
+	$(ENV_VARS) cargo-verus focus $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module gen_range_sanity::vc_init --verify-module gen_range_sanity::vc_sequential --verify-module gen_range_sanity::vc_post_pre --verify-module gen_range_sanity::vc_non_disabling
 
 # verify only property 'merged_in_consume_range'
 .PHONY: merged_in_consume_range
-merged_in_consume_range: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module merged_in_consume_range::vc_init --verify-module merged_in_consume_range::vc_sequential --verify-module merged_in_consume_range::vc_post_pre --verify-module merged_in_consume_range::vc_non_disabling
+merged_in_consume_range:
+	$(VERUS_FRESH_FOCUS)
+	$(ENV_VARS) cargo-verus focus $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module merged_in_consume_range::vc_init --verify-module merged_in_consume_range::vc_sequential --verify-module merged_in_consume_range::vc_post_pre --verify-module merged_in_consume_range::vc_non_disabling
 
 # verify only property 'end_to_end_functional'
 .PHONY: end_to_end_functional
-end_to_end_functional: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module end_to_end_functional::vc_init --verify-module end_to_end_functional::vc_sequential --verify-module end_to_end_functional::vc_post_pre --verify-module end_to_end_functional::vc_non_disabling
+end_to_end_functional:
+	$(VERUS_FRESH_FOCUS)
+	$(ENV_VARS) cargo-verus focus $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module end_to_end_functional::vc_init --verify-module end_to_end_functional::vc_sequential --verify-module end_to_end_functional::vc_post_pre --verify-module end_to_end_functional::vc_non_disabling
 
 # verify only property 'consume_range_loop_invariant'
 .PHONY: consume_range_loop_invariant
-consume_range_loop_invariant: warm-deps
-	$(ENV_VARS) cargo-verus verify $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module consume_range_loop_invariant::vc_init --verify-module consume_range_loop_invariant::vc_sequential --verify-module consume_range_loop_invariant::vc_post_pre --verify-module consume_range_loop_invariant::vc_non_disabling
+consume_range_loop_invariant:
+	$(VERUS_FRESH_FOCUS)
+	$(ENV_VARS) cargo-verus focus $(CARGO_VERUS_OPTS) $(CARGO_FLAGS) -- $(SMT_OPTS) --verify-module consume_range_loop_invariant::vc_init --verify-module consume_range_loop_invariant::vc_sequential --verify-module consume_range_loop_invariant::vc_post_pre --verify-module consume_range_loop_invariant::vc_non_disabling
 
 .PHONY: clean
 clean:

@@ -52,12 +52,6 @@ pub fn SNG_Data_Model_SecurityLevel_strategy_cust(
   ]
 }
 
-/// default proptest strategy for bool: any value of the type
-pub fn bool_strategy_default() -> impl Strategy<Value = bool>
-{
-  any::<bool>()
-}
-
 pub fn SNG_Data_Model_Message_strategy_default() -> impl Strategy<Value = SNG_Data_Model::Message>
 {
   SNG_Data_Model_Message_strategy_cust(

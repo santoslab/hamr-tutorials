@@ -55,7 +55,7 @@ pub fn get_heat_control(value: *mut Isolette_Data_Model::On_Off) -> bool
 {
   unsafe {
     let guard = IN_heat_control.lock().unwrap_or_else(|e| e.into_inner());
-    *value = guard.expect("Not expecting None");
+    *value = guard.expect("incoming data port 'heat_control' has no value: set it before calling the entry point (in a component test, with test_apis::put_heat_control(..))");
     true
   }
 }

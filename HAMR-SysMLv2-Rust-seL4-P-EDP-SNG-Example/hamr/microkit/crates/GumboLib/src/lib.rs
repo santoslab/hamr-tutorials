@@ -128,6 +128,27 @@ verus! {
   {
     equalSecurityLevel_spec(m1, m2) && equalPayload_spec(m1, m2)
   }
+
+  pub assume_specification[ clampedPayloadLowerBound ]() -> (res: i32)
+    ensures res == clampedPayloadLowerBound_spec();
+
+  pub assume_specification[ clampedPayloadUpperBound ]() -> (res: i32)
+    ensures res == clampedPayloadUpperBound_spec();
+
+  pub assume_specification[ clampedPayload ](m: SNG_Data_Model::Message) -> (res: bool)
+    ensures res == clampedPayload_spec(m);
+
+  pub assume_specification[ allowedSecurityLevel ](m: SNG_Data_Model::Message) -> (res: bool)
+    ensures res == allowedSecurityLevel_spec(m);
+
+  pub assume_specification[ equalSecurityLevel ](m1: SNG_Data_Model::Message, m2: SNG_Data_Model::Message) -> (res: bool)
+    ensures res == equalSecurityLevel_spec(m1, m2);
+
+  pub assume_specification[ equalPayload ](m1: SNG_Data_Model::Message, m2: SNG_Data_Model::Message) -> (res: bool)
+    ensures res == equalPayload_spec(m1, m2);
+
+  pub assume_specification[ equalMessage ](m1: SNG_Data_Model::Message, m2: SNG_Data_Model::Message) -> (res: bool)
+    ensures res == equalMessage_spec(m1, m2);
   // END MARKER GUMBO VERUS MARKER
 
 }

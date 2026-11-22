@@ -23,18 +23,6 @@ pub fn option_strategy_bias
   ]
 }
 
-/// default proptest strategy for i32: any value of the type
-pub fn i32_strategy_default() -> impl Strategy<Value = i32>
-{
-  any::<i32>()
-}
-
-/// custom proptest strategy for i32 restricted to an inclusive range
-pub fn i32_strategy_cust(range: core::ops::RangeInclusive<i32>) -> impl Strategy<Value = i32>
-{
-  range
-}
-
 pub fn Isolette_Data_Model_On_Off_strategy_default() -> impl Strategy<Value = Isolette_Data_Model::On_Off>
 {
   Isolette_Data_Model_On_Off_strategy_cust(1, 1)
@@ -48,37 +36,4 @@ pub fn Isolette_Data_Model_On_Off_strategy_cust(
     Onn_bias => Just(Isolette_Data_Model::On_Off::Onn),
     Off_bias => Just(Isolette_Data_Model::On_Off::Off)
   ]
-}
-
-pub fn Isolette_Data_Model_Temp_strategy_default() -> impl Strategy<Value = Isolette_Data_Model::Temp>
-{
-  Isolette_Data_Model_Temp_strategy_cust(
-    any::<i32>()
-  )
-}
-
-pub fn Isolette_Data_Model_Temp_strategy_cust<degrees_i32_strategy: Strategy<Value = i32>> (degrees_strategy: degrees_i32_strategy) -> impl Strategy<Value = Isolette_Data_Model::Temp>
-{
-  (degrees_strategy).prop_map(|(degrees)| {
-    Isolette_Data_Model::Temp { degrees }
-  })
-}
-
-pub fn Isolette_Data_Model_Set_Points_strategy_default() -> impl Strategy<Value = Isolette_Data_Model::Set_Points>
-{
-  Isolette_Data_Model_Set_Points_strategy_cust(
-    Isolette_Data_Model_Temp_strategy_default(),
-    Isolette_Data_Model_Temp_strategy_default()
-  )
-}
-
-pub fn Isolette_Data_Model_Set_Points_strategy_cust
-  <lower_Isolette_Data_Model_Temp_strategy: Strategy<Value = Isolette_Data_Model::Temp>, 
-   upper_Isolette_Data_Model_Temp_strategy: Strategy<Value = Isolette_Data_Model::Temp>> (
-  lower_strategy: lower_Isolette_Data_Model_Temp_strategy,
-  upper_strategy: upper_Isolette_Data_Model_Temp_strategy) -> impl Strategy<Value = Isolette_Data_Model::Set_Points>
-{
-  (lower_strategy, upper_strategy).prop_map(|(lower, upper)| {
-    Isolette_Data_Model::Set_Points { lower, upper }
-  })
 }

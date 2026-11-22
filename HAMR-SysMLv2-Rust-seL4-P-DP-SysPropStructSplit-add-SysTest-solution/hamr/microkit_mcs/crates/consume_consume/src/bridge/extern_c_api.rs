@@ -100,7 +100,7 @@ pub fn get_instruct(value: *mut SysPropStructSplit_Data_Model::StructXY) -> bool
 {
   unsafe {
     let guard = IN_instruct.lock().unwrap_or_else(|e| e.into_inner());
-    *value = guard.expect("Not expecting None");
+    *value = guard.expect("incoming data port 'instruct' has no value: set it before calling the entry point (in a component test, with test_apis::put_instruct(..))");
     true
   }
 }

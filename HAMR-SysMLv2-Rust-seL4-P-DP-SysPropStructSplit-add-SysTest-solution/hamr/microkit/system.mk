@@ -205,7 +205,7 @@ qemu:
 clean::
 	rm -f *.o
 
-test:: 
+test::
 	make -C ${CRATES_DIR}/gen_gen test
 	make -C ${CRATES_DIR}/splitter_splitter test
 	make -C ${CRATES_DIR}/incx_incx test
@@ -214,7 +214,7 @@ test::
 	make -C ${CRATES_DIR}/merger_merger test
 	make -C ${CRATES_DIR}/consume_consume test
 
-clean:: 
+clean::
 	make -C ${CRATES_DIR}/gen_gen clean
 	make -C ${CRATES_DIR}/splitter_splitter clean
 	make -C ${CRATES_DIR}/incx_incx clean
@@ -223,14 +223,14 @@ clean::
 	make -C ${CRATES_DIR}/merger_merger clean
 	make -C ${CRATES_DIR}/consume_consume clean
 
-coverage: 
+coverage:
 	@open=; if [ ! -f $(TOP_DIR)/target/coverage/report/index.html ]; then open=open; fi; \
 	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/gen_gen ${CRATES_DIR}/splitter_splitter ${CRATES_DIR}/incx_incx ${CRATES_DIR}/clampx_clampx ${CRATES_DIR}/decy_decy ${CRATES_DIR}/merger_merger ${CRATES_DIR}/consume_consume out=$(TOP_DIR)/target/coverage $$open $(args)
 
-coverage-report: 
+coverage-report:
 	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/gen_gen ${CRATES_DIR}/splitter_splitter ${CRATES_DIR}/incx_incx ${CRATES_DIR}/clampx_clampx ${CRATES_DIR}/decy_decy ${CRATES_DIR}/merger_merger ${CRATES_DIR}/consume_consume out=$(TOP_DIR)/target/coverage no-run
 
-verus: 
+verus:
 	make -C ${CRATES_DIR}/gen_gen verus
 	make -C ${CRATES_DIR}/splitter_splitter verus
 	make -C ${CRATES_DIR}/incx_incx verus
@@ -239,5 +239,5 @@ verus:
 	make -C ${CRATES_DIR}/merger_merger verus
 	make -C ${CRATES_DIR}/consume_consume verus
 
-verus-sys-proof: 
+verus-sys-proof:
 	make -C ${CRATES_DIR}/sys_nominal_proof all

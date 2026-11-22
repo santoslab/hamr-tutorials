@@ -162,26 +162,26 @@ qemu:
 clean::
 	rm -f *.o
 
-test:: 
+test::
 	make -C ${CRATES_DIR}/temp_sensor_temp_sensor test
 	make -C ${CRATES_DIR}/operator_interface_operator_interface test
 	make -C ${CRATES_DIR}/thermostat_thermostat test
 	make -C ${CRATES_DIR}/heat_source_heat_source test
 
-clean:: 
+clean::
 	make -C ${CRATES_DIR}/temp_sensor_temp_sensor clean
 	make -C ${CRATES_DIR}/operator_interface_operator_interface clean
 	make -C ${CRATES_DIR}/thermostat_thermostat clean
 	make -C ${CRATES_DIR}/heat_source_heat_source clean
 
-coverage: 
+coverage:
 	@open=; if [ ! -f $(TOP_DIR)/target/coverage/report/index.html ]; then open=open; fi; \
 	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/temp_sensor_temp_sensor ${CRATES_DIR}/operator_interface_operator_interface ${CRATES_DIR}/thermostat_thermostat ${CRATES_DIR}/heat_source_heat_source out=$(TOP_DIR)/target/coverage $$open $(args)
 
-coverage-report: 
+coverage-report:
 	$(TOP_DIR)/bin/coverage-report.cmd ${CRATES_DIR}/temp_sensor_temp_sensor ${CRATES_DIR}/operator_interface_operator_interface ${CRATES_DIR}/thermostat_thermostat ${CRATES_DIR}/heat_source_heat_source out=$(TOP_DIR)/target/coverage no-run
 
-verus: 
+verus:
 	make -C ${CRATES_DIR}/temp_sensor_temp_sensor verus
 	make -C ${CRATES_DIR}/operator_interface_operator_interface verus
 	make -C ${CRATES_DIR}/thermostat_thermostat verus
